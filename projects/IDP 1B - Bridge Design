@@ -1,1 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wooden Bridge (IDP1) — By Diljit Singh</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../"><img src="../assets/logo.svg" alt="" width="28" height="28"/><span>By Diljit Singh</span></a>
+    <nav class="nav"><a href="../#projects">Projects</a><a href="../#wiki">My Wiki</a><a href="../#contact" class="btn">Contact</a></nav>
+    <button class="menu" aria-label="Open menu" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<main class="section container">
+  <h1>Wooden Bridge (IDP1)</h1>
+  <p class="section-sub">Cohort-best load test: <strong>2.4 kN</strong> (pass requirement: 1.1 kN)</p>
+
+  <img src="../assets/bridge.jpg" alt="Bridge project" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--grey-2)">
+
+  <h2>Brief</h2>
+  <p>Design and build a wooden bridge to meet a minimum load requirement with constraints on materials and dimensions.</p>
+
+  <h2>Approach</h2>
+  <ul>
+    <li>Selected truss configuration to maximise stiffness-to-mass.</li>
+    <li>Prioritised glue joints and load paths to reduce stress concentrations.</li>
+    <li>Built and tested with a two-person team due to limited availability.</li>
+  </ul>
+
+  <h2>Results</h2>
+  <ul>
+    <li>Withstood <strong>2.4 kN</strong> — highest in cohort.</li>
+    <li>Exceeded pass requirement (1.1 kN) with significant safety margin.</li>
+  </ul>
+
+  <h2>Lessons</h2>
+  <ul>
+    <li>Joint quality and geometry selection dominate performance in lightweight structures.</li>
+    <li>Lean team ⇒ faster iteration and clearer ownership.</li>
+  </ul>
+</main>
+
+<footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
