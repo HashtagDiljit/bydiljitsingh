@@ -27,6 +27,7 @@
       <a href="assets/Diljit_Singh_CV.pdf" class="btn ghost">CV</a>
     </nav>
     <button class="menu" aria-label="Open menu" aria-expanded="false">Menu</button>
+    <button class="menu" id="theme" aria-label="Toggle theme">Theme</button>
   </div>
 </header>
 
@@ -139,15 +140,18 @@
 </footer>
 
 <script>
-  // Year
-  document.getElementById('y').textContent = new Date().getFullYear();
-  // Mobile menu
-  const btn = document.querySelector('.menu');
-  const nav = document.querySelector('.nav');
-  btn.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  // Smooth scroll & offset for sticky header
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href').slice(1);
+      const el=document.getElementById(id);
+      if(!el) return;
+      e.preventDefault();
+      const y=el.getBoundingClientRect().top + window.scrollY - 72;
+      window.scrollTo({top:y,behavior:'smooth'});
+    });
   });
 </script>
+
 </body>
 </html>
