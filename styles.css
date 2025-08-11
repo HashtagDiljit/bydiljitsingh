@@ -1,187 +1,258 @@
-/* Palette */
+/* =========================================================
+   THEME / TOKENS
+   Adjust these first to change the whole site's vibe.
+   =======================================================*/
 :root{
-  --navy:#0B1B3B;
-  --ink:#111214;
-  --charcoal:#0E0F11;
-  --dark:#0A0A0B;
-  --grey-0:#FFFFFF;
-  --grey-1:#F7F8F9;
-  --grey-2:#E6E8EB;
-  --grey-3:#A8AFB7;
-  --link:#2D5BFF;
+  --navy:#0B1B3B;      /* brand accent */
+  --ink:#111214;       /* main body text */
+  --charcoal:#0E0F11;  /* headings */
+  --dark:#0A0A0B;      /* near-black surfaces */
+  --grey-0:#FFFFFF;    /* cards / surfaces */
+  --grey-1:#F7F8F9;    /* page background */
+  --grey-2:#E6E8EB;    /* borders / rules */
+  --grey-3:#A8AFB7;    /* muted text */
+  --link:#2D5BFF;      /* link accent */
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+  --shadow-hover:0 14px 40px rgba(0,0,0,.14);
+  --radius:16px;
 }
 
-/* Base */
+/* =========================================================
+   BASE
+   =======================================================*/
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
   color:var(--ink); background:var(--grey-1); line-height:1.6;
 }
-h1,h2,h3{font-family:Georgia,'Times New Roman',Times,serif;color:var(--charcoal);margin:0 0 .6rem}
+h1,h2,h3{
+  font-family:Georgia,'Times New Roman',Times,serif;
+  color:var(--charcoal); margin:0 0 .6rem;
+}
 h1{font-size:clamp(2rem,4vw,3rem)}
 h2{font-size:clamp(1.4rem,2.6vw,2rem)}
 h3{font-size:1.15rem}
 a{color:inherit;text-decoration:none}
 
-/* Layout */
-.container{max-width:1100px;margin:0 auto;padding:0 20px}
-.section{padding:56px 0}
-.section-title{margin-bottom:.25rem}
-.section-sub{color:#5a6068;margin-top:.25rem}
-
-/* Header */
-.site-header{background:#1f2023;color:#fff;position:sticky;top:0;z-index:10}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:14px}
-.brand img{width:28px;height:28px}
-.brand span{font-family:Georgia,'Times New Roman',Times,serif;font-size:1rem;letter-spacing:.2px}
-.nav{display:flex;gap:16px;align-items:center}
-.nav a{color:#e9eaed;padding:6px 10px;border-radius:10px}
-.nav a:hover{background:rgba(255,255,255,.08)}
-.menu{display:none;background:transparent;border:1px solid #fff;color:#fff;border-radius:999px;padding:6px 12px}
-
-@media (max-width:640px){
-  .nav{display:none}
-  .nav.open{display:flex;position:absolute;right:20px;top:56px;background:#1f2023;
-    border:1px solid rgba(255,255,255,.2);padding:10px;border-radius:12px;flex-direction:column;gap:8px}
-  .menu{display:inline-block}
+/* Gentle global transitions (respects reduced motion) */
+@media (prefers-reduced-motion:no-preference){
+  a, .btn, .tile img, .icon, .brand, .nav a { transition: all .25s ease; }
 }
 
+/* Utility for readable line length on detail pages */
+.prose { max-width: 68ch; }
+.prose p { margin: 0 0 0.9rem; }
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.section{padding:56px 0}
+.section-title{margin-bottom:.25rem; position:relative; text-align:left;}
+.section-sub{color:#5a6068;margin-top:.25rem}
 
-/* Hero */
+/* Optional subtle underline for section titles */
+.section-title::after{
+  content:""; display:block; width:40px; height:2px;
+  background:var(--navy); margin-top:8px; opacity:.25;
+}
+
+/* Narrow container option for case-study pages */
+.container.narrow{max-width:920px}
+
+/* =========================================================
+   HEADER
+   =======================================================*/
+.site-header{background:#1f2023;color:#fff;position:sticky;top:0;z-index:10}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff}
+.brand img{width:28px;height:28px}
+.brand span{
+  font-family:Georgia,'Times New Roman',Times,serif;
+  font-size:1rem; letter-spacing:.2px; white-space:nowrap;
+}
+
+/* Top nav (hidden on small screens; drawer covers that) */
+.nav{display:flex;gap:16px;align-items:center}
+.nav a{color:#e9eaed;padding:6px 10px;border-radius:10px; position:relative}
+.nav a:hover{background:rgba(255,255,255,.08)}
+/* Animated underline on hover */
+.nav a::after{
+  content:""; position:absolute; left:10px; right:10px; bottom:4px; height:2px;
+  background:currentColor; transform:scaleX(0); transform-origin:left; opacity:.6;
+  transition:transform .25s ease;
+}
+.nav a:hover::after{ transform:scaleX(1); }
+
+.btn{
+  background:var(--navy); color:#fff!important; border-radius:12px;
+  padding:8px 14px; font-weight:600; display:inline-block
+}
+.btn:hover{box-shadow:var(--shadow)}
+.btn.ghost{background:transparent;color:#fff!important;border:1px solid #fff}
+.btn.ghost:hover{background:rgba(255,255,255,.06)}
+
+/* Hamburger (three lines) */
+.hamburger{
+  display:none; width:42px; height:36px; border-radius:999px;
+  border:1px solid rgba(255,255,255,.6); background:transparent; position:relative;
+}
+.hamburger span{
+  position:absolute; left:10px; right:10px; height:2px; background:#fff; opacity:.9;
+}
+.hamburger span:nth-child(1){ top:10px }
+.hamburger span:nth-child(2){ top:17px }
+.hamburger span:nth-child(3){ top:24px }
+
+@media (max-width:880px){
+  .nav{display:none}
+  .hamburger{display:inline-block}
+}
+
+/* =========================================================
+   OFF-CANVAS DRAWER (slide-in menu)
+   =======================================================*/
+.drawer{
+  position:fixed; top:0; right:0; height:100vh; width:320px; max-width:86vw;
+  background:#111214; color:#fff; transform:translateX(100%);
+  transition:transform .35s ease; z-index:20; padding:18px;
+  box-shadow:-20px 0 40px rgba(0,0,0,.25);
+}
+.drawer.open{ transform:translateX(0) }
+.drawer-close{
+  background:transparent; border:none; color:#fff; font-size:28px; line-height:1;
+  position:absolute; top:8px; right:12px; cursor:pointer;
+}
+.drawer-nav{ margin-top:48px; display:flex; flex-direction:column; gap:12px }
+.drawer-nav a{
+  color:#f2f4f7; padding:10px 12px; border-radius:10px
+}
+.drawer-nav a:hover{ background:rgba(255,255,255,.08) }
+
+.backdrop{
+  position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:15;
+}
+
+/* =========================================================
+   HERO
+   =======================================================*/
 .hero{background:#000;color:#fff;padding:64px 0}
 .hero-inner{display:grid;grid-template-columns:320px 1fr;gap:40px;align-items:center}
 .hero-copy{max-width:640px}
-.hero-copy h1{margin-bottom:6px}
-.hero-copy .eyebrow{color:#cfd1d4;margin:8px 0 6px;font-weight:600}
-.hero-photo img{width:320px;height:320px;object-fit:cover;border-radius:999px;border:8px solid #1a1a1a}
+.hero-copy h1{margin-bottom:6px; color:var(--grey-2)} /* lighter headline */
+.hero-copy .eyebrow{
+  color:#cfd1d4; margin:8px 0 6px; font-weight:600; font-size:1.05rem; /* smaller */
+}
+.hero-photo img{
+  width:320px;height:320px;object-fit:cover;border-radius:999px;border:8px solid #1a1a1a;
+  box-shadow:0 8px 30px rgba(0,0,0,.35);
+}
+
+/* On-load slide-in for the portrait */
+.reveal[data-animate="slide-in"]{ opacity:0; transform:translateY(18px) scale(.98) }
+.reveal.enter{ opacity:1; transform:none; transition:transform .6s cubic-bezier(.2,.8,.2,1), opacity .6s ease }
+
 @media (max-width:900px){
   .hero-inner{grid-template-columns:1fr;text-align:center}
   .hero-copy{margin:0 auto}
   .hero-photo img{margin:0 auto}
 }
 
+/* =========================================================
+   HOMEPAGE PORTFOLIO (full-width gallery style)
+   =======================================================*/
+.section--full{ width:100%; padding:56px 0; background:var(--grey-1) }
+.projects-inner{ max-width:1400px; margin:0 auto; padding:0 20px }
 
-/* Grid cards */
+#projects .section-title, #projects .section-sub{ text-align:center }
+#projects .section-sub{ max-width:70ch; margin-left:auto; margin-right:auto }
+
+/* 3-up grid with airy gaps; collapses to 2, then 1 */
+.portfolio-grid{
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:28px; margin-top:28px;
+}
+
+/* “Tile” presentation: image + meta + thin rule */
+.tile{ background:transparent; border:none }
+.tile img{
+  width:100%; height:360px; object-fit:cover; object-position:center; border-radius:4px;
+  box-shadow:var(--shadow);
+}
+.tile .meta{ padding:10px 2px 0 2px }
+.tile h3{ margin:6px 0 4px; font-weight:600 }
+.tile p{ color:#2d3239; margin:0 0 12px; line-height:1.55; font-size:.98rem }
+.tile hr{ border:none; border-top:1px solid var(--grey-2); margin:14px 0 0 }
+
+/* Subtle hover lift (minimal but premium) */
+@media (prefers-reduced-motion:no-preference){
+  .tile:hover img{ transform:translateY(-2px) scale(1.01); box-shadow:var(--shadow-hover) }
+}
+
+.projects-cta{ text-align:center; margin-top:26px }
+
+/* Responsive columns */
+@media (max-width:1000px){ .portfolio-grid{ grid-template-columns:1fr 1fr } }
+@media (max-width:640px){ .portfolio-grid{ grid-template-columns:1fr } }
+
+/* =========================================================
+   CARDS (used on older sections / case-study pages)
+   =======================================================*/
+.card{background:var(--grey-0);border:1px solid var(--grey-2);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
 .card img{width:100%;height:200px;object-fit:cover;object-position:center}
+.card-body{padding:14px 14px 16px}
 .card-body p{color:#2d3239;margin:.25rem 0 .5rem}
-.link{display:inline-block;margin-top:.25rem}
 
+/* =========================================================
+   LINKS & ICONS
+   =======================================================*/
+/* Make “Read case study” clearly a link */
+.link{
+  color:var(--link);
+  display:inline-block; margin-top:.25rem; font-weight:600; position:relative;
+}
+.link::after{
+  content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px;
+  background:currentColor; transform:scaleX(0); transform-origin:left; opacity:.55;
+  transition:transform .25s ease;
+}
+.link:hover::after{ transform:scaleX(1) }
 
-/* Wiki block */
-.wiki{background:var(--grey-0);border:1px solid var(--grey-2);border-radius:16px;padding:18px}
+.icon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;border:1px solid var(--grey-2);color:#111}
+.icon:hover{border-color:var(--navy);color:var(--navy); transform:translateY(-1px)}
 
-/* Toolkit */
+/* =========================================================
+   WIKI / TOOLKIT BLOCKS
+   =======================================================*/
+.wiki{background:var(--grey-0);border:1px solid var(--grey-2);border-radius:var(--radius);padding:18px}
 .inline-form{display:flex;gap:10px;margin-top:10px}
 .inline-form input{flex:1;padding:10px;border:1px solid var(--grey-2);border-radius:12px;background:var(--grey-0)}
 .inline-form button{cursor:pointer}
 
-/* Contact */
+/* =========================================================
+   CONTACT / FOOTER
+   =======================================================*/
 .contact-grid{display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px}
 .socials{display:flex;gap:12px}
-.icon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;border:1px solid var(--grey-2);color:#111}
-.icon:hover{border-color:var(--navy);color:var(--navy)}
 
-/* Footer */
 .site-footer{border-top:1px solid var(--grey-2);background:var(--grey-1);color:#6a7078}
 .site-footer .container{padding:22px 20px}
 
-/* Responsive */
+/* =========================================================
+   RESPONSIVE TWEAKS
+   =======================================================*/
 @media (max-width:900px){
   .hero-inner{grid-template-columns:1fr;gap:22px;text-align:center}
   .hero-photo img{margin:0 auto}
-  .grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:640px){
   .grid{grid-template-columns:1fr}
-  .nav{display:none}
-  .nav.open{display:flex;position:absolute;right:20px;top:56px;background:#2a2b2e;border:1px solid rgba(255,255,255,.2);padding:10px;border-radius:12px;flex-direction:column;gap:8px}
-  .menu{display:inline-block}
-}
-/* === HERO HEADINGS TWEAKS ========================================== */
-/* Lighten the big H1 inside the hero */
-.hero-copy h1{
-  margin-bottom:6px;               /* keep spacing you already had */
-  color: var(--grey-2);            /* lighter on black (#E6E8EB from your palette) */
 }
 
-/* Make "Who I Am" a bit smaller and lighter */
-.hero-copy .eyebrow{
-  color:#cfd1d4;                    /* you already had this; keep it */
-  margin:8px 0 6px;
-  font-weight:600;
-  font-size: 1.05rem;               /* smaller than default H2 */
-}
-
-/* === FULL-WIDTH PORTFOLIO SECTION ================================== */
-/* Turn the Projects section into a full-bleed section with a wide inner container */
-.section--full {
-  width: 100%;
-  padding: 56px 0;
-  background: var(--grey-1);
-}
-
-/* Inner wrapper to control max width on huge screens */
-.projects-inner{
-  max-width: 1400px;               /* wider than your normal .container */
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Center the section heading + intro copy */
-#projects .section-title,
-#projects .section-sub{
-  text-align:center;
-}
-#projects .section-sub{
-  max-width: 70ch;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-/* Portfolio grid: 3 equal columns, bigger images, airy gaps */
-.portfolio-grid{
-  display:grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;                       /* a bit more breathing room */
-  margin-top: 28px;
-}
-
-/* "Tile" style cards to match your screenshot (image + text + thin rule) */
-.tile{
-  background: transparent;         /* no card box background */
-  border: none;
-}
-.tile img{
-  width:100%;
-  height: 360px;                   /* tall, editorial feel (adjust as you like) */
-  object-fit: cover;
-  object-position: center;
-  border-radius: 4px;              /* tiny rounding (optional) */
-}
-.tile .meta{
-  padding: 10px 2px 0 2px;
-}
-.tile h3{
-  margin: 6px 0 4px;
-  font-weight: 600;
-}
-.tile p{
-  color: #2d3239;
-  margin: 0 0 12px;
-  line-height: 1.55;
-  font-size: 0.98rem;              /* slightly smaller body */
-}
-.tile hr{
-  border: none;
-  border-top: 1px solid var(--grey-2);
-  margin: 14px 0 0;
-}
-
-/* Responsive: stack to 2 columns and then 1 */
-@media (max-width: 1000px){
-  .portfolio-grid{ grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 640px){
-  .portfolio-grid{ grid-template-columns: 1fr; }
-}
+/* =========================================================
+   DARK MODE (optional hook if you enable later)
+   Add class "dark" to :root in HTML to switch.
+   =======================================================*/
+:root.dark body{ background:#0c0d0f; color:#e9eaed }
+:root.dark .site-header{ background:#0f1013 }
+:root.dark .section-title::after{ background:#7ea1ff; opacity:.35 }
+:root.dark .tile img{ box-shadow:none }
+:root.dark .card{ background:#14161a; border-color:#23262b }
+:root.dark .wiki{ background:#14161a; border-color:#23262b }
