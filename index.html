@@ -14,29 +14,35 @@
 <body>
 
 <!-- ===================== HEADER ===================== -->
+<!-- ===================== HEADER (HOME) ===================== -->
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/">
+    <a class="brand" href="./">
       <img src="assets/logo.svg" alt="by DS logo" width="32" height="32" />
       <span>bydiljitsingh</span>
     </a>
 
-    <!-- Regular nav (we'll hide this on small screens if we want) -->
-    <nav class="nav" aria-label="Primary">
-      <a href="/projects/">Projects</a>
-      <a href="/wiki/">My Wiki</a>
-      <a href="/toolkit/">Toolkit</a>
-      <a href="/cv/" class="btn ghost">CV</a>
-      <a href="#contact" class="btn">Contact</a>
-    </nav>
+    <!-- REMOVE the <nav class="nav"> ... </nav> block completely -->
 
-    <!-- Hamburger button opens the slide-in menu -->
+    <!-- Always-visible hamburger -->
     <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
-      <!-- three lines icon -->
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
+
+<!-- Off-canvas drawer menu (slides in from right) -->
+<aside id="drawer" class="drawer" aria-hidden="true">
+  <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
+  <nav class="drawer-nav" aria-label="Off-canvas">
+    <a href="projects/">Projects</a>
+    <a href="wiki/">My Wiki</a>
+    <a href="toolkit/">Toolkit</a>
+    <a href="cv/">CV</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</aside>
+<div id="backdrop" class="backdrop" hidden></div>
 
 <!-- Off-canvas drawer menu (slides in from right) -->
 <aside id="drawer" class="drawer" aria-hidden="true">
@@ -92,7 +98,7 @@
           <div class="meta">
             <h3>Electric Rally Pickup (IDP3)</h3>
             <p>Vehicle dynamics, suspension, steering, braking & tyres for a Hilux-based EV concept with a swappable battery.</p>
-            <a class="link" href="/projects/idp3.html">Read case study</a>
+            <a class="link" href="projects/idp3.html">Read case study</a>
             <hr>
           </div>
         </article>
@@ -103,7 +109,7 @@
           <div class="meta">
             <h3>Wooden Bridge (IDP1)</h3>
             <p>Designed and built with a minimal team; withstood <strong>2.4 kN</strong> (cohort best) vs 1.1 kN pass requirement.</p>
-            <a class="link" href="/projects/bridge.html">Read case study</a>
+            <a class="link" href="projects/bridge.html">Read case study</a>
             <hr>
           </div>
         </article>
@@ -114,7 +120,7 @@
           <div class="meta">
             <h3>IDP2</h3>
             <p>Multidisciplinary design project focused on sustainability and systems integration. Final grade: <strong>83%</strong>.</p>
-            <a class="link" href="/projects/idp2.html">Read case study</a>
+            <a class="link" href="projects/idp2.html">Read case study</a>
             <hr>
           </div>
         </article>
@@ -169,19 +175,19 @@
 
 <!-- ===================== SCRIPTS ===================== -->
 <script>
-  // Smooth scroll with header offset
+  // Smooth scroll with header offset (works only for same-page anchors)
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',e=>{
       const id=a.getAttribute('href').slice(1);
       const el=document.getElementById(id);
-      if(!el) return;
+      if(!el) return; // ignore external links
       e.preventDefault();
       const y=el.getBoundingClientRect().top + window.scrollY - 72;
       window.scrollTo({top:y,behavior:'smooth'});
     });
   });
 
-  // Off-canvas drawer controls
+  // Off-canvas drawer controls (common for all pages)
   const drawer = document.getElementById('drawer');
   const backdrop = document.getElementById('backdrop');
   const openBtn = document.getElementById('openDrawer');
@@ -190,34 +196,34 @@
   function openDrawer(){
     drawer.classList.add('open');
     backdrop.hidden = false;
-    openBtn.setAttribute('aria-expanded','true');
+    openBtn?.setAttribute('aria-expanded','true');
     drawer.setAttribute('aria-hidden','false');
-    document.body.style.overflow='hidden'; // prevent background scroll
+    document.body.style.overflow='hidden';
   }
   function closeDrawer(){
     drawer.classList.remove('open');
     backdrop.hidden = true;
-    openBtn.setAttribute('aria-expanded','false');
+    openBtn?.setAttribute('aria-expanded','false');
     drawer.setAttribute('aria-hidden','true');
     document.body.style.overflow='';
   }
-  openBtn.addEventListener('click', openDrawer);
-  closeBtn.addEventListener('click', closeDrawer);
-  backdrop.addEventListener('click', closeDrawer);
-  window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer() });
 
-  // On-load animation hook for the portrait
-  // (CSS will define what .reveal.enter looks like)
+  openBtn?.addEventListener('click', openDrawer);
+  closeBtn?.addEventListener('click', closeDrawer);
+  backdrop?.addEventListener('click', closeDrawer);
+  window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer() });
+
+  // On-load animation hook for images with .reveal
   window.addEventListener('load', ()=>{
     document.querySelectorAll('.reveal').forEach(el=>{
-      // Small delay so it feels smoother
       setTimeout(()=> el.classList.add('enter'), 80);
     });
   });
 
-  // Footer year
-  document.getElementById('y').textContent = new Date().getFullYear();
+  // Footer year (if present)
+  const y = document.getElementById('y'); if(y) y.textContent = new Date().getFullYear();
 </script>
+
 
 </body>
 </html>
