@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projects — By Diljit Singh</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <!-- Reuse the same header via copy (or keep this simple header) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/"><img src="../assets/logo.svg" width="28" height="28" alt=""><span>bydiljitsingh</span></a>
+      <nav class="nav"><a href="/">Home</a><a href="/wiki/">My Wiki</a><a href="/toolkit/">Toolkit</a><a href="/cv/">CV</a></nav>
+      <button class="hamburger" id="openDrawer" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="section--full">
+    <div class="projects-inner">
+      <h1 class="section-title">All Projects</h1>
+      <p class="section-sub">A complete list of my engineering projects and case studies.</p>
+
+      <div class="portfolio-grid">
+        <!-- Duplicate/add tiles as you create new projects -->
+        <article class="tile">
+          <img src="../assets/idp3.jpg" alt="Electric Rally Pickup project">
+          <div class="meta">
+            <h3>Electric Rally Pickup (IDP3)</h3>
+            <p>Vehicle dynamics, suspension, steering, braking & tyres for a Hilux-based EV concept with a swappable battery.</p>
+            <a class="link" href="./idp3.html">Read case study</a>
+            <hr>
+          </div>
+        </article>
+
+        <article class="tile">
+          <img src="../assets/bridge.jpg" alt="Wooden bridge test">
+          <div class="meta">
+            <h3>Wooden Bridge (IDP1)</h3>
+            <p>Withstood <strong>2.4 kN</strong> vs 1.1 kN pass; highest in cohort.</p>
+            <a class="link" href="./bridge.html">Read case study</a>
+            <hr>
+          </div>
+        </article>
+
+        <article class="tile">
+          <img src="../assets/idp2.jpg" alt="IDP2 project">
+          <div class="meta">
+            <h3>IDP2</h3>
+            <p>Multidisciplinary design project. Final grade: <strong>83%</strong>.</p>
+            <a class="link" href="./idp2.html">Read case study</a>
+            <hr>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
