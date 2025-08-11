@@ -98,3 +98,90 @@ a{color:inherit;text-decoration:none}
   .nav.open{display:flex;position:absolute;right:20px;top:56px;background:#2a2b2e;border:1px solid rgba(255,255,255,.2);padding:10px;border-radius:12px;flex-direction:column;gap:8px}
   .menu{display:inline-block}
 }
+/* === HERO HEADINGS TWEAKS ========================================== */
+/* Lighten the big H1 inside the hero */
+.hero-copy h1{
+  margin-bottom:6px;               /* keep spacing you already had */
+  color: var(--grey-2);            /* lighter on black (#E6E8EB from your palette) */
+}
+
+/* Make "Who I Am" a bit smaller and lighter */
+.hero-copy .eyebrow{
+  color:#cfd1d4;                    /* you already had this; keep it */
+  margin:8px 0 6px;
+  font-weight:600;
+  font-size: 1.05rem;               /* smaller than default H2 */
+}
+
+/* === FULL-WIDTH PORTFOLIO SECTION ================================== */
+/* Turn the Projects section into a full-bleed section with a wide inner container */
+.section--full {
+  width: 100%;
+  padding: 56px 0;
+  background: var(--grey-1);
+}
+
+/* Inner wrapper to control max width on huge screens */
+.projects-inner{
+  max-width: 1400px;               /* wider than your normal .container */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Center the section heading + intro copy */
+#projects .section-title,
+#projects .section-sub{
+  text-align:center;
+}
+#projects .section-sub{
+  max-width: 70ch;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Portfolio grid: 3 equal columns, bigger images, airy gaps */
+.portfolio-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;                       /* a bit more breathing room */
+  margin-top: 28px;
+}
+
+/* "Tile" style cards to match your screenshot (image + text + thin rule) */
+.tile{
+  background: transparent;         /* no card box background */
+  border: none;
+}
+.tile img{
+  width:100%;
+  height: 360px;                   /* tall, editorial feel (adjust as you like) */
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;              /* tiny rounding (optional) */
+}
+.tile .meta{
+  padding: 10px 2px 0 2px;
+}
+.tile h3{
+  margin: 6px 0 4px;
+  font-weight: 600;
+}
+.tile p{
+  color: #2d3239;
+  margin: 0 0 12px;
+  line-height: 1.55;
+  font-size: 0.98rem;              /* slightly smaller body */
+}
+.tile hr{
+  border: none;
+  border-top: 1px solid var(--grey-2);
+  margin: 14px 0 0;
+}
+
+/* Responsive: stack to 2 columns and then 1 */
+@media (max-width: 1000px){
+  .portfolio-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px){
+  .portfolio-grid{ grid-template-columns: 1fr; }
+}
