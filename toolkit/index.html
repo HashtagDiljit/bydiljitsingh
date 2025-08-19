@@ -6,13 +6,32 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/"><img src="../assets/logo.svg" width="28" height="28" alt=""><span>bydiljitsingh</span></a>
-      <nav class="nav"><a href="/projects/">Projects</a><a href="/wiki/">My Wiki</a><a href="/cv/">CV</a></nav>
-      <button class="hamburger" id="openDrawer" aria-label="Open menu"><span></span><span></span><span></span></button>
-    </div>
-  </header>
+  <!-- ========== HEADER (SUBPAGE) ========== -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../">
+      <img src="../assets/logo.svg" alt="by DS logo" width="28" height="28" />
+      <span>bydiljitsingh</span>
+    </a>
+    <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<aside id="drawer" class="drawer" aria-hidden="true">
+  <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
+  <nav class="drawer-nav" aria-label="Off-canvas">
+    <a href="../projects/">Projects</a>
+    <a href="../wiki/">My Wiki</a>
+    <a href="../toolkit/">Toolkit</a>
+    <a href="../cv/">CV</a>
+    <a href="../#contact">Contact</a>
+  </nav>
+</aside>
+<div id="backdrop" class="backdrop" hidden></div>
+</header>
+
 
   <main class="section container narrow">
     <h1>Engineering Design Review Toolkit</h1>
