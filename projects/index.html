@@ -6,8 +6,8 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <!-- Reuse the same header via copy (or keep this simple header) -->
- <!-- ========== HEADER (SUBPAGE) ========== -->
+
+<!-- ========== HEADER (SUBPAGE) ========== -->
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="../">
@@ -31,50 +31,50 @@
   </nav>
 </aside>
 <div id="backdrop" class="backdrop" hidden></div>
-  </header>
 
-  <main class="section--full">
-    <div class="projects-inner">
-      <h1 class="section-title">All Projects</h1>
-      <p class="section-sub">A complete list of my engineering projects and case studies.</p>
+<main class="section--full">
+  <div class="projects-inner">
+    <h1 class="section-title">All Projects</h1>
+    <p class="section-sub">A complete list of my engineering projects and case studies.</p>
 
-      <div class="portfolio-grid">
-        <!-- Duplicate/add tiles as you create new projects -->
-        <article class="tile">
-          <img src="../assets/idp3.jpg" alt="Electric Rally Pickup project">
-          <div class="meta">
-            <h3>Electric Rally Pickup (IDP3)</h3>
-            <p>Vehicle dynamics, suspension, steering, braking & tyres for a Hilux-based EV concept with a swappable battery.</p>
-            <a class="link" href="./idp3.html">Read case study</a>
-            <hr>
-          </div>
-        </article>
+    <div class="portfolio-grid">
+      <!-- Each tile links to a project page in this folder -->
+      <article class="tile">
+        <img src="../assets/idp3.jpg" alt="Electric Rally Pickup project">
+        <div class="meta">
+          <h3>Electric Rally Pickup (IDP3)</h3>
+          <p>Vehicle dynamics, suspension, steering, braking & tyres for a Hilux-based EV concept with a swappable battery.</p>
+          <a class="link" href="./idp3.html">Read case study</a>
+          <hr>
+        </div>
+      </article>
 
-        <article class="tile">
-          <img src="../assets/bridge.jpg" alt="Wooden bridge test">
-          <div class="meta">
-            <h3>Wooden Bridge (IDP1)</h3>
-            <p>Withstood <strong>2.4 kN</strong> vs 1.1 kN pass; highest in cohort.</p>
-            <a class="link" href="./bridge.html">Read case study</a>
-            <hr>
-          </div>
-        </article>
+      <article class="tile">
+        <img src="../assets/bridge.jpg" alt="Wooden bridge test">
+        <div class="meta">
+          <h3>Wooden Bridge (IDP1)</h3>
+          <p>Withstood <strong>2.4 kN</strong> vs 1.1 kN pass; highest in cohort.</p>
+          <a class="link" href="./bridge.html">Read case study</a>
+          <hr>
+        </div>
+      </article>
 
-        <article class="tile">
-          <img src="../assets/idp2.jpg" alt="IDP2 project">
-          <div class="meta">
-            <h3>IDP2</h3>
-            <p>Multidisciplinary design project. Final grade: <strong>83%</strong>.</p>
-            <a class="link" href="./idp2.html">Read case study</a>
-            <hr>
-          </div>
-        </article>
-      </div>
+      <article class="tile">
+        <img src="../assets/idp2.jpg" alt="IDP2 project">
+        <div class="meta">
+          <h3>IDP2</h3>
+          <p>Multidisciplinary design project. Final grade: <strong>83%</strong>.</p>
+          <a class="link" href="./idp2.html">Read case study</a>
+          <hr>
+        </div>
+      </article>
     </div>
-  </main>
+  </div>
+</main>
 
-  <footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
- <script>
+<footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
+
+<script>
   // Smooth scroll for same-page anchors only
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',e=>{
@@ -109,12 +109,9 @@
   backdrop?.addEventListener('click', closeDrawer);
   window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer() });
 
-  // Portrait reveal (if present)
-  window.addEventListener('load', ()=>{
-    document.querySelectorAll('.reveal').forEach(el=> setTimeout(()=>el.classList.add('enter'),80));
-    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
-  });
+  // Footer year
+  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
 </script>
-  
+
 </body>
 </html>
