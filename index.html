@@ -13,25 +13,21 @@
 </head>
 <body>
 
-<!-- ===================== HEADER ===================== -->
-<!-- ===================== HEADER (HOME) ===================== -->
+<!-- ========== HEADER (HOME) ========== -->
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="./">
       <img src="assets/logo.svg" alt="by DS logo" width="32" height="32" />
       <span>bydiljitsingh</span>
     </a>
-
-    <!-- REMOVE the <nav class="nav"> ... </nav> block completely -->
-
-    <!-- Always-visible hamburger -->
+    <!-- Drawer trigger -->
     <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
-<!-- Off-canvas drawer menu (slides in from right) -->
+<!-- Off-canvas drawer (single instance) -->
 <aside id="drawer" class="drawer" aria-hidden="true">
   <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
   <nav class="drawer-nav" aria-label="Off-canvas">
@@ -44,31 +40,16 @@
 </aside>
 <div id="backdrop" class="backdrop" hidden></div>
 
-<!-- Off-canvas drawer menu (slides in from right) -->
-<aside id="drawer" class="drawer" aria-hidden="true">
-  <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
-  <nav class="drawer-nav" aria-label="Off-canvas">
-    <a href="/projects/">Projects</a>
-    <a href="/wiki/">My Wiki</a>
-    <a href="/toolkit/">Toolkit</a>
-    <a href="/cv/">CV</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</aside>
-<div id="backdrop" class="backdrop" hidden></div>
-
 <main id="top">
 
-  <!-- ===================== HERO ===================== -->
+  <!-- ========== HERO ========== -->
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-photo">
-        <!-- data-animate is a hook we'll use in CSS/JS to slide this in on page load -->
         <img src="assets/profile.jpg" alt="Portrait of Diljit Singh" class="reveal" data-animate="slide-in" />
       </div>
       <div class="hero-copy">
         <h1>Engineering My Journey</h1>
-        <!-- Slightly smaller subheading handled in CSS -->
         <h2 class="eyebrow">Who I Am</h2>
         <p>
           bydiljitsingh is a professional portfolio reflecting my journey as a Mechanical
@@ -83,14 +64,12 @@
     </div>
   </section>
 
-  <!-- ===================== HOMEPAGE PROJECTS (3 most recent) ===================== -->
-  <!-- Full-width section wrapper; inner container is wider than default -->
+  <!-- ========== HOMEPAGE PROJECTS (3 most recent) ========== -->
   <section id="projects" class="section--full">
     <div class="projects-inner">
       <h2 class="section-title">My Portfolio</h2>
       <p class="section-sub">Welcome to my portfolio. Here you’ll find a selection of my work.</p>
 
-      <!-- Show ONLY the 3 most recent projects on the home page -->
       <div class="portfolio-grid">
         <!-- Tile 1 -->
         <article class="tile">
@@ -126,14 +105,14 @@
         </article>
       </div>
 
-      <!-- Link to the dedicated Projects page that lists ALL projects -->
+      <!-- CTA -->
       <div class="projects-cta">
-  <a href="projects/" class="btn-dark">View all projects →</a>
-</div>
+        <a href="projects/" class="btn-dark">View all projects →</a>
+      </div>
     </div>
   </section>
 
-  <!-- ===================== TOOLKIT (keeps a teaser here) ===================== -->
+  <!-- ========== TOOLKIT TEASER ========== -->
   <section id="toolkit" class="section container">
     <h2 class="section-title">Engineering Design Review Toolkit</h2>
     <p>Free guide and pro templates (DFM/DFA checklists, risk registers, CAD drawing standards). Join the early list.</p>
@@ -142,11 +121,11 @@
       <button class="btn">Notify me</button>
     </form>
     <p style="margin-top:10px">
-      <a class="link" href="/toolkit/">Learn more about the Toolkit →</a>
+      <a class="link" href="toolkit/">Learn more about the Toolkit →</a>
     </p>
   </section>
 
-  <!-- ===================== CONTACT ===================== -->
+  <!-- ========== CONTACT ========== -->
   <section id="contact" class="section container">
     <h2 class="section-title">Contact</h2>
     <p>Open to internships and collaborations in automotive, design, and technical communication.</p>
@@ -161,69 +140,3 @@
         </a>
         <a href="#" aria-label="LinkedIn" class="icon">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.26 2.3-2.6 4.73-2.6C22.3 7.6 24 10.1 24 14.1V24h-5v-8.6c0-2-0.03-4.6-2.8-4.6-2.8 0-3.2 2.2-3.2 4.5V24h-5V8z"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <small>© <span id="y"></span> By Diljit Singh</small>
-  </div>
-</footer>
-
-<!-- ===================== SCRIPTS ===================== -->
-<script>
-  // Smooth scroll with header offset (works only for same-page anchors)
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click',e=>{
-      const id=a.getAttribute('href').slice(1);
-      const el=document.getElementById(id);
-      if(!el) return; // ignore external links
-      e.preventDefault();
-      const y=el.getBoundingClientRect().top + window.scrollY - 72;
-      window.scrollTo({top:y,behavior:'smooth'});
-    });
-  });
-
-  // Off-canvas drawer controls (common for all pages)
-  const drawer = document.getElementById('drawer');
-  const backdrop = document.getElementById('backdrop');
-  const openBtn = document.getElementById('openDrawer');
-  const closeBtn = document.getElementById('closeDrawer');
-
-  function openDrawer(){
-    drawer.classList.add('open');
-    backdrop.hidden = false;
-    openBtn?.setAttribute('aria-expanded','true');
-    drawer.setAttribute('aria-hidden','false');
-    document.body.style.overflow='hidden';
-  }
-  function closeDrawer(){
-    drawer.classList.remove('open');
-    backdrop.hidden = true;
-    openBtn?.setAttribute('aria-expanded','false');
-    drawer.setAttribute('aria-hidden','true');
-    document.body.style.overflow='';
-  }
-
-  openBtn?.addEventListener('click', openDrawer);
-  closeBtn?.addEventListener('click', closeDrawer);
-  backdrop?.addEventListener('click', closeDrawer);
-  window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer() });
-
-  // On-load animation hook for images with .reveal
-  window.addEventListener('load', ()=>{
-    document.querySelectorAll('.reveal').forEach(el=>{
-      setTimeout(()=> el.classList.add('enter'), 80);
-    });
-  });
-
-  // Footer year (if present)
-  const y = document.getElementById('y'); if(y) y.textContent = new Date().getFullYear();
-</script>
-
-
-</body>
-</html>
