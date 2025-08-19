@@ -7,15 +7,13 @@
 </head>
 <body>
   <!-- Reuse the same header via copy (or keep this simple header) -->
- <!-- ===================== HEADER (SUBPAGE) ===================== -->
+ <!-- ========== HEADER (SUBPAGE) ========== -->
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="../">
       <img src="../assets/logo.svg" alt="by DS logo" width="28" height="28" />
       <span>bydiljitsingh</span>
     </a>
-
-    <!-- No top nav; use the drawer instead -->
     <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -33,7 +31,6 @@
   </nav>
 </aside>
 <div id="backdrop" class="backdrop" hidden></div>
-
   </header>
 
   <main class="section--full">
@@ -78,54 +75,46 @@
 
   <footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
  <script>
-  // Smooth scroll with header offset (works only for same-page anchors)
+  // Smooth scroll for same-page anchors only
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',e=>{
-      const id=a.getAttribute('href').slice(1);
-      const el=document.getElementById(id);
-      if(!el) return; // ignore external links
+      const id=a.getAttribute('href').slice(1), el=document.getElementById(id);
+      if(!el) return;
       e.preventDefault();
       const y=el.getBoundingClientRect().top + window.scrollY - 72;
       window.scrollTo({top:y,behavior:'smooth'});
     });
   });
 
-  // Off-canvas drawer controls (common for all pages)
+  // Drawer controls
   const drawer = document.getElementById('drawer');
-  const backdrop = document.getElementById('backdrop');
   const openBtn = document.getElementById('openDrawer');
   const closeBtn = document.getElementById('closeDrawer');
+  const backdrop = document.getElementById('backdrop');
 
   function openDrawer(){
-    drawer.classList.add('open');
-    backdrop.hidden = false;
+    drawer.classList.add('open'); backdrop.hidden = false;
     openBtn?.setAttribute('aria-expanded','true');
     drawer.setAttribute('aria-hidden','false');
     document.body.style.overflow='hidden';
   }
   function closeDrawer(){
-    drawer.classList.remove('open');
-    backdrop.hidden = true;
+    drawer.classList.remove('open'); backdrop.hidden = true;
     openBtn?.setAttribute('aria-expanded','false');
     drawer.setAttribute('aria-hidden','true');
     document.body.style.overflow='';
   }
-
   openBtn?.addEventListener('click', openDrawer);
   closeBtn?.addEventListener('click', closeDrawer);
   backdrop?.addEventListener('click', closeDrawer);
   window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer() });
 
-  // On-load animation hook for images with .reveal
+  // Portrait reveal (if present)
   window.addEventListener('load', ()=>{
-    document.querySelectorAll('.reveal').forEach(el=>{
-      setTimeout(()=> el.classList.add('enter'), 80);
-    });
+    document.querySelectorAll('.reveal').forEach(el=> setTimeout(()=>el.classList.add('enter'),80));
+    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
   });
-
-  // Footer year (if present)
-  const y = document.getElementById('y'); if(y) y.textContent = new Date().getFullYear();
 </script>
-
+  
 </body>
 </html>
