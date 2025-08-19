@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wooden Bridge (IDP1) — By Diljit Singh</title>
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  <!-- ========== HEADER (SUBPAGE) ========== -->
+
+<!-- ========== HEADER (SUBPAGE) ========== -->
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="../">
@@ -31,43 +33,42 @@
 </aside>
 <div id="backdrop" class="backdrop" hidden></div>
 
-  </header>
+<main class="section container narrow">
+  <h1>Wooden Bridge (IDP1)</h1>
+  <p class="section-sub">Cohort-best load test: <strong>2.4 kN</strong> (pass requirement: 1.1 kN)</p>
 
-  <main class="section container narrow">
-    <h1>Wooden Bridge (IDP1)</h1>
-    <p class="section-sub">Cohort-best load test: <strong>2.4 kN</strong> (pass: 1.1 kN)</p>
+  <img src="../assets/bridge.jpg" alt="Bridge project" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--grey-2)">
 
-    <img src="../assets/bridge.jpg" alt="Bridge project" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--grey-2)">
+  <div class="prose" style="margin-top:1rem">
+    <h2>Brief</h2>
+    <p>Design and build a wooden bridge to meet a minimum load requirement with constraints on materials and dimensions.</p>
 
-    <div class="prose" style="margin-top:1rem">
-      <h2>Brief</h2>
-      <p>Design and build a wooden bridge to meet a minimum load requirement with constraints on materials and dimensions.</p>
+    <h2>Approach</h2>
+    <ul>
+      <li>Selected truss configuration to maximise stiffness-to-mass.</li>
+      <li>Prioritised glue joints and load paths to reduce stress concentrations.</li>
+      <li>Built and tested with a two-person team due to limited availability.</li>
+    </ul>
 
-      <h2>Approach</h2>
-      <ul>
-        <li>Selected truss geometry to maximise stiffness-to-mass.</li>
-        <li>Prioritised joint quality and load paths to reduce stress concentrations.</li>
-        <li>Built and tested with a two-person team.</li>
-      </ul>
+    <h2>Results</h2>
+    <ul>
+      <li>Withstood <strong>2.4 kN</strong> — highest in cohort.</li>
+      <li>Exceeded pass requirement (1.1 kN) with significant safety margin.</li>
+    </ul>
 
-      <h2>Results</h2>
-      <ul>
-        <li>Withstood <strong>2.4 kN</strong> — highest in cohort.</li>
-        <li>Exceeded pass requirement (1.1 kN) with margin.</li>
-      </ul>
+    <h2>Lessons</h2>
+    <ul>
+      <li>Joint quality and geometry selection dominate performance in lightweight structures.</li>
+      <li>Lean team ⇒ faster iteration and clearer ownership.</li>
+    </ul>
 
-      <h2>Lessons</h2>
-      <ul>
-        <li>Joint precision and geometry dominate performance in lightweight structures.</li>
-        <li>Lean teamwork enabled faster iteration.</li>
-      </ul>
+    <p><a class="link" href="../projects/">← Back to all projects</a></p>
+  </div>
+</main>
 
-      <p><a class="link" href="/projects/">← Back to all projects</a></p>
-    </div>
-  </main>
+<footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
 
-  <footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
-  <script>
+<script>
   // Smooth scroll for same-page anchors only
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',e=>{
@@ -102,11 +103,8 @@
   backdrop?.addEventListener('click', closeDrawer);
   window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer() });
 
-  // Portrait reveal (if present)
-  window.addEventListener('load', ()=>{
-    document.querySelectorAll('.reveal').forEach(el=> setTimeout(()=>el.classList.add('enter'),80));
-    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
-  });
+  // Footer year
+  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
 </script>
 
 </body>
