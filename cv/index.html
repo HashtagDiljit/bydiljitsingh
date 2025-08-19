@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <!-- ========== HEADER (SUBPAGE) ========== -->
+
+<!-- ========== HEADER (SUBPAGE) ========== -->
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="../">
@@ -19,6 +20,7 @@
   </div>
 </header>
 
+<!-- Drawer -->
 <aside id="drawer" class="drawer" aria-hidden="true">
   <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
   <nav class="drawer-nav" aria-label="Off-canvas">
@@ -30,27 +32,111 @@
   </nav>
 </aside>
 <div id="backdrop" class="backdrop" hidden></div>
-  </header>
 
-  <main class="section container narrow">
-    <h1>Curriculum Vitae</h1>
-    <p class="section-sub">Download the PDF or view a brief summary below.</p>
+<!-- ========== MAIN ========== -->
+<main class="section container narrow">
+  <h1>Curriculum Vitae</h1>
+  <p class="section-sub">View the highlights below or download the full document.</p>
 
-    <p><a class="btn" href="../assets/Diljit_Singh_CV.pdf">Download CV (PDF)</a></p>
+  <!-- Download buttons -->
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin:.5rem 0 1rem;">
+    <a class="btn" href="../assets/Diljit_Singh_CV.docx" download>Download CV (DOCX)</a>
+    <!-- Optional: add a PDF later and un-comment this -->
+    <a class="btn-dark" href="../assets/Diljit_Singh_CV.pdf" target="_blank" rel="noopener">Open CV (PDF)</a>
+   
+  </div>
 
-    <div class="prose" style="margin-top:1rem">
-      <h2>Overview</h2>
-      <ul>
-        <li>MEng Mechanical Engineering (Automotive), University of Birmingham</li>
-        <li>Birmingham Scholar; A2B & Chamberlain scholarships</li>
-        <li>Key projects: Electric Rally Pickup (IDP3), IDP1 bridge (2.4 kN), IDP2 (83%)</li>
-        <li>Mentoring & outreach: 100+ ambassador shifts; 16 mentees supported</li>
-      </ul>
-    </div>
-  </main>
+  <!-- Optional inline PDF preview (only works if you add the PDF file) -->
 
-  <footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
-  <script>
+  <div style="margin:14px 0 24px; border:1px solid var(--grey-2); border-radius:12px; overflow:hidden;">
+    <iframe src="../assets/Diljit_Singh_CV.pdf" title="CV PDF"
+            style="width:100%; height:720px; border:0"></iframe>
+  </div>
+
+  <!-- On-page CV content (editable) -->
+  <div class="prose" style="margin-top:1rem">
+
+    <h2>Profile</h2>
+    <p>
+      Aspiring Mechanical Engineer pursuing an MEng in Mechanical Engineering (Automotive) at the University of Birmingham,
+      with hands-on experience in CAD (Fusion 360), FEA/CFD, and technical project coordination. 100+ hours of ambassador
+      and mentoring service reflecting strong communication and leadership. Passionate about applying engineering principles
+      to real-world challenges.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      <strong>Phone:</strong> <a class="link" href="tel:+447448024952">+44 74480 24952</a><br>
+      <strong>Email:</strong> <a class="link" href="mailto:diljitsingh2003@gmail.com">diljitsingh2003@gmail.com</a><br>
+      <strong>LinkedIn:</strong> <a class="link" href="#" target="_blank" rel="noopener">Add your profile URL</a>
+    </p>
+
+    <h2>Areas of Expertise</h2>
+    <ul>
+      <li>Engineering Design (Fusion 360, basic CFD/FEA)</li>
+      <li>Technical Report Writing</li>
+      <li>Problem Solving</li>
+      <li>Project Coordination & Team Leadership</li>
+      <li>Communication & Public Speaking</li>
+      <li>Mentoring & Outreach</li>
+      <li>Creative Tools (Lightroom, DaVinci Resolve)</li>
+      <li>Rapid Skill Acquisition</li>
+      <li>Content & Personal Branding</li>
+    </ul>
+
+    <h2>Education</h2>
+    <p>
+      <strong>MEng Mechanical Engineering (Automotive)</strong>, University of Birmingham — 09/2022–Present<br>
+      Birmingham Scholar; A2B Scholarship recipient. Member: Powerlifting, Olympic Weightlifting, Mountaineering.
+      Part-time Student Ambassador and Mentor.
+    </p>
+    <p>
+      <strong>L3 Extended Diploma in Advanced Manufacturing Engineering</strong>, James Watt College — 09/2020–07/2022<br>
+      Grade: D*D*D*. Vice Chair, Student Council. James Watt Values Award recipient.
+    </p>
+
+    <h2>Experience</h2>
+    <p>
+      <strong>Student Ambassador</strong>, University of Birmingham — 11/2022–Present<br>
+      Delivered 100+ shifts/hours supporting open days and outreach; supervised and engaged students aged 11–18;
+      improved attendee experience by proactively resolving issues.
+    </p>
+    <p>
+      <strong>Inspired@Birmingham Mentor</strong>, University of Birmingham — 04/2023–12/2024<br>
+      Mentored 16 students via weekly check-ins; all finalised a university/course choice. CV/application feedback and
+      action plans aligned to Russell Group expectations.
+    </p>
+    <p>
+      <strong>Online Intern</strong>, Alstom UK — 08/2021<br>
+      Five-day immersion in UK rail: signalling, service logistics, sustainability. Researched and presented transport solutions
+      to 20+ attendees; developed technical communication.
+    </p>
+    <p>
+      <strong>Mechanic Apprentice</strong>, Spectrum Motors — 02/2019–07/2019<br>
+      Learned fundamentals of bodywork repair and workshop discipline; contributed to punctuality and efficiency.
+    </p>
+
+    <h2>Interests & Achievements</h2>
+    <ul>
+      <li>Languages: English (native), Punjabi (fluent)</li>
+      <li>Olympic Weightlifting PBs: 93 kg Clean & Jerk, 66 kg Snatch</li>
+      <li>Self-taught tools: Fusion 360, SolidWorks, Lightroom, DaVinci Resolve, Ansys Fluent, Abaqus, C programming</li>
+      <li>Content creation & visual storytelling (Sony A7IV)</li>
+    </ul>
+
+    <p style="margin-top:1rem"><a class="link" href="../">← Back to home</a></p>
+  </div>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="container">
+    <small>© <span id="y"></span> By Diljit Singh</small>
+  </div>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
   // Smooth scroll for same-page anchors only
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',e=>{
@@ -67,29 +153,15 @@
   const openBtn = document.getElementById('openDrawer');
   const closeBtn = document.getElementById('closeDrawer');
   const backdrop = document.getElementById('backdrop');
-
-  function openDrawer(){
-    drawer.classList.add('open'); backdrop.hidden = false;
-    openBtn?.setAttribute('aria-expanded','true');
-    drawer.setAttribute('aria-hidden','false');
-    document.body.style.overflow='hidden';
-  }
-  function closeDrawer(){
-    drawer.classList.remove('open'); backdrop.hidden = true;
-    openBtn?.setAttribute('aria-expanded','false');
-    drawer.setAttribute('aria-hidden','true');
-    document.body.style.overflow='';
-  }
+  function openDrawer(){ drawer.classList.add('open'); backdrop.hidden=false; openBtn?.setAttribute('aria-expanded','true'); drawer.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  function closeDrawer(){ drawer.classList.remove('open'); backdrop.hidden=true; openBtn?.setAttribute('aria-expanded','false'); drawer.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
   openBtn?.addEventListener('click', openDrawer);
   closeBtn?.addEventListener('click', closeDrawer);
   backdrop?.addEventListener('click', closeDrawer);
   window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer() });
 
-  // Portrait reveal (if present)
-  window.addEventListener('load', ()=>{
-    document.querySelectorAll('.reveal').forEach(el=> setTimeout(()=>el.classList.add('enter'),80));
-    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
-  });
+  // Footer year
+  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
 </script>
 
 </body>
