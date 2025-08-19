@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>By Diljit Singh — Portfolio</title>
   <meta name="description" content="Mechanical Engineering (Automotive) portfolio showcasing projects, achievements, and My Wiki." />
-  <meta property="og:title" content="By Diljit Singh — Portfolio" />
-  <meta property="og:description" content="Engineering projects, case studies, and My Wiki." />
-  <meta property="og:type" content="website" />
   <link rel="icon" href="assets/logo.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -20,6 +17,7 @@
       <img src="assets/logo.svg" alt="by DS logo" width="32" height="32" />
       <span>bydiljitsingh</span>
     </a>
+
     <!-- Drawer trigger -->
     <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -27,7 +25,7 @@
   </div>
 </header>
 
-<!-- Off-canvas drawer (single instance) -->
+<!-- Off-canvas drawer -->
 <aside id="drawer" class="drawer" aria-hidden="true">
   <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
   <nav class="drawer-nav" aria-label="Off-canvas">
@@ -185,12 +183,12 @@
     drawer.setAttribute('aria-hidden','true');
     document.body.style.overflow='';
   }
-  document.getElementById('openDrawer')?.addEventListener('click', openDrawer);
-  document.getElementById('closeDrawer')?.addEventListener('click', closeDrawer);
-  document.getElementById('backdrop')?.addEventListener('click', closeDrawer);
+  openBtn?.addEventListener('click', openDrawer);
+  closeBtn?.addEventListener('click', closeDrawer);
+  backdrop?.addEventListener('click', closeDrawer);
   window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer() });
 
-  // Portrait reveal
+  // Portrait reveal + footer year
   window.addEventListener('load', ()=>{
     document.querySelectorAll('.reveal').forEach(el=> setTimeout(()=>el.classList.add('enter'),80));
     const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
