@@ -6,12 +6,30 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/"><img src="../assets/logo.svg" width="28" height="28" alt=""><span>bydiljitsingh</span></a>
-      <nav class="nav"><a href="/projects/">Projects</a><a href="/wiki/">My Wiki</a><a href="/toolkit/">Toolkit</a></nav>
-      <button class="hamburger" id="openDrawer" aria-label="Open menu"><span></span><span></span><span></span></button>
-    </div>
+  <!-- ========== HEADER (SUBPAGE) ========== -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../">
+      <img src="../assets/logo.svg" alt="by DS logo" width="28" height="28" />
+      <span>bydiljitsingh</span>
+    </a>
+    <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<aside id="drawer" class="drawer" aria-hidden="true">
+  <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
+  <nav class="drawer-nav" aria-label="Off-canvas">
+    <a href="../projects/">Projects</a>
+    <a href="../wiki/">My Wiki</a>
+    <a href="../toolkit/">Toolkit</a>
+    <a href="../cv/">CV</a>
+    <a href="../#contact">Contact</a>
+  </nav>
+</aside>
+<div id="backdrop" class="backdrop" hidden></div>
   </header>
 
   <main class="section container narrow">
@@ -32,6 +50,47 @@
   </main>
 
   <footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script>
+  // Smooth scroll for same-page anchors only
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href').slice(1), el=document.getElementById(id);
+      if(!el) return;
+      e.preventDefault();
+      const y=el.getBoundingClientRect().top + window.scrollY - 72;
+      window.scrollTo({top:y,behavior:'smooth'});
+    });
+  });
+
+  // Drawer controls
+  const drawer = document.getElementById('drawer');
+  const openBtn = document.getElementById('openDrawer');
+  const closeBtn = document.getElementById('closeDrawer');
+  const backdrop = document.getElementById('backdrop');
+
+  function openDrawer(){
+    drawer.classList.add('open'); backdrop.hidden = false;
+    openBtn?.setAttribute('aria-expanded','true');
+    drawer.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function closeDrawer(){
+    drawer.classList.remove('open'); backdrop.hidden = true;
+    openBtn?.setAttribute('aria-expanded','false');
+    drawer.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  openBtn?.addEventListener('click', openDrawer);
+  closeBtn?.addEventListener('click', closeDrawer);
+  backdrop?.addEventListener('click', closeDrawer);
+  window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer() });
+
+  // Portrait reveal (if present)
+  window.addEventListener('load', ()=>{
+    document.querySelectorAll('.reveal').forEach(el=> setTimeout(()=>el.classList.add('enter'),80));
+    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+  });
+</script>
+
 </body>
 </html>
