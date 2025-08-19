@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <!-- ========== HEADER (SUBPAGE) ========== -->
+
+<!-- ========== HEADER (SUBPAGE) ========== -->
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="../">
@@ -19,6 +20,7 @@
   </div>
 </header>
 
+<!-- Drawer -->
 <aside id="drawer" class="drawer" aria-hidden="true">
   <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
   <nav class="drawer-nav" aria-label="Off-canvas">
@@ -30,32 +32,50 @@
   </nav>
 </aside>
 <div id="backdrop" class="backdrop" hidden></div>
-</header>
 
+<!-- ========== MAIN ========== -->
+<main class="section container narrow">
+  <h1>Engineering Design Review Toolkit</h1>
+  <p class="section-sub">
+    A practical set of checklists, templates, and standards for students and early-career engineers. Built from real project needs.
+  </p>
 
-  <main class="section container narrow">
-    <h1>Engineering Design Review Toolkit</h1>
-    <p class="section-sub">A practical set of checklists, templates, and standards for students and early-career engineers.</p>
+  <div class="prose" style="margin-top:1rem">
+    <h2>What’s included</h2>
+    <ul>
+      <li><strong>DFM/DFA Checklist</strong> — manufacturing & assembly prompts (free)</li>
+      <li><strong>Risk Register</strong> — likelihood × impact with mitigations</li>
+      <li><strong>Drawing Standard</strong> — title block + revision control</li>
+      <li><strong>Design Review Pack</strong> — agenda, minutes, action log</li>
+    </ul>
 
-    <div class="prose">
-      <h2>What’s included</h2>
-      <ul>
-        <li>DFM/DFA checklist (free)</li>
-        <li>Risk register template</li>
-        <li>Drawing standard & title block</li>
-        <li>Design review agenda & minutes template</li>
-      </ul>
-      <h2>Get updates</h2>
-      <form class="inline-form" action="#" method="post" onsubmit="return false">
-        <input type="email" placeholder="Email for updates" aria-label="Email" required>
-        <button class="btn">Notify me</button>
-      </form>
-    </div>
-  </main>
+    <h2>Get updates</h2>
+    <form class="inline-form" action="#" method="post" onsubmit="return false">
+      <input type="email" placeholder="Email for updates" aria-label="Email" required>
+      <button class="btn">Notify me</button>
+    </form>
 
-  <footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
-  <script>
-  // Smooth scroll for same-page anchors only
+    <h2 style="margin-top:1.5rem">Downloads</h2>
+    <p>When ready, files will appear here:</p>
+    <ul>
+      <li><a class="link" href="#" aria-disabled="true">DFM/DFA Checklist (PDF)</a></li>
+      <li><a class="link" href="#" aria-disabled="true">Risk Register (XLSX)</a></li>
+      <li><a class="link" href="#" aria-disabled="true">Drawing Standard (DOCX)</a></li>
+      <li><a class="link" href="#" aria-disabled="true">Design Review Pack (ZIP)</a></li>
+    </ul>
+  </div>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="container">
+    <small>© <span id="y"></span> By Diljit Singh</small>
+  </div>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+  // Smooth scroll for same-page anchors
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',e=>{
       const id=a.getAttribute('href').slice(1), el=document.getElementById(id);
@@ -89,11 +109,8 @@
   backdrop?.addEventListener('click', closeDrawer);
   window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer() });
 
-  // Portrait reveal (if present)
-  window.addEventListener('load', ()=>{
-    document.querySelectorAll('.reveal').forEach(el=> setTimeout(()=>el.classList.add('enter'),80));
-    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
-  });
+  // Footer year
+  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
 </script>
 
 </body>
