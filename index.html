@@ -140,3 +140,62 @@
         </a>
         <a href="#" aria-label="LinkedIn" class="icon">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.26 2.3-2.6 4.73-2.6C22.3 7.6 24 10.1 24 14.1V24h-5v-8.6c0-2-0.03-4.6-2.8-4.6-2.8 0-3.2 2.2-3.2 4.5V24h-5V8z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <small>© <span id="y"></span> By Diljit Singh</small>
+  </div>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+  // Smooth scroll for same-page anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href').slice(1), el=document.getElementById(id);
+      if(!el) return;
+      e.preventDefault();
+      const y=el.getBoundingClientRect().top + window.scrollY - 72;
+      window.scrollTo({top:y,behavior:'smooth'});
+    });
+  });
+
+  // Drawer controls
+  const drawer = document.getElementById('drawer');
+  const openBtn = document.getElementById('openDrawer');
+  const closeBtn = document.getElementById('closeDrawer');
+  const backdrop = document.getElementById('backdrop');
+
+  function openDrawer(){
+    drawer.classList.add('open');
+    backdrop.hidden = false;
+    openBtn?.setAttribute('aria-expanded','true');
+    drawer.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function closeDrawer(){
+    drawer.classList.remove('open');
+    backdrop.hidden = true;
+    openBtn?.setAttribute('aria-expanded','false');
+    drawer.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  document.getElementById('openDrawer')?.addEventListener('click', openDrawer);
+  document.getElementById('closeDrawer')?.addEventListener('click', closeDrawer);
+  document.getElementById('backdrop')?.addEventListener('click', closeDrawer);
+  window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer() });
+
+  // Portrait reveal
+  window.addEventListener('load', ()=>{
+    document.querySelectorAll('.reveal').forEach(el=> setTimeout(()=>el.classList.add('enter'),80));
+    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+  });
+</script>
+
+</body>
+</html>
