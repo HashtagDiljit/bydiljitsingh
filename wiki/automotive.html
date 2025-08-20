@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Automotive Engineering — My Wiki</title>
+<link rel="stylesheet" href="../styles.css">
+</head><body>
+<header class="site-header"><div class="container header-inner">
+  <a class="brand" href="../"><img src="../assets/logo.svg" width="28" height="28" alt=""><span>bydiljitsingh</span></a>
+  <button class="hamburger" id="openDrawer" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div></header>
+<aside id="drawer" class="drawer" aria-hidden="true"><button class="drawer-close" id="closeDrawer">×</button>
+  <nav class="drawer-nav"><a href="../projects/">Projects</a><a href="../wiki/">My Wiki</a><a href="../toolkit/">Toolkit</a><a href="../cv/">CV</a><a href="../#contact">Contact</a></nav>
+</aside><div id="backdrop" class="backdrop" hidden></div>
+
+<main class="section container narrow">
+  <h1>Automotive Engineering</h1>
+  <p class="section-sub">Notes on vehicle dynamics, EV systems, rally/off‑road design, etc.</p>
+
+  <div class="prose" style="margin-top:1rem">
+    <!-- Replace with your content -->
+    <h2>Index</h2>
+    <ul>
+      <li><a class="link" href="#">Vehicle dynamics—quick reference</a></li>
+      <li><a class="link" href="#">Suspension geometry basics</a></li>
+      <li><a class="link" href="#">Brake sizing + thermal notes</a></li>
+    </ul>
+    <p><a class="link" href="./">← Back to Wiki</a></p>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
+<script>
+const d=document,dr=d.getElementById('drawer'),op=d.getElementById('openDrawer'),cl=d.getElementById('closeDrawer'),bd=d.getElementById('backdrop');
+function o(){dr.classList.add('open');bd.hidden=false;d.body.style.overflow='hidden'} function c(){dr.classList.remove('open');bd.hidden=true;d.body.style.overflow=''}
+op&&op.addEventListener('click',o);cl&&cl.addEventListener('click',c);bd&&bd.addEventListener('click',c);addEventListener('keydown',e=>{if(e.key==='Escape')c()});
+const y=d.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+</script></body></html>
