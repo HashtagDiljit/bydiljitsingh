@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Thin Plate with Hole (MDB) — By Diljit Singh</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../">
+      <img src="../assets/logo.svg" width="28" height="28" alt="">
+      <span>bydiljitsingh</span>
+    </a>
+    <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<aside id="drawer" class="drawer" aria-hidden="true">
+  <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
+  <nav class="drawer-nav" aria-label="Off-canvas">
+    <a href="../projects/">Projects</a>
+    <a href="../wiki/">My Wiki</a>
+    <a href="../toolkit/">Toolkit</a>
+    <a href="../cv/">CV</a>
+    <a href="../#contact">Contact</a>
+  </nav>
+</aside>
+<div id="backdrop" class="backdrop" hidden></div>
+
+<main class="section container narrow">
+  <h1>Thin Plate with Hole (MDB)</h1>
+  <p class="section-sub">Conducting Finite Element Analysis on a Thin Plate with Hole</p>
+
+  <img src="../assets/fea.jpg" alt="Thin Plate with Hole" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--grey-2)">
+
+  <div class="prose" style="margin-top:1rem">
+    <h2>Brief</h2>
+    <p>Design an electric rally pickup platform for Dakar-style conditions with a modular, swappable energy pack.</p>
+
+    <h2>Scope</h2>
+    <ul>
+      <li>Vehicle dynamics targets; suspension kinematics; steering geometry.</li>
+      <li>Braking system sizing and thermal considerations; tyre selection rationale.</li>
+    </ul>
+
+    <h2>Highlights</h2>
+    <ul>
+      <li>Defined roll gradient / ride targets for mixed terrain.</li>
+      <li>Front and rear suspension geometry trade-offs (travel vs packaging).</li>
+      <li>Preliminary brake thermal load model for stage distances.</li>
+    </ul>
+
+    <p><a class="link" href="./">← Back to all projects</a></p>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
+<script>
+  const drawer=document.getElementById('drawer'), openBtn=document.getElementById('openDrawer'), closeBtn=document.getElementById('closeDrawer'), backdrop=document.getElementById('backdrop');
+  function openDrawer(){drawer.classList.add('open');backdrop.hidden=false;openBtn?.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+  function closeDrawer(){drawer.classList.remove('open');backdrop.hidden=true;openBtn?.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+  openBtn?.addEventListener('click',openDrawer);closeBtn?.addEventListener('click',closeDrawer);backdrop?.addEventListener('click',closeDrawer);window.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()})
+  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
