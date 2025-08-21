@@ -215,3 +215,24 @@ a{ color:inherit; text-decoration:none }
 @media (max-width:640px){
   .portfolio-grid{ grid-template-columns:1fr }
 }
+/* === HOT-FIX: ensure gutters on the homepage header === */
+/* Force left/right padding inside the sticky header on all pages */
+.site-header .container{
+  padding-left: var(--gutter) !important;
+  padding-right: var(--gutter) !important;
+}
+
+/* Make sure brand + hamburger are not touching edges */
+.header-inner{
+  padding-left: 0;   /* side padding now comes from the container above */
+  padding-right: 0;
+}
+
+/* Brand alignment + size (in case older cache kept smaller font) */
+.brand{
+  display:flex; align-items:center; gap:10px;
+}
+.brand span{
+  font-size: 1.25rem;      /* bump if you want bigger: 1.35rem */
+  line-height: 1;
+}
