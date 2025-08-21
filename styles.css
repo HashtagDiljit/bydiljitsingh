@@ -19,7 +19,9 @@
   --drawer-w: 260px;       /* drawer width */
 }
 @media (max-width:900px){ :root{ --gutter:22px; } }
-@media (max-width:600px){ :root{ --gutter:18px; } }
+/* Give small phones a bit more breathing room again */
+@media (max-width:600px){ :root{ --gutter:20px; } }
+@media (max-width:480px){ :root{ --gutter:22px; } }
 
 /* ==========================================================
    BASE
@@ -72,23 +74,27 @@ a{ color:inherit; text-decoration:none }
 
 /* Brand */
 .brand{ display:flex; align-items:center; gap:10px }
-.brand img{ width:28px; height:28px }
+.brand img{
+  width:32px; height:32px;
+  /* If your logo is dark, keep it visible on the dark header */
+  filter: invert(1) contrast(1.1);
+}
 .brand span{
   font-family:Georgia,'Times New Roman',Times,serif;
   font-size:1.25rem; line-height:1; letter-spacing:.2px;
 }
 
-/* Hamburger — fixed, stays on top, slides with drawer & morphs to X */
+/* Hamburger — fixed, stays on top, morphs to X (no slide) */
 .hamburger{
   position:fixed; top:16px; right:var(--gutter);
   width:24px; height:20px; z-index:260;
   display:inline-flex; flex-direction:column; justify-content:space-between;
   background:transparent; border:none; cursor:pointer; padding:0;
-  transition: transform .32s ease;
 }
 .hamburger span{
   height:2px; background:#fff; border-radius:2px; width:100%;
   transition: transform .25s ease, opacity .20s ease;
+  transform-origin:center;
 }
 
 /* Drawer panel */
@@ -119,13 +125,10 @@ a{ color:inherit; text-decoration:none }
 }
 .drawer-nav a:hover{ background:rgba(255,255,255,.08); color:#fff }
 
-/* Open state: slide hamburger same distance as drawer + morph */
-.drawer-open .hamburger{
-  transform: translateX(calc(-1 * min(var(--drawer-w), 86vw)));
-}
-.drawer-open .hamburger span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+/* Open state: only morph bars (icon stays pinned on top) */
+.drawer-open .hamburger span:nth-child(1){ transform: translateY(9px) rotate(45deg); }
 .drawer-open .hamburger span:nth-child(2){ opacity:0; }
-.drawer-open .hamburger span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+.drawer-open .hamburger span:nth-child(3){ transform: translateY(-9px) rotate(-45deg); }
 
 /* ==========================================================
    HERO
@@ -224,4 +227,5 @@ a{ color:inherit; text-decoration:none }
 }
 @media (max-width:640px){
   .portfolio-grid{ grid-template-columns:1fr }
+  .contact-grid{ grid-template-columns:1fr; gap:12px }
 }
