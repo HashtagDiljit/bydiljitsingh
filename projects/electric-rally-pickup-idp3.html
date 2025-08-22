@@ -40,6 +40,11 @@
     .nextprev  { display:flex; gap:10px; justify-content:space-between; margin-top:24px; flex-wrap:wrap; }
     /* hamburger must be visible above drawer */
     .hamburger{ position:fixed; top:16px; right:var(--gutter); z-index:1001; }
+    /* neutralise the homepage hero styling on this page */
+.hero{ background:transparent !important; color:inherit !important; padding:0 !important; }
+.hero figure{ margin:0; border:0; background:none; }
+.caption{ color:#666; background:transparent; }
+ 
   </style>
 </head>
 <body>
