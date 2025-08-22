@@ -4,136 +4,152 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Electric Rally Pickup (IDP3) – Toyota Hilux EV for Dakar | By Diljit Singh, MEng</title>
-  <meta name="description" content="30-person multidisciplinary project converting a Toyota Hilux into an electric rally truck for the 2028 Dakar Rally. I was the elected Team Lead and led the MEng Vehicle Dynamics group: suspension, steering, braking & tyres." />
+  <meta name="description" content="30-person multidisciplinary project converting a Toyota Hilux into an electric rally truck for the 2028 Dakar Rally. I was the elected Team Lead and led the Vehicle Dynamics group: suspension, steering, braking & tyres." />
   <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/projects/electric-rally-pickup-idp3.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="By Diljit Singh" />
   <meta property="og:title" content="Electric Rally Pickup (IDP3) – Toyota Hilux EV for Dakar" />
   <meta property="og:description" content="30-person multidisciplinary project; I was the elected Team Lead. Vehicle dynamics, suspension, steering, braking & tyres." />
-  <meta property="og:type" content="article" />
   <meta property="og:image" content="../assets/hero-hilux-ev.jpg" />
   <link rel="stylesheet" href="../styles.css" />
+
   <style>
-    /* Page-specific additions (safe to paste into styles.css if you prefer) */
-    .container { padding-inline: clamp(16px, 4vw, 28px); }
-    .page { padding-block: clamp(20px, 4vw, 40px); }
-    .eyebrow { font-size: .9rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted, #666); }
-    .hero { display:grid; gap:1rem; align-items:start; }
-    .hero figure { margin:0; }
-    .hero img { width:100%; height:auto; border-radius:12px; display:block; }
-    .caption { font-size:.85rem; color:var(--muted,#666); margin-top:.5rem; }
-    .meta-grid { display:grid; gap:12px; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); }
-    .meta { background:var(--card,#f7f7f8); border:1px solid var(--border,#e6e6e8); border-radius:12px; padding:14px 16px; }
-    .meta h3 { margin:0 0 .25rem 0; font-size:.95rem; }
-    .kpi { display:flex; gap:10px; flex-wrap:wrap; }
-    .pill { font-size:.9rem; background:#eef2ff; border:1px solid #dfe5ff; padding:.25rem .5rem; border-radius:999px; }
-    .prose p, .prose li { max-width: 70ch; }
-    .section { margin-top:clamp(24px, 5vw, 48px); }
-    details { border:1px solid var(--border,#e6e6e8); border-radius:12px; padding:10px 14px; background:var(--card,#fafafa); }
-    details + details { margin-top:10px; }
-    summary { cursor:pointer; font-weight:600; list-style:none; }
-    summary::-webkit-details-marker { display:none; }
-    summary::after { content:"▸"; float:right; transition: transform .2s ease; }
-    details[open] summary::after { transform: rotate(90deg); }
-    .gallery { display:grid; gap:12px; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); }
-    .gallery figure { margin:0; border:1px solid var(--border,#e6e6e8); border-radius:12px; padding:8px; background:#fff; }
-    .viewer { position:relative; border:1px solid var(--border,#e6e6e8); border-radius:12px; overflow:hidden; background:#fff; }
-    .viewer-header { display:flex; align-items:center; justify-content:space-between; padding:10px 12px; border-bottom:1px solid var(--border,#e6e6e8); background:var(--card,#fafafa); }
-    .viewer-pages { display:grid; gap:8px; padding:12px; }
-    .viewer .blocker { position:absolute; inset:0; pointer-events:none; background:repeating-linear-gradient(135deg, transparent 0 12px, rgba(0,0,0,.02) 12px 24px); }
-    .viewer.norc { user-select:none; }
-    .viewer.norc * { -webkit-user-drag: none; }
-    .viewer.norc img, .viewer.norc canvas { pointer-events:none; }
-    .muted { color: var(--muted,#666); }
-    .backlink { display:inline-block; margin-top:24px; }
+    /* --- page-only tidy rules --- */
+    .page      { padding-block: 24px 28px; }
+    .section   { margin-top: 28px; }
+    .breadcrumbs{ margin: 6px 0 10px; font-size: .95rem; }
+    /* hero image with no border/box */
+    .hero figure{ margin:0; border:none; background:none; }
+    .hero img  { width:100%; height:auto; display:block; border-radius:12px; }
+    .caption   { font-size:.85rem; color:#666; margin-top:.5rem; }
+    /* summary cards */
+    .meta-grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+    .meta      { background:#fff; border:1px solid var(--grey-2); border-radius:12px; padding:14px 16px; }
+    .meta h3   { margin:0 0 .35rem 0; font-size:.95rem; }
+    /* collapsibles */
+    details    { border:1px solid var(--grey-2); border-radius:12px; padding:10px 14px; background:#fafafa; }
+    details+details{ margin-top:10px; }
+    summary    { cursor:pointer; font-weight:600; list-style:none; }
+    summary::-webkit-details-marker{ display:none; }
+    summary::after{ content:"▸"; float:right; transition:transform .2s ease; }
+    details[open] summary::after{ transform:rotate(90deg); }
+    /* gallery */
+    .gallery   { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
+    .gallery figure{ margin:0; border:1px solid var(--grey-2); border-radius:12px; padding:8px; background:#fff; }
+    /* prev/next */
+    .nextprev  { display:flex; gap:10px; justify-content:space-between; margin-top:24px; flex-wrap:wrap; }
+    /* hamburger must be visible above drawer */
+    .hamburger{ position:fixed; top:16px; right:var(--gutter); z-index:1001; }
   </style>
 </head>
 <body>
+
+  <!-- Header with hamburger -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="../">
-        <img src="../assets/logo.svg" width="28" height="28" alt="By Diljit Singh logo" />
+      <a class="brand" href="../" aria-label="Home">
+        <picture>
+          <source srcset="../assets/logo.svg" type="image/svg+xml">
+          <img src="../assets/logo.png" alt="bydiljitsingh logo" width="28" height="28" />
+        </picture>
         <span>bydiljitsingh</span>
       </a>
-      <!-- keep your existing hamburger/header here if you want -->
+
+      <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main class="page container">
-    <p class="eyebrow">Project • IDP3</p>
+  <!-- Drawer -->
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
+    <nav class="drawer-nav" aria-label="Off-canvas">
+      <a href="../projects/">Projects</a>
+      <a href="../wiki/">My Wiki</a>
+      <a href="../toolkit/">Toolkit</a>
+      <a href="../cv/">CV</a>
+      <a href="../#contact">Contact</a>
+    </nav>
+  </aside>
+  <div id="backdrop" class="backdrop" hidden></div>
+
+  <main class="page container narrow">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a class="link" href="../">Home</a> › <a class="link" href="./">Projects</a> › <span>Electric Rally Pickup (IDP3)</span>
+    </nav>
+
     <h1>Electric Rally Pickup (Toyota Hilux EV) for the 2028 Dakar Rally</h1>
 
+    <!-- Hero -->
     <section class="hero section">
       <figure>
-        <img src="../assets/hero-hilux-ev.jpg" alt="Concept rendering of a Toyota Hilux electric Dakar rally truck" />
+        <img src="../assets/hero-hilux-ev.jpg" alt="Concept rendering of a Toyota Hilux electric Dakar rally truck" width="1200" height="800" loading="eager" decoding="async">
         <figcaption class="caption">Concept image of our Dakar truck (ChatGPT-generated visual for illustration).</figcaption>
       </figure>
     </section>
 
-    <!-- Project at a glance -->
+    <!-- At-a-glance -->
     <section class="section">
       <div class="meta-grid">
         <div class="meta">
           <h3>Team & Structure</h3>
-          <p>30-person multidisciplinary team split into 6 specialist groups (Chassis/Impact & Cooling; Aero/Body; Vehicle Dynamics; Powertrain/Battery; Electrical & Controls; Civil/Facility).</p>
+          <p>30-person multidisciplinary project split into 6 specialist groups (Chassis/Impact & Cooling; Aero/Body; Vehicle Dynamics; Powertrain/Battery; Electrical & Controls; Civil/Facility).</p>
         </div>
         <div class="meta">
           <h3>My Role</h3>
-          <p>Elected <strong>Team Lead</strong> for the full programme and my MEng subgroup (Vehicle Dynamics). I coordinated timelines, cross-group integration, and supervisor liaison.</p>
+          <p>Elected <strong>Team Lead</strong> for the whole programme and my Vehicle Dynamics subgroup. I coordinated timelines, cross-group interfaces, and supervisor liaison.</p>
         </div>
         <div class="meta">
           <h3>Brief</h3>
-          <p>Design a <strong>high-speed</strong> OR <strong>high-efficiency</strong> vehicle. We chose a <strong>Toyota Hilux conversion</strong> to a fully electric rally truck that showcases Toyota’s forthcoming battery technology at Dakar 2028.</p>
+          <p>Build for either <strong>high speed</strong> or <strong>high efficiency</strong>. We proposed a Toyota-backed conversion of the Hilux to a fully electric rally truck for Dakar 2028 to showcase new battery tech.</p>
         </div>
         <div class="meta">
           <h3>Outcome</h3>
-          <ul class="kpi">
-            <li class="pill">Defined ride/roll/frequency targets</li>
-            <li class="pill">Double-wishbone concept & kinematics</li>
-            <li class="pill">Brake sizing & thermal model</li>
-            <li class="pill">Tyre spec for sand/rock, low-pressure bead retention</li>
+          <ul>
+            <li>Defined ride/roll/frequency targets.</li>
+            <li>Double-wishbone concept & kinematics.</li>
+            <li>Brake sizing & thermal model.</li>
+            <li>Tyre spec for sand/rock and low-pressure bead retention.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Quick summary -->
-    <section class="section prose">
-      <h2>Summary</h2>
-      <p>We converted a production Hilux into a fully electric rally platform aimed at Dakar-style endurance. As Team Lead I kept the six groups aligned on interfaces (mounting points, loads, aero envelopes, electrical safety, packaging) and drove vehicle dynamics decisions across suspension, steering, braking and tyres to meet a predictable handling target on mixed terrain.</p>
-    </section>
-
-    <!-- Group-specific visuals -->
+    <!-- Selected visuals -->
     <section class="section">
       <h2>Selected visuals from my group</h2>
       <div class="gallery">
         <figure>
-          <img src="../assets/suspension-model.png" alt="Front double-wishbone suspension CAD/kinematics model" />
+          <img src="../assets/suspension-model.png" alt="Front double-wishbone suspension CAD/kinematics model" loading="lazy" decoding="async">
           <figcaption class="caption">Front double-wishbone kinematics model (packaging + travel vs. roll targets).</figcaption>
         </figure>
         <figure>
-          <img src="../assets/brake-thermal.png" alt="Brake thermal analysis plot for Dakar stage speeds" />
-          <figcaption class="caption">Brake thermal load envelope for stage distance & speed profile.</figcaption>
+          <img src="../assets/brake-thermal.png" alt="Brake thermal analysis plot for Dakar stage speeds" loading="lazy" decoding="async">
+          <figcaption class="caption">Brake thermal envelope for stage distance & speed profile.</figcaption>
         </figure>
         <figure>
-          <img src="../assets/tyre-spec.png" alt="Tyre/wheel specification illustration for sand/rock stages" />
-          <figcaption class="caption">Tyre/wheel spec for sand/rock stages (37×12.5 R17, beadlock; low-pressure survival).</figcaption>
+          <img src="../assets/tyre-spec.png" alt="Tyre/wheel specification illustration for sand/rock stages" loading="lazy" decoding="async">
+          <figcaption class="caption">Tyre/wheel spec for sand/rock stages (37×12.5 R17 beadlocks; low-pressure survival).</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- Responsibilities / Targets -->
+    <!-- Responsibilities / Process -->
     <section class="section prose">
       <h2>My responsibilities</h2>
       <ul>
         <li>Defined ride, roll and frequency targets; led double-wishbone concept and early kinematics.</li>
         <li>Co-led steering system selection (EHPS 120 bar) and high-level rack ratio trade-offs.</li>
         <li>Developed brake sizing & bias; produced thermal model for rally stages; component stack selection.</li>
-        <li>Specified tyre/wheel package (37×12.5 R17, beadlock) for low-pressure operation on sand/rock.</li>
+        <li>Specified tyre/wheel package (37×12.5 R17, beadlocks) for low-pressure operation on sand/rock.</li>
         <li>Integration lead: packaging with chassis/powertrain (battery & mass distribution towards 50:50).</li>
       </ul>
 
       <details>
         <summary>Vehicle Dynamics Targets</summary>
-        <p>Predictable handling on mixed loose terrain with <em>~2 Hz sprung</em> natural frequency and lateral acceleration in the <em>~1.2–1.5 g</em> concept range. Geometry and travel set to preserve contact over large vertical impacts.</p>
+        <p>Predictable handling on mixed loose terrain with ~2 Hz sprung natural frequency and ~1.2–1.5 g lateral capability at concept level. Geometry and travel preserve contact over large vertical impacts.</p>
       </details>
 
       <details>
@@ -141,7 +157,7 @@
         <ul>
           <li>Front & rear double-wishbone layout for durability and serviceability.</li>
           <li>Travel budget and motion ratios chosen for damper headroom at rally speeds.</li>
-          <li>Packaging: clearance around battery, cooling, steering and upright.</li>
+          <li>Packaging clearance around battery, cooling, steering and upright.</li>
         </ul>
       </details>
 
@@ -156,7 +172,7 @@
       <details>
         <summary>Braking</summary>
         <ul>
-          <li>Disc & pad sizing; bias map; fade margin from thermal model.</li>
+          <li>Disc & pad sizing; bias map; fade margin from the thermal model.</li>
           <li>Integration with regenerative strategies for efficiency and stability.</li>
         </ul>
       </details>
@@ -171,74 +187,61 @@
 
       <h2>Outcome</h2>
       <ul>
-        <li>Package meets Dakar-style performance with serviceable component choices; targets validated through preliminary calcs and FEA checks.</li>
-        <li>Braking performance is viable at rally speeds with thermal margin and adjustable bias.</li>
+        <li>Package meets Dakar-style performance with serviceable component choices; targets validated by preliminary calcs and FEA checks.</li>
+        <li>Braking performance viable at rally speeds with thermal margin and adjustable bias.</li>
         <li>Tyre/wheel spec supports traction and bead retention for low-pressure stages.</li>
       </ul>
-    </section>
 
-    <!-- PDF viewer (no native download) -->
-    <section class="section">
-      <h2>Team brief (selected pages)</h2>
-      <p class="muted">Rendered into images to hide the original file URL and toolbar. Right-click is disabled on the viewer area.</p>
-
-      <div id="pdfViewer" class="viewer norc" data-pdf="../assets/docs/team-1-idp3-report.pdf" data-pages="5">
-        <div class="viewer-header">
-          <strong>Team 1 — Integrated Design Project (brief excerpt)</strong>
-          <span class="muted">No download</span>
-        </div>
-        <div class="viewer-pages" id="pdfPages"></div>
-        <div class="blocker" aria-hidden="true"></div>
+      <!-- Prev / Next -->
+      <div class="nextprev">
+        <a class="btn" href="./green-hydrogen-plant-idp2.html">← Previous: Green Hydrogen Plant</a>
+        <a class="btn-dark" href="./wankel-engine-transmission-gearbox-mdb.html">Next: Wankel Engine Transmission →</a>
       </div>
+      <p style="margin-top:10px"><a class="link" href="./">Back to all projects</a></p>
     </section>
 
-    <p class="backlink"><a class="link" href="../projects/">← Back to all projects</a></p>
+    <!-- Optional: brief preview remains the same (omit if you don’t want it here) -->
+    <!--
+    <section class="section">
+      ...
+    </section>
+    -->
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="y"></span> By Diljit Singh</small>
-    </div>
+    <div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div>
   </footer>
 
-  <!-- Minimal PDF.js render (via CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
   <script>
-    // year
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Footer year
+    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
 
-    // simple no-download PDF renderer
-    (function(){
-      const el = document.getElementById('pdfViewer');
-      if (!el) return;
-      const url   = el.getAttribute('data-pdf');
-      const pages = parseInt(el.getAttribute('data-pages') || '3', 10);
-      const pagesWrap = document.getElementById('pdfPages');
+    // Drawer controls
+    const drawer = document.getElementById('drawer');
+    const openBtn = document.getElementById('openDrawer');
+    const closeBtn = document.getElementById('closeDrawer');
+    const backdrop = document.getElementById('backdrop');
 
-      const pdfjsLib = window['pdfjs-dist/build/pdf'];
-      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
-
-      pdfjsLib.getDocument(url).promise.then(function(pdf) {
-        const total = Math.min(pages, pdf.numPages);
-        for (let i = 1; i <= total; i++) {
-          pdf.getPage(i).then(function(page) {
-            const viewport = page.getViewport({ scale: 1.2 });
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d', { willReadFrequently: true });
-            canvas.width  = viewport.width;
-            canvas.height = viewport.height;
-            canvas.setAttribute('aria-label', 'Page ' + i);
-            pagesWrap.appendChild(canvas);
-            page.render({ canvasContext: ctx, viewport }).promise.catch(()=>{});
-          });
-        }
-      }).catch(()=> {
-        pagesWrap.innerHTML = '<p class="muted">Failed to load the brief preview.</p>';
-      });
-
-      // discourage right-click inside viewer
-      el.addEventListener('contextmenu', e => e.preventDefault());
-    })();
+    function openDrawerFn(){
+      drawer.classList.add('open');
+      backdrop.hidden = false;
+      document.documentElement.classList.add('drawer-open');
+      openBtn?.setAttribute('aria-expanded','true');
+      drawer.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    }
+    function closeDrawerFn(){
+      drawer.classList.remove('open');
+      backdrop.hidden = true;
+      document.documentElement.classList.remove('drawer-open');
+      openBtn?.setAttribute('aria-expanded','false');
+      drawer.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+    }
+    openBtn?.addEventListener('click', openDrawerFn);
+    closeBtn?.addEventListener('click', closeDrawerFn);
+    backdrop?.addEventListener('click', closeDrawerFn);
+    window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawerFn(); });
   </script>
 </body>
 </html>
