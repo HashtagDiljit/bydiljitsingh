@@ -3,9 +3,56 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>By Diljit Singh — Portfolio</title>
-  <meta name="description" content="Mechanical Engineering (Automotive) portfolio showcasing projects, achievements, and My Wiki." />
+  <title>By Diljit Singh — MEng Mechanical Engineering (Automotive) Student</title>
+  <meta name="description" content="Mechanical Engineering (Automotive) portfolio: projects, achievements, and CV.">
+  <meta name="robots" content="index,follow">
   <link rel="icon" href="assets/logo.svg" />
+  <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/" />
+  <meta name="theme-color" content="#111111">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="By Diljit Singh">
+  <meta property="og:url" content="https://hashtagdiljit.github.io/bydiljitsingh/">
+  <meta property="og:title" content="By Diljit Singh — MEng Mechanical Engineering (Automotive) Student">
+  <meta property="og:description" content="Mechanical Engineering (Automotive) portfolio: projects, achievements, and CV.">
+  <!-- Using portrait for now; swap to a 1200×630 banner when you have one -->
+  <meta property="og:image" content="https://hashtagdiljit.github.io/bydiljitsingh/assets/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- JSON-LD: Site + Person + Featured Projects -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebSite",
+        "name":"By Diljit Singh",
+        "url":"https://hashtagdiljit.github.io/bydiljitsingh/"
+      },
+      {
+        "@type":"Person",
+        "name":"Diljit Singh",
+        "url":"https://hashtagdiljit.github.io/bydiljitsingh/",
+        "jobTitle":"MEng Mechanical Engineering (Automotive) Student",
+        "sameAs":[
+          "https://www.linkedin.com/in/diljitsingh03/",
+          "https://instagram.com/hashtagdiljit"
+        ]
+      },
+      {
+        "@type":"ItemList",
+        "name":"Featured Projects",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"url":"https://hashtagdiljit.github.io/bydiljitsingh/projects/electric-rally-pickup-idp3.html"},
+          {"@type":"ListItem","position":2,"url":"https://hashtagdiljit.github.io/bydiljitsingh/projects/green-hydrogen-plant-idp2.html"},
+          {"@type":"ListItem","position":3,"url":"https://hashtagdiljit.github.io/bydiljitsingh/projects/wooden-bridge-idp1.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -13,16 +60,18 @@
 <!-- ========== HEADER (HOME) ========== -->
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="./">
-  <picture>
-    <source srcset="assets/logo.svg" type="image/svg+xml">
-    <img src="assets/logo.png" alt="by DS logo" width="32" height="32" />
-  </picture>
-  <span>bydiljitsingh</span>
-</a>
+
+    <!-- Brand (kept as picture with PNG fallback) -->
+    <a class="brand" href="./" aria-label="Home">
+      <picture>
+        <source srcset="assets/logo.svg" type="image/svg+xml">
+        <img src="assets/logo.png" alt="bydiljitsingh logo" width="32" height="32" />
+      </picture>
+      <span>bydiljitsingh</span>
+    </a>
 
     <!-- Drawer trigger -->
-     <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+    <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -47,7 +96,13 @@
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-photo">
-        <img src="assets/profile.jpg" alt="Portrait of Diljit Singh" class="reveal" data-animate="slide-in" />
+        <img
+          src="assets/profile.jpg"
+          alt="Portrait of Diljit Singh"
+          class="reveal"
+          data-animate="slide-in"
+          width="320" height="320"
+          fetchpriority="high" decoding="async" />
       </div>
       <div class="hero-copy">
         <h1>Engineering With Purpose</h1>
@@ -72,42 +127,44 @@
       <p class="section-sub">Welcome to my portfolio. Here you’ll find a selection of my work.</p>
 
       <div class="portfolio-grid">
-       <!-- Tile 1 -->
-<a class="tile-link" href="projects/idp3.html">
-  <article class="tile">
-    <img src="assets/idp3.jpg" alt="Electric Rally Pickup project">
-    <div class="meta">
-      <h3>Electric Rally Pickup (IDP3)</h3>
-      <p>Vehicle dynamics, suspension, steering, braking & tyres for a Hilux-based EV concept with a swappable battery.</p>
-      <hr>
-    </div>
-  </article>
-</a>
+        <!-- Tile 1 -->
+        <a class="tile-link" href="projects/electric-rally-pickup-idp3.html">
+          <article class="tile">
+            <img src="assets/idp3.jpg" alt="Electric Rally Pickup project"
+                 width="600" height="400" loading="lazy" decoding="async">
+            <div class="meta">
+              <h3>Electric Rally Pickup (IDP3)</h3>
+              <p>Vehicle dynamics, suspension, steering, braking & tyres for a Hilux-based EV concept with a swappable battery.</p>
+              <hr>
+            </div>
+          </article>
+        </a>
 
-<!-- Tile 2 -->
-<a class="tile-link" href="projects/idp2.html">
-  <article class="tile">
-    <img src="assets/idp2.jpg" alt="IDP2 project">
-    <div class="meta">
-      <h3>Green Hydrogen Plant (IDP2)</h3>
-      <p>Multidisciplinary design project focused on sustainability and systems integration. Final grade: <strong>83%</strong>.</p>
-      <hr>
-    </div>
-  </article>
-</a>
+        <!-- Tile 2 -->
+        <a class="tile-link" href="projects/green-hydrogen-plant-idp2.html">
+          <article class="tile">
+            <img src="assets/idp2.jpg" alt="Green Hydrogen Plant project"
+                 width="600" height="400" loading="lazy" decoding="async">
+            <div class="meta">
+              <h3>Green Hydrogen Plant (IDP2)</h3>
+              <p>Multidisciplinary design project focused on sustainability and systems integration. Final grade: <strong>83%</strong>.</p>
+              <hr>
+            </div>
+          </article>
+        </a>
 
-<!-- Tile 3 -->
-<a class="tile-link" href="projects/bridge.html">
-  <article class="tile">
-    <img src="assets/bridge.jpg" alt="Wooden bridge test">
-    <div class="meta">
-      <h3>Wooden Bridge (IDP1)</h3>
-      <p>Designed and built with a minimal team; withstood <strong>2.4 kN</strong> (cohort best) vs 1.1 kN pass requirement.</p>
-      <hr>
-    </div>
-  </article>
-</a>
-
+        <!-- Tile 3 -->
+        <a class="tile-link" href="projects/wooden-bridge-idp1.html">
+          <article class="tile">
+            <img src="assets/bridge.jpg" alt="Wooden Bridge design and test"
+                 width="600" height="400" loading="lazy" decoding="async">
+            <div class="meta">
+              <h3>Wooden Bridge (IDP1)</h3>
+              <p>Designed and built with a minimal team; withstood <strong>2.4 kN</strong> (cohort best) vs 1.1 kN pass requirement.</p>
+              <hr>
+            </div>
+          </article>
+        </a>
       </div>
 
       <!-- CTA -->
@@ -121,13 +178,16 @@
   <section id="toolkit" class="section container">
     <h2 class="section-title">Engineering Design Review Toolkit</h2>
     <p>Free guide and pro templates (DFM/DFA checklists, risk registers, CAD drawing standards). Join the early list.</p>
+
     <form class="inline-form" action="#" method="post" onsubmit="return false">
       <input type="email" placeholder="Email for updates" aria-label="Email" required>
       <button class="btn">Notify me</button>
     </form>
+
+    <!-- Centered CTA button with spacing -->
     <div class="toolkit-cta">
-        <a href="toolkit/" class="btn-dark">Learn more about the Toolkit →</a>
-      </div>
+      <a href="toolkit/" class="btn-dark">Learn more about the Toolkit →</a>
+    </div>
   </section>
 
   <!-- ========== CONTACT ========== -->
@@ -139,12 +199,34 @@
         <p><a href="mailto:diljitsingh2003@gmail.com">diljitsingh2003@gmail.com</a></p>
         <p><a href="tel:+447448024952">+44 74480 24952</a></p>
       </div>
+
+      <!-- Brand-colour icons -->
       <div class="socials">
-        <a href="https://instagram.com/hashtagdiljit" target="_blank" rel="noopener" aria-label="Instagram" class="icon">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.25-.75a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+        <!-- Instagram (gradient logo) -->
+        <a href="https://instagram.com/hashtagdiljit" target="_blank" rel="noopener" aria-label="Instagram" class="icon icon--brand">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <defs>
+              <linearGradient id="igGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F58529"/>
+                <stop offset="30%" stop-color="#DD2A7B"/>
+                <stop offset="60%" stop-color="#8134AF"/>
+                <stop offset="100%" stop-color="#515BD4"/>
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="44" height="44" rx="10" fill="url(#igGrad)"/>
+            <circle cx="24" cy="24" r="9" fill="none" stroke="#fff" stroke-width="4"/>
+            <circle cx="34" cy="14" r="2.5" fill="#fff"/>
+          </svg>
         </a>
-        <a href="https://www.linkedin.com/in/diljitsingh03/" target="_blank" rel="noopener" aria-label="LinkedIn" class="icon">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.26 2.3-2.6 4.73-2.6C22.3 7.6 24 10.1 24 14.1V24h-5v-8.6c0-2-0.03-4.6-2.8-4.6-2.8 0-3.2 2.2-3.2 4.5V24h-5V8z"/></svg>
+
+        <!-- LinkedIn (blue tile with 'in') -->
+        <a href="https://www.linkedin.com/in/diljitsingh03/" target="_blank" rel="noopener" aria-label="LinkedIn" class="icon icon--brand">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <rect x="2" y="2" width="44" height="44" rx="10" fill="#0A66C2"/>
+            <circle cx="14" cy="18" r="3" fill="#fff"/>
+            <rect x="11" y="22" width="6" height="14" rx="1" fill="#fff"/>
+            <path fill="#fff" d="M24 22h5v2.3h.1c.8-1.6 2.8-2.7 5.2-2.7 5 0 6.6 3.2 6.6 7.3V36h-6v-6c0-1.9-.1-4.3-2.7-4.3-2.7 0-3.1 2-3.1 4.1V36h-5V22z"/>
+          </svg>
         </a>
       </div>
     </div>
@@ -179,7 +261,7 @@
   function openDrawer(){
     drawer.classList.add('open');
     backdrop.hidden = false;
-    root.classList.add('drawer-open');        // <— triggers the morph + pin
+    root.classList.add('drawer-open');        // morph bars to X
     btn?.setAttribute('aria-expanded','true');
     drawer.setAttribute('aria-hidden','false');
     document.body.style.overflow='hidden';
@@ -206,7 +288,5 @@
     const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
   });
 </script>
-
-
 </body>
 </html>
