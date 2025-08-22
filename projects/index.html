@@ -1,17 +1,66 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Projects — By Diljit Singh</title>
-  <link rel="stylesheet" href="../styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>All Projects — By Diljit Singh | MEng Mechanical Engineering (Automotive)</title>
+  <meta name="description" content="All engineering projects and case studies by Diljit Singh: vehicle dynamics, Wankel transmission, FEA thin plate with hole, CFD inhaler spacer, green hydrogen, 2-stroke engine, bridge, pneumatic piston." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/projects/" />
+  <meta name="theme-color" content="#111111">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="By Diljit Singh" />
+  <meta property="og:url" content="https://hashtagdiljit.github.io/bydiljitsingh/projects/" />
+  <meta property="og:title" content="All Projects — By Diljit Singh" />
+  <meta property="og:description" content="Explore Diljit Singh’s engineering projects and case studies." />
+  <meta property="og:image" content="https://hashtagdiljit.github.io/bydiljitsingh/assets/profile.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD: Breadcrumbs + ItemList of projects -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://hashtagdiljit.github.io/bydiljitsingh/"},
+          {"@type":"ListItem","position":2,"name":"Projects","item":"https://hashtagdiljit.github.io/bydiljitsingh/projects/"}
+        ]
+      },
+      {
+        "@type":"ItemList",
+        "name":"All Projects",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"url":"https://hashtagdiljit.github.io/bydiljitsingh/projects/electric-rally-pickup-idp3.html"},
+          {"@type":"ListItem","position":2,"url":"https://hashtagdiljit.github.io/bydiljitsingh/projects/wankel-engine-transmission-gearbox-mdb.html"},
+          {"@type":"ListItem","position":3,"url":"https://hashtagdiljit.github.io/bydiljitsingh/projects/thin-plate-with-hole-fea.html"},
+          {"@type":"ListItem","position":4,"url":"https://hashtagdiljit.github.io/bydiljitsingh/projects/childs-inhaler-spacer-redesign-cfd.html"},
+          {"@type":"ListItem","position":5,"url":"https://hashtagdiljit.github.io/bydiljitsingh/projects/green-hydrogen-plant-idp2.html"},
+          {"@type":"ListItem","position":6,"url":"https://hashtagdiljit.github.io/bydiljitsingh/projects/small-scale-2-stroke-engine-idp2.html"},
+          {"@type":"ListItem","position":7,"url":"https://hashtagdiljit.github.io/bydiljitsingh/projects/wooden-bridge-idp1a.html"},
+          {"@type":"ListItem","position":8,"url":"https://hashtagdiljit.github.io/bydiljitsingh/projects/pneumatic-piston-model-idp1b.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
 
-<!-- ========== HEADER (SUBPAGE) ========== -->
+<!-- HEADER -->
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="../">
-      <img src="../assets/logo.svg" alt="by DS logo" width="28" height="28" />
+    <a class="brand" href="../" aria-label="Home">
+      <picture>
+        <source srcset="../assets/logo.svg" type="image/svg+xml">
+        <img src="../assets/logo.png" alt="bydiljitsingh logo" width="28" height="28" />
+      </picture>
       <span>bydiljitsingh</span>
     </a>
     <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
@@ -32,112 +81,126 @@
 </aside>
 <div id="backdrop" class="backdrop" hidden></div>
 
+<!-- MAIN -->
 <main class="section--full">
   <div class="projects-inner">
+    <nav aria-label="Breadcrumb" style="margin-top:8px;margin-bottom:8px;">
+      <a class="link" href="../">Home</a> › <span>Projects</span>
+    </nav>
+
     <h1 class="section-title">All Projects</h1>
     <p class="section-sub">A complete list of my engineering projects and case studies.</p>
 
     <div class="portfolio-grid">
-      <!-- Each tile links to a project page in this folder -->
-      <article class="tile">
-        <img src="../assets/idp3.jpg" alt="Electric Rally Pickup project">
-        <div class="meta">
-          <h3>Electric Rally Pickup (IDP3)</h3>
-          <p>Vehicle dynamics, suspension, steering, braking & tyres for a Hilux-based EV concept with a swappable battery.</p>
-          <a class="link" href="./idp3.html">Read case study</a>
-          <hr>
-        </div>
-      </article>
 
-      <article class="tile">
-        <img src="../assets/MDB.jpg" alt="Wankel Engine Transmission">
-        <div class="meta">
-          <h3>Wankel Engine Transmission (MDB)</h3>
-          <p>Designing a transmission gearbox for a light aircraft Wankel Engine</p>
-          <a class="link" href="./mdb.html">Read case study</a>
-          <hr>
-        </div>
-      </article>
+      <!-- Make the whole tile clickable; add dimensions & lazy loading -->
 
-      <article class="tile">
-        <img src="../assets/FEA.jpg" alt="Thin Plate With Hole">
-        <div class="meta">
-          <h3>Thin Plate with Hole (MDB)</h3>
-          <p>Conducting Finite Element Analysis on a Thin Plate with Hole</p>
-          <a class="link" href="./fea.html">Read case study</a>
-          <hr>
-        </div>
-      </article>
+      <a class="tile-link" href="./electric-rally-pickup-idp3.html">
+        <article class="tile">
+          <img src="../assets/idp3.jpg" alt="Electric Rally Pickup concept — vehicle dynamics & suspension"
+               width="600" height="400" loading="lazy" decoding="async">
+          <div class="meta">
+            <h3>Electric Rally Pickup (IDP3)</h3>
+            <p>Vehicle dynamics, suspension, steering, braking & tyres for a Hilux-based EV concept with a swappable battery.</p>
+            <hr>
+          </div>
+        </article>
+      </a>
 
-      <article class="tile">
-        <img src="../assets/CFD.jpg" alt="Chil'ds Inhaler Spacer Redesign">
-        <div class="meta">
-          <h3>Child's Inhaler Spacer Redesign (CFD)</h3>
-          <p>Redesigning a children's inhaler spacer to make it more efficient using Computational Fluid Dynamics</p>
-          <a class="link" href="./cfd.html">Read case study</a>
-          <hr>
-        </div>
-      </article>
+      <a class="tile-link" href="./wankel-engine-transmission-gearbox-mdb.html">
+        <article class="tile">
+          <img src="../assets/MDB.jpg" alt="Wankel engine speed-reduction gearbox design"
+               width="600" height="400" loading="lazy" decoding="async">
+          <div class="meta">
+            <h3>Wankel Engine Transmission (MDB)</h3>
+            <p>Designing a speed-reduction gearbox for a light-aircraft Wankel engine.</p>
+            <hr>
+          </div>
+        </article>
+      </a>
 
-      <article class="tile">
-        <img src="../assets/idp2.jpg" alt="Green Hydrogen Plant">
-        <div class="meta">
-          <h3>Green Hydrogen Plant (IDP2)</h3>
-          <p>Multidisciplinary design project. Final grade: <strong>83%</strong>.</p>
-          <a class="link" href="./idp2.html">Read case study</a>
-          <hr>
-        </div>
-      </article>
+      <a class="tile-link" href="./thin-plate-with-hole-fea.html">
+        <article class="tile">
+          <img src="../assets/FEA.jpg" alt="Finite Element Analysis of a thin plate with a circular hole"
+               width="600" height="400" loading="lazy" decoding="async">
+          <div class="meta">
+            <h3>Thin Plate with Hole (MDB)</h3>
+            <p>Finite Element Analysis to evaluate stress concentration and deflection.</p>
+            <hr>
+          </div>
+        </article>
+      </a>
 
-      <article class="tile">
-        <img src="../assets/MDA.jpg" alt="Small Scale 2 Stroke Engine">
-        <div class="meta">
-          <h3>Small Scale 2 Stroke Engine (IDP2)</h3>
-          <p>Designing and Modelling a small scale 2 stroke engine.</p>
-          <a class="link" href="./mda.html">Read case study</a>
-          <hr>
-        </div>
-      </article>
+      <a class="tile-link" href="./childs-inhaler-spacer-redesign-cfd.html">
+        <article class="tile">
+          <img src="../assets/CFD.jpg" alt="CFD redesign of a child's inhaler spacer for improved deposition"
+               width="600" height="400" loading="lazy" decoding="async">
+          <div class="meta">
+            <h3>Child’s Inhaler Spacer Redesign (CFD)</h3>
+            <p>Improving inhaler spacer efficiency using Computational Fluid Dynamics.</p>
+            <hr>
+          </div>
+        </article>
+      </a>
 
-      <article class="tile">
-        <img src="../assets/bridge.jpg" alt="Wooden bridge test">
-        <div class="meta">
-          <h3>Wooden Bridge (IDP1 A)</h3>
-          <p>Withstood <strong>2.4 kN</strong> vs 1.1 kN pass; highest in cohort.</p>
-          <a class="link" href="./bridge.html">Read case study</a>
-          <hr>
-        </div>
-      </article>
+      <a class="tile-link" href="./green-hydrogen-plant-idp2.html">
+        <article class="tile">
+          <img src="../assets/idp2.jpg" alt="Green hydrogen plant design with sustainability focus"
+               width="600" height="400" loading="lazy" decoding="async">
+          <div class="meta">
+            <h3>Green Hydrogen Plant (IDP2)</h3>
+            <p>Multidisciplinary design project focused on sustainability and systems integration. Final grade: <strong>83%</strong>.</p>
+            <hr>
+          </div>
+        </article>
+      </a>
 
-      <article class="tile">
-        <img src="../assets/piston.jpg" alt="Pneumatic Piston Model">
-        <div class="meta">
-          <h3>Pneumatic Piston Model(IDP1 B)</h3>
-          <p>Modelling a Pneumatic Piston with Assembly Drawings</p>
-          <a class="link" href="./piston.html">Read case study</a>
-          <hr>
-        </div>
-      </article>
+      <a class="tile-link" href="./small-scale-2-stroke-engine-idp2.html">
+        <article class="tile">
+          <img src="../assets/MDA.jpg" alt="CAD model of a small-scale 2-stroke engine"
+               width="600" height="400" loading="lazy" decoding="async">
+          <div class="meta">
+            <h3>Small-Scale 2-Stroke Engine (IDP2)</h3>
+            <p>Designing and modelling a compact 2-stroke engine.</p>
+            <hr>
+          </div>
+        </article>
+      </a>
+
+      <a class="tile-link" href="./wooden-bridge-idp1a.html">
+        <article class="tile">
+          <img src="../assets/bridge.jpg" alt="Wooden bridge load test — 2.4 kN vs 1.1 kN spec"
+               width="600" height="400" loading="lazy" decoding="async">
+          <div class="meta">
+            <h3>Wooden Bridge (IDP1 A)</h3>
+            <p>Withstood <strong>2.4 kN</strong> vs 1.1 kN pass; highest in cohort.</p>
+            <hr>
+          </div>
+        </article>
+      </a>
+
+      <a class="tile-link" href="./pneumatic-piston-model-idp1b.html">
+        <article class="tile">
+          <img src="../assets/piston.jpg" alt="Parametric CAD model of a pneumatic piston with assembly drawings"
+               width="600" height="400" loading="lazy" decoding="async">
+          <div class="meta">
+            <h3>Pneumatic Piston Model (IDP1 B)</h3>
+            <p>Parametric modelling and assembly drawings for a pneumatic piston.</p>
+            <hr>
+          </div>
+        </article>
+      </a>
 
     </div>
   </div>
 </main>
 
-<footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
+<footer class="site-footer">
+  <div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div>
+</footer>
 
 <script>
-  // Smooth scroll for same-page anchors only
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click',e=>{
-      const id=a.getAttribute('href').slice(1), el=document.getElementById(id);
-      if(!el) return;
-      e.preventDefault();
-      const y=el.getBoundingClientRect().top + window.scrollY - 72;
-      window.scrollTo({top:y,behavior:'smooth'});
-    });
-  });
-
-  // Drawer controls
+  // Drawer controls (kept simple)
   const drawer = document.getElementById('drawer');
   const openBtn = document.getElementById('openDrawer');
   const closeBtn = document.getElementById('closeDrawer');
@@ -163,6 +226,5 @@
   // Footer year
   const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
 </script>
-
 </body>
 </html>
