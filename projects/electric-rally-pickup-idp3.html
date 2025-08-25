@@ -4,27 +4,34 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Electric Rally Pickup — Toyota Hilux (IDP3) | By Diljit Singh, MEng</title>
-  <meta name="description" content="Led a 30-person team to convert Toyota’s Hilux into a fully electric rally truck for Dakar. I was Team Leader and Mechanical subgroup lead (suspension, steering, braking, tyres, vehicle dynamics)." />
+
+  <!-- SEO -->
+  <meta name="description" content="Portfolio project: Electric Rally Pickup — Led a 30-person multidisciplinary team to design a Toyota Hilux EV concept for the Dakar Rally. Focused on suspension, steering, braking, tyres, and vehicle dynamics." />
   <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/projects/electric-rally-pickup-idp3.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="By Diljit Singh" />
   <meta property="og:title" content="Electric Rally Pickup — Toyota Hilux (IDP3)" />
-  <meta property="og:description" content="30-person multidisciplinary project. Team Leader + Mechanical subgroup lead. Suspension, steering, braking, tyres, vehicle dynamics." />
+  <meta property="og:description" content="Led a 30-person team to design a Toyota Hilux EV concept for Dakar 2028." />
   <meta property="og:image" content="../assets/hero-hilux-ev.jpg" />
+
   <link rel="stylesheet" href="../styles.css" />
 
   <style>
-    /* ---------- Page-local styles (kept minimal) ---------- */
+    /* ---------- Page-local polish ---------- */
     :root{ --pad:28px; }
-    .page{ padding-block:24px 28px; }
-    .section{ margin-top:28px; }
+    .page{ padding-block:24px 32px; }
+    /* Consistent vertical rhythm ~44px between sections */
+    .section{ margin-top:44px; }
+    .section:first-of-type{ margin-top:12px; }
+
     .narrow{ max-width:880px; }
-    /* prevent homepage .hero styling leaking here */
+
+    /* Prevent homepage .hero from bleeding into this page */
     .project-hero{ background:transparent; color:inherit; padding:0; }
     .project-hero img{ width:100%; height:auto; display:block; border-radius:14px; }
     .caption{ font-size:.9rem; color:#666; margin-top:.5rem; }
 
-    /* badges (pills) */
+    /* Badges (pills) */
     .badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
     .badge{
       display:inline-flex; align-items:center; gap:8px;
@@ -43,18 +50,25 @@
     .kpi h3{ margin:0 0 4px; font-size:1rem; }
     .kpi p{ margin:0; color:#333 }
 
-    /* leadership quote */
+    /* Leadership quote + impact box */
     .quote{
       border-left:4px solid #111; padding:10px 14px; background:#FAFAFA; border-radius:8px;
       font-style:italic;
     }
+    .impact{
+      background:#F6F7F9; border:1px solid #E6E8EB; border-radius:12px; padding:14px 16px;
+      margin-top:14px;
+    }
+    .impact ul{ margin:8px 0 0; padding-left:18px; }
+    .impact li b{ font-weight:800; }
 
-    /* accordion */
+    /* Accordion for technical contributions */
     .accordion details{
       border:1px solid var(--grey-2); border-radius:12px; padding:12px 14px; background:#FAFAFA;
     }
     .accordion details+details{ margin-top:10px; }
-    .accordion summary{ cursor:pointer; font-weight:600; list-style:none; }
+    .accordion summary{ cursor:pointer; list-style:none; }
+    .accordion summary h3{ display:inline; margin:0; font-size:1.05rem; font-weight:700; }
     .accordion summary::-webkit-details-marker{ display:none; }
     .accordion summary::after{ content:"▸"; float:right; transition:transform .2s ease; }
     .accordion details[open] summary::after{ transform:rotate(90deg); }
@@ -62,9 +76,9 @@
     .tech-visual img{ width:100%; height:auto; display:block; border-radius:10px; }
     .tech-visual .caption{ margin-top:.35rem }
 
-    /* results stats */
+    /* Results stats row */
     .stats{
-      display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+      display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
       margin-top:8px;
     }
     .stat{
@@ -73,22 +87,38 @@
     .stat .num{ font-size:1.6rem; font-weight:800; line-height:1; }
     .stat .cap{ margin-top:4px; opacity:.9 }
 
-    /* gallery */
-    .gallery{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
+    /* Download buttons section */
+    .downloads .btn-dark{ margin-right:10px; margin-bottom:10px; }
+    .btn:hover{ filter:brightness(0.95); }
+    .btn-dark:hover{ filter:brightness(1.1); }
+
+    /* Visuals grid (2x2 on desktop) */
+    .gallery{ display:grid; gap:14px; grid-template-columns:1fr; }
     .gallery figure{ margin:0 }
     .gallery img{ width:100%; height:auto; display:block; border-radius:12px; }
     .gallery figcaption{ margin-top:.45rem; color:#666; font-size:.9rem }
+    @media (min-width:760px){
+      .gallery{ grid-template-columns:1fr 1fr; }
+    }
 
-    /* nav footer */
-    .nextprev{ display:flex; gap:10px; justify-content:space-between; margin-top:24px; flex-wrap:wrap; }
+    /* Nav thumbnails above buttons */
+    .nav-thumbs{
+      display:grid; gap:12px; grid-template-columns:1fr 1fr;
+      margin-bottom:10px;
+    }
+    .nav-thumbs a{ display:flex; gap:10px; align-items:center; text-decoration:none; color:inherit; }
+    .nav-thumbs img{ width:72px; height:48px; object-fit:cover; border-radius:8px; display:block; }
+    .nav-thumbs span{ font-weight:600; line-height:1.2; }
 
-    /* header button stays above drawer */
+    /* Keep hamburger above drawer */
     .hamburger{ position:fixed; top:16px; right:var(--gutter); z-index:1001; }
+    /* Tidy list spacing under H2s */
+    .section h2 + ul{ margin-top:10px; }
   </style>
 </head>
 <body>
 
-  <!-- Header (kept from site) -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="../" aria-label="Home">
@@ -126,7 +156,6 @@
 
       <div class="badges" aria-label="Project badges">
         <span class="badge" title="Team size">
-          <!-- people icon -->
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11a4 4 0 10-8 0 4 4 0 008 0zm-6 5a6 6 0 00-6 6h2a4 4 0 014-4h4a4 4 0 014 4h2a6 6 0 00-6-6H10z" fill="currentColor"/></svg>
           Team size: 30
         </span>
@@ -136,7 +165,7 @@
         </span>
         <span class="badge" title="Duration">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10v2H7V2zm12 4H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2zm0 14H5V10h14v10z" fill="currentColor"/></svg>
-          Duration: Sept-May
+          Duration: Sept–May
         </span>
         <span class="badge" title="Tools">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3l3 3L8 19H5v-3l9.7-9.7zM17 2l5 5-2.3 2.3-5-5L17 2z" fill="currentColor"/></svg>
@@ -145,7 +174,7 @@
       </div>
 
       <figure style="margin-top:12px">
-        <img src="../assets/hero-hilux-ev.jpg" alt="Final concept render of the Toyota Hilux Electric Rally Pickup" width="1200" height="800" loading="eager" decoding="async">
+        <img src="../assets/hero-hilux-ev.jpg" alt="Toyota Hilux EV rally truck concept for Dakar 2028 — exterior render, red livery" width="1200" height="800" loading="eager" decoding="async">
         <figcaption class="caption">Concept image of our Dakar truck (ChatGPT-generated visual for illustration).</figcaption>
       </figure>
     </section>
@@ -153,7 +182,7 @@
     <!-- 2) CONTEXT & CHALLENGE -->
     <section class="section">
       <h2>Context &amp; Challenge</h2>
-      <p>The Dakar Rally is one of the toughest off-road events on earth. Rally contenders have traditionally been ICE-powered; our challenge was to electrify a Hilux for a <strong>2028 Dakar</strong> entry using Toyota’s next-gen solid-state battery. Beyond performance, the brief served a broader sustainability goal: demonstrate that <strong>EVs can survive extreme endurance racing</strong> and still be fast, safe, and serviceable.</p>
+      <p>The Dakar Rally is one of the toughest off-road events on earth. Rally contenders have traditionally been ICE-powered; our challenge was to electrify a Hilux for a <strong>2028 Dakar</strong> entry using Toyota’s next-gen solid-state battery. Beyond performance, the brief served a broader sustainability goal: prove that <strong>EVs can survive extreme endurance racing</strong> while staying fast, safe, and serviceable.</p>
     </section>
 
     <!-- 3) OBJECTIVES & KPIs -->
@@ -161,22 +190,18 @@
       <h2>Objectives &amp; KPIs</h2>
       <div class="kpi-grid">
         <div class="kpi">
-          <!-- speed icon -->
           <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-9 9h2a7 7 0 1114 0h2a9 9 0 00-9-9zm-1 9V6h2v6h-2z" fill="currentColor"/></svg>
           <div><h3>Performance</h3><p>0–100 &lt; 6 s, top speed &gt; 200 km/h.</p></div>
         </div>
         <div class="kpi">
-          <!-- durability icon -->
           <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.8 9.7-8 10-4.2-.3-8-5-8-10V6l8-4z" fill="currentColor"/></svg>
           <div><h3>Durability</h3><p>Survive 500–800 km rally stages with extreme loads.</p></div>
         </div>
         <div class="kpi">
-          <!-- safety icon -->
           <svg viewBox="0 0 24 24"><path d="M12 2l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V6l9-4zm0 5l6 2v3c0 3.6-2.6 6.9-6 7.9-3.4-1-6-4.3-6-7.9V9l6-2z" fill="currentColor"/></svg>
           <div><h3>Safety</h3><p>FIA roll cage compliance, crashworthiness, HV battery safety.</p></div>
         </div>
         <div class="kpi">
-          <!-- sustainability icon -->
           <svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11s4 9 9 9 9-4 9-9-4-9-9-9zm-1 14H8a6 6 0 017-7v3a4 4 0 01-4 4z" fill="currentColor"/></svg>
           <div><h3>Sustainability</h3><p>Solid-state battery, regenerative suspension, zero tailpipe emissions.</p></div>
         </div>
@@ -186,53 +211,62 @@
     <!-- 4) MY ROLE & LEADERSHIP -->
     <section class="section">
       <h2>My Role &amp; Leadership</h2>
-      <p>I was elected <strong>Team Leader</strong> for the full 30-person cohort. I chaired weekly stand-ups, resolved cross-group conflicts, and kept interfaces aligned across six sub-teams. I authored shared documentation and review standards to keep design quality consistent. Within the <strong>Mechanical subgroup</strong>, which focused on suspension, steering, braking, tyres, and vehicle dynamics, I contributed to the suspension CAD, vehicle dynamics, risk assessment and wider implications.</p>
+      <p>I was elected <strong>Team Leader</strong> for the 30-person cohort. I chaired weekly stand-ups, resolved cross-group conflicts, and kept interfaces aligned across six sub-teams. I authored shared documentation and review standards to keep design quality consistent. Within the <strong>Mechanical subgroup</strong> (suspension, steering, braking, tyres, vehicle dynamics), I contributed CAD/kinematics, vehicle-dynamics calculations, risk assessment and integration.</p>
       <p class="quote">“I balanced technical design with team leadership, ensuring 6 subgroups integrated into one working concept.”</p>
+
+      <!-- Leadership Impact Callout -->
+      <div class="impact">
+        <ul>
+          <li><b>30</b> teammates across <b>6</b> specialist groups coordinated</li>
+          <li>Delivered <b>3</b> reports &amp; <b>1</b> final presentation on time</li>
+          <li>Maintained subsystem integration with <b>0</b> missed deadlines</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- 5) TECHNICAL CONTRIBUTIONS (accordion) -->
+    <!-- 5) TECHNICAL CONTRIBUTIONS -->
     <section class="section accordion">
       <h2>Technical Contributions</h2>
 
       <details>
-        <summary>Suspension</summary>
+        <summary><h3>Suspension</h3></summary>
         <p>Double wishbone front and rear with <strong>350&nbsp;mm</strong> travel, tuned to around <strong>2&nbsp;Hz</strong> ride frequency for predictable handling on loose terrain. We explored regenerative dampers targeting <strong>~2–5&nbsp;kW</strong> per wheel in heavy compression events.</p>
         <div class="tech-visual">
-          <img src="../assets/suspension-model.png" alt="Double-wishbone suspension CAD/kinematics model">
-          <div class="caption">Double wishbone CAD model.</div>
+          <img src="../assets/suspension-model.png" alt="Double-wishbone CAD and kinematics model for long-travel suspension">
+          <div class="caption">Kinematics/packaging study for long-travel double wishbone.</div>
         </div>
       </details>
 
       <details>
-        <summary>Steering</summary>
+        <summary><h3>Steering</h3></summary>
         <p>Electro-hydraulic power steering rack sized for off-road loads, capable of &gt;<strong>11,500&nbsp;Nm</strong> wheel torque. Ratios chosen to balance quick inputs at speed with stability and feedback.</p>
         <div class="tech-visual">
-          <img src="../assets/steering-schematic.png" alt="EHPS steering schematic (rack, pump, controller)">
-          <div class="caption">EHPS concept model.</div>
+          <img src="../assets/steering-schematic.png" alt="Architecture diagram for electro-hydraulic steering rack, pump, and controller">
+          <div class="caption">EHPS concept schematic and load envelope.</div>
         </div>
       </details>
 
       <details>
-        <summary>Braking</summary>
-        <p>Brembo 6-piston front / 4-piston rear with vented rotors; deceleration target <strong>7.7&nbsp;m·s⁻²</strong>. Thermal/structural checks via FEA confirmed margin for repeated high-speed stops.</p>
+        <summary><h3>Braking</h3></summary>
+        <p>Brembo 6-piston front / 4-piston rear with vented rotors; deceleration target <strong>7.7&nbsp;m·s⁻²</strong>. Thermal/structural FEA confirmed margin for repeated high-speed stops.</p>
         <div class="tech-visual">
-          <img src="../assets/brake-thermal.png" alt="Brake rotor thermal/structural FEA">
+          <img src="../assets/brake-thermal.png" alt="Brake rotor thermal and structural FEA visualisation under rally duty cycles">
           <div class="caption">Thermal/structural FEA snapshot of front rotor.</div>
         </div>
       </details>
 
       <details>
-        <summary>Tyres</summary>
+        <summary><h3>Tyres</h3></summary>
         <p>BFGoodrich Dakar All-Terrain on beadlock wheels for low-pressure running in sand/rock, balancing endurance, puncture resistance, and grip.</p>
         <div class="tech-visual">
-          <img src="../assets/tyre-spec.png" alt="Tyre/wheel specification for rally stages">
+          <img src="../assets/tyre-spec.png" alt="Tyre and beadlock wheel specification for low-pressure sand/rock stages">
           <div class="caption">Tyre &amp; beadlock selection for low-pressure stages.</div>
         </div>
       </details>
 
       <details>
-        <summary>Vehicle Dynamics</summary>
-        <p>Mass distribution targeted at <strong>50:50</strong> including a central ~<strong>1,200&nbsp;kg</strong> battery pack. Stability analysis and envelope trade-offs performed with MATLAB &amp; GP100.</p>
+        <summary><h3>Vehicle Dynamics</h3></summary>
+        <p>Mass distribution targeted at <strong>50:50</strong>, including a central ~<strong>1,200&nbsp;kg</strong> battery pack. Stability analysis and envelope trade-offs performed with MATLAB &amp; GP100.</p>
       </details>
     </section>
 
@@ -245,13 +279,21 @@
         <div class="stat"><div class="num">1.2–1.5 g</div><div class="cap">Lateral Grip (target)</div></div>
         <div class="stat"><div class="num">&lt; few min</div><div class="cap">Battery Swap Time</div></div>
       </div>
-      <p style="margin-top:10px">Delivered a validated concept with suspension/brake FEA, an integration plan across six subgroups, and a concise business case for Toyota to launch an EV Dakar entry in 2028.This included a presentation, report and regenerative damper prototype.</p>
+      <p style="margin-top:10px">Delivered a validated concept with suspension/brake FEA, an integration plan across six subgroups, and a concise business case for Toyota to launch an EV Dakar entry in 2028.</p>
+    </section>
+
+    <!-- Downloads (after outcomes, before reflections) -->
+    <section class="section downloads">
+      <h2>Downloads</h2>
+      <a class="btn-dark" href="/pdfs/team-presentation.pdf" target="_blank" rel="noopener">Download Team Presentation (PDF)</a>
+      <a class="btn-dark" href="/pdfs/team-report.pdf" target="_blank" rel="noopener">Download Team-Level Report (PDF)</a>
+      <a class="btn-dark" href="/pdfs/mechanical-group-report.pdf" target="_blank" rel="noopener">Download Mechanical Group Report (PDF)</a>
     </section>
 
     <!-- 7) REFLECTIONS -->
     <section class="section">
       <h2>Reflections &amp; Learnings</h2>
-      <ul>
+      <ul style="margin-top:10px">
         <li>Led a large multidisciplinary team under time pressure.</li>
         <li>Balanced technical depth with project management and communication.</li>
         <li>Subsystem interface management is critical for pace and quality.</li>
@@ -259,35 +301,47 @@
       </ul>
     </section>
 
-    <!-- 8) VISUALS GALLERY -->
+    <!-- 8) VISUALS (2x2 grid) -->
     <section class="section">
       <h2>Visuals</h2>
       <div class="gallery">
         <figure>
-          <img src="../assets/hero-hilux-ev.jpg" alt="Final CAD/render of Hilux EV rally concept">
-          <figcaption>Final render / concept visual of the Hilux EV rally truck.</figcaption>
+          <img src="../assets/hero-hilux-ev.jpg" alt="Toyota Hilux EV rally truck concept for Dakar 2028 — final render">
+          <figcaption>Toyota Hilux EV rally truck concept for Dakar 2028.</figcaption>
         </figure>
         <figure>
-          <img src="../assets/suspension-fea.png" alt="Suspension FEA stress plot">
-          <figcaption>Suspension FEA: peak stress regions and safety factors.</figcaption>
+          <img src="../assets/suspension-fea.png" alt="Suspension FEA stress plot validating wishbone strength up to 16g Dakar loads">
+          <figcaption>Validated wishbone strength under extreme Dakar loads (up to 16g).</figcaption>
         </figure>
         <figure>
-          <img src="../assets/steering-braking.png" alt="Steering and braking schematic">
-          <figcaption>Steering/braking architecture overview.</figcaption>
+          <img src="../assets/steering-braking.png" alt="Architecture diagram showing electro-hydraulic steering and Brembo braking system">
+          <figcaption>Architecture diagram showing electro-hydraulic steering and Brembo braking system.</figcaption>
         </figure>
         <figure>
-          <img src="../assets/risk-matrix.png" alt="Risk assessment snapshot">
-          <figcaption>Risk assessment matrix (top technical & program risks).</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/gantt.png" alt="Project Gantt chart">
-          <figcaption>Programme Gantt and key integration milestones.</figcaption>
+          <img src="../assets/risk-matrix.png" alt="Risk matrix highlighting top technical and program delivery risks">
+          <figcaption>Risk matrix highlighting top technical and program delivery risks.</figcaption>
         </figure>
       </div>
+      <figure style="margin-top:14px">
+        <img src="../assets/gantt.png" alt="Project Gantt chart with milestones: kickoff, subsystem design, FEA, final delivery" style="width:100%;height:auto;display:block;border-radius:12px">
+        <figcaption class="caption">Timeline of major milestones: kickoff, subsystem design, FEA, final delivery.</figcaption>
+      </figure>
     </section>
 
     <!-- 9) NAV FOOTER -->
     <section class="section">
+      <!-- Thumbnails -->
+      <div class="nav-thumbs">
+        <a href="./green-hydrogen-plant-idp2.html">
+          <img src="../assets/idp2.jpg" alt="Thumbnail — Green Hydrogen Plant (IDP2)">
+          <span>Previous: Green Hydrogen Plant</span>
+        </a>
+        <a href="./wankel-engine-transmission-gearbox-mdb.html">
+          <img src="../assets/MDB.jpg" alt="Thumbnail — Wankel Engine Transmission (MDB)">
+          <span>Next: Wankel Engine Transmission</span>
+        </a>
+      </div>
+      <!-- Buttons -->
       <div class="nextprev">
         <a class="btn" href="./green-hydrogen-plant-idp2.html">← Previous Project</a>
         <a class="btn-dark" href="./wankel-engine-transmission-gearbox-mdb.html">Next Project →</a>
@@ -305,7 +359,7 @@
     // Footer year
     const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
 
-    // Drawer controls (same behaviour site-wide)
+    // Drawer controls
     const drawer=document.getElementById('drawer'), openBtn=document.getElementById('openDrawer'),
           closeBtn=document.getElementById('closeDrawer'), backdrop=document.getElementById('backdrop');
     function openDrawerFn(){drawer.classList.add('open');backdrop.hidden=false;document.documentElement.classList.add('drawer-open');openBtn?.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
