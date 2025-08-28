@@ -1,70 +1,325 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Thin Plate with Hole (MDB) — By Diljit Singh</title>
-  <link rel="stylesheet" href="../styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thin Plate with Hole — FEA Mesh Study (Abaqus) | By Diljit Singh, MEng</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Portfolio project: Thin Plate with Hole — Finite Element Analysis (Abaqus) of an Inconel 718 plate with a central hole under 20 kN and 85 kN tension. Mesh-density study (46–8890 elements), convergence ~1000 elements, validated against Kt≈2.06 theory." />
+  <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/projects/thin-plate-with-hole-fea.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="By Diljit Singh" />
+  <meta property="og:title" content="Thin Plate with Hole — FEA Mesh Study (Abaqus)" />
+  <meta property="og:description" content="Mesh convergence on a thin plate with a central hole; Inconel 718; validation vs. theory; Abaqus CAE + MATLAB." />
+  <meta property="og:image" content="../assets/FEA/hero-plate-hole.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="mask-icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/safari-pinned-tab.svg" color="#111111">
+  <meta name="theme-color" content="#111111">
+
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    /* ---------- Page-local polish ---------- */
+    .page{ padding-block:24px 32px; }
+    .section{ margin-top:44px; }
+    .section:first-of-type{ margin-top:12px; }
+    .narrow{ max-width:880px; }
+
+    /* Prevent homepage .hero bleed */
+    .project-hero{ background:transparent; color:inherit; padding:0; }
+    .project-hero img{ width:100%; height:auto; display:block; border-radius:14px; }
+    .caption{ font-size:.9rem; color:#666; margin-top:.5rem; }
+
+    /* Badges */
+    .badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .badge{ display:inline-flex; align-items:center; gap:8px; padding:.35rem .65rem; border-radius:999px; background:#F2F4F7; border:1px solid #E5E7EB; font-size:.9rem; }
+    .badge svg{ width:16px; height:16px }
+
+    /* KPIs */
+    .kpi-grid{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+    .kpi{ background:#fff; border:1px solid var(--grey-2); border-radius:12px; padding:14px 16px; display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:start; }
+    .kpi svg{ width:22px; height:22px; opacity:.8; margin-top:2px; }
+    .kpi h3{ margin:0 0 4px; font-size:1rem; }
+    .kpi p{ margin:0; color:#333 }
+
+    /* Quote + impact (reuse pattern) */
+    .quote{ border-left:4px solid #111; padding:10px 14px; background:#FAFAFA; border-radius:8px; font-style:italic; }
+    .impact{ background:#F6F7F9; border:1px solid #E6E8EB; border-radius:12px; padding:14px 16px; margin-top:14px; }
+    .impact ul{ margin:8px 0 0; padding-left:18px; }
+    .impact li b{ font-weight:800; }
+
+    /* Accordion */
+    .accordion details{ border:1px solid var(--grey-2); border-radius:12px; padding:12px 14px; background:#FAFAFA; }
+    .accordion details+details{ margin-top:10px; }
+    .accordion summary{ cursor:pointer; list-style:none; }
+    .accordion summary h3{ display:inline; margin:0; font-size:1.05rem; font-weight:700; }
+    .accordion summary::-webkit-details-marker{ display:none; }
+    .accordion summary::after{ content:"▸"; float:right; transition:transform .2s ease; }
+    .accordion details[open] summary::after{ transform:rotate(90deg); }
+    .tech-visual{ margin-top:10px }
+    .tech-visual img{ width:100%; height:auto; display:block; border-radius:10px; }
+    .tech-visual .caption{ margin-top:.35rem }
+
+    /* Results stats */
+    .stats{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); margin-top:8px; }
+    .stat{ background:#0B1B3B; color:#fff; border-radius:14px; padding:16px; text-align:center; }
+    .stat .num{ font-size:1.6rem; font-weight:800; line-height:1; }
+    .stat .cap{ margin-top:4px; opacity:.9 }
+
+    /* Downloads + buttons */
+    .downloads .btn-dark{ margin-right:10px; margin-bottom:10px; }
+    .btn:hover{ filter:brightness(0.95); }
+    .btn-dark:hover{ filter:brightness(1.1); }
+
+    /* Visuals grid (2x2 on desktop) */
+    .gallery{ display:grid; gap:14px; grid-template-columns:1fr; }
+    .gallery figure{ margin:0 }
+    .gallery img{ width:100%; height:auto; display:block; border-radius:12px; }
+    .gallery figcaption{ margin-top:.45rem; color:#666; font-size:.9rem }
+    @media (min-width:760px){ .gallery{ grid-template-columns:1fr 1fr; } }
+
+    /* Nav thumbs */
+    .nav-thumbs{ display:grid; gap:12px; grid-template-columns:1fr 1fr; margin-bottom:10px; }
+    .nav-thumbs a{ display:flex; gap:10px; align-items:center; text-decoration:none; color:inherit; }
+    .nav-thumbs img{ width:72px; height:48px; object-fit:cover; border-radius:8px; display:block; }
+    .nav-thumbs span{ font-weight:600; line-height:1.2; }
+
+    .hamburger{ position:fixed; top:16px; right:var(--gutter); z-index:1001; }
+    .section h2 + ul{ margin-top:10px; }
+  </style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="../">
-      <img src="../assets/logo.svg" width="28" height="28" alt="">
-      <span>bydiljitsingh</span>
-    </a>
-    <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../" aria-label="Home">
+        <picture>
+          <source srcset="../assets/logo.svg" type="image/svg+xml">
+          <img src="../assets/logo.png" alt="bydiljitsingh logo" width="28" height="28" />
+        </picture>
+        <span>bydiljitsingh</span>
+      </a>
+      <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-<aside id="drawer" class="drawer" aria-hidden="true">
-  <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
-  <nav class="drawer-nav" aria-label="Off-canvas">
-    <a href="../projects/">Projects</a>
-    <a href="../wiki/">My Wiki</a>
-    <a href="../toolkit/">Toolkit</a>
-    <a href="../cv/">CV</a>
-    <a href="../#contact">Contact</a>
-  </nav>
-</aside>
-<div id="backdrop" class="backdrop" hidden></div>
+  <!-- Drawer -->
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
+    <nav class="drawer-nav" aria-label="Off-canvas">
+      <a href="../projects/">Projects</a>
+      <a href="../wiki/">My Wiki</a>
+      <a href="../toolkit/">Toolkit</a>
+      <a href="../cv/">CV</a>
+      <a href="../#contact">Contact</a>
+    </nav>
+  </aside>
+  <div id="backdrop" class="backdrop" hidden></div>
 
-<main class="section container narrow">
-  <h1>Thin Plate with Hole (MDB)</h1>
-  <p class="section-sub">Conducting Finite Element Analysis on a Thin Plate with Hole</p>
+  <main class="page container narrow">
 
-  <img src="../assets/fea.jpg" alt="Thin Plate with Hole" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--grey-2)">
+    <!-- HERO -->
+    <section class="project-hero">
+      <h1>Thin Plate with Hole — FEA Mesh Study (Abaqus)</h1>
+      <p>FEA of a thin Inconel 718 plate with a central hole under <strong>20&nbsp;kN</strong> tension, then <strong>85&nbsp;kN</strong> after convergence. Mesh sweep from <strong>46</strong> to <strong>8,890</strong> elements; validation against stress-concentration theory.</p>
 
-  <div class="prose" style="margin-top:1rem">
-    <h2>Brief</h2>
-    <p>Design an electric rally pickup platform for Dakar-style conditions with a modular, swappable energy pack.</p>
+      <div class="badges" aria-label="Project badges">
+        <span class="badge" title="Team size">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11a4 4 0 10-8 0 4 4 0 008 0zm-6 5a6 6 0 00-6 6h2a4 4 0 014-4h4a4 4 0 014 4h2a6 6 0 00-6-6H10z" fill="currentColor"/></svg>
+          Solo project
+        </span>
+        <span class="badge" title="Role">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6 6 .9-4.5 4.2L17.8 20 12 16.9 6.2 20l1.3-6.9L3 8.9 9 8l3-6z" fill="currentColor"/></svg>
+          Role: FEA Analyst
+        </span>
+        <span class="badge" title="Duration">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10v2H7V2zm12 4H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2zm0 14H5V10h14v10z" fill="currentColor"/></svg>
+          Duration: [insert dates]
+        </span>
+        <span class="badge" title="Tools">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3l3 3L8 19H5v-3l9.7-9.7zM17 2l5 5-2.3 2.3-5-5L17 2z" fill="currentColor"/></svg>
+          Tools: Abaqus/CAE, MATLAB
+        </span>
+      </div>
 
-    <h2>Scope</h2>
-    <ul>
-      <li>Vehicle dynamics targets; suspension kinematics; steering geometry.</li>
-      <li>Braking system sizing and thermal considerations; tyre selection rationale.</li>
-    </ul>
+      <figure style="margin-top:12px">
+        <img src="../assets/FEA/hero-plate-hole.png" alt="Abaqus von Mises stress contour of a thin plate with central hole under tension; high stresses around hole perimeter" width="1200" height="800" loading="eager" decoding="async">
+        <figcaption class="caption">Von Mises stress contour at converged mesh density.</figcaption>
+      </figure>
+    </section>
 
-    <h2>Highlights</h2>
-    <ul>
-      <li>Defined roll gradient / ride targets for mixed terrain.</li>
-      <li>Front and rear suspension geometry trade-offs (travel vs packaging).</li>
-      <li>Preliminary brake thermal load model for stage distances.</li>
-    </ul>
+    <!-- CONTEXT -->
+    <section class="section">
+      <h2>Context &amp; Challenge</h2>
+      <p>A plate-with-hole is a classic FEA benchmark. Here, an <strong>Inconel&nbsp;718</strong> plate is tensioned to <strong>20&nbsp;kN</strong> (and then <strong>85&nbsp;kN</strong>) to study how <strong>mesh density</strong> affects the predicted peak stress at the hole. The model uses <strong>quarter symmetry</strong> to cut solve time without losing fidelity.</p>
+    </section>
 
-    <p><a class="link" href="./">← Back to all projects</a></p>
-  </div>
-</main>
+    <!-- KPIs -->
+    <section class="section">
+      <h2>Objectives &amp; KPIs</h2>
+      <div class="kpi-grid">
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-9 9h2a7 7 0 1114 0h2a9 9 0 00-9-9zm-1 9V6h2v6h-2z" fill="currentColor"/></svg>
+          <div><h3>Accuracy</h3><p>Converge σ<sub>max</sub> ≈ 1.7×10⁸ Pa near ~1000 elements.</p></div>
+        </div>
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.8 9.7-8 10-4.2-.3-8-5-8-10V6l8-4z" fill="currentColor"/></svg>
+          <div><h3>Efficiency</h3><p>Keep solve time around ~8 s at the optimal mesh (600–1200 elems).</p></div>
+        </div>
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 2l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V6l9-4zm0 5l6 2v3c0 3.6-2.6 6.9-6 7.9-3.4-1-6-4.3-6-7.9V9l6-2z" fill="currentColor"/></svg>
+          <div><h3>Validation</h3><p>Check against K<sub>t</sub> ≈ 2.06 theory → σ<sub>max,th</sub> ≈ 1.79×10⁸ Pa.</p></div>
+        </div>
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11s4 9 9 9 9-4 9-9-4-9-9-9zm-1 14H8a6 6 0 017-7v3a4 4 0 01-4 4z" fill="currentColor"/></svg>
+          <div><h3>Robustness</h3><p>Symmetry BCs and displacement contours reviewed.</p></div>
+        </div>
+      </div>
+    </section>
 
-<footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
-<script>
-  const drawer=document.getElementById('drawer'), openBtn=document.getElementById('openDrawer'), closeBtn=document.getElementById('closeDrawer'), backdrop=document.getElementById('backdrop');
-  function openDrawer(){drawer.classList.add('open');backdrop.hidden=false;openBtn?.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
-  function closeDrawer(){drawer.classList.remove('open');backdrop.hidden=true;openBtn?.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true');document.body.style.overflow=''}
-  openBtn?.addEventListener('click',openDrawer);closeBtn?.addEventListener('click',closeDrawer);backdrop?.addEventListener('click',closeDrawer);window.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()})
-  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
-</script>
+    <!-- METHOD / MY ROLE -->
+    <section class="section">
+      <h2>My Role &amp; Method</h2>
+      <p>I set up the model, applied symmetry boundary conditions, swept five mesh densities (46 → 8890 elements), logged runtime and σ<sub>max</sub>, validated vs. theory, and then re-ran at <strong>85&nbsp;kN</strong> using the optimal mesh.</p>
+      <p class="quote">“Find the point where more elements no longer change the answer — then ship the right mesh, not the biggest mesh.”</p>
+    </section>
+
+    <!-- TECHNICAL CONTRIBUTIONS -->
+    <section class="section accordion">
+      <h2>Technical Contributions</h2>
+
+      <details>
+        <summary><h3>Geometry &amp; Boundary Conditions</h3></summary>
+        <p>Quarter model with symmetry on the mid-planes; pressure load applied to the tension face. This reduces DOFs while preserving the hotspot around the hole.</p>
+        <div class="tech-visual">
+          <img src="../assets/FEA/bc-quarter-model.png" alt="Quarter model of plate with hole showing symmetry boundary conditions and tensile loading">
+          <div class="caption">Quarter model &amp; BCs for efficiency.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><h3>Material Model</h3></summary>
+        <p>Inconel 718: E = 200&nbsp;GPa, ν = 0.3; yield ≈ 1186&nbsp;MPa, UTS ≈ 1400&nbsp;MPa (context for stress levels).</p>
+      </details>
+
+      <details>
+        <summary><h3>Meshing Strategy</h3></summary>
+        <p>Auto-meshing used consistently across five ranges: 46, 230, 982, 4028, 8890 elements. Convergence observed near ~1000 elements with diminishing returns beyond that.</p>
+        <div class="tech-visual">
+          <img src="../assets/FEA/mesh-low-vs-high.png" alt="Comparison of coarse and fine meshes around the hole; element refinement improves stress resolution">
+          <div class="caption">Coarse vs. fine mesh around the hole.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><h3>Results &amp; Validation</h3></summary>
+        <p>σ<sub>max</sub> rose from 1.36×10⁸ Pa (46 elems) to 1.73×10⁸ Pa (8890 elems). Using <em>K</em><sub>t</sub> ≈ 2.06, the closed-form estimate is ≈1.79×10⁸ Pa — close to the converged FEA result.</p>
+        <div class="tech-visual">
+          <img src="../assets/FEA/convergence-plot.png" alt="Plot of solve time and maximum stress versus number of elements; curve plateaus near 1000 elements">
+          <div class="caption">Convergence: accuracy ↑ then plateaus; runtime rises after ~1000 elems.</div>
+        </div>
+      </details>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section class="section">
+      <h2>What I Achieved</h2>
+      <div class="stats">
+        <div class="stat"><div class="num">600–1200</div><div class="cap">Optimal Elements</div></div>
+        <div class="stat"><div class="num">≈1.70e8 Pa</div><div class="cap">σ<sub>max</sub> @ 20 kN</div></div>
+        <div class="stat"><div class="num">1.79e8 Pa</div><div class="cap">σ<sub>max</sub> (theory)</div></div>
+        <div class="stat"><div class="num">~8 s</div><div class="cap">Runtime (opt.)</div></div>
+      </div>
+      <p style="margin-top:10px">A converged, validated setup that balances accuracy with solve time, then scaled to <strong>85&nbsp;kN</strong> for displacement/contour review.</p>
+    </section>
+
+    <!-- DOWNLOADS -->
+    <section class="section downloads">
+      <h2>Downloads</h2>
+      <a class="btn-dark" href="../assets/FEA/FEA_Report_Diljit_Singh.pdf" target="_blank" rel="noopener">Download FEA Report (PDF)</a>
+    </section>
+
+    <!-- REFLECTIONS -->
+    <section class="section">
+      <h2>Reflections &amp; Learnings</h2>
+      <ul style="margin-top:10px">
+        <li>Mesh convergence beats brute-force meshing for speed and reliability.</li>
+        <li>Symmetry + simplified geometry can cut runtime dramatically.</li>
+        <li>Always benchmark against theory (K<sub>t</sub>) for sanity checks.</li>
+        <li>Next: try local refinement/manual meshing near the hole for even faster convergence.</li>
+      </ul>
+    </section>
+
+    <!-- VISUALS -->
+    <section class="section">
+      <h2>Visuals</h2>
+      <div class="gallery">
+        <figure>
+          <img src="../assets/FEA/mesh-46.png" alt="Coarse mesh (46 elements) with von Mises stress — under-resolved hotspot">
+          <figcaption>Coarse mesh (46 elems): under-resolved hotspot.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/FEA/mesh-8890.png" alt="Fine mesh (8890 elements) with von Mises stress — smooth stress band around hole">
+          <figcaption>Fine mesh (8890 elems): smooth stress band around the hole.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/FEA/displacement-contour.png" alt="Displacement contour at 85 kN — highest displacement on loaded edge">
+          <figcaption>Displacement contour at 85&nbsp;kN — peak at loaded edge.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/FEA/time-vs-stress.png" alt="Solve time vs. maximum stress curve; plateau near 1000 elements indicates convergence">
+          <figcaption>Solve time vs. σ<sub>max</sub>: plateau indicates convergence near ~1000 elems.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- NAV FOOTER -->
+    <section class="section">
+      <div class="nav-thumbs">
+        <a href="./wankel-engine-transmission-gearbox-mdb.html">
+          <img src="../assets/MDB/hero-gearbox.jpg" alt="Thumbnail — Wankel Engine Transmission (MDB)">
+          <span>Previous: Wankel Engine Transmission (MDB)</span>
+        </a>
+        <a href="./green-hydrogen-plant-idp2.html">
+          <img src="../assets/IDP2/plant-thumb.jpg" alt="Thumbnail — Green Hydrogen Plant (IDP2)">
+          <span>Next: Green Hydrogen Plant (IDP2)</span>
+        </a>
+      </div>
+      <div class="nextprev">
+        <a class="btn" href="./wankel-engine-transmission-gearbox-mdb.html">← Previous Project</a>
+        <a class="btn-dark" href="./green-hydrogen-plant-idp2.html">Next Project →</a>
+      </div>
+      <p style="margin-top:8px"><a class="link" href="./">Back to all projects</a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div>
+  </footer>
+
+  <script>
+    // Footer year
+    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+
+    // Drawer controls
+    const drawer=document.getElementById('drawer'), openBtn=document.getElementById('openDrawer'),
+          closeBtn=document.getElementById('closeDrawer'), backdrop=document.getElementById('backdrop');
+    function openDrawerFn(){drawer.classList.add('open');backdrop.hidden=false;document.documentElement.classList.add('drawer-open');openBtn?.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+    function closeDrawerFn(){drawer.classList.remove('open');backdrop.hidden=true;document.documentElement.classList.remove('drawer-open');openBtn?.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+    openBtn?.addEventListener('click', openDrawerFn);
+    closeBtn?.addEventListener('click', closeDrawerFn);
+    backdrop?.addEventListener('click', closeDrawerFn);
+    window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawerFn(); });
+  </script>
 </body>
 </html>
