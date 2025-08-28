@@ -1,70 +1,364 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Wankel Engine Transmission (MDB) — By Diljit Singh</title>
-  <link rel="stylesheet" href="../styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wankel Engine Transmission — Aero-Engine Speed Reducer (MDB) | By Diljit Singh, MEng</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Portfolio project: Wankel Engine Transmission — Designed an aero-engine speed-reducer gearbox for a Wankel engine, reducing 6500–7000 rpm to 2000 rpm at the propeller with a 3.25:1 ratio. Responsibilities: gear pair design, shafts, bearings, seals, lubrication, DFA." />
+  <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/projects/wankel-engine-transmission-gearbox-mdb.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="By Diljit Singh" />
+  <meta property="og:title" content="Wankel Engine Transmission — Aero-Engine Speed Reducer (MDB)" />
+  <meta property="og:description" content="Speed reducer gearbox for a Wankel engine. Ratio 3.25:1 to 2000 rpm, 50 hp, >2000 h bearing life." />
+  <meta property="og:image" content="../assets/MDB/hero-gearbox.jpg" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="mask-icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/safari-pinned-tab.svg" color="#111111">
+  <meta name="theme-color" content="#111111">
+
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    /* ---------- Page-local polish (same system as IDP3) ---------- */
+    :root{ --pad:28px; }
+    .page{ padding-block:24px 32px; }
+    /* Consistent vertical rhythm ~44px between sections */
+    .section{ margin-top:44px; }
+    .section:first-of-type{ margin-top:12px; }
+    .narrow{ max-width:880px; }
+
+    /* Prevent homepage .hero from bleeding into this page */
+    .project-hero{ background:transparent; color:inherit; padding:0; }
+    .project-hero img{ width:100%; height:auto; display:block; border-radius:14px; }
+    .caption{ font-size:.9rem; color:#666; margin-top:.5rem; }
+
+    /* Badges (pills) */
+    .badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:.35rem .65rem; border-radius:999px;
+      background:#F2F4F7; border:1px solid #E5E7EB; font-size:.9rem;
+    }
+    .badge svg{ width:16px; height:16px }
+
+    /* KPI grid */
+    .kpi-grid{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+    .kpi{
+      background:#fff; border:1px solid var(--grey-2); border-radius:12px; padding:14px 16px;
+      display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:start;
+    }
+    .kpi svg{ width:22px; height:22px; opacity:.8; margin-top:2px; }
+    .kpi h3{ margin:0 0 4px; font-size:1rem; }
+    .kpi p{ margin:0; color:#333 }
+
+    /* Quote + impact */
+    .quote{
+      border-left:4px solid #111; padding:10px 14px; background:#FAFAFA; border-radius:8px;
+      font-style:italic;
+    }
+    .impact{
+      background:#F6F7F9; border:1px solid #E6E8EB; border-radius:12px; padding:14px 16px;
+      margin-top:14px;
+    }
+    .impact ul{ margin:8px 0 0; padding-left:18px; }
+    .impact li b{ font-weight:800; }
+
+    /* Accordion */
+    .accordion details{
+      border:1px solid var(--grey-2); border-radius:12px; padding:12px 14px; background:#FAFAFA;
+    }
+    .accordion details+details{ margin-top:10px; }
+    .accordion summary{ cursor:pointer; list-style:none; }
+    .accordion summary h3{ display:inline; margin:0; font-size:1.05rem; font-weight:700; }
+    .accordion summary::-webkit-details-marker{ display:none; }
+    .accordion summary::after{ content:"▸"; float:right; transition:transform .2s ease; }
+    .accordion details[open] summary::after{ transform:rotate(90deg); }
+    .tech-visual{ margin-top:10px }
+    .tech-visual img{ width:100%; height:auto; display:block; border-radius:10px; }
+    .tech-visual .caption{ margin-top:.35rem }
+
+    /* Results stats */
+    .stats{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); margin-top:8px; }
+    .stat{ background:#0B1B3B; color:#fff; border-radius:14px; padding:16px; text-align:center; }
+    .stat .num{ font-size:1.6rem; font-weight:800; line-height:1; }
+    .stat .cap{ margin-top:4px; opacity:.9 }
+
+    /* Downloads + buttons */
+    .downloads .btn-dark{ margin-right:10px; margin-bottom:10px; }
+    .btn:hover{ filter:brightness(0.95); }
+    .btn-dark:hover{ filter:brightness(1.1); }
+
+    /* Visuals grid (2x2 on desktop) */
+    .gallery{ display:grid; gap:14px; grid-template-columns:1fr; }
+    .gallery figure{ margin:0 }
+    .gallery img{ width:100%; height:auto; display:block; border-radius:12px; }
+    .gallery figcaption{ margin-top:.45rem; color:#666; font-size:.9rem }
+    @media (min-width:760px){ .gallery{ grid-template-columns:1fr 1fr; } }
+
+    /* Nav thumbs above buttons */
+    .nav-thumbs{
+      display:grid; gap:12px; grid-template-columns:1fr 1fr;
+      margin-bottom:10px;
+    }
+    .nav-thumbs a{ display:flex; gap:10px; align-items:center; text-decoration:none; color:inherit; }
+    .nav-thumbs img{ width:72px; height:48px; object-fit:cover; border-radius:8px; display:block; }
+    .nav-thumbs span{ font-weight:600; line-height:1.2; }
+
+    /* Keep hamburger above drawer */
+    .hamburger{ position:fixed; top:16px; right:var(--gutter); z-index:1001; }
+    .section h2 + ul{ margin-top:10px; }
+  </style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="../">
-      <img src="../assets/logo.svg" width="28" height="28" alt="">
-      <span>bydiljitsingh</span>
-    </a>
-    <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../" aria-label="Home">
+        <picture>
+          <source srcset="../assets/logo.svg" type="image/svg+xml">
+          <img src="../assets/logo.png" alt="bydiljitsingh logo" width="28" height="28" />
+        </picture>
+        <span>bydiljitsingh</span>
+      </a>
+      <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-<aside id="drawer" class="drawer" aria-hidden="true">
-  <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
-  <nav class="drawer-nav" aria-label="Off-canvas">
-    <a href="../projects/">Projects</a>
-    <a href="../wiki/">My Wiki</a>
-    <a href="../toolkit/">Toolkit</a>
-    <a href="../cv/">CV</a>
-    <a href="../#contact">Contact</a>
-  </nav>
-</aside>
-<div id="backdrop" class="backdrop" hidden></div>
+  <!-- Drawer -->
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
+    <nav class="drawer-nav" aria-label="Off-canvas">
+      <a href="../projects/">Projects</a>
+      <a href="../wiki/">My Wiki</a>
+      <a href="../toolkit/">Toolkit</a>
+      <a href="../cv/">CV</a>
+      <a href="../#contact">Contact</a>
+    </nav>
+  </aside>
+  <div id="backdrop" class="backdrop" hidden></div>
 
-<main class="section container narrow">
-  <h1>Wankel Engine Transmission (MDB)</h1>
-  <p class="section-sub">Designing a transmission gearbox for a light aircraft Wankel Engine</p>
+  <main class="page container narrow">
 
-  <img src="../assets/mdb.jpg" alt="Wankel Engine Transmission" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--grey-2)">
+    <!-- 1) HERO -->
+    <section class="project-hero">
+      <h1>Wankel Engine Transmission — Aero-Engine Speed Reducer (MDB)</h1>
+      <p>Designed a compact, serviceable gearbox to reduce Wankel engine speed from <strong>6500–7000 rpm</strong> down to <strong>2000 rpm</strong> at the propeller using a <strong>3.25:1</strong> gear ratio.</p>
 
-  <div class="prose" style="margin-top:1rem">
-    <h2>Brief</h2>
-    <p>Design an electric rally pickup platform for Dakar-style conditions with a modular, swappable energy pack.</p>
+      <div class="badges" aria-label="Project badges">
+        <span class="badge" title="Team size">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11a4 4 0 10-8 0 4 4 0 008 0zm-6 5a6 6 0 00-6 6h2a4 4 0 014-4h4a4 4 0 014 4h2a6 6 0 00-6-6H10z" fill="currentColor"/></svg>
+          Team size: 3
+        </span>
+        <span class="badge" title="Role">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6 6 .9-4.5 4.2L17.8 20 12 16.9 6.2 20l1.3-6.9L3 8.9 9 8l3-6z" fill="currentColor"/></svg>
+          Role: Gearbox Design (gears, shafts, bearings, seals)
+        </span>
+        <span class="badge" title="Duration">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10v2H7V2zm12 4H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2zm0 14H5V10h14v10z" fill="currentColor"/></svg>
+          Duration: Oct–Dec 2024
+        </span>
+        <span class="badge" title="Tools">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3l3 3L8 19H5v-3l9.7-9.7zM17 2l5 5-2.3 2.3-5-5L17 2z" fill="currentColor"/></svg>
+          Tools: Fusion 360, Ansys Fluent, Granta Edupack
+        </span>
+      </div>
 
-    <h2>Scope</h2>
-    <ul>
-      <li>Vehicle dynamics targets; suspension kinematics; steering geometry.</li>
-      <li>Braking system sizing and thermal considerations; tyre selection rationale.</li>
-    </ul>
+      <figure style="margin-top:12px">
+        <img src="../assets/MDB/hero-gearbox.jpg" alt="Aero-engine speed reducer gearbox for a Wankel engine — compact aluminium casing with input/output shafts" width="1200" height="800" loading="eager" decoding="async">
+        <figcaption class="caption">Final assembly visual of the Wankel gearbox (speed reducer).</figcaption>
+      </figure>
+    </section>
 
-    <h2>Highlights</h2>
-    <ul>
-      <li>Defined roll gradient / ride targets for mixed terrain.</li>
-      <li>Front and rear suspension geometry trade-offs (travel vs packaging).</li>
-      <li>Preliminary brake thermal load model for stage distances.</li>
-    </ul>
+    <!-- 2) CONTEXT & CHALLENGE -->
+    <section class="section">
+      <h2>Context &amp; Challenge</h2>
+      <p>For an aero-engine application, the Wankel engine operates at high speed but the propeller must run near <strong>2000 rpm</strong> for efficiency and noise. The challenge was to engineer a compact, reliable <strong>speed reducer</strong> meeting power (≈50 hp), packaging (≤90 mm centre distance; limited shaft overhang), durability (≥2000 h) and serviceability constraints.</p>
+    </section>
 
-    <p><a class="link" href="./">← Back to all projects</a></p>
-  </div>
-</main>
+    <!-- 3) OBJECTIVES & KPIs -->
+    <section class="section">
+      <h2>Objectives &amp; KPIs</h2>
+      <div class="kpi-grid">
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-9 9h2a7 7 0 1114 0h2a9 9 0 00-9-9zm-1 9V6h2v6h-2z" fill="currentColor"/></svg>
+          <div><h3>Speed Reduction</h3><p>Ratio <strong>3.25:1</strong> to achieve <strong>2000 rpm</strong> at the propeller.</p></div>
+        </div>
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.8 9.7-8 10-4.2-.3-8-5-8-10V6l8-4z" fill="currentColor"/></svg>
+          <div><h3>Reliability</h3><p>Bearings selected for <strong>&gt;2000 h</strong> life (L10h), with axial/radial load checks.</p></div>
+        </div>
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 2l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V6l9-4zm0 5l6 2v3c0 3.6-2.6 6.9-6 7.9-3.4-1-6-4.3-6-7.9V9l6-2z" fill="currentColor"/></svg>
+          <div><h3>Safety</h3><p>Withstand surge/vibration; shafts designed for fatigue with adequate factors of safety.</p></div>
+        </div>
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11s4 9 9 9 9-4 9-9-4-9-9-9zm-1 14H8a6 6 0 017-7v3a4 4 0 01-4 4z" fill="currentColor"/></svg>
+          <div><h3>Packaging</h3><p>Centre distance ≤ <strong>90 mm</strong>; output shaft projection ≤ <strong>90 mm</strong>.</p></div>
+        </div>
+      </div>
+    </section>
 
-<footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
-<script>
-  const drawer=document.getElementById('drawer'), openBtn=document.getElementById('openDrawer'), closeBtn=document.getElementById('closeDrawer'), backdrop=document.getElementById('backdrop');
-  function openDrawer(){drawer.classList.add('open');backdrop.hidden=false;openBtn?.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
-  function closeDrawer(){drawer.classList.remove('open');backdrop.hidden=true;openBtn?.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true');document.body.style.overflow=''}
-  openBtn?.addEventListener('click',openDrawer);closeBtn?.addEventListener('click',closeDrawer);backdrop?.addEventListener('click',closeDrawer);window.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()})
-  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
-</script>
+    <!-- 4) ROLE -->
+    <section class="section">
+      <h2>My Role &amp; Leadership</h2>
+      <p>As a core designer, I sized the gear pair (via GP100), selected bearings, designed shafts, specified seals and lubrication, and authored the assembly drawing and report extracts. I also ran DFA to reduce parts and simplify assembly.</p>
+      <p class="quote">“Balanced performance, packaging and reliability to turn a high-speed Wankel into a prop-friendly drivetrain.”</p>
+
+      <div class="impact">
+        <ul>
+          <li><b>3</b> teammates in a compact design cell (MDB)</li>
+          <li>Delivered <b>1</b> assembly drawing pack &amp; <b>1</b> technical report</li>
+          <li>Improved assembly with DFA: fewer parts, standardised fasteners</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5) TECHNICAL CONTRIBUTIONS -->
+    <section class="section accordion">
+      <h2>Technical Contributions</h2>
+
+      <details>
+        <summary><h3>Gear Pair (3.25:1)</h3></summary>
+        <p>Ratio chosen to reduce 6500/7000 rpm to ~2000 rpm at the propeller. Helical geometry selected for smoothness and longevity; materials balanced (stronger pinion vs wheel) with manufacturable face width.</p>
+        <div class="tech-visual">
+          <img src="../assets/MDB/gp100-results.png" alt="GP100 design results for the 3.25:1 helical gear pair including geometry and life">
+          <div class="caption">GP100 outputs confirming geometry and life targets.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><h3>Bearings &amp; Life</h3></summary>
+        <p>Tapered rollers on the input (combined loads) and deep-groove ball bearings on the output (primarily radial). Equivalent load and L10h checks exceed the 2000 h requirement.</p>
+        <div class="tech-visual">
+          <img src="../assets/MDB/bearing-table.png" alt="Bearing selection table with sizes, load ratings and calculated L10h life">
+          <div class="caption">Bearing selection and L10h life calculations.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><h3>Shafts, Fatigue &amp; Critical Speed</h3></summary>
+        <p>Shear/bending envelopes defined from gear forces; diameters tuned for FoS in the 4–6 band. Deflection and first critical speed checks confirm stiffness margins.</p>
+        <div class="tech-visual">
+          <img src="../assets/MDB/shaft-bending.png" alt="Shaft free-body, shear force and bending moment diagrams used for sizing">
+          <div class="caption">Free-body, shear and bending moment diagrams for sizing.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><h3>Seals, Lubrication &amp; DFA</h3></summary>
+        <p>Spring-loaded rotary shaft seals with nitrile rubber; splash lubrication with trough and baffle (PLV &gt;12.5 m/s). DFA steps reduced part count, unified fasteners and simplified assembly direction.</p>
+        <div class="tech-visual">
+          <img src="../assets/MDB/exploded-view.png" alt="Exploded view of the gearbox showing seals, bearings and fasteners">
+          <div class="caption">Exploded view showing serviceable layout.</div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 6) OUTCOMES -->
+    <section class="section">
+      <h2>What We Achieved</h2>
+      <div class="stats">
+        <div class="stat"><div class="num">3.25:1</div><div class="cap">Reduction Ratio</div></div>
+        <div class="stat"><div class="num">2000 rpm</div><div class="cap">Propeller Speed</div></div>
+        <div class="stat"><div class="num">&gt; 2000 h</div><div class="cap">Bearing Life (L10h)</div></div>
+        <div class="stat"><div class="num">15.3 kg</div><div class="cap">Dry Weight</div></div>
+      </div>
+      <p style="margin-top:10px">Delivered a compact transmission meeting ratio, packaging and durability targets with manufacturable parts and a simplified assembly process.</p>
+    </section>
+
+    <!-- Downloads -->
+    <section class="section downloads">
+      <h2>Downloads</h2>
+      <a class="btn-dark" href="../assets/MDB/Mech_Design_B_Group_26_Design_Report.pdf" target="_blank" rel="noopener">Download Design Report (PDF)</a>
+      <a class="btn-dark" href="../assets/MDB/Mech_Design_B_Group_26_Assembly_Drawing.pdf" target="_blank" rel="noopener">Download Assembly Drawing Pack (PDF)</a>
+      <a class="btn-dark" href="../assets/MDB/bom-parts-list.pdf" target="_blank" rel="noopener">Download Parts List &amp; BOM (PDF)</a>
+    </section>
+
+    <!-- Reflections -->
+    <section class="section">
+      <h2>Reflections &amp; Learnings</h2>
+      <ul style="margin-top:10px">
+        <li>Managing axial loads early drives bearing choice and shaft geometry.</li>
+        <li>DFA and fastener standardisation have outsized impact on build clarity.</li>
+        <li>Helical gears improve smoothness but add axial load—trade-offs matter.</li>
+        <li>Critical speed and deflection checks are essential for aero-use reliability.</li>
+      </ul>
+    </section>
+
+    <!-- Visuals -->
+    <section class="section">
+      <h2>Visuals</h2>
+      <div class="gallery">
+        <figure>
+          <img src="../assets/MDB/assembly-iso.jpg" alt="Final gearbox assembly render with casing, shafts, bearings and seals">
+          <figcaption>Final gearbox assembly.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/MDB/assembly-drawing-sheet.png" alt="Assembly drawing sheet with notes, tolerances and exploded callouts">
+          <figcaption>Assembly drawing excerpts and tolerances.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/MDB/gp100-geometry.png" alt="GP100 geometry outputs for pinion and wheel including centre distance and helix angle">
+          <figcaption>GP100 geometry for the 3.25:1 helical pair.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/MDB/dfa-comparison.png" alt="Before/after DFA comparison showing reduced parts and unified fasteners">
+          <figcaption>DFA improvements: fewer parts, unified fasteners.</figcaption>
+        </figure>
+      </div>
+      <figure style="margin-top:14px">
+        <img src="../assets/MDB/gantt-mdb.png" alt="Project Gantt: concept, GP100 sizing, bearings, shafts, DFA, drawings, submission" style="width:100%;height:auto;display:block;border-radius:12px">
+        <figcaption class="caption">Gantt snapshot: GP100 sizing → bearings/shafts → DFA → drawings → submission.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Nav footer -->
+    <section class="section">
+      <div class="nav-thumbs">
+        <a href="./electric-rally-pickup-idp3.html">
+          <img src="../assets/IDP3/concept-hilux.jpg" alt="Thumbnail — Electric Rally Pickup (IDP3)">
+          <span>Previous: Electric Rally Pickup (IDP3)</span>
+        </a>
+        <a href="./wooden-bridge-idp1.html">
+          <img src="../assets/IDP1/bridge-thumb.jpg" alt="Thumbnail — Wooden Bridge (IDP1)">
+          <span>Next: Wooden Bridge (IDP1)</span>
+        </a>
+      </div>
+      <div class="nextprev">
+        <a class="btn" href="./electric-rally-pickup-idp3.html">← Previous Project</a>
+        <a class="btn-dark" href="./wooden-bridge-idp1.html">Next Project →</a>
+      </div>
+      <p style="margin-top:8px"><a class="link" href="./">Back to all projects</a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div>
+  </footer>
+
+  <script>
+    // Footer year
+    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+
+    // Drawer controls
+    const drawer=document.getElementById('drawer'), openBtn=document.getElementById('openDrawer'),
+          closeBtn=document.getElementById('closeDrawer'), backdrop=document.getElementById('backdrop');
+    function openDrawerFn(){drawer.classList.add('open');backdrop.hidden=false;document.documentElement.classList.add('drawer-open');openBtn?.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+    function closeDrawerFn(){drawer.classList.remove('open');backdrop.hidden=true;document.documentElement.classList.remove('drawer-open');openBtn?.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+    openBtn?.addEventListener('click', openDrawerFn);
+    closeBtn?.addEventListener('click', closeDrawerFn);
+    backdrop?.addEventListener('click', closeDrawerFn);
+    window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawerFn(); });
+  </script>
 </body>
 </html>
