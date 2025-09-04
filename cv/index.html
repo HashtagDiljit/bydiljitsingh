@@ -5,16 +5,12 @@
   <title>CV — By Diljit Singh</title>
   <link rel="stylesheet" href="../styles.css">
 
-  <!-- Minimal page-local styles to “glow up” the CV without touching global CSS -->
   <style>
-    .cv-hero{
-      display:grid; gap:24px; align-items:center;
-      grid-template-columns: 120px 1fr; margin:24px 0 8px;
-    }
-    .cv-hero img{ width:120px; height:120px; border-radius:24px; object-fit:cover; border:2px solid var(--grey-2,#e7e7e7);}
+    .cv-hero{ display:grid; gap:24px; align-items:center; grid-template-columns:120px 1fr; margin:24px 0 8px; }
+    .cv-hero img{ width:120px; height:120px; border-radius:24px; object-fit:cover; border:2px solid var(--grey-2,#e7e7e7); }
     .cv-title{ margin:0; line-height:1.15; font-size:clamp(1.4rem,2.3vw,2rem); }
     .cv-sub{ color:var(--grey-5,#69707a); margin:.25rem 0 0; }
-    .cv-cta{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;}
+    .cv-cta{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
     .btn, .btn-dark, .btn-ghost{
       display:inline-flex; align-items:center; gap:.5rem; padding:.6rem .9rem; border-radius:10px;
       border:1px solid var(--grey-2,#e7e7e7); text-decoration:none; transition:transform .06s ease;
@@ -22,66 +18,38 @@
     .btn:hover, .btn-dark:hover, .btn-ghost:hover{ transform:translateY(-1px); }
     .btn-dark{ background:var(--navy,#0B1B3B); color:#fff; border-color:transparent; }
     .btn-ghost{ background:transparent; }
+    .contact-inline{ margin-top:6px; font-size:.98rem; color:var(--grey-6,#4b4f55); white-space:normal; }
+    .contact-inline a{ color:inherit; text-decoration:underline; text-underline-offset:2px; }
+    .contact-inline .sep{ padding:0 .5rem; color:var(--grey-4,#9aa2ab); }
     .chip-row{ display:flex; flex-wrap:wrap; gap:8px; }
-    .chip{
-      padding:.35rem .6rem; border-radius:999px; border:1px dashed var(--grey-3,#d6d7da);
-      font-size:.9rem; color:var(--grey-6,#4b4f55); background:var(--grey-1,#f7f8f9);
-    }
-    .stat-grid{
-      display:grid; grid-template-columns:repeat(4, minmax(0,1fr));
-      gap:10px; margin:18px 0 6px;
-    }
-    .stat{
-      border:1px solid var(--grey-2,#e7e7e7); border-radius:14px; padding:12px;
-      background:linear-gradient(180deg, #fff, #fafbfc);
-    }
+    .chip{ padding:.35rem .6rem; border-radius:999px; border:1px dashed var(--grey-3,#d6d7da); font-size:.9rem; color:var(--grey-6,#4b4f55); background:var(--grey-1,#f7f8f9); }
+    .stat-grid{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:10px; margin:18px 0 6px; }
+    .stat{ border:1px solid var(--grey-2,#e7e7e7); border-radius:14px; padding:12px; background:linear-gradient(180deg,#fff,#fafbfc); }
     .stat b{ display:block; font-size:1.1rem; }
-    .timeline{ display:grid; gap:14px; margin-top:8px;}
-    .tl-item{
-      border:1px solid var(--grey-2,#e7e7e7); border-radius:14px; padding:14px; background:#fff;
-    }
-    .tl-item h3{ margin:.1rem 0 .25rem; font-size:1.05rem;}
-    .tl-meta{ color:var(--grey-6,#4b4f55); font-size:.95rem; margin-bottom:.35rem;}
+    .timeline{ display:grid; gap:14px; margin-top:8px; }
+    .tl-item{ border:1px solid var(--grey-2,#e7e7e7); border-radius:14px; padding:14px; background:#fff; }
+    .tl-item h3{ margin:.1rem 0 .25rem; font-size:1.05rem; }
+    .tl-meta{ color:var(--grey-6,#4b4f55); font-size:.95rem; margin-bottom:.35rem; }
     details summary{ cursor:pointer; color:var(--navy,#0B1B3B); font-weight:600; margin-top:.25rem; }
-    .link-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:.25rem; }
     .section + .section{ margin-top:28px; }
     .pdf-wrap{ border:1px solid var(--grey-2,#e7e7e7); border-radius:12px; overflow:hidden; margin-top:10px; }
     .prose h2{ scroll-margin-top:84px; }
     @media (max-width:720px){
-      .cv-hero{ grid-template-columns: 1fr; }
+      .cv-hero{ grid-template-columns:1fr; }
       .stat-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .contact-inline{ display:block; }
+      .contact-inline .sep{ display:none; }
     }
-    /* tiny icon style */
     .i{ width:18px; height:18px; display:inline-block; }
   </style>
 
-  <!-- Basic OG tags for the page -->
   <meta property="og:title" content="CV — By Diljit Singh">
-  <meta property="og:description" content="Mechanical Engineering (Automotive) MEng candidate — CAD, CFD/FEA, technical leadership, and communication. Download my CV (PDF/DOCX) or browse the highlights.">
+  <meta property="og:description" content="Mechanical Engineering (Automotive) MEng candidate — CAD, CFD/FEA, design-for-manufacture, and leadership. Download my CV (PDF/DOCX) or browse the highlights.">
   <meta property="og:type" content="profile">
-  <meta name="description" content="Mechanical Engineering (Automotive) MEng candidate. CAD (Fusion 360), FEA/CFD, team leadership, public speaking, mentoring. Download CV (PDF/DOCX).">
-
-  <!-- JSON-LD (helps SEO for personal profile pages) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Diljit Singh",
-    "url":"https://bydiljitsingh.github.io/cv/",
-    "image":"https://bydiljitsingh.github.io/assets/cv-portrait.jpg",
-    "jobTitle":"Mechanical Engineering (Automotive) MEng Student",
-    "affiliation":{"@type":"CollegeOrUniversity","name":"University of Birmingham"},
-    "alumniOf":{"@type":"CollegeOrUniversity","name":"University of Birmingham"},
-    "email":"mailto:diljitsingh2003@gmail.com",
-    "sameAs":[
-      "https://www.linkedin.com/in/diljitsingh03"
-    ]
-  }
-  </script>
+  <meta name="description" content="Mechanical Engineering (Automotive) MEng candidate. CAD (Fusion 360), FEA/CFD, GD&T, DFM/DFA, FMEA, stakeholder communication. Download CV (PDF/DOCX).">
 </head>
 <body>
 
-<!-- ========== HEADER (SUBPAGE) ========== -->
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="../">
@@ -94,7 +62,6 @@
   </div>
 </header>
 
-<!-- Drawer -->
 <aside id="drawer" class="drawer" aria-hidden="true">
   <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
   <nav class="drawer-nav" aria-label="Off-canvas">
@@ -107,7 +74,6 @@
 </aside>
 <div id="backdrop" class="backdrop" hidden></div>
 
-<!-- ========== MAIN ========== -->
 <main class="section container narrow">
 
   <!-- HERO -->
@@ -117,13 +83,8 @@
       <h1 class="cv-title" id="cv-title">Curriculum Vitae</h1>
       <p class="cv-sub">MEng Mechanical Engineering (Automotive) — University of Birmingham</p>
 
-      <!-- CTA buttons -->
+      <!-- CTA: downloads + preview -->
       <div class="cv-cta" role="group" aria-label="Primary actions">
-        <a class="btn-dark" href="../assets/Diljit_Singh_CV.pdf" target="_blank" rel="noopener">
-          <!-- pdf icon -->
-          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8z"/><path fill="#fff" d="M14 2v6h6"/></svg>
-          Open CV (PDF)
-        </a>
         <a class="btn" href="../assets/Diljit_Singh_CV.pdf" download>
           <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14"/></svg>
           Download PDF
@@ -137,6 +98,15 @@
           Preview PDF
         </button>
       </div>
+
+      <!-- Inline contact -->
+      <div class="contact-inline" aria-label="Contact">
+        <a href="tel:+447448024952">+44 74480 24952</a>
+        <span class="sep">|</span>
+        <a href="mailto:diljitsingh2003@gmail.com">diljitsingh2003@gmail.com</a>
+        <span class="sep">|</span>
+        <a href="https://www.linkedin.com/in/diljitsingh03/" target="_blank" rel="noopener">linkedin.com/in/diljitsingh03</a>
+      </div>
     </div>
   </section>
 
@@ -145,7 +115,7 @@
     <iframe src="../assets/Diljit_Singh_CV.pdf" title="CV PDF" style="width:100%; height:720px; border:0"></iframe>
   </section>
 
-  <!-- QUICK STATS -->
+  <!-- HIGHLIGHTS -->
   <section class="section" aria-labelledby="quick-stats">
     <h2 id="quick-stats">Highlights at a glance</h2>
     <div class="stat-grid" role="list">
@@ -156,25 +126,67 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- SKILLS / EXPERTISE (ATS-aware) -->
   <section class="section" aria-labelledby="skills">
     <h2 id="skills">Areas of expertise</h2>
     <div class="chip-row">
-      <span class="chip">Engineering Design (Fusion 360)</span>
-      <span class="chip">CFD/FEA (Fluent, Abaqus)</span>
-      <span class="chip">Technical Writing</span>
-      <span class="chip">Problem Solving</span>
-      <span class="chip">Team Leadership</span>
-      <span class="chip">Public Speaking</span>
-      <span class="chip">Mentoring & Outreach</span>
-      <span class="chip">Lightroom</span>
-      <span class="chip">DaVinci Resolve</span>
+      <!-- Core technical -->
+      <span class="chip">3D CAD (Fusion 360, SolidWorks)</span>
+      <span class="chip">CFD (Ansys Fluent)</span>
+      <span class="chip">FEA (Abaqus)</span>
+      <span class="chip">Engineering Drawings · GD&T (ASME Y14.5)</span>
+      <span class="chip">DFM/DFA</span>
+      <span class="chip">Tolerance & Fit Analysis</span>
+      <span class="chip">Materials & Manufacturing Processes</span>
+      <span class="chip">Thermal/Fluids · Heat Transfer</span>
+
+      <!-- Quality & reliability -->
+      <span class="chip">FMEA · Risk Assessment</span>
+      <span class="chip">Root Cause Analysis (8D)</span>
+      <span class="chip">SPC · Continuous Improvement</span>
+      <span class="chip">ISO 9001 awareness</span>
+
+      <!-- Project / delivery -->
+      <span class="chip">BOM & PDM hygiene</span>
+      <span class="chip">Project Coordination</span>
+      <span class="chip">Stakeholder Communication</span>
+      <span class="chip">Agile basics (Jira/Trello)</span>
+
+      <!-- Data / tools -->
+      <span class="chip">Excel (analysis & charts)</span>
+      <span class="chip">Technical Writing & Reports</span>
+      <span class="chip">Presentation & Public Speaking</span>
+
+      <!-- Creative stack -->
+      <span class="chip">Lightroom · DaVinci Resolve</span>
       <span class="chip">Content & Personal Branding</span>
       <span class="chip">Rapid Skill Acquisition</span>
     </div>
+    <!-- Source note (invisible to users but fine for maintainers): ATS/keyword guidance pulled from Jobscan & industry lists. -->
   </section>
 
-  <!-- EXPERIENCE (compact timeline) -->
+  <!-- EDUCATION (moved above experience; with bubble achievements) -->
+  <section class="section" aria-labelledby="education">
+    <h2 id="education">Education</h2>
+
+    <p><strong>MEng Mechanical Engineering (Automotive)</strong>, University of Birmingham — 09/2022–Present</p>
+    <div class="chip-row" style="margin-bottom:10px">
+      <span class="chip">Birmingham Scholar</span>
+      <span class="chip">A2B Scholarship</span>
+      <span class="chip">Societies: Powerlifting · Olympic Weightlifting · Mountaineering</span>
+      <span class="chip">Student Ambassador</span>
+      <span class="chip">Mentor (Inspired@Birmingham)</span>
+    </div>
+
+    <p><strong>L3 Extended Diploma in Advanced Manufacturing Engineering</strong>, James Watt College — 09/2020–07/2022</p>
+    <div class="chip-row">
+      <span class="chip">D*D*D*</span>
+      <span class="chip">Vice Chair — Student Council</span>
+      <span class="chip">James Watt Values Award</span>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
   <section class="section" aria-labelledby="experience">
     <h2 id="experience">Experience</h2>
     <div class="timeline">
@@ -218,46 +230,28 @@
     </div>
   </section>
 
-  <!-- EDUCATION -->
-  <section class="section" aria-labelledby="education">
-    <h2 id="education">Education</h2>
-    <p><strong>MEng Mechanical Engineering (Automotive)</strong>, University of Birmingham — 09/2022–Present<br>
-      Birmingham Scholar; A2B Scholarship. Societies: Powerlifting, Olympic Weightlifting, Mountaineering.
+  <!-- INTERESTS (links integrated in text) -->
+  <section class="section" aria-labelledby="interests">
+    <h2 id="interests">Interests</h2>
+    <p>
+      I enjoy <a class="link" href="../wiki/#olympic-weightlifting">Olympic Weightlifting</a> and strength training,
+      <a class="link" href="../gallery/">photography & videography</a> (Sony A7IV, editing in Lightroom & DaVinci Resolve),
+      hiking and travel, building a thoughtful watch collection, and developing systems for productivity and
+      entrepreneurship—lately channelled into an <a class="link" href="../toolkit/">Engineering Design Review Toolkit</a>.
     </p>
-    <p><strong>L3 Extended Diploma in Advanced Manufacturing Engineering</strong>, James Watt College — 09/2020–07/2022<br>
-      D*D*D*; Vice Chair, Student Council; James Watt Values Award.
-    </p>
-  </section>
-
-  <!-- LINKS / INTERESTS -->
-  <section class="section" aria-labelledby="links">
-    <h2 id="links">Links & interests</h2>
-    <div class="link-row">
-      <a class="btn" href="../wiki/#olympic-weightlifting">Olympic Weightlifting (PBs, logs)</a>
-      <a class="btn" href="../gallery/">Photo & Video Gallery</a>
-      <a class="btn" href="mailto:diljitsingh2003@gmail.com">Email</a>
-      <a class="btn" href="https://www.linkedin.com/in/diljitsingh03" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <ul style="margin-top:.8rem">
-      <li>Languages: English (native), Punjabi (fluent)</li>
-      <li>Olympic Weightlifting PBs: 93 kg Clean & Jerk, 66 kg Snatch</li>
-      <li>Tools: Fusion 360, SolidWorks, Lightroom, DaVinci Resolve, Ansys Fluent, Abaqus, C</li>
-    </ul>
   </section>
 
   <p style="margin-top:1rem"><a class="link" href="../">← Back to home</a></p>
 </main>
 
-<!-- ========== FOOTER ========== -->
 <footer class="site-footer">
   <div class="container">
     <small>© <span id="y"></span> By Diljit Singh</small>
   </div>
 </footer>
 
-<!-- ========== SCRIPTS ========== -->
 <script>
-  // Smooth scroll for same-page anchors only
+  // Smooth scroll for same-page anchors
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',e=>{
       const id=a.getAttribute('href').slice(1), el=document.getElementById(id);
