@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pneumatic Piston — IDP 1A (Fusion 360) | By Diljit Singh, MEng</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Intro CAD project: Pneumatic piston model (IDP 1A). Solo Fusion 360 build with fully constrained sketches, 3D assembly, and a 1:4 drawing pack with clear dimensions, callouts and sections." />
+  <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/projects/pneumatic-piston-model-idp1a.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="By Diljit Singh" />
+  <meta property="og:title" content="Pneumatic Piston — IDP 1A (Fusion 360)" />
+  <meta property="og:description" content="Solo Fusion 360 modelling exercise with 1:4 drawings focused on clear dimensioning and sectioning." />
+  <meta property="og:image" content="../assets/IDP1A/hero-pneumatic-piston.jpg" />
+
+  <!-- Favicons (site-wide set) -->
+  <link rel="icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="mask-icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/safari-pinned-tab.svg" color="#111111">
+  <meta name="theme-color" content="#111111">
+
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    /* ---------- Page-local polish (same system as your other pages) ---------- */
+    :root{ --pad:28px; }
+    .page{ padding-block:24px 32px; }
+    .section{ margin-top:44px; }
+    .section:first-of-type{ margin-top:12px; }
+    .narrow{ max-width:880px; }
+
+    .project-hero{ background:transparent; color:inherit; padding:0; }
+    .project-hero img{ width:100%; height:auto; display:block; border-radius:14px; }
+    .caption{ font-size:.9rem; color:#666; margin-top:.5rem; }
+
+    .badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:.35rem .65rem; border-radius:999px;
+      background:#F2F4F7; border:1px solid #E5E7EB; font-size:.9rem;
+    }
+    .badge svg{ width:16px; height:16px }
+
+    .kpi-grid{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+    .kpi{
+      background:#fff; border:1px solid var(--grey-2); border-radius:12px; padding:14px 16px;
+      display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:start;
+    }
+    .kpi svg{ width:22px; height:22px; opacity:.8; margin-top:2px; }
+    .kpi h3{ margin:0 0 4px; font-size:1rem; }
+    .kpi p{ margin:0; color:#333 }
+
+    .quote{
+      border-left:4px solid #111; padding:10px 14px; background:#FAFAFA; border-radius:8px;
+      font-style:italic;
+    }
+    .impact{
+      background:#F6F7F9; border:1px solid #E6E8EB; border-radius:12px; padding:14px 16px;
+      margin-top:14px;
+    }
+    .impact ul{ margin:8px 0 0; padding-left:18px; }
+    .impact li b{ font-weight:800; }
+
+    .accordion details{
+      border:1px solid var(--grey-2); border-radius:12px; padding:12px 14px; background:#FAFAFA;
+    }
+    .accordion details+details{ margin-top:10px; }
+    .accordion summary{ cursor:pointer; list-style:none; }
+    .accordion summary h3{ display:inline; margin:0; font-size:1.05rem; font-weight:700; }
+    .accordion summary::-webkit-details-marker{ display:none; }
+    .accordion summary::after{ content:"▸"; float:right; transition:transform .2s ease; }
+    .accordion details[open] summary::after{ transform:rotate(90deg); }
+    .tech-visual{ margin-top:10px }
+    .tech-visual img{ width:100%; height:auto; display:block; border-radius:10px; }
+    .tech-visual .caption{ margin-top:.35rem }
+
+    .stats{
+      display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+      margin-top:8px;
+    }
+    .stat{ background:#0B1B3B; color:#fff; border-radius:14px; padding:16px; text-align:center; }
+    .stat .num{ font-size:1.6rem; font-weight:800; line-height:1; }
+    .stat .cap{ margin-top:4px; opacity:.9 }
+
+    .downloads .btn-dark{ margin-right:10px; margin-bottom:10px; }
+    .btn:hover{ filter:brightness(0.95); }
+    .btn-dark:hover{ filter:brightness(1.1); }
+
+    .gallery{ display:grid; gap:14px; grid-template-columns:1fr; }
+    .gallery figure{ margin:0 }
+    .gallery img{ width:100%; height:auto; display:block; border-radius:12px; }
+    .gallery figcaption{ margin-top:.45rem; color:#666; font-size:.9rem }
+    @media (min-width:760px){ .gallery{ grid-template-columns:1fr 1fr; } }
+
+    .nav-thumbs{
+      display:grid; gap:12px; grid-template-columns:1fr 1fr;
+      margin-bottom:10px;
+    }
+    .nav-thumbs a{ display:flex; gap:10px; align-items:center; text-decoration:none; color:inherit; }
+    .nav-thumbs img{ width:72px; height:48px; object-fit:cover; border-radius:8px; display:block; }
+    .nav-thumbs span{ font-weight:600; line-height:1.2; }
+
+    .hamburger{ position:fixed; top:16px; right:var(--gutter); z-index:1001; }
+    .section h2 + ul{ margin-top:10px; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../" aria-label="Home">
+        <picture>
+          <source srcset="../assets/logo.svg" type="image/svg+xml">
+          <img src="../assets/logo.png" alt="bydiljitsingh logo" width="28" height="28" />
+        </picture>
+        <span>bydiljitsingh</span>
+      </a>
+      <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Drawer -->
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
+    <nav class="drawer-nav" aria-label="Off-canvas">
+      <a href="../projects/">Projects</a>
+      <a href="../wiki/">My Wiki</a>
+      <a href="../toolkit/">Toolkit</a>
+      <a href="../cv/">CV</a>
+      <a href="../#contact">Contact</a>
+    </nav>
+  </aside>
+  <div id="backdrop" class="backdrop" hidden></div>
+
+  <main class="page container narrow">
+
+    <!-- 1) HERO -->
+    <section class="project-hero">
+      <h1>Pneumatic Piston — IDP 1A (Fusion 360)</h1>
+      <p>Solo modelling exercise to learn <strong>Fusion 360</strong>: fully constrained sketches, part modelling, assembly, and a <strong>1:4 drawing pack</strong> with clear dimensions, section views and callouts.</p>
+
+      <div class="badges" aria-label="Project badges">
+        <span class="badge" title="Team size">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11a4 4 0 10-8 0 4 4 0 008 0zm-6 5a6 6 0 00-6 6h2a4 4 0 014-4h4a4 4 0 014 4h2a6 6 0 00-6-6H10z" fill="currentColor"/></svg>
+          Team size: 1
+        </span>
+        <span class="badge" title="Role">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6 6 .9-4.5 4.2L17.8 20 12 16.9 6.2 20l1.3-6.9L3 8.9 9 8l3-6z" fill="currentColor"/></svg>
+          Role: CAD Modelling & Drawings
+        </span>
+        <span class="badge" title="Duration">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10v2H7V2zm12 4H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2zm0 14H5V10h14v10z" fill="currentColor"/></svg>
+          Duration: IDP 1A block
+        </span>
+        <span class="badge" title="Tools">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3l3 3L8 19H5v-3l9.7-9.7zM17 2l5 5-2.3 2.3-5-5L17 2z" fill="currentColor"/></svg>
+          Tools: Fusion 360
+        </span>
+      </div>
+
+      <figure style="margin-top:12px">
+        <img src="../assets/IDP1A/hero-pneumatic-piston.jpg" alt="Fusion 360 render of a pneumatic piston assembly" width="1200" height="800" loading="eager" decoding="async">
+        <figcaption class="caption">Intro project to practise parametric modelling and drawing standards.</figcaption>
+      </figure>
+    </section>
+
+    <!-- 2) CONTEXT & CHALLENGE -->
+    <section class="section">
+      <h2>Context &amp; Challenge</h2>
+      <p>Objective: get comfortable with parametric CAD and drawing standards. I focused on <strong>clear diagram layout</strong> and <strong>adequate dimensioning</strong> based on feedback from previous assessments, while avoiding over-dimensioning. </p>
+    </section>
+
+    <!-- 3) OBJECTIVES & KPIs -->
+    <section class="section">
+      <h2>Objectives &amp; KPIs</h2>
+      <div class="kpi-grid">
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-9 9h2a7 7 0 1114 0h2a9 9 0 00-9-9zm-1 9V6h2v6h-2z" fill="currentColor"/></svg>
+          <div><h3>Parametric Model</h3><p>Fully constrained sketches & clean feature tree.</p></div>
+        </div>
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.8 9.7-8 10-4.2-.3-8-5-8-10V6l8-4z" fill="currentColor"/></svg>
+          <div><h3>Drawings</h3><p>Complete 2D pack at <strong>1:4 scale</strong> with sections & callouts. :contentReference[oaicite:3]{index=3}</p></div>
+        </div>
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 2l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V6l9-4zm0 5l6 2v3c0 3.6-2.6 6.9-6 7.9-3.4-1-6-4.3-6-7.9V9l6-2z" fill="currentColor"/></svg>
+          <div><h3>Clarity</h3><p>Readable dimensioning and neat layout to address prior feedback. :contentReference[oaicite:4]{index=4}</p></div>
+        </div>
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11s4 9 9 9 9-4 9-9-4-9-9-9zm-1 14H8a6 6 0 017-7v3a4 4 0 01-4 4z" fill="currentColor"/></svg>
+          <div><h3>Process</h3><p>Hand sketch → CAD → drawings; sections & notes. :contentReference[oaicite:5]{index=5}</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) MY ROLE & LEARNING -->
+    <section class="section">
+      <h2>My Role &amp; Learning</h2>
+      <p>Individual project. I iterated from a hand sketch to a clean parametric model, then produced drawings with section cuts and callouts. I asked for feedback on complexity, layout and dimensioning to ensure the drawings met expectations. :contentReference[oaicite:6]{index=6}</p>
+      <p class="quote">“Make the drawings clear, dimensioned and not over-dimensioned — with callouts and section cuts.” :contentReference[oaicite:7]{index=7}</p>
+    </section>
+
+    <!-- 5) TECHNICAL CONTRIBUTIONS -->
+    <section class="section accordion">
+      <h2>Technical Contributions</h2>
+
+      <details>
+        <summary><h3>Concept Sketch</h3></summary>
+        <p>Initial pencil sketch to establish the assembly proportions and key dimensions before moving into CAD.</p>
+        <div class="tech-visual">
+          <img src="../assets/IDP1A/hand-sketch.jpg" alt="Pneumatic piston concept sketch with dimensions and section callouts">
+          <div class="caption">Hand sketch used to seed the CAD model.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><h3>Parametric CAD</h3></summary>
+        <p>Modeled the cylinder, piston, end caps and fasteners with fully constrained sketches; used named parameters for diameters and lengths for easy edits.</p>
+        <div class="tech-visual">
+          <img src="../assets/IDP1A/piston-cad.png" alt="Fusion 360 model of the pneumatic piston assembly with components">
+          <div class="caption">Fusion 360 assembly.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><h3>Drawing Pack (1:4)</h3></summary>
+        <p>Generated orthographic and section views with clear dimensions, hole notes and callouts; positioned views for legibility per the assessment guidance. </p>
+        <div class="tech-visual">
+          <img src="../assets/IDP1A/drawing-sheet.png" alt="1:4 drawing sheet with orthographic and section views, dimensions and callouts">
+          <div class="caption">Example drawing sheet at 1:4 scale.</div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 6) OUTCOMES -->
+    <section class="section">
+      <h2>What I Achieved</h2>
+      <div class="stats">
+        <div class="stat"><div class="num">1:4</div><div class="cap">Drawing Scale</div></div>
+        <div class="stat"><div class="num">Parametric</div><div class="cap">Fully Constrained</div></div>
+        <div class="stat"><div class="num">Sections</div><div class="cap">Clear Callouts</div></div>
+        <div class="stat"><div class="num">Neat</div><div class="cap">Readable Layout</div></div>
+      </div>
+      <p style="margin-top:10px">A complete intro pipeline: hand sketch → fully parametric CAD → legible 2D drawings that emphasise clarity and correct dimensioning.</p>
+    </section>
+
+    <!-- Downloads -->
+    <section class="section downloads">
+      <h2>Downloads</h2>
+      <a class="btn-dark" href="../assets/IDP1A/Project_1.pdf" target="_blank" rel="noopener">Download Drawing Pack (PDF)</a>
+      <a class="btn-dark" href="../assets/IDP1A/Project_1.docx" target="_blank" rel="noopener">Download Submission Template (DOCX)</a>
+    </section>
+
+    <!-- Reflections -->
+    <section class="section">
+      <h2>Reflections &amp; Learnings</h2>
+      <ul style="margin-top:10px">
+        <li>Clarity beats complexity: prioritised neat view placement and readable dimensions. :contentReference[oaicite:9]{index=9}</li>
+        <li>Sections and callouts make function obvious without clutter. :contentReference[oaicite:10]{index=10}</li>
+        <li>Parametric naming simplifies iteration later in the course.</li>
+      </ul>
+    </section>
+
+    <!-- Visuals -->
+    <section class="section">
+      <h2>Visuals</h2>
+      <div class="gallery">
+        <figure>
+          <img src="../assets/IDP1A/hand-sketch.jpg" alt="Pneumatic piston concept hand sketch with dimensions">
+          <figcaption>Initial hand sketch.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/IDP1A/piston-cad.png" alt="Fusion 360 model of pneumatic piston assembly">
+          <figcaption>Fusion 360 model.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/IDP1A/drawing-sheet.png" alt="Orthographic and section drawing, 1:4 scale">
+          <figcaption>1:4 drawing sheet.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/IDP1A/exploded.png" alt="Exploded view with balloons and parts list">
+          <figcaption>Exploded view (parts list).</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- NAV FOOTER -->
+    <section class="section">
+      <div class="nav-thumbs">
+        <a href="./thin-plate-with-hole-fea.html">
+          <img src="../assets/FEA/hero-plate-hole.png" alt="Thumbnail — Thin Plate with Hole (FEA)">
+          <span>Previous: Thin Plate with Hole (FEA)</span>
+        </a>
+        <a href="./wooden-bridge-idp1b.html">
+          <img src="../assets/IDP1/hero-bridge.jpg" alt="Thumbnail — Wooden Bridge (IDP 1B)">
+          <span>Next: Wooden Bridge (IDP 1B)</span>
+        </a>
+      </div>
+      <div class="nextprev">
+        <a class="btn" href="./thin-plate-with-hole-fea.html">← Previous Project</a>
+        <a class="btn-dark" href="./wooden-bridge-idp1b.html">Next Project →</a>
+      </div>
+      <p style="margin-top:8px"><a class="link" href="./">Back to all projects</a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div>
+  </footer>
+
+  <script>
+    // Footer year
+    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+
+    // Drawer controls
+    const drawer=document.getElementById('drawer'), openBtn=document.getElementById('openDrawer'),
+          closeBtn=document.getElementById('closeDrawer'), backdrop=document.getElementById('backdrop');
+    function openDrawerFn(){drawer.classList.add('open');backdrop.hidden=false;document.documentElement.classList.add('drawer-open');openBtn?.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+    function closeDrawerFn(){drawer.classList.remove('open');backdrop.hidden=true;document.documentElement.classList.remove('drawer-open');openBtn?.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+    openBtn?.addEventListener('click', openDrawerFn);
+    closeBtn?.addEventListener('click', closeDrawerFn);
+    backdrop?.addEventListener('click', closeDrawerFn);
+    window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawerFn(); });
+  </script>
+</body>
+</html>
