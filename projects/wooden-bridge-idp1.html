@@ -2,110 +2,328 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wooden Bridge (IDP1) — By Diljit Singh</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wooden Bridge — IDP 1B (Jelutong) | By Diljit Singh, MEng</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Portfolio project: IDP 1B Wooden Bridge — Jelutong wood bridge, student-budget build. I owned CAD modelling, the Bill of Materials and contributed to the design. Total timber length ≈ 5630 mm; footprint ≈ 520×390 mm; total cost ≈ £4.80." />
+  <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/projects/wooden-bridge-idp1b.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="By Diljit Singh" />
+  <meta property="og:title" content="Wooden Bridge — IDP 1B (Jelutong)" />
+  <meta property="og:description" content="CAD & BOM lead for a student-budget wooden bridge: 5630 mm total timber, footprint ≈ 520×390 mm, total cost ≈ £4.80." />
+  <meta property="og:image" content="../assets/IDP1/hero-bridge.jpg" />
+
+  <!-- Favicons (site-wide set) -->
+  <link rel="icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="mask-icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/safari-pinned-tab.svg" color="#111111">
+  <meta name="theme-color" content="#111111">
+
   <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    /* ---------- Page-local polish (matches your other case studies) ---------- */
+    :root{ --pad:28px; }
+    .page{ padding-block:24px 32px; }
+    .section{ margin-top:44px; }
+    .section:first-of-type{ margin-top:12px; }
+    .narrow{ max-width:880px; }
+
+    .project-hero{ background:transparent; color:inherit; padding:0; }
+    .project-hero img{ width:100%; height:auto; display:block; border-radius:14px; }
+    .caption{ font-size:.9rem; color:#666; margin-top:.5rem; }
+
+    .badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .badge{ display:inline-flex; align-items:center; gap:8px; padding:.35rem .65rem; border-radius:999px; background:#F2F4F7; border:1px solid #E5E7EB; font-size:.9rem; }
+    .badge svg{ width:16px; height:16px }
+
+    .kpi-grid{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+    .kpi{ background:#fff; border:1px solid var(--grey-2); border-radius:12px; padding:14px 16px; display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:start; }
+    .kpi svg{ width:22px; height:22px; opacity:.8; margin-top:2px; }
+    .kpi h3{ margin:0 0 4px; font-size:1rem; }
+    .kpi p{ margin:0; color:#333 }
+
+    .quote{ border-left:4px solid #111; padding:10px 14px; background:#FAFAFA; border-radius:8px; font-style:italic; }
+    .impact{ background:#F6F7F9; border:1px solid #E6E8EB; border-radius:12px; padding:14px 16px; margin-top:14px; }
+    .impact ul{ margin:8px 0 0; padding-left:18px; }
+    .impact li b{ font-weight:800; }
+
+    .accordion details{ border:1px solid var(--grey-2); border-radius:12px; padding:12px 14px; background:#FAFAFA; }
+    .accordion details+details{ margin-top:10px; }
+    .accordion summary{ cursor:pointer; list-style:none; }
+    .accordion summary h3{ display:inline; margin:0; font-size:1.05rem; font-weight:700; }
+    .accordion summary::-webkit-details-marker{ display:none; }
+    .accordion summary::after{ content:"▸"; float:right; transition:transform .2s ease; }
+    .accordion details[open] summary::after{ transform:rotate(90deg); }
+    .tech-visual{ margin-top:10px }
+    .tech-visual img{ width:100%; height:auto; display:block; border-radius:10px; }
+    .tech-visual .caption{ margin-top:.35rem }
+
+    .stats{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); margin-top:8px; }
+    .stat{ background:#0B1B3B; color:#fff; border-radius:14px; padding:16px; text-align:center; }
+    .stat .num{ font-size:1.6rem; font-weight:800; line-height:1; }
+    .stat .cap{ margin-top:4px; opacity:.9 }
+
+    .downloads .btn-dark{ margin-right:10px; margin-bottom:10px; }
+    .btn:hover{ filter:brightness(0.95); }
+    .btn-dark:hover{ filter:brightness(1.1); }
+
+    .gallery{ display:grid; gap:14px; grid-template-columns:1fr; }
+    .gallery figure{ margin:0 }
+    .gallery img{ width:100%; height:auto; display:block; border-radius:12px; }
+    .gallery figcaption{ margin-top:.45rem; color:#666; font-size:.9rem }
+    @media (min-width:760px){ .gallery{ grid-template-columns:1fr 1fr; } }
+
+    .nav-thumbs{ display:grid; gap:12px; grid-template-columns:1fr 1fr; margin-bottom:10px; }
+    .nav-thumbs a{ display:flex; gap:10px; align-items:center; text-decoration:none; color:inherit; }
+    .nav-thumbs img{ width:72px; height:48px; object-fit:cover; border-radius:8px; display:block; }
+    .nav-thumbs span{ font-weight:600; line-height:1.2; }
+
+    .hamburger{ position:fixed; top:16px; right:var(--gutter); z-index:1001; }
+    .section h2 + ul{ margin-top:10px; }
+  </style>
 </head>
 <body>
 
-<!-- ========== HEADER (SUBPAGE) ========== -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="../">
-      <img src="../assets/logo.svg" alt="by DS logo" width="28" height="28" />
-      <span>bydiljitsingh</span>
-    </a>
-    <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../" aria-label="Home">
+        <picture>
+          <source srcset="../assets/logo.svg" type="image/svg+xml">
+          <img src="../assets/logo.png" alt="bydiljitsingh logo" width="28" height="28" />
+        </picture>
+        <span>bydiljitsingh</span>
+      </a>
+      <button class="hamburger" id="openDrawer" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-<aside id="drawer" class="drawer" aria-hidden="true">
-  <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
-  <nav class="drawer-nav" aria-label="Off-canvas">
-    <a href="../projects/">Projects</a>
-    <a href="../wiki/">My Wiki</a>
-    <a href="../toolkit/">Toolkit</a>
-    <a href="../cv/">CV</a>
-    <a href="../#contact">Contact</a>
-  </nav>
-</aside>
-<div id="backdrop" class="backdrop" hidden></div>
+  <!-- Drawer -->
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <button class="drawer-close" id="closeDrawer" aria-label="Close menu">×</button>
+    <nav class="drawer-nav" aria-label="Off-canvas">
+      <a href="../projects/">Projects</a>
+      <a href="../wiki/">My Wiki</a>
+      <a href="../toolkit/">Toolkit</a>
+      <a href="../cv/">CV</a>
+      <a href="../#contact">Contact</a>
+    </nav>
+  </aside>
+  <div id="backdrop" class="backdrop" hidden></div>
 
-<main class="section container narrow">
-  <h1>Wooden Bridge (IDP1)</h1>
-  <p class="section-sub">Cohort-best load test: <strong>2.4 kN</strong> (pass requirement: 1.1 kN)</p>
+  <main class="page container narrow">
 
-  <img src="../assets/bridge.jpg" alt="Bridge project" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--grey-2)">
+    <!-- HERO -->
+    <section class="project-hero">
+      <h1>Wooden Bridge — IDP 1B (Jelutong)</h1>
+      <p>Student-budget bridge built from <strong>Jelutong</strong> sheet stock with standard fasteners. I owned <strong>CAD modelling</strong>, the <strong>Bill of Materials</strong>, and contributed to concept/design decisions.</p>
 
-  <div class="prose" style="margin-top:1rem">
-    <h2>Brief</h2>
-    <p>Design and build a wooden bridge to meet a minimum load requirement with constraints on materials and dimensions.</p>
+      <div class="badges" aria-label="Project badges">
+        <span class="badge" title="Team size">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11a4 4 0 10-8 0 4 4 0 008 0zm-6 5a6 6 0 00-6 6h2a4 4 0 014-4h4a4 4 0 014 4h2a6 6 0 00-6-6H10z" fill="currentColor"/></svg>
+          Team size: 5–6
+        </span>
+        <span class="badge" title="Role">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6 6 .9-4.5 4.2L17.8 20 12 16.9 6.2 20l1.3-6.9L3 8.9 9 8l3-6z" fill="currentColor"/></svg>
+          Role: CAD &amp; Bill of Materials
+        </span>
+        <span class="badge" title="Duration">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10v2H7V2zm12 4H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2zm0 14H5V10h14v10z" fill="currentColor"/></svg>
+          Duration: Feb–Mar 2023
+        </span>
+        <span class="badge" title="Tools">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3l3 3L8 19H5v-3l9.7-9.7zM17 2l5 5-2.3 2.3-5-5L17 2z" fill="currentColor"/></svg>
+          Tools: Fusion 360, Hand Tools, Drill Press
+        </span>
+      </div>
 
-    <h2>Approach</h2>
-    <ul>
-      <li>Selected truss configuration to maximise stiffness-to-mass.</li>
-      <li>Prioritised glue joints and load paths to reduce stress concentrations.</li>
-      <li>Built and tested with a two-person team due to limited availability.</li>
-    </ul>
+      <figure style="margin-top:12px">
+        <img src="../assets/IDP1/hero-bridge.jpg" alt="Jelutong wooden bridge prototype on bench with cross-braced deck and fastener details" width="1200" height="800" loading="eager" decoding="async">
+        <figcaption class="caption">Prototype built from Jelutong sheets and standard fasteners.</figcaption>
+      </figure>
+    </section>
 
-    <h2>Results</h2>
-    <ul>
-      <li>Withstood <strong>2.4 kN</strong> — highest in cohort.</li>
-      <li>Exceeded pass requirement (1.1 kN) with significant safety margin.</li>
-    </ul>
+    <!-- CONTEXT & CHALLENGE -->
+    <section class="section">
+      <h2>Context &amp; Challenge</h2>
+      <p>Design and build a wooden bridge from student-accessible materials within a strict budget. The structure had to be <strong>cut from 600×600×10 mm Jelutong sheets</strong>, assembled with standard screws/bolts, and fit on a bench-top test rig while meeting strength and stability requirements.</p>
+    </section>
 
-    <h2>Lessons</h2>
-    <ul>
-      <li>Joint quality and geometry selection dominate performance in lightweight structures.</li>
-      <li>Lean team ⇒ faster iteration and clearer ownership.</li>
-    </ul>
+    <!-- OBJECTIVES & KPIs -->
+    <section class="section">
+      <h2>Objectives &amp; KPIs</h2>
+      <div class="kpi-grid">
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-9 9h2a7 7 0 1114 0h2a9 9 0 00-9-9zm-1 9V6h2v6h-2z" fill="currentColor"/></svg>
+          <div><h3>Budget</h3><p>Keep total material cost ≈ <strong>£4.80</strong>.</p></div>
+        </div>
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.8 9.7-8 10-4.2-.3-8-5-8-10V6l8-4z" fill="currentColor"/></svg>
+          <div><h3>Cut Plan</h3><p>Stay within <strong>5630 mm</strong> total timber length (all pieces).</p></div>
+        </div>
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 2l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V6l9-4z" fill="currentColor"/></svg>
+          <div><h3>Footprint</h3><p>Assembly envelope about <strong>520×390 mm</strong>.</p></div>
+        </div>
+        <div class="kpi">
+          <svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11s4 9 9 9 9-4 9-9-4-9-9-9zm-1 14H8a6 6 0 017-7v3a4 4 0 01-4 4z" fill="currentColor"/></svg>
+          <div><h3>Safety</h3><p>Workshop build with risk controls & PPE in place.</p></div>
+        </div>
+      </div>
+    </section>
 
-    <p><a class="link" href="../projects/">← Back to all projects</a></p>
-  </div>
-</main>
+    <!-- MY ROLE -->
+    <section class="section">
+      <h2>My Role &amp; Contributions</h2>
+      <p>I produced the <strong>CAD model & drawings</strong>, compiled the <strong>Bill of Materials</strong>, and contributed to concept choices that balanced cut lengths, fixings and stability. I also supported workshop preparation by aligning the cut plan with the risk controls in our build method statement.</p>
+      <p class="quote">“I kept the bridge buildable on a student budget — clear drawings, a tight BOM, and a clean cut list.”</p>
 
-<footer class="site-footer"><div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div></footer>
+      <div class="impact">
+        <ul>
+          <li><b>1</b> CAD pack delivered (assembly + hole/fastener callouts)</li>
+          <li><b>£4.80</b> total material cost maintained</li>
+          <li>Cut list summed to <b>~5630 mm</b>; stock plan fit on 600×600 mm sheets</li>
+        </ul>
+      </div>
+    </section>
 
-<script>
-  // Smooth scroll for same-page anchors only
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click',e=>{
-      const id=a.getAttribute('href').slice(1), el=document.getElementById(id);
-      if(!el) return;
-      e.preventDefault();
-      const y=el.getBoundingClientRect().top + window.scrollY - 72;
-      window.scrollTo({top:y,behavior:'smooth'});
-    });
-  });
+    <!-- TECHNICAL CONTRIBUTIONS -->
+    <section class="section accordion">
+      <h2>Technical Contributions</h2>
 
-  // Drawer controls
-  const drawer = document.getElementById('drawer');
-  const openBtn = document.getElementById('openDrawer');
-  const closeBtn = document.getElementById('closeDrawer');
-  const backdrop = document.getElementById('backdrop');
+      <details>
+        <summary><h3>Bill of Materials</h3></summary>
+        <p>Jelutong wood sheets <strong>600×600×10 mm (×12)</strong>; self-tapping wood screws <strong>No.6, 3.5×19 mm (×44)</strong>; screws &amp; nuts <strong>M4×30 mm (×4)</strong>. Estimated total cost ≈ <strong>£4.80</strong>.</p>
+        <div class="tech-visual">
+          <img src="../assets/IDP1/bom-table.png" alt="BOM table: Jelutong 600×600×10 mm ×12; No.6 self-tapping wood screws 3.5×19 mm ×44; M4×30 mm screws & nuts ×4; total ≈ £4.80">
+          <div class="caption">BOM snapshot from the assignment pack.</div>
+        </div>
+      </details>
 
-  function openDrawer(){
-    drawer.classList.add('open'); backdrop.hidden = false;
-    openBtn?.setAttribute('aria-expanded','true');
-    drawer.setAttribute('aria-hidden','false');
-    document.body.style.overflow='hidden';
-  }
-  function closeDrawer(){
-    drawer.classList.remove('open'); backdrop.hidden = true;
-    openBtn?.setAttribute('aria-expanded','false');
-    drawer.setAttribute('aria-hidden','true');
-    document.body.style.overflow='';
-  }
-  openBtn?.addEventListener('click', openDrawer);
-  closeBtn?.addEventListener('click', closeDrawer);
-  backdrop?.addEventListener('click', closeDrawer);
-  window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer() });
+      <details>
+        <summary><h3>Cut Plan</h3></summary>
+        <p>Standardised member lengths (e.g., 520×2, 295×4, 220×4 … 230×2) summing to **~5630 mm** total timber. This kept waste low and assembly steps repeatable.</p>
+        <div class="tech-visual">
+          <img src="../assets/IDP1/cut-plan.png" alt="Cut plan list of member lengths and quantities totalling approximately 5630 mm">
+          <div class="caption">Cut lengths & quantities for all members.</div>
+        </div>
+      </details>
 
-  // Footer year
-  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
-</script>
+      <details>
+        <summary><h3>CAD &amp; Drawing Pack</h3></summary>
+        <p>Assembly envelope about <strong>520×390 mm</strong>; hole callouts for M4 fixings and Ø4 pilot holes; chamfers and countersinks called up where needed for flush fasteners.</p>
+        <div class="tech-visual">
+          <img src="../assets/IDP1/drawing-preview.png" alt="Drawing preview showing plan and elevation with 520×390 mm envelope and hole callouts">
+          <div class="caption">Assembly drawing with critical dimensions & callouts.</div>
+        </div>
+      </details>
 
+      <details>
+        <summary><h3>Workshop Risk Controls</h3></summary>
+        <p>Mitigations for fire, trips, electrocution, machine entrapment, eye/back injury; PAT-tested tools, PPE (goggles/boots), clear e-stops and signage; guarded machines and tidy walkways.</p>
+        <div class="tech-visual">
+          <img src="../assets/IDP1/risk-matrix.png" alt="Workshop risk matrix with hazards, controls and residual risk ratings">
+          <div class="caption">Risk assessment & residual risk ratings.</div>
+        </div>
+      </details>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section class="section">
+      <h2>What We Achieved</h2>
+      <div class="stats">
+        <div class="stat"><div class="num">£4.80</div><div class="cap">Total Material Cost</div></div>
+        <div class="stat"><div class="num">~5630 mm</div><div class="cap">Total Timber Length</div></div>
+        <div class="stat"><div class="num">520×390</div><div class="cap">mm Footprint</div></div>
+        <div class="stat"><div class="num">48</div><div class="cap">Fasteners (44 screws + 4 M4)</div></div>
+      </div>
+      <p style="margin-top:10px">Delivered a clear drawing/BOM pack and assembly plan that met footprint and budget constraints and was safe to execute in the university workshop.</p>
+    </section>
+
+    <!-- Downloads -->
+    <section class="section downloads">
+      <h2>Downloads</h2>
+      <a class="btn-dark" href="../assets/IDP1/Final_Bridge_Drawing_v1.pdf" target="_blank" rel="noopener">Download Final Bridge Drawing (PDF)</a>
+      <a class="btn-dark" href="../assets/IDP1/Assignment_1_Bridge_Project.docx" target="_blank" rel="noopener">Download Assignment Report (DOCX)</a>
+    </section>
+
+    <!-- Reflections -->
+    <section class="section">
+      <h2>Reflections &amp; Learnings</h2>
+      <ul style="margin-top:10px">
+        <li>Clear drawings and a tidy BOM de-risk student builds under time pressure.</li>
+        <li>Normalising cut lengths reduces waste and speeds assembly.</li>
+        <li>Pre-agreed workshop controls (PPE, e-stops, signage) keep the build smooth.</li>
+      </ul>
+    </section>
+
+    <!-- Visuals -->
+    <section class="section">
+      <h2>Visuals</h2>
+      <div class="gallery">
+        <figure>
+          <img src="../assets/IDP1/drawing-preview.png" alt="Bridge assembly drawing preview with critical dimensions">
+          <figcaption>Assembly drawing highlights.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/IDP1/bom-table.png" alt="BOM table for Jelutong sheets and fasteners with costs">
+          <figcaption>BOM with costs (student budget).</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/IDP1/cut-plan.png" alt="Cut list for all members totalling ~5630 mm">
+          <figcaption>Cut list for all members.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/IDP1/build-steps.png" alt="Build steps in the workshop: marking, drilling, dry-fit and final assembly">
+          <figcaption>Workshop build steps.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- NAV FOOTER -->
+    <section class="section">
+      <div class="nav-thumbs">
+        <a href="./thin-plate-with-hole-fea.html">
+          <img src="../assets/FEA/hero-plate-hole.png" alt="Thumbnail — Thin Plate with Hole (FEA)">
+          <span>Previous: Thin Plate with Hole (FEA)</span>
+        </a>
+        <a href="./two-stroke-engine-mda.html">
+          <img src="../assets/MDA/hero-two-stroke.jpg" alt="Thumbnail — Two-Stroke Engine (MDA)">
+          <span>Next: Two-Stroke Engine (MDA)</span>
+        </a>
+      </div>
+      <div class="nextprev">
+        <a class="btn" href="./thin-plate-with-hole-fea.html">← Previous Project</a>
+        <a class="btn-dark" href="./two-stroke-engine-mda.html">Next Project →</a>
+      </div>
+      <p style="margin-top:8px"><a class="link" href="./">Back to all projects</a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><small>© <span id="y"></span> By Diljit Singh</small></div>
+  </footer>
+
+  <script>
+    // Footer year
+    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+
+    // Drawer controls
+    const drawer=document.getElementById('drawer'), openBtn=document.getElementById('openDrawer'),
+          closeBtn=document.getElementById('closeDrawer'), backdrop=document.getElementById('backdrop');
+    function openDrawerFn(){drawer.classList.add('open');backdrop.hidden=false;document.documentElement.classList.add('drawer-open');openBtn?.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+    function closeDrawerFn(){drawer.classList.remove('open');backdrop.hidden=true;document.documentElement.classList.remove('drawer-open');openBtn?.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+    openBtn?.addEventListener('click', openDrawerFn);
+    closeBtn?.addEventListener('click', closeDrawerFn);
+    backdrop?.addEventListener('click', closeDrawerFn);
+    window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawerFn(); });
+  </script>
 </body>
 </html>
