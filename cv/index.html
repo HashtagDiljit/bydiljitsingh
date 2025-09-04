@@ -4,6 +4,80 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>CV — By Diljit Singh</title>
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Minimal page-local styles to “glow up” the CV without touching global CSS -->
+  <style>
+    .cv-hero{
+      display:grid; gap:24px; align-items:center;
+      grid-template-columns: 120px 1fr; margin:24px 0 8px;
+    }
+    .cv-hero img{ width:120px; height:120px; border-radius:24px; object-fit:cover; border:2px solid var(--grey-2,#e7e7e7);}
+    .cv-title{ margin:0; line-height:1.15; font-size:clamp(1.4rem,2.3vw,2rem); }
+    .cv-sub{ color:var(--grey-5,#69707a); margin:.25rem 0 0; }
+    .cv-cta{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;}
+    .btn, .btn-dark, .btn-ghost{
+      display:inline-flex; align-items:center; gap:.5rem; padding:.6rem .9rem; border-radius:10px;
+      border:1px solid var(--grey-2,#e7e7e7); text-decoration:none; transition:transform .06s ease;
+    }
+    .btn:hover, .btn-dark:hover, .btn-ghost:hover{ transform:translateY(-1px); }
+    .btn-dark{ background:var(--navy,#0B1B3B); color:#fff; border-color:transparent; }
+    .btn-ghost{ background:transparent; }
+    .chip-row{ display:flex; flex-wrap:wrap; gap:8px; }
+    .chip{
+      padding:.35rem .6rem; border-radius:999px; border:1px dashed var(--grey-3,#d6d7da);
+      font-size:.9rem; color:var(--grey-6,#4b4f55); background:var(--grey-1,#f7f8f9);
+    }
+    .stat-grid{
+      display:grid; grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:10px; margin:18px 0 6px;
+    }
+    .stat{
+      border:1px solid var(--grey-2,#e7e7e7); border-radius:14px; padding:12px;
+      background:linear-gradient(180deg, #fff, #fafbfc);
+    }
+    .stat b{ display:block; font-size:1.1rem; }
+    .timeline{ display:grid; gap:14px; margin-top:8px;}
+    .tl-item{
+      border:1px solid var(--grey-2,#e7e7e7); border-radius:14px; padding:14px; background:#fff;
+    }
+    .tl-item h3{ margin:.1rem 0 .25rem; font-size:1.05rem;}
+    .tl-meta{ color:var(--grey-6,#4b4f55); font-size:.95rem; margin-bottom:.35rem;}
+    details summary{ cursor:pointer; color:var(--navy,#0B1B3B); font-weight:600; margin-top:.25rem; }
+    .link-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:.25rem; }
+    .section + .section{ margin-top:28px; }
+    .pdf-wrap{ border:1px solid var(--grey-2,#e7e7e7); border-radius:12px; overflow:hidden; margin-top:10px; }
+    .prose h2{ scroll-margin-top:84px; }
+    @media (max-width:720px){
+      .cv-hero{ grid-template-columns: 1fr; }
+      .stat-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+    }
+    /* tiny icon style */
+    .i{ width:18px; height:18px; display:inline-block; }
+  </style>
+
+  <!-- Basic OG tags for the page -->
+  <meta property="og:title" content="CV — By Diljit Singh">
+  <meta property="og:description" content="Mechanical Engineering (Automotive) MEng candidate — CAD, CFD/FEA, technical leadership, and communication. Download my CV (PDF/DOCX) or browse the highlights.">
+  <meta property="og:type" content="profile">
+  <meta name="description" content="Mechanical Engineering (Automotive) MEng candidate. CAD (Fusion 360), FEA/CFD, team leadership, public speaking, mentoring. Download CV (PDF/DOCX).">
+
+  <!-- JSON-LD (helps SEO for personal profile pages) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Diljit Singh",
+    "url":"https://bydiljitsingh.github.io/cv/",
+    "image":"https://bydiljitsingh.github.io/assets/cv-portrait.jpg",
+    "jobTitle":"Mechanical Engineering (Automotive) MEng Student",
+    "affiliation":{"@type":"CollegeOrUniversity","name":"University of Birmingham"},
+    "alumniOf":{"@type":"CollegeOrUniversity","name":"University of Birmingham"},
+    "email":"mailto:diljitsingh2003@gmail.com",
+    "sameAs":[
+      "https://www.linkedin.com/in/diljitsingh03"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -35,98 +109,143 @@
 
 <!-- ========== MAIN ========== -->
 <main class="section container narrow">
-  <h1>Curriculum Vitae</h1>
-  <p class="section-sub">View the highlights below or download the full document.</p>
 
-  <!-- Download buttons -->
-  <div style="display:flex; gap:10px; flex-wrap:wrap; margin:.5rem 0 1rem;">
-    <a class="btn" href="../assets/Diljit_Singh_CV.docx" download>Download CV (DOCX)</a>
-    <!-- Optional: add a PDF later and un-comment this
-    <a class="btn-dark" href="../assets/Diljit_Singh_CV.pdf" target="_blank" rel="noopener">Open CV (PDF)</a> 
-    -->
-   
-  </div>
+  <!-- HERO -->
+  <section class="cv-hero" aria-labelledby="cv-title">
+    <img src="../assets/profile.jpg" alt="Portrait of Diljit Singh">
+    <div>
+      <h1 class="cv-title" id="cv-title">Curriculum Vitae</h1>
+      <p class="cv-sub">MEng Mechanical Engineering (Automotive) — University of Birmingham</p>
 
-  <!-- Optional inline PDF preview (only works if you add the PDF file) -->
-<!--
-  <div style="margin:14px 0 24px; border:1px solid var(--grey-2); border-radius:12px; overflow:hidden;">
-    <iframe src="../assets/Diljit_Singh_CV.pdf" title="CV PDF"
-            style="width:100%; height:720px; border:0"></iframe>
-  </div>
--->
-  <!-- On-page CV content (editable) -->
-  <div class="prose" style="margin-top:1rem">
+      <!-- CTA buttons -->
+      <div class="cv-cta" role="group" aria-label="Primary actions">
+        <a class="btn-dark" href="../assets/Diljit_Singh_CV.pdf" target="_blank" rel="noopener">
+          <!-- pdf icon -->
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8z"/><path fill="#fff" d="M14 2v6h6"/></svg>
+          Open CV (PDF)
+        </a>
+        <a class="btn" href="../assets/Diljit_Singh_CV.pdf" download>
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14"/></svg>
+          Download PDF
+        </a>
+        <a class="btn" href="../assets/Diljit_Singh_CV.docx" download>
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path fill="#fff" d="M6 8h12v8H6z"/></svg>
+          Download DOCX
+        </a>
+        <button class="btn-ghost" id="togglePreview" type="button" aria-expanded="false" aria-controls="pdfPreview">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          Preview PDF
+        </button>
+      </div>
+    </div>
+  </section>
 
-    <h2>Profile</h2>
-    <p>
-      Aspiring Mechanical Engineer pursuing an MEng in Mechanical Engineering (Automotive) at the University of Birmingham,
-      with hands-on experience in CAD (Fusion 360), FEA/CFD, and technical project coordination. 100+ hours of ambassador
-      and mentoring service reflecting strong communication and leadership. Passionate about applying engineering principles
-      to real-world challenges.
-    </p>
+  <!-- Optional inline PDF preview (collapsible) -->
+  <section id="pdfPreview" class="pdf-wrap" hidden aria-label="Embedded CV PDF">
+    <iframe src="../assets/Diljit_Singh_CV.pdf" title="CV PDF" style="width:100%; height:720px; border:0"></iframe>
+  </section>
 
-    <h2>Contact</h2>
-    <p>
-      <strong>Phone:</strong> <a class="link" href="tel:+447448024952">+44 74480 24952</a><br>
-      <strong>Email:</strong> <a class="link" href="mailto:diljitsingh2003@gmail.com">diljitsingh2003@gmail.com</a><br>
-      <strong>LinkedIn:</strong> <a class="link" href="#" target="_blank" rel="noopener">Add your profile URL</a>
-    </p>
+  <!-- QUICK STATS -->
+  <section class="section" aria-labelledby="quick-stats">
+    <h2 id="quick-stats">Highlights at a glance</h2>
+    <div class="stat-grid" role="list">
+      <div class="stat" role="listitem"><b>100+ hours</b><small>Student Ambassador & outreach</small></div>
+      <div class="stat" role="listitem"><b>16 mentees</b><small>Guided to uni/course decisions</small></div>
+      <div class="stat" role="listitem"><b>CAD & FEA/CFD</b><small>Fusion 360 · Fluent · Abaqus</small></div>
+      <div class="stat" role="listitem"><b>Content</b><small>Sony A7IV · Lightroom · Resolve</small></div>
+    </div>
+  </section>
 
-    <h2>Areas of Expertise</h2>
-    <ul>
-      <li>Engineering Design (Fusion 360, basic CFD/FEA)</li>
-      <li>Technical Report Writing</li>
-      <li>Problem Solving</li>
-      <li>Project Coordination & Team Leadership</li>
-      <li>Communication & Public Speaking</li>
-      <li>Mentoring & Outreach</li>
-      <li>Creative Tools (Lightroom, DaVinci Resolve)</li>
-      <li>Rapid Skill Acquisition</li>
-      <li>Content & Personal Branding</li>
-    </ul>
+  <!-- SKILLS -->
+  <section class="section" aria-labelledby="skills">
+    <h2 id="skills">Areas of expertise</h2>
+    <div class="chip-row">
+      <span class="chip">Engineering Design (Fusion 360)</span>
+      <span class="chip">CFD/FEA (Fluent, Abaqus)</span>
+      <span class="chip">Technical Writing</span>
+      <span class="chip">Problem Solving</span>
+      <span class="chip">Team Leadership</span>
+      <span class="chip">Public Speaking</span>
+      <span class="chip">Mentoring & Outreach</span>
+      <span class="chip">Lightroom</span>
+      <span class="chip">DaVinci Resolve</span>
+      <span class="chip">Content & Personal Branding</span>
+      <span class="chip">Rapid Skill Acquisition</span>
+    </div>
+  </section>
 
-    <h2>Education</h2>
-    <p>
-      <strong>MEng Mechanical Engineering (Automotive)</strong>, University of Birmingham — 09/2022–Present<br>
-      Birmingham Scholar; A2B Scholarship recipient. Member: Powerlifting, Olympic Weightlifting, Mountaineering.
-      Part-time Student Ambassador and Mentor.
-    </p>
-    <p>
-      <strong>L3 Extended Diploma in Advanced Manufacturing Engineering</strong>, James Watt College — 09/2020–07/2022<br>
-      Grade: D*D*D*. Vice Chair, Student Council. James Watt Values Award recipient.
-    </p>
+  <!-- EXPERIENCE (compact timeline) -->
+  <section class="section" aria-labelledby="experience">
+    <h2 id="experience">Experience</h2>
+    <div class="timeline">
+      <article class="tl-item">
+        <h3>Student Ambassador</h3>
+        <div class="tl-meta">University of Birmingham — Nov 2022–Present</div>
+        <p>Delivered 100+ shifts supporting open days & outreach; proactive issue-solving to improve attendee experience.</p>
+        <details>
+          <summary>More impact</summary>
+          <ul>
+            <li>Supervised and engaged students (11–18) across events.</li>
+            <li>Collaborated with cross-functional teams to ensure smooth logistics.</li>
+          </ul>
+        </details>
+      </article>
 
-    <h2>Experience</h2>
-    <p>
-      <strong>Student Ambassador</strong>, University of Birmingham — 11/2022–Present<br>
-      Delivered 100+ shifts/hours supporting open days and outreach; supervised and engaged students aged 11–18;
-      improved attendee experience by proactively resolving issues.
-    </p>
-    <p>
-      <strong>Inspired@Birmingham Mentor</strong>, University of Birmingham — 04/2023–12/2024<br>
-      Mentored 16 students via weekly check-ins; all finalised a university/course choice. CV/application feedback and
-      action plans aligned to Russell Group expectations.
-    </p>
-    <p>
-      <strong>Online Intern</strong>, Alstom UK — 08/2021<br>
-      Five-day immersion in UK rail: signalling, service logistics, sustainability. Researched and presented transport solutions
-      to 20+ attendees; developed technical communication.
-    </p>
-    <p>
-      <strong>Mechanic Apprentice</strong>, Spectrum Motors — 02/2019–07/2019<br>
-      Learned fundamentals of bodywork repair and workshop discipline; contributed to punctuality and efficiency.
-    </p>
+      <article class="tl-item">
+        <h3>Inspired@Birmingham Mentor</h3>
+        <div class="tl-meta">University of Birmingham — Apr 2023–Dec 2024</div>
+        <p>Mentored 16 students; all finalised a university/course choice via structured feedback and action plans.</p>
+        <details>
+          <summary>More impact</summary>
+          <ul>
+            <li>CV/application feedback aligned to Russell Group expectations.</li>
+            <li>Weekly check-ins; measurable progress tracking.</li>
+          </ul>
+        </details>
+      </article>
 
-    <h2>Interests & Achievements</h2>
-    <ul>
+      <article class="tl-item">
+        <h3>Online Intern</h3>
+        <div class="tl-meta">Alstom UK — Aug 2021</div>
+        <p>5-day immersion in rail (signalling, service logistics, sustainability). Presented transport solutions to 20+ attendees.</p>
+      </article>
+
+      <article class="tl-item">
+        <h3>Mechanic Apprentice</h3>
+        <div class="tl-meta">Spectrum Motors — Feb 2019–Jul 2019</div>
+        <p>Learned bodywork fundamentals; contributed to workshop punctuality and efficiency.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" aria-labelledby="education">
+    <h2 id="education">Education</h2>
+    <p><strong>MEng Mechanical Engineering (Automotive)</strong>, University of Birmingham — 09/2022–Present<br>
+      Birmingham Scholar; A2B Scholarship. Societies: Powerlifting, Olympic Weightlifting, Mountaineering.
+    </p>
+    <p><strong>L3 Extended Diploma in Advanced Manufacturing Engineering</strong>, James Watt College — 09/2020–07/2022<br>
+      D*D*D*; Vice Chair, Student Council; James Watt Values Award.
+    </p>
+  </section>
+
+  <!-- LINKS / INTERESTS -->
+  <section class="section" aria-labelledby="links">
+    <h2 id="links">Links & interests</h2>
+    <div class="link-row">
+      <a class="btn" href="../wiki/#olympic-weightlifting">Olympic Weightlifting (PBs, logs)</a>
+      <a class="btn" href="../gallery/">Photo & Video Gallery</a>
+      <a class="btn" href="mailto:diljitsingh2003@gmail.com">Email</a>
+      <a class="btn" href="https://www.linkedin.com/in/diljitsingh03" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <ul style="margin-top:.8rem">
       <li>Languages: English (native), Punjabi (fluent)</li>
       <li>Olympic Weightlifting PBs: 93 kg Clean & Jerk, 66 kg Snatch</li>
-      <li>Self-taught tools: Fusion 360, SolidWorks, Lightroom, DaVinci Resolve, Ansys Fluent, Abaqus, C programming</li>
-      <li>Content creation & visual storytelling (Sony A7IV)</li>
+      <li>Tools: Fusion 360, SolidWorks, Lightroom, DaVinci Resolve, Ansys Fluent, Abaqus, C</li>
     </ul>
+  </section>
 
-    <p style="margin-top:1rem"><a class="link" href="../">← Back to home</a></p>
-  </div>
+  <p style="margin-top:1rem"><a class="link" href="../">← Back to home</a></p>
 </main>
 
 <!-- ========== FOOTER ========== -->
@@ -163,6 +282,16 @@
 
   // Footer year
   const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+
+  // Toggle inline PDF preview
+  const togglePreview = document.getElementById('togglePreview');
+  const pdfPreview = document.getElementById('pdfPreview');
+  togglePreview?.addEventListener('click', ()=>{
+    const isHidden = pdfPreview.hasAttribute('hidden');
+    if(isHidden){ pdfPreview.removeAttribute('hidden'); }
+    else { pdfPreview.setAttribute('hidden',''); }
+    togglePreview.setAttribute('aria-expanded', String(isHidden));
+  });
 </script>
 
 </body>
