@@ -12,7 +12,7 @@
   <meta property="og:site_name" content="By Diljit Singh" />
   <meta property="og:title" content="Thin Plate with Hole — FEA Mesh Study (Abaqus)" />
   <meta property="og:description" content="Mesh convergence on a thin plate with a central hole; Inconel 718; validation vs. theory; Abaqus CAE + MATLAB." />
-  <meta property="og:image" content="../assets/FEA/hero-plate-hole.png" />
+  <meta property="og:image" content="../assets/FEA/thin-plate-fea.png" />
 
   <!-- Favicons -->
   <link rel="icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/favicon.svg" type="image/svg+xml" sizes="any">
@@ -152,7 +152,7 @@
       </div>
 
       <figure style="margin-top:12px">
-        <img src="../assets/FEA/hero-plate-hole.png" alt="Abaqus von Mises stress contour of a thin plate with central hole under tension; high stresses around hole perimeter" width="1200" height="800" loading="eager" decoding="async">
+        <img src="../assets/FEA/thin-plate-fea.png" alt="Abaqus von Mises stress contour of a thin plate with central hole under tension; high stresses around hole perimeter" width="1200" height="800" loading="eager" decoding="async">
         <figcaption class="caption">Von Mises stress contour at converged mesh density.</figcaption>
       </figure>
     </section>
@@ -215,8 +215,6 @@
         <summary><h3>Meshing Strategy</h3></summary>
         <p>Auto-meshing used consistently across five ranges: 46, 230, 982, 4028, 8890 elements. Convergence observed near ~1000 elements with diminishing returns beyond that.</p>
         <div class="tech-visual">
-          <img src="../assets/FEA/mesh-low-vs-high.png" alt="Comparison of coarse and fine meshes around the hole; element refinement improves stress resolution">
-          <div class="caption">Coarse vs. fine mesh around the hole.</div>
         </div>
       </details>
 
@@ -259,34 +257,11 @@
       </ul>
     </section>
 
-    <!-- VISUALS -->
-    <section class="section">
-      <h2>Visuals</h2>
-      <div class="gallery">
-        <figure>
-          <img src="../assets/FEA/mesh-46.png" alt="Coarse mesh (46 elements) with von Mises stress — under-resolved hotspot">
-          <figcaption>Coarse mesh (46 elems): under-resolved hotspot.</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/FEA/mesh-8890.png" alt="Fine mesh (8890 elements) with von Mises stress — smooth stress band around hole">
-          <figcaption>Fine mesh (8890 elems): smooth stress band around the hole.</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/FEA/displacement-contour.png" alt="Displacement contour at 85 kN — highest displacement on loaded edge">
-          <figcaption>Displacement contour at 85&nbsp;kN — peak at loaded edge.</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/FEA/time-vs-stress.png" alt="Solve time vs. maximum stress curve; plateau near 1000 elements indicates convergence">
-          <figcaption>Solve time vs. σ<sub>max</sub>: plateau indicates convergence near ~1000 elems.</figcaption>
-        </figure>
-      </div>
-    </section>
-
     <!-- NAV FOOTER -->
     <section class="section">
       <div class="nextprev">
-        <a class="btn" href="./wankel-engine-transmission-gearbox-mdb.html">← Previous Project: Wankel Engine Transmission (MDB)</a>
-        <a class="btn-dark" href="./green-hydrogen-plant-idp2.html">Next Project: Child's Inhaler Spacer Redesign (CFD) →</a>
+        <a class="btn-dark" href="./green-hydrogen-plant-idp2.html">← Previous Project: Child's Inhaler Spacer Redesign (CFD)</a>
+        <a class="btn" href="./wankel-engine-transmission-gearbox-mdb.html">Next Project: Wankel Engine Transmission (MDB) →</a>
       </div>
       <p style="margin-top:8px"><a class="link" href="./">Back to all projects</a></p>
     </section>
