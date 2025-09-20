@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Inhaler Spacer Redesign — CFD Study (Healthcare) | By Diljit Singh, MEng</title>
+  <title>Inhaler Spacer Redesign — CFD Study | By Diljit Singh, MEng</title>
 
   <!-- SEO -->
   <meta name="description" content="Portfolio project: Inhaler Spacer Redesign — Computational Fluid Dynamics study in Ansys Fluent to reduce oropharyngeal deposition, improve lung delivery and keep pressure drop low. Mesh-independence, validation and design iteration." />
@@ -12,7 +12,7 @@
   <meta property="og:site_name" content="By Diljit Singh" />
   <meta property="og:title" content="Inhaler Spacer Redesign — CFD Study" />
   <meta property="og:description" content="Redesigned a paediatric inhaler spacer using Ansys Fluent: lower throat deposition, higher lung-bound fraction, low pressure drop." />
-  <meta property="og:image" content="../assets/CFD/inhaler/hero-inhaler-cfd.png" />
+  <meta property="og:image" content="../assets/CFD/inhaler-cfd.png" />
 
   <!-- Favicons -->
   <link rel="icon" href="https://hashtagdiljit.github.io/bydiljitsingh/assets/favicon.svg" type="image/svg+xml" sizes="any">
@@ -112,7 +112,6 @@
       <a href="../wiki/">My Wiki</a>
       <a href="../toolkit/">Toolkit</a>
       <a href="../cv/">CV</a>
-      <a href="../#contact">Contact</a>
     </nav>
   </aside>
   <div id="backdrop" class="backdrop" hidden></div>
@@ -135,7 +134,7 @@
         </span>
         <span class="badge" title="Duration">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10v2H7V2zm12 4H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2zm0 14H5V10h14v10z" fill="currentColor"/></svg>
-          Duration: [insert dates]
+          Duration: Sept-Jan
         </span>
         <span class="badge" title="Tools">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3l3 3L8 19H5v-3l9.7-9.7zM17 2l5 5-2.3 2.3-5-5L17 2z" fill="currentColor"/></svg>
@@ -144,7 +143,7 @@
       </div>
 
       <figure style="margin-top:12px">
-        <img src="../assets/CFD/inhaler/hero-inhaler-cfd.png" alt="CFD streamlines and velocity contours inside a redesigned paediatric inhaler spacer" width="1200" height="800" loading="eager" decoding="async">
+        <img src="../assets/CFD/inhaler-cfd.png" alt="CFD streamlines and velocity contours inside a redesigned paediatric inhaler spacer" width="1200" height="800" loading="eager" decoding="async">
         <figcaption class="caption">Streamlines & velocity field in the redesigned spacer.</figcaption>
       </figure>
     </section>
@@ -152,7 +151,7 @@
     <!-- CONTEXT & CHALLENGE -->
     <section class="section">
       <h2>Context &amp; Challenge</h2>
-      <p>Pressurised metered-dose inhalers (pMDIs) for children often suffer from poor drug delivery due to <strong>oropharyngeal deposition</strong>, coordination issues and high <strong>pressure drop</strong>. The brief was to <strong>pick an everyday medical product</strong> and <strong>redesign it using CFD</strong> to improve performance without sacrificing usability or cleanability.</p>
+      <p>Pressurised metered-dose inhalers (pMDIs) for children often suffer from poor drug delivery due to <strong>oropharyngeal deposition</strong>, coordination issues and high <strong>pressure drop</strong>. The brief was to <strong>pick an industry and a product that could use aerodynamic improvements</strong> and <strong>redesign it using CFD</strong> to improve performance without sacrificing usability or cleanability.</p>
     </section>
 
     <!-- OBJECTIVES & KPIs -->
@@ -198,38 +197,38 @@
       <h2>Technical Contributions</h2>
 
       <details>
-        <summary><h3>Geometry &amp; Boundary Conditions</h3></summary>
-        <p>Spacer body with gentle diffuser, integrated flow straighteners near the mouthpiece, and optional anti-swirl baffle upstream. Inlet mass-flow or velocity profile for 15–30 L/min; pressure outlet; no-slip walls.</p>
+        <summary><h3>Initial Control Design</h3></summary>
+        <p>This was our initial control design that is found commonly and it was used as a baseline to see if our own designs were an improvement</p>
         <div class="tech-visual">
-          <img src="../assets/CFD/inhaler/geometry-cutaway.png" alt="CAD cutaway of the redesigned inhaler spacer showing diffuser, straighteners and baffle">
-          <div class="caption">Cutaway of redesigned geometry (diffuser + straighteners).</div>
+          <img src="../assets/CFD/control-design.png" alt="Initial Control Design CAD">
+          <div class="caption">Initial Control Design CAD</div>
         </div>
       </details>
 
       <details>
-        <summary><h3>Meshing Strategy</h3></summary>
-        <p>Poly-hexcore with inflation layers along walls and at baffle edges to capture boundary layers; refined core near the mouthpiece and in recirculation regions. Three meshes (coarse/med/fine) for independence.</p>
+        <summary><h3>Improved Design</h3></summary>
+        <p>This is the improved design with a spacer that aims the medicine towards the roof of your mouth so fewer particles stick to the tongue.</p>
         <div class="tech-visual">
-          <img src="../assets/CFD/inhaler/mesh-closeup.png" alt="Mesh close-up of spacer interior showing inflation layers and graded refinement">
-          <div class="caption">Inflation near walls; graded refinement to the mouthpiece.</div>
+          <img src="../assets/CFD/improved-design.png" alt="Improved CAD Design">
+          <div class="caption">Improved CAD Design.</div>
         </div>
       </details>
 
       <details>
-        <summary><h3>Turbulence &amp; Particles</h3></summary>
-        <p>SST k–ω (steady RANS) with second-order schemes. Discrete Phase Model for droplets (polydisperse Rosin–Rammler), stochastic tracking and wall interaction tuned to estimate deposition trends.</p>
+        <summary><h3>Fluid &amp; Material Properties</h3></summary>
+        <p>We used Salbutamol and its properties to model the fluid inside of Ansys Fluent. Some values were not given, so properties from Ansys were used to replace the missing ones.</p>
         <div class="tech-visual">
-          <img src="../assets/CFD/inhaler/streamlines.png" alt="Streamlines inside spacer showing reduced swirl and smoother delivery to the mouthpiece">
-          <div class="caption">Streamlines show reduced swirl in the final design.</div>
+          <img src="../assets/CFD/properties.png" alt="Properties of Material Used">
+          <div class="caption">Properties of Material Used.</div>
         </div>
       </details>
 
       <details>
-        <summary><h3>Validation &amp; Sensitivity</h3></summary>
-        <p>Compared Δp with correlations/benchmarks; sensitivity to flow rate and particle size distribution. Final design meets target Δp and improves predicted delivery uniformity at the mouthpiece.</p>
+        <summary><h3>Final CFD Render</h3></summary>
+        <p>The final render showed an efficiency of 69.29% compared to the initial design, which was 46.83% This showed more particles reached the bottom of the trachea and therefore each pump is more efficient.</p>
         <div class="tech-visual">
-          <img src="../assets/CFD/inhaler/validation-plot.png" alt="Plot comparing pressure drop and uniformity metrics across design iterations vs baseline">
-          <div class="caption">Baseline vs. concepts A/B vs. final — Δp & uniformity.</div>
+          <img src="../assets/CFD/cfd-render.png" alt="Final CFD Render">
+          <div class="caption">Final CFD Render.</div>
         </div>
       </details>
     </section>
@@ -250,64 +249,25 @@
     <section class="section downloads">
       <h2>Downloads</h2>
       <!-- Swap these to your real files/paths when uploaded -->
-      <a class="btn-dark" href="../assets/CFD/inhaler/Inhaler_Spacer_CFD_Presentation.pdf" target="_blank" rel="noopener">Download Presentation (PDF)</a>
-      <a class="btn-dark" href="../assets/CFD/inhaler/Inhaler_Spacer_CFD_SetupNotes.pdf" target="_blank" rel="noopener">Download Setup &amp; Notes (PDF)</a>
-      <a class="btn-dark" href="../assets/CFD/inhaler/Inhaler_Spacer_CFD_PostProcessing.pdf" target="_blank" rel="noopener">Download Post-Processing Pack (PDF)</a>
+      <a class="btn-dark" href="../assets/CFD/Inhaler_Spacer_CFD_Presentation.pdf" target="_blank" rel="noopener">Download Presentation (PDF)</a>
     </section>
 
     <!-- REFLECTIONS -->
     <section class="section">
       <h2>Reflections &amp; Learnings</h2>
       <ul style="margin-top:10px">
-        <li>Flow straighteners near the outlet improved velocity uniformity more than upstream baffles.</li>
-        <li>Local mesh near the mouthpiece matters most; uniform refinement is wasteful.</li>
+        <li>How to use Ansys Fluent and how to set up a model.</li>
+        <li>How to sort out common problems like mesh not rendering correctly.</li>
         <li>Particle modelling assumptions change deposition trends — validate ranges, not single numbers.</li>
-        <li>Next: test anti-static materials and transient puff synchronisation with breathing profiles.</li>
+        <li>Next: Improve material and environment properties, such as including gravity.</li>
       </ul>
-    </section>
-
-    <!-- VISUALS -->
-    <section class="section">
-      <h2>Visuals</h2>
-      <div class="gallery">
-        <figure>
-          <img src="../assets/CFD/inhaler/velocity-contour.png" alt="Velocity contour through spacer showing diffuser action and straightened flow to mouthpiece">
-          <figcaption>Velocity contour — diffuser & straighteners at work.</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/CFD/inhaler/pressure-field.png" alt="Static pressure field indicating overall pressure drop across spacer">
-          <figcaption>Static pressure field (Δp across spacer).</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/CFD/inhaler/deposition-map.png" alt="Predicted deposition heatmap on walls for baseline vs redesigned spacer">
-          <figcaption>Deposition trend map — baseline vs. redesign.</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/CFD/inhaler/mesh-global.png" alt="Global mesh view with graded refinement and inflation layers">
-          <figcaption>Global mesh with graded refinement & inflation.</figcaption>
-        </figure>
-      </div>
-      <figure style="margin-top:14px">
-        <img src="../assets/CFD/inhaler/iteration-comparison.png" alt="Comparison panel of baseline, concept A, concept B and final spacer flow fields" style="width:100%;height:auto;display:block;border-radius:12px">
-        <figcaption class="caption">Iteration snapshots: baseline → A/B → final.</figcaption>
-      </figure>
     </section>
 
     <!-- NAV FOOTER -->
     <section class="section">
-      <div class="nav-thumbs">
-        <a href="./wankel-engine-transmission-gearbox-mdb.html">
-          <img src="../assets/MDB/hero-gearbox.jpg" alt="Thumbnail — Wankel Engine Transmission (MDB)">
-          <span>Previous: Wankel Engine Transmission (MDB)</span>
-        </a>
-        <a href="./thin-plate-with-hole-fea.html">
-          <img src="../assets/FEA/hero-plate-hole.png" alt="Thumbnail — Thin Plate with Hole (FEA)">
-          <span>Next: Thin Plate with Hole (FEA)</span>
-        </a>
-      </div>
       <div class="nextprev">
-        <a class="btn" href="./wankel-engine-transmission-gearbox-mdb.html">← Previous Project</a>
-        <a class="btn-dark" href="./thin-plate-with-hole-fea.html">Next Project →</a>
+        <a class="btn" href="./green-hydrogen-plant-idp2.html">← Previous Project: Green Hydrogen Plant (IDP 2)</a>
+        <a class="btn-dark" href="./thin-plate-with-hole-fea.html">Next Project: Thin Plate with Hole (FEA) →</a>
       </div>
       <p style="margin-top:8px"><a class="link" href="./">Back to all projects</a></p>
     </section>
