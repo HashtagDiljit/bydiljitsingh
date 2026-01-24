@@ -386,6 +386,12 @@ nav a.active::after {
   overflow: hidden;
   background: #f3f4f8;
   border: 1px solid #eef0f5;
+  transition: transform 0.2s ease;
+}
+
+.project-card-link:hover .project-image,
+.project-card-link:focus-visible .project-image {
+  transform: translateY(-4px) scale(1.01);
 }
 
 .project-year {
@@ -625,6 +631,10 @@ nav a.active::after {
 
 .project-detail-hero {
   padding: 70px 0 40px;
+}
+
+.back-button {
+  margin-bottom: 24px;
 }
 
 .project-detail-hero h1 {
