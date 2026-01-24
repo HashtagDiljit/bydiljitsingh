@@ -446,6 +446,82 @@ nav a.active::after {
   padding: 70px 0;
 }
 
+.cv-page {
+  padding: 70px 0 90px;
+}
+
+.cv-page-inner {
+  display: grid;
+  gap: 32px;
+}
+
+.cv-header {
+  text-align: center;
+}
+
+.cv-header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: 8px;
+}
+
+.cv-contact {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.cv-contact a {
+  color: var(--ink);
+}
+
+.cv-download {
+  margin-top: 8px;
+}
+
+.cv-divider {
+  border: 0;
+  border-top: 1px solid #1f2937;
+  opacity: 0.2;
+}
+
+.cv-section {
+  display: grid;
+  gap: 16px;
+}
+
+.cv-section-title {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+}
+
+.cv-expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px 24px;
+}
+
+.cv-entry {
+  display: grid;
+  gap: 8px;
+}
+
+.cv-entry-title {
+  font-weight: 600;
+}
+
+.cv-entry-meta {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.cv-bullets {
+  padding-left: 20px;
+  color: var(--ink);
+  display: grid;
+  gap: 8px;
+}
+
 .cv-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
