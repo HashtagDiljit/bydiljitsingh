@@ -472,6 +472,13 @@ nav a.active::after {
   transition: transform 0.2s ease;
 }
 
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .project-card-link:hover .project-image,
 .project-card-link:focus-visible .project-image {
   transform: translateY(-4px) scale(1.01);
@@ -489,41 +496,6 @@ nav a.active::after {
   text-transform: uppercase;
 }
 
-.project-image--rally {
-  background: linear-gradient(135deg, #f6efe9, #f0d9c7);
-}
-
-.project-image--bridge {
-  background: linear-gradient(135deg, #e9edf4, #cfd6e6);
-}
-
-.project-image--piston {
-  background: linear-gradient(135deg, #f2f3f7, #e3e6ef);
-}
-
-.gradient-sand {
-  background: linear-gradient(135deg, #cab49f, #f1e5d6);
-}
-
-.gradient-steel {
-  background: linear-gradient(135deg, #3c3f44, #b7bac3);
-}
-
-.gradient-blueprint {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-}
-
-.gradient-mist {
-  background: linear-gradient(135deg, #cbd5e1, #f8fafc);
-}
-
-.gradient-green {
-  background: linear-gradient(135deg, #22c55e, #a7f3d0);
-}
-
-.gradient-charcoal {
-  background: linear-gradient(135deg, #0f0f11, #3f3f46);
-}
 
 .cv {
   padding: 70px 0;
