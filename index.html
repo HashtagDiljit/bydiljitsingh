@@ -15,12 +15,14 @@
   <body>
     <header class="site-header">
       <div class="container nav-bar">
-        <div class="logo">bydiljitsingh</div>
+        <a class="logo" href="index.html">
+          <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
+        </a>
         <nav>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#cv">CV</a>
-          <a href="#wiki">Wiki</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="cv.html">CV</a>
+          <a href="wiki.html">Wiki</a>
         </nav>
       </div>
     </header>
@@ -41,22 +43,20 @@
               ideas I’m most curious about.
             </p>
             <div class="hero-actions">
-              <a class="button primary" href="#projects">Explore Projects</a>
-              <a class="button ghost" href="#cv">Download CV</a>
+              <a class="button primary" href="projects.html">Explore Projects</a>
+              <a class="button ghost" href="cv.html">Download CV</a>
             </div>
             <div class="socials">
-              <a href="https://www.linkedin.com" aria-label="LinkedIn">in</a>
-              <a href="https://www.instagram.com" aria-label="Instagram">ig</a>
-              <a href="mailto:hello@bydiljitsingh.com" aria-label="Email">@</a>
+              <a href="https://www.linkedin.com/in/diljitsingh03/" aria-label="LinkedIn">in</a>
+              <a href="https://www.instagram.com/hashtagdiljit/" aria-label="Instagram">ig</a>
+              <a href="mailto:diljitsingh2003@gmail.com" aria-label="Email">@</a>
             </div>
           </div>
           <div class="hero-card">
             <div class="frame">
               <div class="frame-label">Diljit Singh</div>
-              <div class="frame-body">
-                <div class="frame-highlight"></div>
-                <div class="frame-highlight"></div>
-                <div class="frame-highlight"></div>
+              <div class="frame-body photo-frame">
+                <img src="assets/diljit-singh.jpg" alt="Diljit Singh" />
               </div>
             </div>
           </div>
@@ -80,122 +80,6 @@
           </div>
         </div>
       </section>
-
-      <section class="projects" id="projects">
-        <div class="container section-heading">
-          <div>
-            <h2>Technical portfolio</h2>
-            <p>Case studies in CAD, FEA, CFD, and manufacturing engineering.</p>
-          </div>
-          <a class="button ghost" href="#wiki">View project wiki</a>
-        </div>
-        <div class="container project-grid">
-          <article class="project-card">
-            <div class="project-image gradient-sand">
-              <span>2024</span>
-            </div>
-            <h3>Electric Rally Pickup — Toyota Hilux</h3>
-            <p>Vehicle dynamics, suspension geometry, and EV battery packaging studies.</p>
-            <a href="#">View project details →</a>
-          </article>
-          <article class="project-card">
-            <div class="project-image gradient-steel">
-              <span>2023</span>
-            </div>
-            <h3>Wankel Engine Transmission</h3>
-            <p>Designing a speed-reduction gearbox for a light-aircraft power unit.</p>
-            <a href="#">View project details →</a>
-          </article>
-          <article class="project-card">
-            <div class="project-image gradient-blueprint">
-              <span>2023</span>
-            </div>
-            <h3>Thin Plate With Hole (FEA)</h3>
-            <p>Finite element analysis of stress concentration and deflection behavior.</p>
-            <a href="#">View project details →</a>
-          </article>
-          <article class="project-card">
-            <div class="project-image gradient-mist">
-              <span>2024</span>
-            </div>
-            <h3>Child’s Inhaler Spacer Redesign</h3>
-            <p>Improving inhaler spacer efficiency using CFD and rapid prototyping.</p>
-            <a href="#">View project details →</a>
-          </article>
-          <article class="project-card">
-            <div class="project-image gradient-green">
-              <span>2023</span>
-            </div>
-            <h3>Green Hydrogen Plant</h3>
-            <p>Systems integration project focused on renewable energy scalability.</p>
-            <a href="#">View project details →</a>
-          </article>
-          <article class="project-card">
-            <div class="project-image gradient-charcoal">
-              <span>2022</span>
-            </div>
-            <h3>Small-Scale 2-Stroke Engine</h3>
-            <p>Modeling and packaging a compact engine for UAV applications.</p>
-            <a href="#">View project details →</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="cv" id="cv">
-        <div class="container cv-grid">
-          <div>
-            <h2>Curriculum vitae</h2>
-            <p>
-              From research assistantships to vehicle dynamics competitions, here’s the timeline of
-              the roles that shaped my approach to engineering.
-            </p>
-            <a class="button primary" href="mailto:hello@bydiljitsingh.com">Request full CV</a>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <span>2024 — Present</span>
-              <h3>Lightweight Structures Intern · Apex Motors</h3>
-              <p>Developed composite layup strategies and validated FEA material models.</p>
-            </div>
-            <div class="timeline-item">
-              <span>2023 — 2024</span>
-              <h3>Student Researcher · Birmingham Mobility Lab</h3>
-              <p>Built a thermal management rig for hydrogen fuel cell testing.</p>
-            </div>
-            <div class="timeline-item">
-              <span>2022 — 2023</span>
-              <h3>Powertrain Designer · Formula Student</h3>
-              <p>Led powertrain packaging and drivetrain integration for a single-seater EV.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="wiki" id="wiki">
-        <div class="container wiki-grid">
-          <div>
-            <h2>Project wiki</h2>
-            <p>
-              A living knowledge base with schematics, CAD snapshots, and experiment logs. Each entry
-              highlights learnings and links to in-depth documentation.
-            </p>
-          </div>
-          <div class="wiki-list">
-            <article>
-              <h3>Suspension Geometry Primer</h3>
-              <p>Notes on double wishbone optimization, roll center tuning, and kinematic KPIs.</p>
-            </article>
-            <article>
-              <h3>CFD Validation Checklist</h3>
-              <p>A step-by-step workflow for mesh independence and solver convergence.</p>
-            </article>
-            <article>
-              <h3>Materials Library</h3>
-              <p>Quick references for aluminum, carbon fiber, and additive-manufactured alloys.</p>
-            </article>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">
@@ -205,7 +89,7 @@
           <p>Open to collaborations, internships, and research opportunities.</p>
         </div>
         <div class="footer-links">
-          <a href="mailto:hello@bydiljitsingh.com">hello@bydiljitsingh.com</a>
+          <a href="mailto:diljitsingh2003@gmail.com">diljitsingh2003@gmail.com</a>
           <span>© 2024 bydiljitsingh</span>
         </div>
       </div>
