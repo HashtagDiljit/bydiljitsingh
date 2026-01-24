@@ -20,6 +20,11 @@ body {
   line-height: 1.6;
 }
 
+::selection {
+  background: #000000;
+  color: #ffffff;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -216,8 +221,8 @@ nav a.active::after {
 }
 
 .socials a {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 1px solid var(--border);
   display: grid;
@@ -227,8 +232,8 @@ nav a.active::after {
 }
 
 .socials svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   fill: currentColor;
 }
 
