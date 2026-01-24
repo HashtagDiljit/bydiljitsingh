@@ -358,6 +358,18 @@ nav a.active::after {
   box-shadow: 0 18px 40px rgba(16, 24, 40, 0.06);
 }
 
+.project-card-link {
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card-link:hover,
+.project-card-link:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(20, 20, 20, 0.2);
+  box-shadow: 0 24px 50px rgba(16, 24, 40, 0.12);
+}
+
 .project-card h3 {
   font-size: 1.05rem;
 }
@@ -367,27 +379,16 @@ nav a.active::after {
   font-size: 0.95rem;
 }
 
-.project-card a {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--ink);
-  transition: color 0.2s ease, letter-spacing 0.2s ease;
-}
-
-.project-card a:hover,
-.project-card a:focus-visible {
-  letter-spacing: 0.12em;
-}
-
 .project-image {
-  height: 150px;
+  height: 190px;
   border-radius: 18px;
   position: relative;
   overflow: hidden;
+  background: #f3f4f8;
+  border: 1px solid #eef0f5;
 }
 
-.project-image span {
+.project-year {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -397,6 +398,18 @@ nav a.active::after {
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.project-image--rally {
+  background: linear-gradient(135deg, #f6efe9, #f0d9c7);
+}
+
+.project-image--bridge {
+  background: linear-gradient(135deg, #e9edf4, #cfd6e6);
+}
+
+.project-image--piston {
+  background: linear-gradient(135deg, #f2f3f7, #e3e6ef);
 }
 
 .gradient-sand {
@@ -608,6 +621,195 @@ nav a.active::after {
   margin-top: 12px;
   padding-left: 20px;
   color: var(--muted);
+}
+
+.project-detail-hero {
+  padding: 70px 0 40px;
+}
+
+.project-detail-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  margin-bottom: 18px;
+}
+
+.project-detail-hero p {
+  color: var(--muted);
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 36px;
+}
+
+.project-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fafbfe;
+  color: var(--ink);
+  font-size: 0.85rem;
+}
+
+.project-chip svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.project-hero-image {
+  background: #f6f7fb;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  padding: 28px;
+}
+
+.project-hero-image .image-frame {
+  background: #ffffff;
+  border-radius: 20px;
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  color: #a0a7b6;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 24px;
+}
+
+.project-section {
+  padding: 50px 0;
+}
+
+.project-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  margin-bottom: 16px;
+}
+
+.project-section p {
+  color: var(--muted);
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.kpi-card {
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  padding: 18px;
+  background: #ffffff;
+  display: grid;
+  gap: 6px;
+}
+
+.kpi-card h3 {
+  font-size: 1rem;
+}
+
+.role-quote {
+  border-left: 4px solid #111827;
+  padding: 18px 20px;
+  margin-top: 24px;
+  background: #f8f9fb;
+  border-radius: 14px;
+  color: var(--ink);
+  font-style: italic;
+}
+
+.highlight-card {
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  padding: 22px;
+  background: #fff;
+}
+
+.highlight-card ul {
+  padding-left: 20px;
+  color: var(--ink);
+  display: grid;
+  gap: 8px;
+}
+
+.tech-details {
+  display: grid;
+  gap: 16px;
+}
+
+.tech-details details {
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  padding: 18px 20px;
+  background: #fff;
+}
+
+.tech-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tech-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.tech-details summary::after {
+  content: "▾";
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.tech-details details[open] summary::after {
+  content: "▴";
+}
+
+.tech-details p {
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+.detail-media {
+  margin-top: 16px;
+  background: #f4f5f8;
+  border-radius: 18px;
+  min-height: 280px;
+  display: grid;
+  place-items: center;
+  color: #9aa0af;
+  text-align: center;
+  padding: 24px;
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.achievement-card {
+  background: #0f1b3d;
+  color: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+  display: grid;
+  gap: 4px;
+}
+
+.achievement-card strong {
+  font-size: 1.5rem;
 }
 
 .quick-facts {
