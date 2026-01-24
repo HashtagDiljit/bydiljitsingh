@@ -325,6 +325,78 @@ nav a.active::after {
   gap: 20px;
 }
 
+.toolkit {
+  padding: 70px 0;
+  border-top: 1px solid var(--border);
+  background: #fafafb;
+  position: relative;
+  overflow: hidden;
+}
+
+.toolkit-grid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: center;
+}
+
+.toolkit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(17, 24, 39, 0.08), transparent 55%);
+  pointer-events: none;
+}
+
+.toolkit .container {
+  position: relative;
+  z-index: 1;
+}
+
+.toolkit-form {
+  background: #fff;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+  box-shadow: 0 18px 40px rgba(16, 24, 40, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toolkit-form:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(16, 24, 40, 0.12);
+}
+
+.toolkit-form label {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.toolkit-input {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.toolkit-input input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: #f6f7fb;
+}
+
+.toolkit-input input:focus {
+  outline: 2px solid #111827;
+  outline-offset: 2px;
+  background: #fff;
+}
+
 .projects {
   padding: 60px 0 80px;
   background: #fafafb;
