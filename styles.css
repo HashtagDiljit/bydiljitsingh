@@ -448,6 +448,7 @@ nav a.active::after {
 
 .cv-page {
   padding: 70px 0 90px;
+  background: radial-gradient(circle at top, #f7f7fb 0%, #ffffff 55%);
 }
 
 .cv-page-inner {
@@ -455,8 +456,22 @@ nav a.active::after {
   gap: 32px;
 }
 
+.fancy-cv {
+  position: relative;
+}
+
+.fancy-cv::before {
+  content: "";
+  position: absolute;
+  inset: -40px -20px auto;
+  height: 220px;
+  background: radial-gradient(circle, rgba(17, 24, 39, 0.08), transparent 70%);
+  pointer-events: none;
+}
+
 .cv-header {
   text-align: center;
+  animation: cv-fade-in 0.6s ease forwards;
 }
 
 .cv-header h1 {
@@ -468,6 +483,7 @@ nav a.active::after {
 .cv-contact {
   color: var(--muted);
   margin-bottom: 16px;
+  letter-spacing: 0.02em;
 }
 
 .cv-contact a {
@@ -476,6 +492,7 @@ nav a.active::after {
 
 .cv-download {
   margin-top: 8px;
+  animation: cv-rise 0.7s ease forwards;
 }
 
 .cv-divider {
@@ -493,12 +510,59 @@ nav a.active::after {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 0.8rem;
+  color: #111827;
 }
 
 .cv-expertise-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 14px 24px;
+}
+
+.cv-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+  animation: cv-fade-in 0.6s ease forwards;
+}
+
+.cv-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.1);
+}
+
+.cv-entry + .cv-entry {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.cv-bullets li {
+  padding-left: 4px;
+}
+
+@keyframes cv-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cv-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .cv-entry {
