@@ -930,6 +930,13 @@ nav a.active::after {
   font-style: italic;
 }
 
+.highlight-card--spaced {
+  margin-top: 16px;
+}
+
+.text-center {
+  text-align: center;
+}
 .highlight-card {
   border-radius: 22px;
   border: 1px solid var(--border);
@@ -971,8 +978,16 @@ nav a.active::after {
 
 .tech-details summary::after {
   content: "▾";
-  font-size: 0.9rem;
-  color: var(--muted);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0b1220;
+  background: #e1e5f1;
+  border-radius: 999px;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tech-details details[open] summary::after {
@@ -994,6 +1009,14 @@ nav a.active::after {
   color: #9aa0af;
   text-align: center;
   padding: 24px;
+}
+
+.detail-media img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 16px;
 }
 
 .achievement-grid {
@@ -1055,5 +1078,16 @@ nav a.active::after {
 
   .footer-links {
     text-align: left;
+  }
+}
+.project-download .download-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+@media (min-width: 720px) {
+  .project-download .download-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
