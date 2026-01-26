@@ -29,244 +29,356 @@
     </header>
 
     <main>
-      <section class="project-detail-hero">
-        <div class="container">
-          <a class="button ghost back-button" href="../projects.html">Back to all projects</a>
-          <h1>Small Scale 2 Stroke Engine (MDA)</h1>
+  <section class="project-detail-hero">
+    <div class="container">
+      <a class="button ghost back-button" href="../projects.html">Back to all projects</a>
+      <h1>Small-Scale Two-Stroke CI Engine (Mechanical Design A)</h1>
+      <p>
+        Designed and validated a single-cylinder, air-cooled, two-stroke compression ignition engine concept for a UAV,
+        then translated the design into a manufacturable plan for 20,000 units.
+      </p>
+
+      <div class="project-meta">
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"
+            />
+          </svg>
+          Team size: 3
+        </div>
+
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2 2 7l10 5 10-5-10-5Zm0 20-10-5v-7l10 5 10-5v7l-10 5Z" />
+          </svg>
+          Role: Design + Validation + Manufacturing Planning
+        </div>
+
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M6 2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 4v12h12V6H6Zm2 3h8v2H8V9Zm0 4h5v2H8v-2Z"
+            />
+          </svg>
+          Duration: 2023 (Mechanical Design A)
+        </div>
+
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m14 2-1 2H7l-1-2H4v2l1 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6l1-2V2Zm-1 6H9v2h4V8Z" />
+          </svg>
+          Tools: Fusion 360, Granta EduPack, CAM
+        </div>
+      </div>
+
+      <div class="project-hero-image">
+        <div class="image-frame">
+          <img
+            src="../assets/projects/two-stroke-engine/cover.jpg"
+            alt="Small-scale two-stroke compression ignition engine concept render"
+          />
+        </div>
+        <p>CAD concept render of the small-scale engine (replace with your final images).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Context &amp; Challenge</h2>
+      <p>
+        The brief was to design a compact two-stroke, compression ignition engine to power an unmanned aerial vehicle,
+        meeting a minimum flight time requirement while staying air-cooled and manufacturable at scale. Key constraints
+        included a target speed of <strong>12,000 rpm</strong>, output around <strong>45 W (0.06 bhp)</strong>,
+        and a production requirement of <strong>20,000 units in 4 months</strong>. :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1}
+      </p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Objectives &amp; KPIs</h2>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <h3>Performance</h3>
+          <p>45 W at 12,000 rpm, sized for a 200 mm propeller and 100 mm pitch.</p>
+        </div>
+
+        <div class="kpi-card">
+          <h3>Packaging</h3>
+          <p>Bore–stroke ratio of <strong>0.8:1</strong> with compact internal geometry.</p>
+        </div>
+
+        <div class="kpi-card">
+          <h3>Safety &amp; Reliability</h3>
+          <p>Safety factor target range <strong>2.3–3.5</strong> and critical speed margin above operating rpm.</p>
+        </div>
+
+        <div class="kpi-card">
+          <h3>Manufacturability</h3>
+          <p>Processes and materials selected for repeatable mass production (20,000 units).</p>
+        </div>
+      </div>
+
+      <p class="project-note">
+        These KPIs were captured in the Product Design Specification and design summary. :contentReference[oaicite:2]{index=2}
+      </p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>System Overview</h2>
+      <p>
+        The engine architecture followed a traditional single-cylinder layout with piston, connecting rod, crankshaft,
+        crankcase, cylinder head and a compact fuel system. The design also included a contra piston arrangement for the
+        combustion chamber, plus standard fasteners and bearings to simplify assembly and servicing. :contentReference[oaicite:3]{index=3} :contentReference[oaicite:4]{index=4}
+      </p>
+
+      <div class="detail-media">
+        <img
+          src="../assets/projects/two-stroke-engine/system-layout.png"
+          alt="Exploded view or system layout of the two-stroke engine (placeholder)"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Key Design Choices</h2>
+
+      <div class="tech-details">
+        <details>
+          <summary>Bore, Stroke &amp; Compression</summary>
           <p>
-            Designing and modelling a 2 stroke engine for a unmanned aerial vehicle with necessary calculations and drawings.
+            Bore and stroke were set to approximately <strong>9.0 mm</strong> and <strong>11.3 mm</strong> respectively to
+            meet the bore–stroke ratio requirement. The design used a <strong>starting compression ratio of 8:1</strong>
+            and <strong>running compression ratio of 18:1</strong>, with clearance volumes calculated from displacement.
+            :contentReference[oaicite:5]{index=5}
           </p>
-          <div class="project-meta">
-            <div class="project-chip">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"
-                />
-              </svg>
-              Team size: 3
-            </div>
-            <div class="project-chip">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 2 2 7l10 5 10-5-10-5Zm0 20-10-5v-7l10 5 10-5v7l-10 5Z" />
-              </svg>
-              Role: Team Leader + CAD Modelling
-            </div>
-            <div class="project-chip">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M6 2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 4v12h12V6H6Zm2 3h8v2H8V9Zm0 4h5v2H8v-2Z"
-                />
-              </svg>
-              Duration: Sept-Dec
-            </div>
-            <div class="project-chip">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m14 2-1 2H7l-1-2H4v2l1 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6l1-2V2Zm-1 6H9v2h4V8Z" />
-              </svg>
-              Tools: Fusion 360 &amp Granta Edupack
-            </div>
+          <div class="detail-media">
+            <img
+              src="../assets/projects/two-stroke-engine/bore-stroke.png"
+              alt="Bore and stroke diagram or calculation snapshot (placeholder)"
+            />
           </div>
-          </div>
-          <div class="project-hero-image">
-            <div class="image-frame">
-              <img
-                src="../assets/projects/small-scale-2-stroke-engine/cover.png"
-                alt="Final 2 Stroke Engine Render"
-              />
-            </div>
-            <p>Final Model Render of 2 Stroke Engine.</p>
-          </div>
-        </div>
-      </section>
+        </details>
 
-      <section class="project-section">
-        <div class="container">
-          <h2>Context &amp; Challenge</h2>
+        <details>
+          <summary>Porting Concept</summary>
           <p>
-            The Dakar Rally is one of the toughest off-road events on earth. Rally contenders have
-            traditionally been ICE-powered; our challenge was to electrify a Hilux for a 2028 Dakar
-            entry using Toyota’s next-gen solid-state battery. Beyond performance, the brief served a
-            broader sustainability goal: demonstrate that EVs can survive extreme endurance racing
-            while staying fast, safe and serviceable.
+            Intake, exhaust, and transfer port timing and areas were sized from crank-angle durations, translating into
+            target mean port areas and widths for the small displacement volume. :contentReference[oaicite:6]{index=6}
           </p>
-        </div>
-      </section>
-
-      <section class="project-section">
-        <div class="container">
-          <h2>Objectives &amp; KPIs</h2>
-          <div class="kpi-grid">
-            <div class="kpi-card">
-              <h3>Performance</h3>
-              <p>0–100 &lt; 6 s; top speed &gt; 200 km/h.</p>
-            </div>
-            <div class="kpi-card">
-              <h3>Durability</h3>
-              <p>Survive 500–800 km rally stages under extreme loads.</p>
-            </div>
-            <div class="kpi-card">
-              <h3>Safety</h3>
-              <p>FIA roll cage compliance, crashworthiness, HV battery safety.</p>
-            </div>
-            <div class="kpi-card">
-              <h3>Sustainability</h3>
-              <p>Solid-state battery, regenerative suspension, zero tailpipe emissions.</p>
-            </div>
+          <div class="detail-media">
+            <img
+              src="../assets/projects/two-stroke-engine/porting.png"
+              alt="Port timing and sizing diagram (placeholder)"
+            />
           </div>
-        </div>
-      </section>
+        </details>
 
-    <section class="project-section">
-        <div class="container">
-          <h2>My Role &amp; Leadership</h2>
+        <details>
+          <summary>Rotordynamics: Critical Speed Margin</summary>
           <p>
-            Elected Team Leader for the 30-person cohort. I chaired weekly stand-ups, resolved
-            cross-group conflicts and kept interfaces aligned across six sub-teams. I authored shared
-            documentation and review standards to maintain design quality. Within the Mechanical
-            subgroup (suspension, steering, braking, tyres, vehicle dynamics) I contributed CAD and
-            kinematics, vehicle-dynamics calculations, risk assessment and system integration.
+            Whirl risk was checked by estimating shaft deflection and applying the Rayleigh–Ritz approach. The calculated
+            critical speed was around <strong>19,300 rpm</strong>, giving a margin of about <strong>1.6×</strong> the
+            operating speed. :contentReference[oaicite:7]{index=7}
           </p>
-          <div class="role-quote">
-            “I balanced technical design with leadership, ensuring six subgroups integrated into one
-            concept.”
+          <div class="detail-media">
+            <img
+              src="../assets/projects/two-stroke-engine/critical-speed.png"
+              alt="Free body / deflection / critical speed plot or page snapshot (placeholder)"
+            />
           </div>
-          <div class="highlight-card highlight-card--spaced">
-            <ul>
-              <li><strong>30</strong> teammates across <strong>6</strong> specialist groups coordinated.</li>
-              <li>Delivered <strong>3</strong> reports &amp; <strong>1</strong> final presentation on time.</li>
-              <li>Subsystem integration achieved with <strong>0</strong> missed deadlines.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        </details>
 
-      <section class="project-section">
-        <div class="container">
-          <h2>Technical Contributions</h2>
-          <div class="tech-details">
-            <details>
-              <summary>Suspension</summary>
-              <p>
-                Double wishbone front and rear with <strong>350 mm</strong> travel, tuned to around
-                <strong>2 Hz</strong> ride frequency for predictable handling on loose terrain. We
-                explored regenerative dampers targeting <strong>2–5 kW</strong> per wheel during heavy
-                compression events.
-              </p>
-              <div class="detail-media">
-                <img
-                  src="../assets/projects/electric-rally-pickup/suspension-model.png"
-                  alt="Suspension CAD rendering"
-                />
-              </div>
-            </details>
-            <details>
-              <summary>Steering</summary>
-              <p>
-                Electro-hydraulic power steering rack sized for off-road loads, capable of
-                <strong>&gt; 11,500 Nm</strong> wheel torque. Ratios chosen to balance quick inputs at
-                speed with stability and feedback.
-              </p>
-              <div class="detail-media">
-                <img
-                  src="../assets/projects/electric-rally-pickup/steering-model.png"
-                  alt="Steering system render"
-                />
-              </div>
-            </details>
-            <details>
-              <summary>Braking</summary>
-              <p>
-                Brembo 6-piston front / 4-piston rear with vented rotors; deceleration target
-                <strong>7.7 m·s⁻²</strong>. Thermal/structural FEA confirmed margin for repeated
-                high-speed stops.
-              </p>
-              <div class="detail-media">
-                <img
-                  src="../assets/projects/electric-rally-pickup/brake-thermal.png"
-                  alt="Brake thermal FEA"
-                />
-              </div>
-            </details>
-            <details>
-              <summary>Tyres</summary>
-              <p>
-                BFGoodrich Dakar All-Terrain on beadlock wheels for low-pressure running in
-                sand/rock, balancing endurance, puncture resistance and grip over 500–800 km stages.
-              </p>
-              <div class="detail-media">
-                <img
-                  src="../assets/projects/electric-rally-pickup/tyre-spec.png"
-                  alt="Tyre Selection render"
-                />
-              </div>
-            </details>
-            <details>
-              <summary>Vehicle Dynamics</summary>
-              <p>
-                Targeted <strong>50:50</strong> distribution including a central
-                <strong>~1,200 kg</strong> battery pack. Stability analysis and envelope trade-offs
-                performed with MATLAB &amp; GP100.
-              </p>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <section class="project-section">
-        <div class="container">
-          <h2>What We Achieved</h2>
-          <div class="achievement-grid">
-            <div class="achievement-card">
-              <strong>204 km/h</strong>
-              <span>Top Speed</span>
-            </div>
-            <div class="achievement-card">
-              <strong>&lt; 6 s</strong>
-              <span>0–100 km/h</span>
-            </div>
-            <div class="achievement-card">
-              <strong>1.2–1.5 g</strong>
-              <span>Lateral Grip</span>
-            </div>
-            <div class="achievement-card">
-              <strong>&lt; few min</strong>
-              <span>Battery Swap</span>
-            </div>
-          </div>
+        <details>
+          <summary>Strength: Safety Factor</summary>
           <p>
-            Delivered a validated concept with suspension/brake FEA, an integration plan across six
-            subgroups, and a concise business case for Toyota to launch an EV Dakar entry in 2028.
+            A combined loading check used a conservative yield assumption and the Tresca criterion, giving a lower-bound
+            safety factor of about <strong>2.3</strong>, with an upper bound around <strong>3.46</strong> if higher yield
+            strength steel is assumed. :contentReference[oaicite:8]{index=8}
           </p>
-        </div>
-      </section>
-      <section>
-        <div class="container">
-          <div class="download-grid">
-            <a
-              class="button primary cv-download"
-              href="../assets/projects/electric-rally-pickup/team-presentation.pdf"
-              download
-            >
-              Download Team Presentation
-            </a>
-            <a
-              class="button primary cv-download"
-              href="../assets/projects/electric-rally-pickup/team-report.pdf"
-              download
-            >
-              Download Full Report
-            </a>
-            <a
-              class="button primary cv-download"
-              href="../assets/projects/electric-rally-pickup/mechanical-group-report.pdf"
-              download
-            >
-              Download Mechanical Report
-            </a>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Manufacturing &amp; Materials Strategy</h2>
+      <p>
+        The project did not stop at CAD. We built a manufacturing plan tailored for volume production, defining primary and
+        secondary processes for non-standard components, then justifying material choices based on stiffness, fatigue,
+        thermal stability, machinability, and cost. :contentReference[oaicite:9]{index=9}
+      </p>
+
+      <div class="tech-details">
+        <details>
+          <summary>Material Selection Focus: Crankshaft</summary>
+          <p>
+            Using Granta EduPack, the crankshaft material was screened on Young’s modulus, fatigue strength at
+            10<sup>7</sup> cycles, thermal expansion, density, and price. The final comparison considered stainless steel,
+            cast iron, and medium carbon steel. <strong>Medium carbon steel</strong> was selected as it offered the best
+            stiffness-to-cost balance with favourable fatigue strength and low thermal expansion. :contentReference[oaicite:10]{index=10}
+          </p>
+          <div class="detail-media">
+            <img
+              src="../assets/projects/two-stroke-engine/granta-selection.png"
+              alt="Granta EduPack material selection charts (placeholder)"
+            />
           </div>
+        </details>
+
+        <details>
+          <summary>High-Volume Manufacturing Plan</summary>
+          <p>
+            The casing and piston were specified as grey cast iron for thermal conductivity, vibration damping and
+            machinability. Powertrain components such as the crankshaft, connecting rod and gudgeon pin were specified as
+            medium carbon steel for strength and fatigue performance. The fuel tank was specified as polypropylene for
+            injection moulding, chemical resistance, and transparency. :contentReference[oaicite:11]{index=11}
+          </p>
+          <div class="detail-media">
+            <img
+              src="../assets/projects/two-stroke-engine/process-map.png"
+              alt="Process map for non-standard components (placeholder)"
+            />
+          </div>
+        </details>
+
+        <details>
+          <summary>Process Breakdown: Example Components</summary>
+          <p>
+            We defined process routes for each non-standard part. Examples include:
+          </p>
+          <ul>
+            <li>
+              <strong>Piston</strong>: turning + drilling + deburring for a smooth sliding surface
+              (cycle time reported around <strong>~2 minutes</strong>). :contentReference[oaicite:12]{index=12}
+            </li>
+            <li>
+              <strong>Connecting rod</strong>: CNC milling with reamed holes for fit and finish
+              (cycle time reported around <strong>1 min 44 s</strong>). :contentReference[oaicite:13]{index=13}
+            </li>
+            <li>
+              <strong>Crankshaft</strong>: turning + milling + threading to hit fits and reduce deflection risk
+              (cycle time reported around <strong>1 min 44 s</strong>). :contentReference[oaicite:14]{index=14}
+            </li>
+            <li>
+              <strong>Crankcase</strong>: gravity die casting followed by machining for contact surfaces and ports. :contentReference[oaicite:15]{index=15}
+            </li>
+          </ul>
+        </details>
+      </div>
+
+      <div class="detail-media">
+        <img
+          src="../assets/projects/two-stroke-engine/component-manufacturing.png"
+          alt="CAD renders showing piston, rod, crankshaft manufacturing steps (placeholder)"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Assembly Planning</h2>
+      <p>
+        To reduce variability at scale, assembly was structured into subassemblies with simple jigs. A piston jig guided
+        gudgeon pin insertion depth before pressing the pin fully with the connecting rod in place. A crankcase jig held
+        the case during bearing and crankshaft insertion. The final assembly sequence was designed to be completed with
+        minimal tooling. :contentReference[oaicite:16]{index=16}
+      </p>
+
+      <div class="detail-media">
+        <img
+          src="../assets/projects/two-stroke-engine/assembly-flow.png"
+          alt="Assembly flowchart and jig concept images (placeholder)"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>CAM Study (Component-Level)</h2>
+      <p>
+        Alongside the manufacturing strategy, I produced a CAM routine for a small cylindrical component (piston-form
+        factor) including roughing, finishing and drilling parameters, targeting tight tolerances and surface finish for
+        low friction interfaces. :contentReference[oaicite:17]{index=17}
+      </p>
+
+      <div class="highlight-card highlight-card--spaced">
+        <ul>
+          <li>Total manufacturing time reported: <strong>2 min 15 s</strong>.</li>
+          <li>Tolerance target: <strong>0.01 mm</strong>.</li>
+          <li>Surface finish targets referenced: <strong>Ra 0.4 μm</strong> (milling) and <strong>Ra 1.6 μm</strong> (drilling).</li>
+        </ul>
+      </div>
+
+      <div class="detail-media">
+        <img
+          src="../assets/projects/two-stroke-engine/cam-flowchart.png"
+          alt="CAM manufacturing flowchart image (placeholder)"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>What We Achieved</h2>
+
+      <div class="achievement-grid">
+        <div class="achievement-card">
+          <strong>45 W</strong>
+          <span>Target Power</span>
         </div>
-      </section>
-    </main>
+        <div class="achievement-card">
+          <strong>12,000 rpm</strong>
+          <span>Operating Speed</span>
+        </div>
+        <div class="achievement-card">
+          <strong>~19,300 rpm</strong>
+          <span>Critical Speed (calc.)</span>
+        </div>
+        <div class="achievement-card">
+          <strong>2.3–3.5</strong>
+          <span>Safety Factor Range</span>
+        </div>
+      </div>
+
+      <p>
+        The outcome was a coherent engine concept supported by core validation calculations, plus a practical manufacturing
+        and assembly plan that considered repeatability, cost, and scalability. :contentReference[oaicite:18]{index=18} :contentReference[oaicite:19]{index=19}
+      </p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Reflections &amp; Improvements</h2>
+      <p>
+        The most valuable learning was connecting analysis to manufacturability. Small geometric decisions cascaded into
+        assembly difficulty, tool access, tolerance risk, and cycle time. If repeating the project, I would tighten the
+        PDS into more measurable targets and automate unit checking earlier using spreadsheets to reduce error, then use
+        the same parametric approach to iterate on geometry faster. :contentReference[oaicite:20]{index=20}
+      </p>
+
+      <div class="detail-media">
+        <img
+          src="../assets/projects/two-stroke-engine/lessons-learned.png"
+          alt="Lessons learned visual or annotated screenshot (placeholder)"
+        />
+      </div>
+    </div>
+  </section>
+</main>
+
 
     <footer class="site-footer">
       <div class="container footer-grid">
