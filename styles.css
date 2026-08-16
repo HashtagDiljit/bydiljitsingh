@@ -541,11 +541,14 @@ a {
 
 .showcase__media {
   position: sticky;
-  top: 15vh;
-  aspect-ratio: 4 / 5;
-  max-height: 66vh;
+  top: 18vh;
+  /* Landscape box: the project imagery is mostly wide CAD renders and
+     drawings, so a portrait frame cropped them badly. */
+  aspect-ratio: 4 / 3;
+  max-height: 58vh;
   overflow: hidden;
   background: var(--paper);
+  border: 1px solid var(--line);
 }
 
 .showcase__media figure {
@@ -564,17 +567,9 @@ a {
 .showcase__media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  filter: sepia(0.16) saturate(0.92);
-}
-
-.showcase__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 1px solid var(--line);
-  pointer-events: none;
-  z-index: 3;
+  object-fit: contain;
+  padding: 26px;
+  filter: sepia(0.1) saturate(0.95);
 }
 
 /* Multiply an ivory wash over imagery so white studio backgrounds settle
@@ -586,7 +581,7 @@ a {
   inset: 0;
   background: var(--sage);
   mix-blend-mode: multiply;
-  opacity: 0.5;
+  opacity: 0.22;
   pointer-events: none;
   z-index: 2;
 }
@@ -668,15 +663,18 @@ a {
 .showcase__inline {
   display: none;
   margin-bottom: 22px;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--line);
 }
 
 .showcase__inline img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  filter: sepia(0.16) saturate(0.92);
+  object-fit: contain;
+  padding: 16px;
+  filter: sepia(0.1) saturate(0.95);
 }
 
 /* --------------------------------------------------------------------------
