@@ -48,9 +48,8 @@ Anyone editing this site should keep to the following, because the pages share m
 ## Known open items
 
 1. **`assets/Diljit_Singh_CV.pdf` is out of date.** The CV page content has been updated to the 2026 CV; the downloadable PDF has not. Replace it so the two match.
-2. **23 project images are absent.** They currently show labelled placeholders on these pages: `agrdrive.html`, `factory-in-a-box.html`, `inhaler-spcaer.html`, `thin-plate-fea.html`, `wankel-engine-transmission.html`. Drop the real images into the matching `assets/projects/<slug>/` folder and swap the `media-pending` span back to an `<img>`.
-3. **Two filenames contain typos**: `projects/agrdrive.html` (should be `agridrive`) and `projects/inhaler-spcaer.html` (should be `inhaler-spacer`). Renaming these means updating the links in `projects.html` and `sitemap.xml` at the same time. Old URLs will break, which is acceptable given the site has little inbound linking, but do it in one commit.
-4. **No Wiki page.** A placeholder Wiki page was removed because every link pointed nowhere. If it returns, it should launch with real content.
+2. **23 project images are absent.** They currently show labelled placeholders on these pages: `agridrive.html`, `factory-in-a-box.html`, `inhaler-spacer.html`, `thin-plate-fea.html`, `wankel-engine-transmission.html`. Drop the real images into the matching `assets/projects/<slug>/` folder and swap the `media-pending` span back to an `<img>`.
+3. **No Wiki page.** A placeholder Wiki page was removed because every link pointed nowhere. If it returns, it should launch with real content.
 
 ## Local preview
 
