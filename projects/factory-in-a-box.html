@@ -3,304 +3,271 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Factory-in-a-Box Automation System (Industrial Automation &amp; Robotics) — an engineering project case study from Diljit Singh's technical portfolio, covering approach, analysis, and outcomes." />
+    <meta name="description" content="Group design and digital-twin simulation of an automated Factory-in-a-Box (FIAB) workcell for assembling a motorised XY stage, including robot selection, sequencing, end-effector strategy, and RoboDK validation." />
     <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/projects/factory-in-a-box.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Electric Rally Pickup — Toyota Hilux | bydiljitsingh" />
-    <meta property="og:description" content="Factory-in-a-Box Automation System (Industrial Automation &amp; Robotics) — an engineering project case study from Diljit Singh's technical portfolio, covering approach, analysis, and outcomes." />
+    <meta property="og:title" content="Factory-in-a-Box Automation System (Industrial Automation &amp; Robotics) | bydiljitsingh" />
+    <meta property="og:description" content="Group design and digital-twin simulation of an automated Factory-in-a-Box (FIAB) workcell for assembling a motorised XY stage, including robot selection, sequencing, end-effector strategy, and RoboDK validation." />
     <meta property="og:url" content="https://hashtagdiljit.github.io/bydiljitsingh/projects/factory-in-a-box.html" />
     <meta property="og:image" content="https://hashtagdiljit.github.io/bydiljitsingh/assets/social-preview.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <title>Electric Rally Pickup — Toyota Hilux | bydiljitsingh</title>
+    <title>Factory-in-a-Box Automation System (Industrial Automation &amp; Robotics) | bydiljitsingh</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../pages.css" />
     <link rel="icon" href="../assets/bydiljitsingh-favicon.png" />
+    <script src="../site.js"></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container nav-bar">
-        <a class="logo" href="../index.html">
-          <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
-        </a>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="masthead">
+      <div class="shell masthead__inner">
+        <a class="wordmark" href="../index.html">Diljit <em>Singh</em></a>
         <nav>
-          <a href="../index.html">Home</a>
-          <a href="../projects.html" class="active">Projects</a>
+          <a href="../index.html">Index</a>
+          <a href="../projects.html" aria-current="page">Work</a>
           <a href="../cv.html">CV</a>
+          <a href="mailto:diljitsingh2003@gmail.com">Contact</a>
         </nav>
       </div>
     </header>
 
-    <main>
-  <section class="project-detail-hero">
-    <div class="container">
-      <a class="button ghost back-button" href="../projects.html">Back to all projects</a>
-      <h1>Factory-in-a-Box Automation System (Industrial Automation &amp; Robotics)</h1>
-      <p>
-        Group design and digital-twin simulation of an automated Factory-in-a-Box (FIAB) workcell for
-        assembling a motorised XY stage, including robot selection, sequencing, end-effector strategy,
-        and RoboDK validation.
-      </p>
+    <main id="main">
+      <section class="band">
+        <div class="shell">
+          <div class="hero__eyebrow">
+            <span class="label label--light">Sheet IV</span>
+            <hr class="rule" />
+            <span class="label label--light">2025</span>
+          </div>
 
-      <div class="project-meta">
-        <div class="project-chip">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"/>
-          </svg>
-          Team size: 5
-        </div>
+          <h1 class="band__statement">Factory-in-a-Box <em>Automation</em> System</h1>
 
-        <div class="project-chip">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 2 2 7l10 5 10-5-10-5Zm0 20-10-5v-7l10 5 10-5v7l-10 5Z"/>
-          </svg>
-          Role: CAD, Research &amp; Report Writing
+          <div class="band__copy">
+            <p>Group design and digital-twin simulation of an automated Factory-in-a-Box (FIAB) workcell for assembling a motorised XY stage, including robot selection, sequencing, end-effector strategy, and RoboDK validation.</p>
+          </div>
         </div>
-
-        <div class="project-chip">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M6 2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 4v12h12V6H6Zm2 3h8v2H8V9Zm0 4h5v2H8v-2Z"/>
-          </svg>
-          Duration: Full semester
-        </div>
-
-        <div class="project-chip">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="m14 2-1 2H7l-1-2H4v2l1 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6l1-2V2Zm-1 6H9v2h4V8Z"/>
-          </svg>
-          Tools: RoboDK, CAD, DFA, automation theory
-        </div>
+      </section>
+      <section class="section">
+        <div class="shell hero__grid">
+          <div>
+            <p class="label label--brass">Particulars</p>
+      <dl class="hero__meta">
+        <div><dt>Module</dt><dd>Industrial Automation &amp; Robotics</dd></div>
+        <div><dt>Team size</dt><dd>5</dd></div>
+        <div><dt>Role</dt><dd>CAD, Research &amp; Report Writing</dd></div>
+        <div><dt>Duration</dt><dd>Full semester</dd></div>
+        <div><dt>Tools</dt><dd>RoboDK, CAD, DFA, automation theory</dd></div>
+      </dl>
+      <div class="btn-row">
+        <a class="btn" href="../projects.html">All work</a>
       </div>
-    </div>
+          </div>
 
-    <div class="project-hero-image">
-      <div class="image-frame">
-        <img
-          src="../assets/projects/factory-in-a-box/cover.jpg"
-          alt="Factory-in-a-Box RoboDK digital twin overview (placeholder)"
-        />
-      </div>
-      <p>Placeholder image: replace with RoboDK workcell overview render.</p>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>Context &amp; Challenge</h2>
-      <p>
-        Factory-in-a-Box systems aim to deliver flexible, reconfigurable manufacturing within a compact
-        footprint. The module challenge was to design an automated workcell capable of assembling a
-        motorised XY stage at industrially realistic throughput, while respecting space, payload,
-        reach, and sequencing constraints.
-      </p>
-      <p>
-        The project was split into two phases. The first focused on structured weekly tasks covering
-        product selection, robot justification, sequencing, and automation principles. The second
-        applied this learning to a fully defined FIAB concept, validated through a RoboDK digital twin,
-        alongside an individual research topic in Section B.
-      </p>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>Objectives &amp; KPIs</h2>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <h3>Throughput</h3>
-          <p>Meet a target of <strong>300 units per week</strong>.</p>
+        <figure class="figure">
+        <div class="figure__frame">
+          <img src="../assets/projects/factory-in-a-box/cover.jpg" alt="Factory-in-a-Box RoboDK digital twin overview (placeholder)" loading="lazy" />
         </div>
-        <div class="kpi-card">
-          <h3>Compactness</h3>
-          <p>Fit the full workcell within a constrained FIAB footprint.</p>
+        <figcaption class="figure__cap">
+          <span class="label">Plate I</span>
+          <p>Placeholder image: replace with RoboDK workcell overview render.</p>
+        </figcaption>
+      </figure>
         </div>
-        <div class="kpi-card">
-          <h3>Automation Quality</h3>
-          <p>Collision-free motion, stable assembly sequence, clear task allocation.</p>
+      </section>
+      <section class="section">
+        <div class="shell">
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>Context &amp; Challenge</h2>
+            </div>
+            <div class="stack">
+              <div class="prose">
+        <p> Factory-in-a-Box systems aim to deliver flexible, reconfigurable manufacturing within a compact footprint. The module challenge was to design an automated workcell capable of assembling a motorised XY stage at industrially realistic throughput, while respecting space, payload, reach, and sequencing constraints. </p>
+        <p> The project was split into two phases. The first focused on structured weekly tasks covering product selection, robot justification, sequencing, and automation principles. The second applied this learning to a fully defined FIAB concept, validated through a RoboDK digital twin, alongside an individual research topic in Section B. </p>
+      </div>
+            </div>
+          </div>
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>Objectives &amp; KPIs</h2>
+            </div>
+            <div class="stack">
+              <dl class="hero__meta">
+        <div><dt>Throughput</dt><dd>Meet a target of <strong>300 units per week</strong>.</dd></div>
+        <div><dt>Compactness</dt><dd>Fit the full workcell within a constrained FIAB footprint.</dd></div>
+        <div><dt>Automation Quality</dt><dd>Collision-free motion, stable assembly sequence, clear task allocation.</dd></div>
+        <div><dt>Flexibility</dt><dd>Support mixed component handling without tool-change downtime.</dd></div>
+      </dl>
+            </div>
+          </div>
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>My Role</h2>
+            </div>
+            <div class="stack">
+              <div class="prose">
+        <p> My contribution focused on CAD development, technical research, and report writing. I produced CAD models for key components and end-effector concepts, supported analytical justification of mechanical choices, and authored significant portions of both the system-level design and the Section B research report. </p>
+        <ul> <li>CAD modelling for FIAB layout and end-effector concepts.</li> <li>Research and technical writing for Section B (end effectors).</li> <li>Integration of design decisions into a coherent final report.</li> </ul>
+      </div>
+            </div>
+          </div>
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>Factory-in-a-Box System Design</h2>
+            </div>
+            <div class="stack">
+              <div class="prose">
+        <p> The FIAB workcell assembles a motorised XY stage using a linear flow layout. Components are picked from bins, assembled on a central jig, transferred via conveyor, and placed into packaging and storage. Lean principles were applied to minimise motion, transport, and rehandling. </p>
+      </div>
+            <figure class="figure">
+        <div class="figure__frame">
+          <span class="media-pending">FIAB workcell layout and material flow</span>
         </div>
-        <div class="kpi-card">
-          <h3>Flexibility</h3>
-          <p>Support mixed component handling without tool-change downtime.</p>
+        <figcaption class="figure__cap">
+          <span class="label">Plate II</span>
+          <p>Image to follow.</p>
+        </figcaption>
+      </figure>
+            <div class="prose">
+        <p class="muted">Placeholder image: FIAB layout or exploded XY stage assembly.</p>
+      </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>My Role</h2>
-      <p>
-        My contribution focused on CAD development, technical research, and report writing. I produced
-        CAD models for key components and end-effector concepts, supported analytical justification of
-        mechanical choices, and authored significant portions of both the system-level design and the
-        Section B research report.
-      </p>
-
-      <div class="highlight-card highlight-card--spaced">
-        <ul>
-          <li>CAD modelling for FIAB layout and end-effector concepts.</li>
-          <li>Research and technical writing for Section B (end effectors).</li>
-          <li>Integration of design decisions into a coherent final report.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>Factory-in-a-Box System Design</h2>
-      <p>
-        The FIAB workcell assembles a motorised XY stage using a linear flow layout. Components are picked
-        from bins, assembled on a central jig, transferred via conveyor, and placed into packaging and
-        storage. Lean principles were applied to minimise motion, transport, and rehandling.
-      </p>
-
-      <div class="detail-media">
-        <span class="media-pending">FIAB workcell layout and material flow</span>
-      </div>
-      <p class="muted">Placeholder image: FIAB layout or exploded XY stage assembly.</p>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>Robots, Sequencing &amp; Automation Logic</h2>
-
-      <div class="tech-details">
+      </section>
+      <section class="section section--wash">
+        <div class="shell">
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>Robots, Sequencing &amp; Automation Logic</h2>
+            </div>
+            <div class="stack">
+              <div class="sheets">
         <details>
           <summary>Robot selection and justification</summary>
-          <p>
-            The workcell uses collaborative <strong>KUKA LBR iiwa 14 R820</strong> robots, selected for
-            their 7-axis dexterity, <strong>820 mm</strong> reach, <strong>14 kg</strong> payload and
-            <strong>±0.1 mm</strong> repeatability. Wall mounting was used to free floor space and improve
-            access to bins, jigs and conveyors.
-          </p>
+          <p> The workcell uses collaborative <strong>KUKA LBR iiwa 14 R820</strong> robots, selected for their 7-axis dexterity, <strong>820 mm</strong> reach, <strong>14 kg</strong> payload and <strong>±0.1 mm</strong> repeatability. Wall mounting was used to free floor space and improve access to bins, jigs and conveyors. </p>
         </details>
-
         <details>
           <summary>Assembly sequencing and stability</summary>
-          <p>
-            Multiple assembly sequences were evaluated using stability and graspability matrices.
-            Sequence 2 was selected as it maximised structural stability and gripper accessibility by
-            delaying motors and top plates until the core structure and lead screws were installed.
-          </p>
+          <p> Multiple assembly sequences were evaluated using stability and graspability matrices. Sequence 2 was selected as it maximised structural stability and gripper accessibility by delaying motors and top plates until the core structure and lead screws were installed. </p>
         </details>
-
         <details>
           <summary>Workcell flow and cycle time</summary>
-          <p>
-            Material flow is strictly linear, eliminating backtracking. RoboDK simulation predicted a
-            cycle time of approximately <strong>5 minutes 30 seconds</strong> per assembly, sufficient
-            to meet the weekly production target with margin.
-          </p>
-          <div class="detail-media">
-            <span class="media-pending">RoboDK simulation screenshot</span>
+          <p> Material flow is strictly linear, eliminating backtracking. RoboDK simulation predicted a cycle time of approximately <strong>5 minutes 30 seconds</strong> per assembly, sufficient to meet the weekly production target with margin. </p>
+          <figure class="figure">
+          <div class="figure__frame">
+          <span class="media-pending">RoboDK simulation screenshot</span>
           </div>
+          <figcaption class="figure__cap">
+          <span class="label">Plate III</span>
+          <p>Image to follow.</p>
+          </figcaption>
+          </figure>
         </details>
       </div>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>Section B: End-Effector Research</h2>
-      <p>
-        My Section B research investigated whether a <strong>double-ended hybrid end effector</strong>
-        combining a mechanical gripper and suction cup could improve FIAB efficiency compared to a
-        single-function gripper.
-      </p>
-
-      <div class="tech-details">
+            </div>
+          </div>
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>Section B: End-Effector Research</h2>
+            </div>
+            <div class="stack">
+              <div class="prose">
+        <p> My Section B research investigated whether a <strong>double-ended hybrid end effector</strong> combining a mechanical gripper and suction cup could improve FIAB efficiency compared to a single-function gripper. </p>
+      </div>
+            <div class="sheets">
         <details>
           <summary>Concept and motivation</summary>
-          <p>
-            Single-function grippers struggle in mixed-geometry assembly. By integrating mechanical
-            and suction gripping into one tool, the robot can switch handling modes through orientation
-            rather than time-consuming tool changes.
-          </p>
+          <p> Single-function grippers struggle in mixed-geometry assembly. By integrating mechanical and suction gripping into one tool, the robot can switch handling modes through orientation rather than time-consuming tool changes. </p>
         </details>
-
         <details>
           <summary>Digital twin comparison</summary>
-          <p>
-            Two RoboDK simulations were run under identical conditions: one using a standard gripper,
-            the other using the hybrid end effector. Only the end-effector configuration was changed,
-            isolating its effect on performance.
-          </p>
+          <p> Two RoboDK simulations were run under identical conditions: one using a standard gripper, the other using the hybrid end effector. Only the end-effector configuration was changed, isolating its effect on performance. </p>
         </details>
-
         <details>
           <summary>Results</summary>
-          <p>
-            The hybrid end effector reduced total assembly time by <strong>13.8%</strong>, reduced robot
-            motion count by <strong>17.6%</strong>, and shortened path length by <strong>7.6%</strong>.
-            The reduction in non-productive motion directly improved robot utilisation.
-          </p>
-          <div class="detail-media">
-            <span class="media-pending">Hybrid double-ended gripper CAD</span>
+          <p> The hybrid end effector reduced total assembly time by <strong>13.8%</strong>, reduced robot motion count by <strong>17.6%</strong>, and shortened path length by <strong>7.6%</strong>. The reduction in non-productive motion directly improved robot utilisation. </p>
+          <figure class="figure">
+          <div class="figure__frame">
+          <span class="media-pending">Hybrid double-ended gripper CAD</span>
           </div>
+          <figcaption class="figure__cap">
+          <span class="label">Plate IV</span>
+          <p>Image to follow.</p>
+          </figcaption>
+          </figure>
         </details>
       </div>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>What This Project Demonstrated</h2>
-      <div class="highlight-card highlight-card--spaced">
-        <ul>
-          <li>System-level thinking across mechanics, robotics, and production flow.</li>
-          <li>Use of digital twins as a design and comparison tool, not just visualisation.</li>
-          <li>Ability to link research insight directly to measurable manufacturing improvements.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>Reflections</h2>
-      <p>
-        The strongest takeaway was that automation quality is driven by integration, not individual
-        optimisation. Robot choice, sequencing, end-effectors and layout must be developed together.
-        The hybrid end-effector study showed how small tooling decisions can unlock measurable gains in
-        cycle time, energy use, and flexibility.
-      </p>
-    </div>
-  </section>
-</main>
-
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <div class="logo footer-logo">
-            <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
+            </div>
           </div>
-          <p>Graduate Project Manager at Arcadis, Property Regions &middot; MEng Mechanical Engineering (Automotive), University of Birmingham.</p>
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>What This Project Demonstrated</h2>
+            </div>
+            <div class="stack">
+              <div class="prose">
+        <ul> <li>System-level thinking across mechanics, robotics, and production flow.</li> <li>Use of digital twins as a design and comparison tool, not just visualisation.</li> <li>Ability to link research insight directly to measurable manufacturing improvements.</li> </ul>
+      </div>
+            </div>
+          </div>
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>Reflections</h2>
+            </div>
+            <div class="stack">
+              <div class="prose">
+        <p> The strongest takeaway was that automation quality is driven by integration, not individual optimisation. Robot choice, sequencing, end-effectors and layout must be developed together. The hybrid end-effector study showed how small tooling decisions can unlock measurable gains in cycle time, energy use, and flexibility. </p>
+      </div>
+            </div>
+          </div>
         </div>
-        <div class="footer-links">
-          <a
-            href="https://www.linkedin.com/in/diljitsingh03/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >LinkedIn</a
-          >
-          <a
-            href="https://www.instagram.com/hashtagdiljit/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Instagram</a
-          >
-          <a href="mailto:diljitsingh2003@gmail.com">Email</a>
+      </section>
+    </main>
+    <footer class="colophon-block">
+      <div class="shell">
+        <div class="colophon__top">
+          <div>
+            <p class="label label--light">Get in touch</p>
+            <p class="colophon__cta">
+              Always glad to talk about <em>property</em>, delivery, or a good engineering problem.
+              <a href="mailto:diljitsingh2003@gmail.com">Write to me.</a>
+            </p>
+          </div>
+
+          <dl class="colophon__details">
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:diljitsingh2003@gmail.com">diljitsingh2003@gmail.com</a></dd>
+            </div>
+            <div>
+              <dt>LinkedIn</dt>
+              <dd><a href="https://www.linkedin.com/in/diljitsingh03/" target="_blank" rel="noopener noreferrer">diljitsingh03</a></dd>
+            </div>
+            <div>
+              <dt>Instagram</dt>
+              <dd><a href="https://www.instagram.com/hashtagdiljit/" target="_blank" rel="noopener noreferrer">hashtagdiljit</a></dd>
+            </div>
+            <div>
+              <dt>Located</dt>
+              <dd>Birmingham, United Kingdom</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="colophon__bottom">
+          <span class="label label--light">© 2026 Diljit Singh</span>
+          <span class="label label--brass">Set in Baskervville — after John Baskerville of Birmingham</span>
         </div>
       </div>
-      <div class="container footer-bottom">© 2026 BYDILJITSINGH — BIRMINGHAM, UK</div>
     </footer>
   </body>
 </html>

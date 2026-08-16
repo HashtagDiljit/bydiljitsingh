@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Pneumatic Piston Model (IDP1 A) — an engineering project case study from Diljit Singh's technical portfolio, covering approach, analysis, and outcomes." />
+    <meta name="description" content="Parametric modelling and drawing for a pneumatic piston assembly, focusing on CAD skills and learning." />
     <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/projects/pneumatic-piston.html" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Pneumatic Piston Model (IDP1 A) | bydiljitsingh" />
-    <meta property="og:description" content="Pneumatic Piston Model (IDP1 A) — an engineering project case study from Diljit Singh's technical portfolio, covering approach, analysis, and outcomes." />
+    <meta property="og:description" content="Parametric modelling and drawing for a pneumatic piston assembly, focusing on CAD skills and learning." />
     <meta property="og:url" content="https://hashtagdiljit.github.io/bydiljitsingh/projects/pneumatic-piston.html" />
     <meta property="og:image" content="https://hashtagdiljit.github.io/bydiljitsingh/assets/social-preview.png" />
     <meta property="og:image:width" content="1200" />
@@ -17,134 +17,175 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../pages.css" />
     <link rel="icon" href="../assets/bydiljitsingh-favicon.png" />
+    <script src="../site.js"></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container nav-bar">
-        <a class="logo" href="../index.html">
-          <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
-        </a>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="masthead">
+      <div class="shell masthead__inner">
+        <a class="wordmark" href="../index.html">Diljit <em>Singh</em></a>
         <nav>
-          <a href="../index.html">Home</a>
-          <a href="../projects.html" class="active">Projects</a>
+          <a href="../index.html">Index</a>
+          <a href="../projects.html" aria-current="page">Work</a>
           <a href="../cv.html">CV</a>
+          <a href="mailto:diljitsingh2003@gmail.com">Contact</a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <section class="project-detail-hero">
-        <div class="container">
-          <a class="button ghost back-button" href="../projects.html">Back to all projects</a>
-          <h1>Pneumatic Piston Model (IDP1 A)</h1>
-          <p>
-            Parametric modelling and drawing for a pneumatic piston assembly, focusing on
-            CAD skills and learning.
-          </p>
-          <div class="project-meta">
-            <div class="project-chip">Role: CAD Designer</div>
-            <div class="project-chip">Duration: 6 weeks</div>
-            <div class="project-chip">Tools: Fusion 360</div>
-            <div class="project-chip">Deliverables: Hand Sketches + Assembly Drawings</div>
+    <main id="main">
+      <section class="band">
+        <div class="shell">
+          <div class="hero__eyebrow">
+            <span class="label label--light">Sheet XII</span>
+            <hr class="rule" />
+            <span class="label label--light">2022</span>
           </div>
-          <div class="project-hero-image">
-            <div class="image-frame">
-              <img
-                src="../assets/projects/pneumatic-piston/cover.jpg"
-                alt="Toyota Hilux EV rally truck concept for Dakar 2028 — exterior render, red livery"
-              />
-            </div>
-            <p>Final Pneumatic Piston Model Isometric View.</p>
+
+          <h1 class="band__statement">Pneumatic <em>Piston</em> Model</h1>
+
+          <div class="band__copy">
+            <p>Parametric modelling and drawing for a pneumatic piston assembly, focusing on CAD skills and learning.</p>
           </div>
         </div>
       </section>
+      <section class="section">
+        <div class="shell hero__grid">
+          <div>
+            <p class="label label--brass">Particulars</p>
+      <dl class="hero__meta">
+        <div><dt>Module</dt><dd>IDP1 A</dd></div>
+        <div><dt>Role</dt><dd>CAD Designer</dd></div>
+        <div><dt>Duration</dt><dd>6 weeks</dd></div>
+        <div><dt>Tools</dt><dd>Fusion 360</dd></div>
+        <div><dt>Deliverables</dt><dd>Hand Sketches + Assembly Drawings</dd></div>
+      </dl>
+      <div class="btn-row">
+        <a class="btn" href="../projects.html">All work</a>
+      </div>
+          </div>
 
-      <section class="project-section">
-        <div class="container">
-          <h2>Context &amp; Challenge</h2>
-          <p>
-            The brief required us to use an image of a pneumatic piston to hand sketch within scale and make a CAD model
-            to produce isometric drawings with a BOM and 2 part drawings.
-          </p>
+        <figure class="figure">
+        <div class="figure__frame">
+          <img src="../assets/projects/pneumatic-piston/cover.jpg" alt="Toyota Hilux EV rally truck concept for Dakar 2028 — exterior render, red livery" loading="lazy" />
+        </div>
+        <figcaption class="figure__cap">
+          <span class="label">Plate I</span>
+          <p>Final Pneumatic Piston Model Isometric View.</p>
+        </figcaption>
+      </figure>
         </div>
       </section>
-
-      <section class="project-section">
-        <div class="container">
-          <h2>Technical Details</h2>
-          <div class="tech-details">
-            <details>
-              <summary>Hand Sketch</summary>
-              <p>
-                Made a hand sketch at a 2:1 scale, dimensioning all the relevant parts and adding centre and hidden lines.
-              </p>
-              <div class="detail-media">
-                <img
-                  src="../assets/projects/pneumatic-piston/handsketch.png"
-                  alt="Handsketch of Pneumatic Piston"
-                />
-              </div>
-            </details>
-            <details>
-              <summary>Assembly &amp Part Drawings</summary>
-              <p>
-                Final Assembly Drawing with Bill of Materials.
-              </p>
-              <div class="detail-media">
-                <img
-                  src="../assets/projects/pneumatic-piston/assembly-drawing.png"
-                  alt="Assembly Drawing of Pneumatic Piston with BoM"
-                />
-              </div>
-            </details>
+      <section class="section">
+        <div class="shell">
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>Context &amp; Challenge</h2>
+            </div>
+            <div class="stack">
+              <div class="prose">
+        <p> The brief required us to use an image of a pneumatic piston to hand sketch within scale and make a CAD model to produce isometric drawings with a BOM and 2 part drawings. </p>
+      </div>
+            </div>
+          </div>
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>Technical Details</h2>
+            </div>
+            <div class="stack">
+              <div class="sheets">
+        <details>
+          <summary>Hand Sketch</summary>
+          <p> Made a hand sketch at a 2:1 scale, dimensioning all the relevant parts and adding centre and hidden lines. </p>
+          <figure class="figure">
+          <div class="figure__frame">
+          <img src="../assets/projects/pneumatic-piston/handsketch.png" alt="Handsketch of Pneumatic Piston" loading="lazy" />
+          </div>
+          <figcaption class="figure__cap">
+          <span class="label">Plate II</span>
+          </figcaption>
+          </figure>
+        </details>
+        <details>
+          <summary>Assembly &amp; Part Drawings</summary>
+          <p> Final Assembly Drawing with Bill of Materials. </p>
+          <figure class="figure">
+          <div class="figure__frame">
+          <img src="../assets/projects/pneumatic-piston/assembly-drawing.png" alt="Assembly Drawing of Pneumatic Piston with BoM" loading="lazy" />
+          </div>
+          <figcaption class="figure__cap">
+          <span class="label">Plate III</span>
+          </figcaption>
+          </figure>
+        </details>
+      </div>
+            </div>
           </div>
         </div>
       </section>
-
-      <section class="project-section">
-        <div class="container">
-          <h2>What I Achieved</h2>
-          <div class="achievement-grid">
-            <div class="achievement-card">
-              <strong>13</strong>
-              <span>Unique Parts</span>
+      <section class="section section--wash">
+        <div class="shell">
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>What I Achieved</h2>
             </div>
-            <div class="achievement-card">
-              <strong>1</strong>
-              <span>Assembly BOM</span>
-            </div>
-            <div class="achievement-card">
-              <strong>100%</strong>
-              <span>Drawing Coverage</span>
+            <div class="stack">
+              <dl class="hero__meta">
+        <div><dt>Unique Parts</dt><dd>13</dd></div>
+        <div><dt>Assembly BOM</dt><dd>1</dd></div>
+        <div><dt>Drawing Coverage</dt><dd>100%</dd></div>
+      </dl>
+            <div class="prose">
+        <p> Delivered a hand sketch with assembly and part drawings with a bill of materials. </p>
+      </div>
             </div>
           </div>
-          <p>
-            Delivered a hand sketch with assembly and part drawings with a bill of materials.
-          </p>
         </div>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <div class="logo footer-logo">
-            <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
+    <footer class="colophon-block">
+      <div class="shell">
+        <div class="colophon__top">
+          <div>
+            <p class="label label--light">Get in touch</p>
+            <p class="colophon__cta">
+              Always glad to talk about <em>property</em>, delivery, or a good engineering problem.
+              <a href="mailto:diljitsingh2003@gmail.com">Write to me.</a>
+            </p>
           </div>
-          <p>Graduate Project Manager at Arcadis, Property Regions &middot; MEng Mechanical Engineering (Automotive), University of Birmingham.</p>
+
+          <dl class="colophon__details">
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:diljitsingh2003@gmail.com">diljitsingh2003@gmail.com</a></dd>
+            </div>
+            <div>
+              <dt>LinkedIn</dt>
+              <dd><a href="https://www.linkedin.com/in/diljitsingh03/" target="_blank" rel="noopener noreferrer">diljitsingh03</a></dd>
+            </div>
+            <div>
+              <dt>Instagram</dt>
+              <dd><a href="https://www.instagram.com/hashtagdiljit/" target="_blank" rel="noopener noreferrer">hashtagdiljit</a></dd>
+            </div>
+            <div>
+              <dt>Located</dt>
+              <dd>Birmingham, United Kingdom</dd>
+            </div>
+          </dl>
         </div>
-        <div class="footer-links">
-          <a href="https://www.linkedin.com/in/diljitsingh03/">LinkedIn</a>
-          <a href="https://www.instagram.com/hashtagdiljit/">Instagram</a>
-          <a href="mailto:diljitsingh2003@gmail.com">Email</a>
+
+        <div class="colophon__bottom">
+          <span class="label label--light">© 2026 Diljit Singh</span>
+          <span class="label label--brass">Set in Baskervville — after John Baskerville of Birmingham</span>
         </div>
       </div>
-      <div class="container footer-bottom">© 2026 BYDILJITSINGH — BIRMINGHAM, UK</div>
     </footer>
   </body>
 </html>
