@@ -2,62 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hashtagdiljit.github.io/bydiljitsingh/</loc>
+    <lastmod>2026-08-16</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects.html</loc>
+    <lastmod>2026-08-16</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hashtagdiljit.github.io/bydiljitsingh/cv.html</loc>
+    <lastmod>2026-08-16</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/final-year-project.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/AFPS.html</loc>
+    <lastmod>2026-08-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/agridrive.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/electric-rally-pickup.html</loc>
+    <lastmod>2026-08-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/factory-in-a-box.html</loc>
+    <lastmod>2026-08-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/final-year-project.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/green-hydrogen-plant.html</loc>
+    <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/electric-rally-pickup.html</loc>
+    <lastmod>2026-08-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/inhaler-spacer.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/pneumatic-piston.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/small-scale-2-stroke-engine.html</loc>
+    <lastmod>2026-08-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/thin-plate-fea.html</loc>
+    <lastmod>2026-08-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/wankel-engine-transmission.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/green-hydrogen-plant.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/small-scale-2-stroke-engine.html</loc>
+    <lastmod>2026-08-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/wooden-bridge.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hashtagdiljit.github.io/bydiljitsingh/projects/pneumatic-piston.html</loc>
+    <lastmod>2026-08-16</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>

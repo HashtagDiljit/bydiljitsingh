@@ -3,128 +3,227 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Advanced Fuels &amp; Powertrains (In Progress) — an engineering project case study from Diljit Singh's technical portfolio, covering approach, analysis, and outcomes." />
+    <meta name="description" content="GDI and HCCI single-cylinder engine modelling in AVL Cruise M — seven cases calibrated against experimental data, with fuel blend and valve timing modifications assessed against net zero. Advanced Fuels and Powertrain Systems, module mark 73." />
     <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/projects/AFPS.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Electric Rally Pickup — Toyota Hilux | bydiljitsingh" />
-    <meta property="og:description" content="Advanced Fuels &amp; Powertrains (In Progress) — an engineering project case study from Diljit Singh's technical portfolio, covering approach, analysis, and outcomes." />
+    <meta property="og:title" content="GDI & HCCI Engine Modelling | bydiljitsingh" />
+    <meta property="og:description" content="GDI and HCCI single-cylinder engine modelling in AVL Cruise M — seven cases calibrated against experimental data, with fuel blend and valve timing modifications assessed against net zero. Advanced Fuels and Powertrain Systems, module mark 73." />
     <meta property="og:url" content="https://hashtagdiljit.github.io/bydiljitsingh/projects/AFPS.html" />
     <meta property="og:image" content="https://hashtagdiljit.github.io/bydiljitsingh/assets/social-preview.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <title>Electric Rally Pickup — Toyota Hilux | bydiljitsingh</title>
+    <title>GDI & HCCI Engine Modelling | bydiljitsingh</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../pages.css" />
     <link rel="icon" href="../assets/bydiljitsingh-favicon.png" />
+    <script src="../site.js"></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container nav-bar">
-        <a class="logo" href="../index.html">
-          <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
-        </a>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="masthead">
+      <div class="shell masthead__inner">
+        <a class="wordmark" href="../index.html">Diljit <em>Singh</em></a>
         <nav>
-          <a href="../index.html">Home</a>
-          <a href="../projects.html" class="active">Projects</a>
+          <a href="../index.html">Index</a>
+          <a href="../projects.html" aria-current="page">Work</a>
           <a href="../cv.html">CV</a>
+          <a href="mailto:diljitsingh2003@gmail.com">Contact</a>
         </nav>
       </div>
     </header>
 
-<main>
-  <section class="project-detail-hero">
-    <div class="container">
-      <a class="button ghost back-button" href="../projects.html">Back to all projects</a>
-      <h1>Advanced Fuels &amp; Powertrains (In Progress)</h1>
-      <p>
-        Ongoing module exploring advanced propulsion systems, fuel pathways, and future powertrain strategies.
-      </p>
-
-      <div class="project-meta">
-        <div class="project-chip">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"/>
-          </svg>
-          Status: Ongoing
-        </div>
-
-        <div class="project-chip">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 2 2 7l10 5 10-5-10-5Zm0 20-10-5v-7l10 5 10-5v7l-10 5Z"/>
-          </svg>
-          Format: Individual + Group Work
-        </div>
-
-        <div class="project-chip">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M6 2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/>
-          </svg>
-          Focus: Fuels, ICE, Hybrid, EV
-        </div>
-      </div>
-    </div>
-
-    <div class="project-hero-image">
-      <div class="image-frame">
-        <img
-          src="../assets/projects/AFPS/cover.jpg"
-          alt="Advanced fuels and powertrains placeholder image"
-        />
-      </div>
-      <p>Project currently in progress.</p>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>Project Status</h2>
-      <p>
-        This module is currently underway. Work includes comparative analysis of advanced fuels,
-        powertrain architectures, efficiency trade-offs, and emissions impacts across real-world use cases.
-      </p>
-
-      <div class="highlight-card">
-        <ul>
-          <li>System-level evaluation of fuel and powertrain options.</li>
-          <li>Focus on practical deployment rather than purely theoretical performance.</li>
-          <li>Final outcomes and technical detail to be added on completion.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-</main>
-    
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <div class="logo footer-logo">
-            <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
+    <main id="main">
+      <section class="band">
+        <div class="shell">
+          <div class="hero__eyebrow">
+            <span class="label label--light">Sheet II</span>
+            <hr class="rule" />
+            <span class="label label--light">2026</span>
           </div>
-          <p>Graduate Project Manager at Arcadis, Property Regions &middot; MEng Mechanical Engineering (Automotive), University of Birmingham.</p>
+
+          <h1 class="band__statement">GDI &amp; HCCI <em>Engine</em> Modelling</h1>
+
+          <div class="band__copy">
+            <p>Building, calibrating and modifying single-cylinder engine models in AVL Cruise M across two combustion modes, then assessing what renewable fuels and aftertreatment would be needed to take them towards net zero.</p>
+          </div>
         </div>
-        <div class="footer-links">
-          <a
-            href="https://www.linkedin.com/in/diljitsingh03/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >LinkedIn</a
-          >
-          <a
-            href="https://www.instagram.com/hashtagdiljit/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Instagram</a
-          >
-          <a href="mailto:diljitsingh2003@gmail.com">Email</a>
+      </section>
+
+      <section class="section">
+        <div class="shell hero__grid">
+          <div>
+            <p class="label label--brass">Particulars</p>
+            <dl class="hero__meta">
+              <div><dt>Context</dt><dd>Advanced Fuels and Powertrain Systems (AFPS)</dd></div>
+              <div><dt>Team</dt><dd>Group of five</dd></div>
+              <div><dt>Module mark</dt><dd>73</dd></div>
+              <div><dt>Cases modelled</dt><dd>7</dd></div>
+              <div><dt>Engine speed</dt><dd>1,500 rpm</dd></div>
+              <div><dt>Bore × stroke</dt><dd>90 × 88.9 mm</dd></div>
+              <div><dt>Compression ratio</dt><dd>11.5:1</dd></div>
+              <div><dt>Lambda match</dt><dd>Exact, all cases</dd></div>
+              <div><dt>IMEP accuracy</dt><dd>Within 10%, all cases</dd></div>
+              <div><dt>Tool</dt><dd>AVL Cruise M</dd></div>
+            </dl>
+
+            <div class="tag-row">
+            <span class="tag tag--brass">Group of five</span>
+            <span class="tag">AVL Cruise M</span>
+            <span class="tag">Combustion modelling</span>
+            </div>
+
+            <div class="btn-row">
+              <a class="btn" href="../projects.html">All work</a>
+            </div>
+          </div>
+
+          <figure class="figure">
+            <div class="figure__frame">
+              <img src="../assets/projects/AFPS/cover.jpg" alt="Intake system layout showing throttle body, air heater tube, plenum and intake runner" loading="lazy" />
+            </div>
+            <figcaption class="figure__cap">
+              <span class="label">Plate I</span>
+              <p>Intake system layout: throttle body, air heater tube, plenum and intake runner</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="section">
+        <div class="shell">
+          <div class="section__head reveal">
+            <h2>The work</h2>
+            <span class="label">I</span>
+          </div>
+          <div class="stack reveal">
+            <div class="prose">
+              <p>Seven cases at 1,500 rpm on a common single-cylinder geometry: 90 mm bore, 88.9 mm stroke, 160 mm connecting rod, 11.5:1 compression ratio. Cases 1&ndash;3 ran homogeneous charge compression ignition on a low-lift camshaft; cases 4&ndash;7 ran gasoline direct injection spark ignition on a high-lift camshaft.</p>
+              <p>Normalised rate of heat release inputs were derived by hand before modelling: instantaneous cylinder volume per crank angle, log pressure against log volume to extract separate polytropic indices for compression and expansion, then first-law heat release, then normalisation against peak.</p>
+            </div>
+            <figure class="figure">
+              <div class="figure__frame">
+                <img src="../assets/projects/AFPS/exhaust-layout.jpg" alt="Exhaust system layout and dimensions" loading="lazy" />
+              </div>
+              <figcaption class="figure__cap">
+                <span class="label">Plate II</span>
+                <p>Exhaust system layout and dimensions</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section class="section section--wash">
+        <div class="shell">
+          <div class="section__head reveal">
+            <h2>Calibration</h2>
+            <span class="label">II</span>
+          </div>
+          <div class="stack reveal">
+            <div class="prose">
+              <p>Models were tuned against experimental targets for lambda, IMEP, peak pressure and the crank angle of peak pressure. Lambda matched exactly across all seven cases. IMEP stayed within 10% throughout. Six of seven cases matched peak pressure within ±4%; case 3 was the exception at 9% low, because reaching earlier HCCI phasing at higher load needs either a more reactive charge or a higher residual fraction, and both were constrained by the available valve timing range.</p>
+              <p>Emissions calibration ran into a genuine tool limit worth stating: AVL Cruise M's classic species kinetic model has a floor on CO output that no multiplier reduces, so isCO could not be matched to experiment in any case. CO<sub>2</sub> is reported wet and needs dividing by 1.57 for dry-basis comparison.</p>
+              <p>The NOx results followed the physics cleanly. HCCI cases produced far lower NOx than GDI, consistent with the Zeldovich thermal mechanism needing sustained temperatures above roughly 1800 K. Within the GDI cases NOx rose with load: 3.906, 6.390 and 8.370 g/ikWh across cases 5, 6 and 7.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="shell">
+          <div class="section__head reveal">
+            <h2>Modifications</h2>
+            <span class="label">III</span>
+          </div>
+          <div class="stack reveal">
+            <div class="prose">
+              <p>Three changes were applied across all cases, chosen to cut emissions while holding IMEP roughly constant so the comparison stayed meaningful.</p>
+            </div>
+            <div class="sheets">
+              <details open>
+                <summary>Valve timing</summary>
+                <p>Shifted 15° on both intake opening and exhaust closing. For the GDI cases this removed the positive valve overlap that was raising residual gas fraction and pumping losses; CO fell consistently, most sharply in case 7 from 1.03% to 0.39%. For HCCI, where there is no spark and autoignition depends entirely on trapped charge mass and temperature, the same shift moved phasing favourably, and case 3 gained IMEP from 3.48 to 4.60 bar.</p>
+              </details>
+              <details>
+                <summary>Throttle opening</summary>
+                <p>Increased 2&ndash;5° where applicable, raising air mass flow and improving combustion completeness.</p>
+              </details>
+              <details>
+                <summary>Fuel blends</summary>
+                <p>Selected by iteration rather than assumption. For GDI, gasoline-ethanol-water blends held IMEP but added no energy; hydrogen raised IMEP to 3.50 bar but ran rich at lambda 0.89; a hydrogen-heavy blend spiked NOx to 14.53 g/h on elevated flame temperature and was rejected. The blend selected was 85% gasoline, 5% hydrogen, 10% ammonia, reaching stoichiometric lambda at 3.51 bar IMEP with CO at 0.53%. For HCCI the choice was 50% diesel, 45% ammonia, 5% hydrogen, giving lambda 1.47, IMEP 2.87 bar, CO at zero and NOx at 0.05 g/h. Diesel's cetane number secures autoignition while ammonia carries the carbon reduction.</p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section--wash">
+        <div class="shell">
+          <div class="section__head reveal">
+            <h2>Wider assessment</h2>
+            <span class="label">IV</span>
+          </div>
+          <div class="stack reveal">
+            <div class="prose">
+              <p>The report also covered renewable fuels against the UK's 2050 net-zero commitment, comparing hydrotreated vegetable oil, green hydrogen and e-methanol on technical, environmental, commercial and legal grounds; exhaust aftertreatment across the baseline and modified powertrains, including why a three-way catalyst suits GDI but HCCI needs a diesel oxidation catalyst with SCR, and why the ammonia blend requires an ammonia slip catalyst under Euro 7; and the implications of hybrid electrification for each.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="shell">
+          <div class="section__head reveal">
+            <h2>Role</h2>
+            <span class="label">V</span>
+          </div>
+          <div class="stack reveal">
+            <div class="prose">
+              <p>One of five. Responsibilities for AVL modelling were divided across the seven cases, with the group initially split between model setup and heat release processing, then calibration cases assigned individually and results consolidated in a shared spreadsheet with a changelog.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="colophon-block">
+      <div class="shell">
+        <div class="colophon__top">
+          <div>
+            <p class="label label--light">Get in touch</p>
+            <p class="colophon__cta">
+              Always glad to talk about <em>property</em>, delivery, or a good engineering problem.
+              <a href="mailto:diljitsingh2003@gmail.com">Write to me.</a>
+            </p>
+          </div>
+
+          <dl class="colophon__details">
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:diljitsingh2003@gmail.com">diljitsingh2003@gmail.com</a></dd>
+            </div>
+            <div>
+              <dt>LinkedIn</dt>
+              <dd><a href="https://www.linkedin.com/in/diljitsingh03/" target="_blank" rel="noopener noreferrer">diljitsingh03</a></dd>
+            </div>
+            <div>
+              <dt>Instagram</dt>
+              <dd><a href="https://www.instagram.com/hashtagdiljit/" target="_blank" rel="noopener noreferrer">hashtagdiljit</a></dd>
+            </div>
+            <div>
+              <dt>Located</dt>
+              <dd>Birmingham, United Kingdom</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="colophon__bottom">
+          <span class="label label--light">© 2026 Diljit Singh</span>
+          <span class="label label--brass">Set in Baskervville — after John Baskerville of Birmingham</span>
         </div>
       </div>
-      <div class="container footer-bottom">© 2026 BYDILJITSINGH — BIRMINGHAM, UK</div>
     </footer>
   </body>
 </html>

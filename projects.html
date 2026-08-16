@@ -3,223 +3,249 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="A technical portfolio of engineering projects spanning CAD, FEA, CFD, and manufacturing, from Diljit Singh, MEng Mechanical Engineering (Automotive) graduate and Arcadis Graduate Project Manager." />
+    <meta name="description" content="The full register of twelve engineering projects by Diljit Singh, spanning design, simulation, manufacture and delivery — newest first." />
     <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/projects.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Projects | bydiljitsingh" />
-    <meta property="og:description" content="A technical portfolio of engineering projects spanning CAD, FEA, CFD, and manufacturing, from Diljit Singh, MEng Mechanical Engineering (Automotive) graduate and Arcadis Graduate Project Manager." />
+    <meta property="og:title" content="Work | bydiljitsingh" />
+    <meta property="og:description" content="The full register of twelve engineering projects by Diljit Singh, spanning design, simulation, manufacture and delivery — newest first." />
     <meta property="og:url" content="https://hashtagdiljit.github.io/bydiljitsingh/projects.html" />
     <meta property="og:image" content="https://hashtagdiljit.github.io/bydiljitsingh/assets/social-preview.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <title>Projects | bydiljitsingh</title>
+    <title>Work | bydiljitsingh</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="pages.css" />
     <link rel="icon" href="assets/bydiljitsingh-favicon.png" />
+    <script src="site.js"></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container nav-bar">
-        <a class="logo" href="index.html">
-          <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
-        </a>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="masthead">
+      <div class="shell masthead__inner">
+        <a class="wordmark" href="index.html">Diljit <em>Singh</em></a>
         <nav>
-          <a href="index.html">Home</a>
-          <a href="projects.html" class="active">Projects</a>
+          <a href="index.html">Index</a>
+          <a href="projects.html" aria-current="page">Work</a>
           <a href="cv.html">CV</a>
+          <a href="mailto:diljitsingh2003@gmail.com">Contact</a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <section class="page-hero">
-        <div class="container page-hero-grid">
-          <div>
-            <p class="eyebrow">Selected work</p>
-            <h1>Technical portfolio</h1>
-            <p class="intro">
-              Detailed case studies across CAD, FEA, CFD, and manufacturing engineering. Each project
-              balances theory with hands-on execution.
-            </p>
+    <main id="main">
+      <section class="sheet-head">
+        <div class="shell">
+          <div class="hero__eyebrow">
+            <span class="label label--brass">The register</span>
+            <hr class="rule" />
+            <span class="label">Twelve entries</span>
           </div>
-          <div class="page-hero-card quote-card">
-            <p>
-              “I design with a systems-first mindset, always asking how each decision impacts
-              performance, manufacturability, and sustainability.”
-            </p>
-          </div>
+          <h1 class="sheet-title">Selected <em>work</em></h1>
+          <p class="sheet-standfirst">
+            Four years of design, simulation and delivery, from a first-year bridge tested to
+            destruction to a 40-credit individual project on pressure-jump spectroscopy. Listed
+            newest first.
+          </p>
         </div>
       </section>
 
-      <section class="projects" id="projects">
-        <div class="container project-grid">
-          <a class="project-card project-card-link" href="projects/final-year-project.html">
-            <div class="project-image">
-              <img
-                src="assets/projects/final-year-project/cover.jpg"
-                alt="Final Year Project cover"
-              />
-              <span class="project-year">2026</span>
+      <section class="section">
+        <div class="shell">
+          <div class="group reveal">
+            <div class="group__head">
+              <h2 class="group__year">2026</h2>
+              <span class="label">Two projects</span>
             </div>
-            <h3>Piezoelectric Pressure Cell for IR Spectroscopy (IP)</h3>
-            <p>Modifying a piezoelectric pressure cell to be suitable for IR spectroscopy.</p>
-          </a>
-          <a class="project-card project-card-link" href="projects/AFPS.html">
-            <div class="project-image">
-              <img
-                src="assets/projects/AFPS/cover.jpg"
-                alt="GDI & HCCI Engine Modelling cover"
-              />
-              <span class="project-year">2026</span>
+            <div class="register">
+            <a class="entry" href="projects/final-year-project.html">
+              <span class="entry__no">01</span>
+              <span>
+                <span class="entry__title">Pressure-Jump Cell for Infrared Spectroscopy</span>
+                <span class="entry__desc">Redesigning a sub-millisecond pressure-jump cell so it could be used for infrared spectroscopy rather than X-ray scattering, and proving the geometry would hold 1,000 bar before committing it to manufacture.</span>
+              </span>
+              <span class="entry__disc">Individual project</span>
+              <span class="entry__year">2026</span>
+            </a>
+            <a class="entry" href="projects/AFPS.html">
+              <span class="entry__no">02</span>
+              <span>
+                <span class="entry__title">GDI & HCCI Engine Modelling</span>
+                <span class="entry__desc">Building, calibrating and modifying single-cylinder engine models in AVL Cruise M across two combustion modes, then assessing what renewable fuels and aftertreatment would be needed to take them towards net zero.</span>
+              </span>
+              <span class="entry__disc">Combustion modelling</span>
+              <span class="entry__year">2026</span>
+            </a>
             </div>
-            <h3>GDI & HCCI Engine Modelling (AFPS)</h3>
-            <p>GDI and HCCI modelling on AVL Cruise</p>
-          </a>
-          <a class="project-card project-card-link" href="projects/agridrive.html">
-            <div class="project-image">
-              <img
-                src="assets/projects/agridrive/cover.jpg"
-                alt="Agridrive cover"
-              />
-              <span class="project-year">2025</span>
+          </div>
+          <div class="group reveal">
+            <div class="group__head">
+              <h2 class="group__year">2025</h2>
+              <span class="label">Three projects</span>
             </div>
-            <h3>Agridrive (AVE)</h3>
-            <p>Dual use agricultural platform combining on and off-road farming capabilities.</p>
-          </a>
-          <a class="project-card project-card-link" href="projects/factory-in-a-box.html">
-            <div class="project-image">
-              <img
-                src="assets/projects/factory-in-a-box/cover.jpg"
-                alt="Factory in a Box cover"
-              />
-              <span class="project-year">2025</span>
+            <div class="register">
+            <a class="entry" href="projects/agridrive.html">
+              <span class="entry__no">03</span>
+              <span>
+                <span class="entry__title">AgriDrive 6×6 Dual-Use Agricultural Vehicle</span>
+                <span class="entry__desc">Dual-use agricultural platform combining on and off-road farming capabilities.</span>
+              </span>
+              <span class="entry__disc">Vehicle engineering</span>
+              <span class="entry__year">2025</span>
+            </a>
+            <a class="entry" href="projects/factory-in-a-box.html">
+              <span class="entry__no">04</span>
+              <span>
+                <span class="entry__title">Factory-in-a-Box Automation System</span>
+                <span class="entry__desc">Factory-in-a-Box model to assemble and package XY stages.</span>
+              </span>
+              <span class="entry__disc">Automation & robotics</span>
+              <span class="entry__year">2025</span>
+            </a>
+            <a class="entry" href="projects/electric-rally-pickup.html">
+              <span class="entry__no">05</span>
+              <span>
+                <span class="entry__title">Electric Rally Pickup</span>
+                <span class="entry__desc">EV off-road concept, vehicle dynamics, and subsystem integration leadership.</span>
+              </span>
+              <span class="entry__disc">Team leadership</span>
+              <span class="entry__year">2025</span>
+            </a>
             </div>
-            <h3>Factory in a Box (IAR)</h3>
-            <p>Factory in a Box model to assemble and package XY stages.</p>
-          </a>
-          <a class="project-card project-card-link" href="projects/electric-rally-pickup.html">
-            <div class="project-image">
-              <img
-                src="assets/projects/electric-rally-pickup/cover.jpg"
-                alt="Electric Rally Pickup cover"
-              />
-              <span class="project-year">2025</span>
+          </div>
+          <div class="group reveal">
+            <div class="group__head">
+              <h2 class="group__year">2024</h2>
+              <span class="label">Three projects</span>
             </div>
-            <h3>Electric Rally Pickup (IDP 3)</h3>
-            <p>EV off-road concept, vehicle dynamics, and subsystem integration leadership.</p>
-          </a>
-          <a class="project-card project-card-link" href="projects/inhaler-spacer.html">
-            <div class="project-image">
-              <img
-                src="assets/projects/inhaler-spacer/cover.png"
-                alt="Child's Inhaler Spacer Redesign cover"
-              />
-              <span class="project-year">2024</span>
+            <div class="register">
+            <a class="entry" href="projects/inhaler-spacer.html">
+              <span class="entry__no">06</span>
+              <span>
+                <span class="entry__title">CFD Redesign of Paediatric Inhaler Spacer</span>
+                <span class="entry__desc">Improving inhaler spacer efficiency using CFD and rapid prototyping.</span>
+              </span>
+              <span class="entry__disc">CFD</span>
+              <span class="entry__year">2024</span>
+            </a>
+            <a class="entry" href="projects/thin-plate-fea.html">
+              <span class="entry__no">07</span>
+              <span>
+                <span class="entry__title">Finite Element Analysis: Plate With Central Hole</span>
+                <span class="entry__desc">Finite element analysis of stress concentration and deflection behaviour.</span>
+              </span>
+              <span class="entry__disc">FEA</span>
+              <span class="entry__year">2024</span>
+            </a>
+            <a class="entry" href="projects/wankel-engine-transmission.html">
+              <span class="entry__no">08</span>
+              <span>
+                <span class="entry__title">Aero-Engine Speed Reducer for Wankel Engine</span>
+                <span class="entry__desc">Designing a speed-reduction gearbox for a light-aircraft power unit.</span>
+              </span>
+              <span class="entry__disc">Mechanical design</span>
+              <span class="entry__year">2024</span>
+            </a>
             </div>
-            <h3>Child’s Inhaler Spacer Redesign</h3>
-            <p>Improving inhaler spacer efficiency using CFD and rapid prototyping.</p>
-          </a>
-          <a class="project-card project-card-link" href="projects/thin-plate-fea.html">
-            <div class="project-image">
-              <img
-                src="assets/projects/thin-plate-fea/cover.png"
-                alt="Thin Plate With Hole cover"
-              />
-              <span class="project-year">2024</span>
+          </div>
+          <div class="group reveal">
+            <div class="group__head">
+              <h2 class="group__year">2023</h2>
+              <span class="label">Two projects</span>
             </div>
-            <h3>Thin Plate With Hole (FEA)</h3>
-            <p>Finite element analysis of stress concentration and deflection behavior.</p>
-          </a>
-          <a class="project-card project-card-link" href="projects/wankel-engine-transmission.html">
-            <div class="project-image">
-              <img
-                src="assets/projects/wankel-engine-transmission/cover.png"
-                alt="Wankel Engine Transmission cover"
-              />
-              <span class="project-year">2024</span>
+            <div class="register">
+            <a class="entry" href="projects/green-hydrogen-plant.html">
+              <span class="entry__no">09</span>
+              <span>
+                <span class="entry__title">Green Hydrogen Plant</span>
+                <span class="entry__desc">Systems integration project focused on renewable energy scalability.</span>
+              </span>
+              <span class="entry__disc">Systems integration</span>
+              <span class="entry__year">2023</span>
+            </a>
+            <a class="entry" href="projects/small-scale-2-stroke-engine.html">
+              <span class="entry__no">10</span>
+              <span>
+                <span class="entry__title">Small-Scale Two-Stroke CI Engine</span>
+                <span class="entry__desc">Modelling and packaging a compact engine for UAV applications.</span>
+              </span>
+              <span class="entry__disc">Design & manufacture</span>
+              <span class="entry__year">2023</span>
+            </a>
             </div>
-            <h3>Wankel Engine Transmission</h3>
-            <p>Designing a speed-reduction gearbox for a light-aircraft power unit.</p>
-          </a>
-           <a class="project-card project-card-link" href="projects/green-hydrogen-plant.html">
-            <div class="project-image">
-              <img
-                src="assets/projects/green-hydrogen-plant/cover.jpg"
-                alt="Green Hydrogen Plant cover"
-              />
-              <span class="project-year">2023</span>
+          </div>
+          <div class="group reveal">
+            <div class="group__head">
+              <h2 class="group__year">2022</h2>
+              <span class="label">Two projects</span>
             </div>
-            <h3>Green Hydrogen Plant</h3>
-            <p>Systems integration project focused on renewable energy scalability.</p>
-          </a>
-            <a class="project-card project-card-link" href="projects/small-scale-2-stroke-engine.html">
-            <div class="project-image">
-              <img
-                src="assets/projects/small-scale-2-stroke-engine/cover.png"
-                alt="Small-Scale 2-Stroke Engine cover"
-              />
-              <span class="project-year">2023</span>
+            <div class="register">
+            <a class="entry" href="projects/wooden-bridge.html">
+              <span class="entry__no">11</span>
+              <span>
+                <span class="entry__title">Wooden Bridge</span>
+                <span class="entry__desc">Structural optimisation project delivering the cohort's top load-to-weight ratio.</span>
+              </span>
+              <span class="entry__disc">Structures</span>
+              <span class="entry__year">2022</span>
+            </a>
+            <a class="entry" href="projects/pneumatic-piston.html">
+              <span class="entry__no">12</span>
+              <span>
+                <span class="entry__title">Pneumatic Piston Model</span>
+                <span class="entry__desc">Hand sketching, CAD modelling and assembly drawing with BoM.</span>
+              </span>
+              <span class="entry__disc">Technical drawing</span>
+              <span class="entry__year">2022</span>
+            </a>
             </div>
-            <h3>Small-Scale 2-Stroke Engine (MDA)</h3>
-            <p>Modeling and packaging a compact engine for UAV applications.</p>
-          </a>
-          <a class="project-card project-card-link" href="projects/wooden-bridge.html">
-            <div class="project-image">
-              <img
-                src="assets/projects/wooden-bridge/cover.jpg"
-                alt="Wooden Bridge cover"
-              />
-              <span class="project-year">2022</span>
-            </div>
-            <h3>Wooden Bridge (IDP1 B)</h3>
-            <p>Structural optimisation project delivering the cohort’s top load-to-weight ratio.</p>
-          </a>
-          <a class="project-card project-card-link" href="projects/pneumatic-piston.html">
-            <div class="project-image">
-              <img
-                src="assets/projects/pneumatic-piston/cover.jpg"
-                alt="Pneumatic Piston Model cover"
-              />
-              <span class="project-year">2022</span>
-            </div>
-            <h3>Pneumatic Piston Model (IDP1 A)</h3>
-            <p>Hand sketching, CAD modelling and assembly drawing with BoM.</p>
-          </a>
+          </div>
         </div>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <div class="logo footer-logo">
-            <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
+    <footer class="colophon-block">
+      <div class="shell">
+        <div class="colophon__top">
+          <div>
+            <p class="label label--light">Get in touch</p>
+            <p class="colophon__cta">
+              Always glad to talk about <em>property</em>, delivery, or a good engineering problem.
+              <a href="mailto:diljitsingh2003@gmail.com">Write to me.</a>
+            </p>
           </div>
-          <p>Graduate Project Manager at Arcadis, Property Regions &middot; MEng Mechanical Engineering (Automotive), University of Birmingham.</p>
+
+          <dl class="colophon__details">
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:diljitsingh2003@gmail.com">diljitsingh2003@gmail.com</a></dd>
+            </div>
+            <div>
+              <dt>LinkedIn</dt>
+              <dd><a href="https://www.linkedin.com/in/diljitsingh03/" target="_blank" rel="noopener noreferrer">diljitsingh03</a></dd>
+            </div>
+            <div>
+              <dt>Instagram</dt>
+              <dd><a href="https://www.instagram.com/hashtagdiljit/" target="_blank" rel="noopener noreferrer">hashtagdiljit</a></dd>
+            </div>
+            <div>
+              <dt>Located</dt>
+              <dd>Birmingham, United Kingdom</dd>
+            </div>
+          </dl>
         </div>
-        <div class="footer-links">
-          <a
-            href="https://www.linkedin.com/in/diljitsingh03/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >LinkedIn</a
-          >
-          <a
-            href="https://www.instagram.com/hashtagdiljit/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Instagram</a
-          >
-          <a href="mailto:diljitsingh2003@gmail.com">Email</a>
+
+        <div class="colophon__bottom">
+          <span class="label label--light">© 2026 Diljit Singh</span>
+          <span class="label label--brass">Set in Baskervville — after John Baskerville of Birmingham</span>
         </div>
       </div>
-      <div class="container footer-bottom">© 2026 BYDILJITSINGH — BIRMINGHAM, UK</div>
     </footer>
   </body>
 </html>

@@ -1,0 +1,326 @@
+/* ==========================================================================
+   bydiljitsingh — page components
+   Supplements styles.css for the sub-pages. styles.css is the reference
+   implementation and is not modified; everything here is built from its
+   tokens only. No new colours, no new fonts, no border-radius on a content
+   container, no box-shadow anywhere.
+
+   Why these exist: styles.css implements image framing only inside the
+   sticky showcase (.showcase__media::after) and the hero portrait
+   (.plate::before, which forces a 4/5 crop). Neither survives a landscape
+   FEA plot or a technical drawing, so sub-pages need a plate that keeps an
+   image's own aspect ratio. The CV needs a dated-entry row, the register
+   needs year grouping, and .media-pending was dropped from styles.css but
+   is still carried by 23 placeholders across five project pages.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Prose — body copy inside a section
+   -------------------------------------------------------------------------- */
+
+.prose {
+  max-width: 68ch;
+}
+
+.prose > * + * {
+  margin-top: 20px;
+}
+
+.prose p {
+  color: var(--ink-soft);
+}
+
+.prose strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.prose ul {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.prose li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--ink-soft);
+}
+
+/* Brass en-dash marker, in place of a bullet */
+.prose li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--brass);
+}
+
+.prose h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.prose a {
+  border-bottom: 1px solid var(--brass);
+}
+
+.prose sup {
+  font-size: 0.7em;
+}
+
+/* Vertical rhythm between blocks within one section */
+.stack > * + * {
+  margin-top: clamp(30px, 4vw, 52px);
+}
+
+/* --------------------------------------------------------------------------
+   Figure plate — hairline frame, hard corners, image keeps its own ratio
+   -------------------------------------------------------------------------- */
+
+.figure {
+  margin: 0;
+}
+
+.figure__frame {
+  position: relative;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: clamp(10px, 1.4vw, 18px);
+}
+
+.figure__frame img {
+  width: 100%;
+  height: auto;
+}
+
+/* Sage multiplied over imagery, as in the showcase, so white studio
+   backgrounds settle into the palette rather than punching holes in it. */
+.figure__frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--sage);
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.figure__cap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-top: 14px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.figure__cap p {
+  font-size: 0.86rem;
+  color: var(--stone);
+  margin: 0;
+  max-width: 62ch;
+}
+
+/* Two-up and three-up figure rows */
+.figure-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(20px, 3vw, 38px);
+}
+
+/* Placeholder where the real image has not been supplied yet */
+.media-pending {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 168px;
+  padding: 32px 24px;
+  border: 1px dashed var(--line);
+  color: var(--stone-light);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Tag row, as in the showcase but standalone under a metadata table */
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+/* --------------------------------------------------------------------------
+   Pull quote
+   -------------------------------------------------------------------------- */
+
+.pullquote {
+  font-family: var(--display);
+  font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+  line-height: 1.3;
+  color: var(--ink);
+  border-left: 1px solid var(--brass);
+  padding-left: clamp(18px, 2.4vw, 30px);
+  max-width: 46ch;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Disclosure sheets — the old tech-details accordions
+   -------------------------------------------------------------------------- */
+
+.sheets {
+  border-bottom: 1px solid var(--line);
+}
+
+.sheets details {
+  border-top: 1px solid var(--line);
+}
+
+.sheets summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding-block: 20px;
+  cursor: pointer;
+  font-family: var(--display);
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+  list-style: none;
+  transition: color 400ms var(--ease);
+}
+
+.sheets summary::-webkit-details-marker {
+  display: none;
+}
+
+.sheets summary::after {
+  content: "+";
+  font-family: var(--body);
+  font-size: 1.1rem;
+  color: var(--brass);
+  line-height: 1;
+}
+
+.sheets details[open] summary::after {
+  content: "–";
+}
+
+.sheets summary:hover {
+  color: var(--oxblood);
+}
+
+.sheets details > *:not(summary) {
+  margin-bottom: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   Document entries — CV. Date in a left column, hairline between rows.
+   -------------------------------------------------------------------------- */
+
+.doc {
+  border-bottom: 1px solid var(--line);
+}
+
+.doc__row {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: clamp(16px, 3vw, 44px);
+  padding-block: clamp(22px, 3vw, 34px);
+  border-top: 1px solid var(--line);
+}
+
+.doc__date {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stone);
+  line-height: 1.5;
+}
+
+.doc__title {
+  font-family: var(--display);
+  font-size: clamp(1.12rem, 1.9vw, 1.45rem);
+  line-height: 1.25;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   Register year groups — projects.html
+   -------------------------------------------------------------------------- */
+
+.group + .group {
+  margin-top: clamp(52px, 7vw, 92px);
+}
+
+.group__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.group__year {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   Narrow page head, used where a page needs a title but not the full hero
+   -------------------------------------------------------------------------- */
+
+.sheet-head {
+  padding-block: clamp(46px, 7vw, 92px) clamp(30px, 4vw, 52px);
+}
+
+.sheet-title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.1rem, 5.2vw, 4.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.016em;
+  margin-top: 26px;
+  max-width: 20ch;
+}
+
+.sheet-title em {
+  font-style: italic;
+  color: var(--brass);
+}
+
+.sheet-standfirst {
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin-top: 24px;
+  line-height: 1.62;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 760px) {
+  .doc__row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .figure__cap {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

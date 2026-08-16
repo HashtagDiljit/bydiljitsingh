@@ -3,290 +3,297 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Finite Element Analysis: Plate With Central Hole (CFD &amp; FEA Module) — an engineering project case study from Diljit Singh's technical portfolio, covering approach, analysis, and outcomes." />
+    <meta name="description" content="Individual Abaqus CAE study of stress concentration and mesh convergence on a thin Inconel 718 plate under tensile loading, validated against theory." />
     <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/projects/thin-plate-fea.html" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Electric Rally Pickup — Toyota Hilux | bydiljitsingh" />
-    <meta property="og:description" content="Finite Element Analysis: Plate With Central Hole (CFD &amp; FEA Module) — an engineering project case study from Diljit Singh's technical portfolio, covering approach, analysis, and outcomes." />
+    <meta property="og:title" content="Finite Element Analysis: Plate With Central Hole (CFD &amp; FEA Module) | bydiljitsingh" />
+    <meta property="og:description" content="Individual Abaqus CAE study of stress concentration and mesh convergence on a thin Inconel 718 plate under tensile loading, validated against theory." />
     <meta property="og:url" content="https://hashtagdiljit.github.io/bydiljitsingh/projects/thin-plate-fea.html" />
     <meta property="og:image" content="https://hashtagdiljit.github.io/bydiljitsingh/assets/social-preview.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <title>Electric Rally Pickup — Toyota Hilux | bydiljitsingh</title>
+    <title>Finite Element Analysis: Plate With Central Hole (CFD &amp; FEA Module) | bydiljitsingh</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../pages.css" />
     <link rel="icon" href="../assets/bydiljitsingh-favicon.png" />
+    <script src="../site.js"></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container nav-bar">
-        <a class="logo" href="../index.html">
-          <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
-        </a>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="masthead">
+      <div class="shell masthead__inner">
+        <a class="wordmark" href="../index.html">Diljit <em>Singh</em></a>
         <nav>
-          <a href="../index.html">Home</a>
-          <a href="../projects.html" class="active">Projects</a>
+          <a href="../index.html">Index</a>
+          <a href="../projects.html" aria-current="page">Work</a>
           <a href="../cv.html">CV</a>
+          <a href="mailto:diljitsingh2003@gmail.com">Contact</a>
         </nav>
       </div>
     </header>
 
-<main>
-  <section class="project-detail-hero">
-    <div class="container">
-      <a class="button ghost back-button" href="../projects.html">Back to all projects</a>
-      <h1>Finite Element Analysis: Plate With Central Hole (CFD &amp; FEA Module)</h1>
-      <p>
-        Individual Abaqus CAE study of stress concentration and mesh convergence on a thin Inconel 718 plate under tensile
-        loading, validated against theory.
-      </p>
+    <main id="main">
+      <section class="band">
+        <div class="shell">
+          <div class="hero__eyebrow">
+            <span class="label label--light">Sheet VII</span>
+            <hr class="rule" />
+            <span class="label label--light">2024</span>
+          </div>
 
-      <div class="project-meta">
-        <div class="project-chip">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"
-            />
-          </svg>
-          Team size: 1 (Individual)
-        </div>
+          <h1 class="band__statement">Finite Element Analysis: Plate With <em>Central</em> Hole</h1>
 
-        <div class="project-chip">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 2 2 7l10 5 10-5-10-5Zm0 20-10-5v-7l10 5 10-5v7l-10 5Z" />
-          </svg>
-          Role: Analyst + Report Author
+          <div class="band__copy">
+            <p>Individual Abaqus CAE study of stress concentration and mesh convergence on a thin Inconel 718 plate under tensile loading, validated against theory.</p>
+          </div>
         </div>
-
-        <div class="project-chip">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M6 2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 4v12h12V6H6Zm2 3h8v2H8V9Zm0 4h5v2H8v-2Z"
-            />
-          </svg>
-          Duration: Module project
-        </div>
-
-        <div class="project-chip">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="m14 2-1 2H7l-1-2H4v2l1 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6l1-2V2Zm-1 6H9v2h4V8Z" />
-          </svg>
-          Tools: Abaqus CAE, MATLAB
-        </div>
+      </section>
+      <section class="section">
+        <div class="shell hero__grid">
+          <div>
+            <p class="label label--brass">Particulars</p>
+      <dl class="hero__meta">
+        <div><dt>Module</dt><dd>CFD &amp; FEA Module</dd></div>
+        <div><dt>Team size</dt><dd>1 (Individual)</dd></div>
+        <div><dt>Role</dt><dd>Analyst + Report Author</dd></div>
+        <div><dt>Duration</dt><dd>Module project</dd></div>
+        <div><dt>Tools</dt><dd>Abaqus CAE, MATLAB</dd></div>
+      </dl>
+      <div class="btn-row">
+        <a class="btn" href="../projects.html">All work</a>
       </div>
+          </div>
 
-      <div class="project-hero-image">
-        <div class="image-frame">
-          <img
-            src="../assets/projects/thin-plate-fea/cover.png"
-            alt="FEA stress contour of a plate with a central hole under tension (placeholder)"
-          />
+        <figure class="figure">
+        <div class="figure__frame">
+          <img src="../assets/projects/thin-plate-fea/cover.png" alt="FEA stress contour of a plate with a central hole under tension (placeholder)" loading="lazy" />
         </div>
-        <p>Placeholder image: replace with your Abaqus stress contour for the final mesh.</p>
+        <figcaption class="figure__cap">
+          <span class="label">Plate I</span>
+          <p>Placeholder image: replace with your Abaqus stress contour for the final mesh.</p>
+        </figcaption>
+      </figure>
+        </div>
+      </section>
+      <section class="section">
+        <div class="shell">
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>Context &amp; Challenge</h2>
+            </div>
+            <div class="stack">
+              <div class="prose">
+        <p> Stress concentrations around holes are a classic failure driver in lightweight structures. This project modelled a thin rectangular plate with a central hole under tensile loading and used mesh refinement to study how element count affects predicted peak stress, runtime, and confidence in results. </p>
       </div>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>Context &amp; Challenge</h2>
-      <p>
-        Stress concentrations around holes are a classic failure driver in lightweight structures. This project modelled a
-        thin rectangular plate with a central hole under tensile loading and used mesh refinement to study how element
-        count affects predicted peak stress, runtime, and confidence in results. :contentReference[oaicite:0]{index=0}
-      </p>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>Objectives &amp; KPIs</h2>
-
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <h3>Mesh Convergence</h3>
-          <p>Run 5 meshes from ~<strong>50</strong> elements to ~<strong>9000</strong> elements and compare peak stress.</p>
-        </div>
-        <div class="kpi-card">
-          <h3>Validation</h3>
-          <p>Compare FEA peak stress with theoretical stress concentration calculation.</p>
-        </div>
-        <div class="kpi-card">
-          <h3>Efficiency</h3>
-          <p>Identify an optimal mesh that balances accuracy with compute time.</p>
-        </div>
-        <div class="kpi-card">
-          <h3>Re-run at Higher Load</h3>
-          <p>Repeat using the chosen mesh for <strong>85,000 N</strong> to test scaling and outputs.</p>
-        </div>
+            </div>
+          </div>
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>Objectives &amp; KPIs</h2>
+            </div>
+            <div class="stack">
+              <dl class="hero__meta">
+        <div><dt>Mesh Convergence</dt><dd>Run 5 meshes from ~<strong>50</strong> elements to ~<strong>9000</strong> elements and compare peak stress.</dd></div>
+        <div><dt>Validation</dt><dd>Compare FEA peak stress with theoretical stress concentration calculation.</dd></div>
+        <div><dt>Efficiency</dt><dd>Identify an optimal mesh that balances accuracy with compute time.</dd></div>
+        <div><dt>Re-run at Higher Load</dt><dd>Repeat using the chosen mesh for <strong>85,000 N</strong> to test scaling and outputs.</dd></div>
+      </dl>
+            </div>
+          </div>
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>Model Setup</h2>
+            </div>
+            <div class="stack">
+              <div class="prose">
+        <p> The plate was defined as <strong>750 mm</strong> long, <strong>500 mm</strong> wide, <strong>2 mm</strong> thick, with a <strong>375 mm</strong> diameter central hole. Material was <strong>Inconel 718</strong> (E = <strong>200 GPa</strong>, ν = <strong>0.3</strong>, yield ≈ <strong>1186 MPa</strong>). </p>
       </div>
-      :contentReference[oaicite:1]{index=1}
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>Model Setup</h2>
-      <p>
-        The plate was defined as <strong>750 mm</strong> long, <strong>500 mm</strong> wide, <strong>2 mm</strong> thick,
-        with a <strong>375 mm</strong> diameter central hole. Material was <strong>Inconel 718</strong>
-        (E = <strong>200 GPa</strong>, ν = <strong>0.3</strong>, yield ≈ <strong>1186 MPa</strong>). :contentReference[oaicite:2]{index=2}
-      </p>
-
-      <div class="tech-details">
+            <div class="sheets">
         <details>
           <summary>Simplification and boundary conditions</summary>
-          <p>
-            To reduce compute time while keeping accuracy, a <strong>quarter model</strong> was used with symmetry
-            boundary conditions on the midlines. Load was applied as pressure equivalent to the specified tensile force on
-            the free face. :contentReference[oaicite:3]{index=3}
-          </p>
-          <div class="detail-media">
-            <span class="media-pending">Symmetry boundary conditions diagram</span>
+          <p> To reduce compute time while keeping accuracy, a <strong>quarter model</strong> was used with symmetry boundary conditions on the midlines. Load was applied as pressure equivalent to the specified tensile force on the free face. </p>
+          <figure class="figure">
+          <div class="figure__frame">
+          <span class="media-pending">Symmetry boundary conditions diagram</span>
           </div>
+          <figcaption class="figure__cap">
+          <span class="label">Plate II</span>
+          <p>Image to follow.</p>
+          </figcaption>
+          </figure>
         </details>
-
         <details>
           <summary>Meshing strategy</summary>
-          <p>
-            Auto-meshing was kept consistent across all runs. Global mesh size was adjusted to hit target element ranges:
-            <strong>30–60</strong>, <strong>160–300</strong>, <strong>600–1200</strong>, <strong>2500–6000</strong>,
-            and approximately <strong>9000</strong> elements. :contentReference[oaicite:4]{index=4}
-          </p>
-          <div class="detail-media">
-            <span class="media-pending">Low vs high mesh density comparison</span>
+          <p> Auto-meshing was kept consistent across all runs. Global mesh size was adjusted to hit target element ranges: <strong>30–60</strong>, <strong>160–300</strong>, <strong>600–1200</strong>, <strong>2500–6000</strong>, and approximately <strong>9000</strong> elements. </p>
+          <figure class="figure">
+          <div class="figure__frame">
+          <span class="media-pending">Low vs high mesh density comparison</span>
           </div>
+          <figcaption class="figure__cap">
+          <span class="label">Plate III</span>
+          <p>Image to follow.</p>
+          </figcaption>
+          </figure>
         </details>
       </div>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>Results: Mesh Convergence</h2>
-      <p>
-        Peak stress increased rapidly with early refinement, then plateaued around ~<strong>1000</strong> elements. This
-        indicated diminishing returns beyond the 600–1200 element range, while runtime started increasing after that.
-        :contentReference[oaicite:5]{index=5}
-      </p>
-
-      <div class="highlight-card highlight-card--spaced">
-        <ul>
-          <li><strong>46</strong> elements → max stress <strong>1.36×10<sup>8</sup> Pa</strong> (8 s)</li>
-          <li><strong>230</strong> elements → max stress <strong>1.59×10<sup>8</sup> Pa</strong> (8 s)</li>
-          <li><strong>982</strong> elements → max stress <strong>1.70×10<sup>8</sup> Pa</strong> (8 s)</li>
-          <li><strong>4028</strong> elements → max stress <strong>1.72×10<sup>8</sup> Pa</strong> (10 s)</li>
-          <li><strong>8890</strong> elements → max stress <strong>1.73×10<sup>8</sup> Pa</strong> (12 s)</li>
-        </ul>
-      </div>
-
-      <div class="detail-media">
-        <span class="media-pending">Solve time vs max stress vs number of elements plot</span>
-      </div>
-      :contentReference[oaicite:6]{index=6}
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>Validation Against Theory</h2>
-      <p>
-        Theoretical stress concentration calculations predicted a peak stress of approximately
-        <strong>1.79×10<sup>8</sup> Pa</strong>. The converged FEA result was slightly lower (~<strong>1.73×10<sup>8</sup> Pa</strong>),
-        which is consistent with modelling and boundary simplifications. :contentReference[oaicite:7]{index=7}
-      </p>
-
-      <div class="detail-media">
-        <span class="media-pending">Stress concentration calculation snapshot</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>Higher Load Case</h2>
-      <p>
-        Using the optimal mesh (<strong>982</strong> elements), the model was re-run at <strong>85,000 N</strong>.
-        The reported peak stress was <strong>8.134×10<sup>8</sup> Pa</strong>. Displacement contours showed the highest
-        deformation at the loaded edge, with a linear displacement trend across the model. :contentReference[oaicite:8]{index=8}
-      </p>
-
-      <div class="detail-media">
-        <span class="media-pending">Stress contour at 85,000 N</span>
-      </div>
-
-      <div class="detail-media">
-        <span class="media-pending">Displacement contour plot</span>
-      </div>
-
-      <div class="detail-media">
-        <span class="media-pending">Displacement plot showing linear relationship</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>What This Demonstrated</h2>
-      <div class="highlight-card highlight-card--spaced">
-        <ul>
-          <li><strong>Engineering judgement</strong>: stopping mesh refinement once results plateau, instead of chasing maximum element count.</li>
-          <li><strong>Verification mindset</strong>: checking simulation outputs against theory rather than trusting contours.</li>
-          <li><strong>Efficiency</strong>: quarter-symmetry model delivered comparable accuracy at lower compute cost.</li>
-        </ul>
-      </div>
-      :contentReference[oaicite:9]{index=9}
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="container">
-      <h2>Reflections &amp; Improvements</h2>
-      <p>
-        Auto-meshing was fast and consistent, but manual refinement around the hole would likely improve local accuracy
-        without a large increase in overall element count. A 2D simplification could further reduce runtime for thin
-        structures, provided the assumptions match the physics and boundary conditions. :contentReference[oaicite:10]{index=10}
-      </p>
-
-      <div class="detail-media">
-        <span class="media-pending">Lessons learned visual</span>
-      </div>
-    </div>
-  </section>
-</main>
-
-    
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <div class="logo footer-logo">
-            <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
+            </div>
           </div>
-          <p>Graduate Project Manager at Arcadis, Property Regions &middot; MEng Mechanical Engineering (Automotive), University of Birmingham.</p>
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>Results: Mesh Convergence</h2>
+            </div>
+            <div class="stack">
+              <div class="prose">
+        <p> Peak stress increased rapidly with early refinement, then plateaued around ~<strong>1000</strong> elements. This indicated diminishing returns beyond the 600–1200 element range, while runtime started increasing after that. </p>
+        <ul> <li><strong>46</strong> elements → max stress <strong>1.36×10<sup>8</sup> Pa</strong> (8 s)</li> <li><strong>230</strong> elements → max stress <strong>1.59×10<sup>8</sup> Pa</strong> (8 s)</li> <li><strong>982</strong> elements → max stress <strong>1.70×10<sup>8</sup> Pa</strong> (8 s)</li> <li><strong>4028</strong> elements → max stress <strong>1.72×10<sup>8</sup> Pa</strong> (10 s)</li> <li><strong>8890</strong> elements → max stress <strong>1.73×10<sup>8</sup> Pa</strong> (12 s)</li> </ul>
+      </div>
+            <figure class="figure">
+        <div class="figure__frame">
+          <span class="media-pending">Solve time vs max stress vs number of elements plot</span>
         </div>
-        <div class="footer-links">
-          <a
-            href="https://www.linkedin.com/in/diljitsingh03/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >LinkedIn</a
-          >
-          <a
-            href="https://www.instagram.com/hashtagdiljit/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Instagram</a
-          >
-          <a href="mailto:diljitsingh2003@gmail.com">Email</a>
+        <figcaption class="figure__cap">
+          <span class="label">Plate IV</span>
+          <p>Image to follow.</p>
+        </figcaption>
+      </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section--wash">
+        <div class="shell">
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>Validation Against Theory</h2>
+            </div>
+            <div class="stack">
+              <div class="prose">
+        <p> Theoretical stress concentration calculations predicted a peak stress of approximately <strong>1.79×10<sup>8</sup> Pa</strong>. The converged FEA result was slightly lower (~<strong>1.73×10<sup>8</sup> Pa</strong>), which is consistent with modelling and boundary simplifications. </p>
+      </div>
+            <figure class="figure">
+        <div class="figure__frame">
+          <span class="media-pending">Stress concentration calculation snapshot</span>
+        </div>
+        <figcaption class="figure__cap">
+          <span class="label">Plate V</span>
+          <p>Image to follow.</p>
+        </figcaption>
+      </figure>
+            </div>
+          </div>
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>Higher Load Case</h2>
+            </div>
+            <div class="stack">
+              <div class="prose">
+        <p> Using the optimal mesh (<strong>982</strong> elements), the model was re-run at <strong>85,000 N</strong>. The reported peak stress was <strong>8.134×10<sup>8</sup> Pa</strong>. Displacement contours showed the highest deformation at the loaded edge, with a linear displacement trend across the model. </p>
+      </div>
+            <figure class="figure">
+        <div class="figure__frame">
+          <span class="media-pending">Stress contour at 85,000 N</span>
+        </div>
+        <figcaption class="figure__cap">
+          <span class="label">Plate VI</span>
+          <p>Image to follow.</p>
+        </figcaption>
+      </figure>
+            <figure class="figure">
+        <div class="figure__frame">
+          <span class="media-pending">Displacement contour plot</span>
+        </div>
+        <figcaption class="figure__cap">
+          <span class="label">Plate VII</span>
+          <p>Image to follow.</p>
+        </figcaption>
+      </figure>
+            <figure class="figure">
+        <div class="figure__frame">
+          <span class="media-pending">Displacement plot showing linear relationship</span>
+        </div>
+        <figcaption class="figure__cap">
+          <span class="label">Plate VIII</span>
+          <p>Image to follow.</p>
+        </figcaption>
+      </figure>
+            </div>
+          </div>
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>What This Demonstrated</h2>
+            </div>
+            <div class="stack">
+              <div class="prose">
+        <ul> <li><strong>Engineering judgement</strong>: stopping mesh refinement once results plateau, instead of chasing maximum element count.</li> <li><strong>Verification mindset</strong>: checking simulation outputs against theory rather than trusting contours.</li> <li><strong>Efficiency</strong>: quarter-symmetry model delivered comparable accuracy at lower compute cost.</li> </ul>
+      </div>
+            </div>
+          </div>
+          <div class="group reveal">
+            <div class="section__head">
+              <h2>Reflections &amp; Improvements</h2>
+            </div>
+            <div class="stack">
+              <div class="prose">
+        <p> Auto-meshing was fast and consistent, but manual refinement around the hole would likely improve local accuracy without a large increase in overall element count. A 2D simplification could further reduce runtime for thin structures, provided the assumptions match the physics and boundary conditions. </p>
+      </div>
+            <figure class="figure">
+        <div class="figure__frame">
+          <span class="media-pending">Lessons learned visual</span>
+        </div>
+        <figcaption class="figure__cap">
+          <span class="label">Plate IX</span>
+          <p>Image to follow.</p>
+        </figcaption>
+      </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="colophon-block">
+      <div class="shell">
+        <div class="colophon__top">
+          <div>
+            <p class="label label--light">Get in touch</p>
+            <p class="colophon__cta">
+              Always glad to talk about <em>property</em>, delivery, or a good engineering problem.
+              <a href="mailto:diljitsingh2003@gmail.com">Write to me.</a>
+            </p>
+          </div>
+
+          <dl class="colophon__details">
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:diljitsingh2003@gmail.com">diljitsingh2003@gmail.com</a></dd>
+            </div>
+            <div>
+              <dt>LinkedIn</dt>
+              <dd><a href="https://www.linkedin.com/in/diljitsingh03/" target="_blank" rel="noopener noreferrer">diljitsingh03</a></dd>
+            </div>
+            <div>
+              <dt>Instagram</dt>
+              <dd><a href="https://www.instagram.com/hashtagdiljit/" target="_blank" rel="noopener noreferrer">hashtagdiljit</a></dd>
+            </div>
+            <div>
+              <dt>Located</dt>
+              <dd>Birmingham, United Kingdom</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="colophon__bottom">
+          <span class="label label--light">© 2026 Diljit Singh</span>
+          <span class="label label--brass">Set in Baskervville — after John Baskerville of Birmingham</span>
         </div>
       </div>
-      <div class="container footer-bottom">© 2026 BYDILJITSINGH — BIRMINGHAM, UK</div>
     </footer>
   </body>
 </html>
