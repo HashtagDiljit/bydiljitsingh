@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Aero-Engine Speed Reducer for Wankel Engine (Mechanical Design B) — an engineering project case study from Diljit Singh's technical portfolio, covering approach, analysis, and outcomes." />
+    <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/projects/wankel-engine-transmission.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Wankel Engine Transmission | bydiljitsingh" />
+    <meta property="og:description" content="Aero-Engine Speed Reducer for Wankel Engine (Mechanical Design B) — an engineering project case study from Diljit Singh's technical portfolio, covering approach, analysis, and outcomes." />
+    <meta property="og:url" content="https://hashtagdiljit.github.io/bydiljitsingh/projects/wankel-engine-transmission.html" />
+    <meta property="og:image" content="https://hashtagdiljit.github.io/bydiljitsingh/assets/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Wankel Engine Transmission | bydiljitsingh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" href="../assets/bydiljitsingh-favicon.png" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a class="logo" href="../index.html">
+          <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
+        </a>
+        <nav>
+          <a href="../index.html">Home</a>
+          <a href="../projects.html" class="active">Projects</a>
+          <a href="../cv.html">CV</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+  <section class="project-detail-hero">
+    <div class="container">
+      <a class="button ghost back-button" href="../projects.html">Back to all projects</a>
+      <h1>Aero-Engine Speed Reducer for Wankel Engine (Mechanical Design B)</h1>
+      <p>
+        Designed a compact speed-reduction gearbox to couple a high-speed Wankel engine to a propeller, covering gear,
+        shaft, bearing, sealing, lubrication and assembly-for-manufacture decisions.
+      </p>
+
+      <div class="project-meta">
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"
+            />
+          </svg>
+          Team size: 3
+        </div>
+
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2 2 7l10 5 10-5-10-5Zm0 20-10-5v-7l10 5 10-5v7l-10 5Z" />
+          </svg>
+          Role: Design + Integration (Group 26)
+        </div>
+
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M6 2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 4v12h12V6H6Zm2 3h8v2H8V9Zm0 4h5v2H8v-2Z"
+            />
+          </svg>
+          Duration: 7-week design cycle
+        </div>
+
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m14 2-1 2H7l-1-2H4v2l1 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6l1-2V2Zm-1 6H9v2h4V8Z" />
+          </svg>
+          Tools: GP100, CAD, design calculations, DFA (Lucas method)
+        </div>
+      </div>
+    </div>
+
+    <div class="project-hero-image">
+      <div class="image-frame">
+        <img
+          src="../assets/projects/wankel-engine-transmission/cover.png"
+          alt="Aero-engine speed reducer concept render"
+        />
+      </div>
+      <p>Placeholder image: replace with your CAD render of the final assembly.</p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Context &amp; Challenge</h2>
+      <p>
+        A propeller is most efficient at a lower rotational speed than a compact Wankel engine. The challenge was to design
+        a gearbox that reduces engine speed while staying compact, reliable and manufacturable. Constraints included a
+        maximum gear centre distance of <strong>90 mm</strong> and a minimum life target of <strong>2000 hours</strong>.
+      </p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Objectives &amp; KPIs</h2>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <h3>Speed Reduction</h3>
+          <p><strong>3.25:1</strong> ratio to reduce <strong>6500 rpm</strong> cruise to <strong>2000 rpm</strong>.</p>
+        </div>
+        <div class="kpi-card">
+          <h3>Power Handling</h3>
+          <p>Design for up to <strong>50 hp</strong> max power, with <strong>45 hp</strong> at cruise.</p>
+        </div>
+        <div class="kpi-card">
+          <h3>Packaging</h3>
+          <p>Gear centre distance <strong>&le; 90 mm</strong>, compact shaft layout and casing integration.</p>
+        </div>
+        <div class="kpi-card">
+          <h3>Reliability</h3>
+          <p>Target life <strong>&ge; 2000 hours</strong>, infinite fatigue intent for shafts/gears under normal conditions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>My Contribution</h2>
+      <p>
+        I worked across the gearbox as a system rather than isolated parts. That meant aligning the GP100 gear design with
+        bearing selection, shaft sizing, seals, lubrication and assembly choices, then using DFA to iterate toward a more
+        buildable and cost-conscious final design.
+      </p>
+      <div class="highlight-card highlight-card--spaced">
+        <ul>
+          <li>Used GP100 to converge gear ratio, centre distance, helix angle and materials.</li>
+          <li>Completed bearing life checks and shaft stress, fatigue, deflection and critical-speed validation.</li>
+          <li>Specified coupling, spline/key interfaces, seals, lubrication and maintenance schedule.</li>
+          <li>Ran a Lucas DFA analysis to reduce part count and improve manufacturability.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Technical Highlights</h2>
+
+      <div class="tech-details">
+        <details>
+          <summary>Gear design (GP100)</summary>
+          <p>
+            Designed a helical gear pair targeting a <strong>3.25:1</strong> ratio, with a <strong>20°</strong> helix
+            angle choice as a balance between smoother operation and manageable axial load. Centre distance was constrained
+            to <strong>&le; 90 mm</strong>. Materials were selected with a stronger pinion than wheel
+            (<strong>EN34 pinion</strong>, <strong>EN24 SH wheel</strong>), and a ground finish was chosen to support life.
+          </p>
+          <div class="detail-media">
+            <span class="media-pending">GP100 results screenshot placeholder</span>
+          </div>
+        </details>
+
+        <details>
+          <summary>Bearings and life validation</summary>
+          <p>
+            Selected <strong>tapered roller bearings</strong> on the input shaft to handle combined radial and axial loads,
+            and <strong>deep groove ball bearings</strong> on the output shaft where axial load was much lower. Bearing
+            life calculations (L10h) exceeded the <strong>2000 hour</strong> requirement for all selected bearings.
+          </p>
+          <div class="detail-media">
+            <span class="media-pending">Bearing specification table placeholder</span>
+          </div>
+        </details>
+
+        <details>
+          <summary>Shaft design, stress, fatigue, deflection and critical speed</summary>
+          <p>
+            Sized shafts using GP100 gear forces and bending moment diagrams, then checked combined stress and fatigue.
+            Materials were chosen for strength and toughness: <strong>AISI 4140</strong> (input shaft) and
+            <strong>AISI 4340</strong> (output shaft). The combined-loading safety factors landed at
+            <strong>4.26</strong> (input) and <strong>5.56</strong> (output), with very low predicted deflections and high
+            critical speeds compared to operating speed.
+          </p>
+          <div class="detail-media">
+            <span class="media-pending">Shaft free body and bending moment diagrams placeholder</span>
+          </div>
+        </details>
+
+        <details>
+          <summary>Torque transmission and coupling decision</summary>
+          <p>
+            Evaluated coupling options then moved toward a more robust approach for torque transfer. A clamping coupling
+            was specified for the input side, and the final design introduced a <strong>spline coupling</strong> to improve
+            load distribution and assembly symmetry compared with a keyway approach.
+          </p>
+          <div class="detail-media">
+            <span class="media-pending">Coupling and spline interface placeholder</span>
+          </div>
+        </details>
+
+        <details>
+          <summary>Sealing and lubrication specification</summary>
+          <p>
+            Specified bore-sealing spring-loaded rotary shaft seals (nitrile/Buna-N with steel case) to prevent oil leaks,
+            plus a casing gasket between housing halves. Lubrication was defined as splash lubrication with an oil trough.
+            Pitch line velocity exceeded the threshold for a baffle, so a baffle was included for better oil control at
+            speed.
+          </p>
+          <div class="detail-media">
+            <span class="media-pending">Seal and lubrication tables placeholder</span>
+          </div>
+        </details>
+
+        <details>
+          <summary>DFA iteration (Lucas method)</summary>
+          <p>
+            Used Lucas DFA to diagnose assembly difficulty and drive iteration. The final design improved design
+            efficiency from <strong>69.57%</strong> to <strong>84.21%</strong> by reducing non-essential parts, reduced the
+            fitting ratio from <strong>6.2</strong> to <strong>4.93</strong>, and reduced manufacturing cost index from
+            <strong>131,459.5</strong> to <strong>113,635.7</strong>. Practical changes included reducing lip seals,
+            standardising bolt sizes, aligning assembly directions, and moving from keyway to spline for better symmetry.
+          </p>
+          <div class="detail-media">
+            <span class="media-pending">DFA tables and improvements placeholder</span>
+          </div>
+        </details>
+
+        <details>
+          <summary>Assembly and documentation</summary>
+          <p>
+            Produced an exploded view and assembly sequence for both the initial and final designs, with the key change
+            being the spline-based coupling interface in the final design. This made the assembly process cleaner and
+            reduced alignment issues.
+          </p>
+          <div class="detail-media">
+            <span class="media-pending">Exploded view placeholder</span>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>What We Achieved</h2>
+      <div class="achievement-grid">
+        <div class="achievement-card">
+          <strong>3.25:1</strong>
+          <span>Gear Ratio</span>
+        </div>
+        <div class="achievement-card">
+          <strong>&le; 90 mm</strong>
+          <span>Centre Distance</span>
+        </div>
+        <div class="achievement-card">
+          <strong>&ge; 2000 h</strong>
+          <span>Design Life</span>
+        </div>
+        <div class="achievement-card">
+          <strong>84.21%</strong>
+          <span>DFA Design Efficiency</span>
+        </div>
+      </div>
+
+      <p>
+        The final concept met the packaging and performance requirements, validated key failure modes (bearings, shafts,
+        lubrication, sealing), and demonstrated a clear engineering iteration loop by using DFA to improve buildability
+        and cost.
+      </p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>What I’d Improve Next Time</h2>
+      <p>
+        The strongest upgrade would be a tighter “source of truth” model for the gearbox, one mass and energy and load
+        set that feeds every decision. That would reduce rework between GP100 outputs, shaft/bearing checks, lubrication
+        assumptions and casing packaging, and it would make design changes faster and safer.
+      </p>
+      <div class="highlight-card">
+        <ul>
+          <li><strong>One parameter sheet</strong> driving gears, bearings, shafts and lubrication.</li>
+          <li><strong>Earlier interface freeze</strong> on coupling geometry and seal stack-up.</li>
+          <li><strong>More validation</strong> around vibration and thermal behaviour for the operating envelope.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+     <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="logo footer-logo">
+            <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
+          </div>
+          <p>Graduate Project Manager at Arcadis, Property Regions &middot; MEng Mechanical Engineering (Automotive), University of Birmingham.</p>
+        </div>
+        <div class="footer-links">
+          <a
+            href="https://www.linkedin.com/in/diljitsingh03/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://www.instagram.com/hashtagdiljit/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Instagram</a
+          >
+          <a href="mailto:diljitsingh2003@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">© 2026 BYDILJITSINGH — BIRMINGHAM, UK</div>
+    </footer>
+  </body>
+</html>

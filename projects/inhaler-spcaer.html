@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="CFD Redesign of Paediatric Inhaler Spacer (CFD Module) — an engineering project case study from Diljit Singh's technical portfolio, covering approach, analysis, and outcomes." />
+    <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/projects/inhaler-spcaer.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Inhaler Spacer Moficiation | bydiljitsingh" />
+    <meta property="og:description" content="CFD Redesign of Paediatric Inhaler Spacer (CFD Module) — an engineering project case study from Diljit Singh's technical portfolio, covering approach, analysis, and outcomes." />
+    <meta property="og:url" content="https://hashtagdiljit.github.io/bydiljitsingh/projects/inhaler-spcaer.html" />
+    <meta property="og:image" content="https://hashtagdiljit.github.io/bydiljitsingh/assets/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Inhaler Spacer Moficiation | bydiljitsingh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" href="../assets/bydiljitsingh-favicon.png" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a class="logo" href="../index.html">
+          <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
+        </a>
+        <nav>
+          <a href="../index.html">Home</a>
+          <a href="../projects.html" class="active">Projects</a>
+          <a href="../cv.html">CV</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+  <section class="project-detail-hero">
+    <div class="container">
+      <a class="button ghost back-button" href="../projects.html">Back to all projects</a>
+      <h1>CFD Redesign of Paediatric Inhaler Spacer (CFD Module)</h1>
+      <p>
+        Group CFD study using ANSYS Fluent to evaluate and redesign a child inhaler spacer, focusing on particle
+        delivery efficiency and flow behaviour into the throat.
+      </p>
+
+      <div class="project-meta">
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"
+            />
+          </svg>
+          Team size: 4
+        </div>
+
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2 2 7l10 5 10-5-10-5Zm0 20-10-5v-7l10 5 10-5v7l-10 5Z" />
+          </svg>
+          Role: Spacer Redesign + CFD Analysis
+        </div>
+
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M6 2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 4v12h12V6H6Zm2 3h8v2H8V9Zm0 4h5v2H8v-2Z"
+            />
+          </svg>
+          Duration: Sept–Nov
+        </div>
+
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m14 2-1 2H7l-1-2H4v2l1 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6l1-2V2Zm-1 6H9v2h4V8Z" />
+          </svg>
+          Tools: ANSYS Fluent, CAD, Discrete Phase Model (DPM)
+        </div>
+      </div>
+    </div>
+
+    <div class="project-hero-image">
+      <div class="image-frame">
+        <img
+          src="../assets/projects/inhaler-spacer/cover.png"
+          alt="CFD velocity contours inside a paediatric inhaler spacer (placeholder)"
+        />
+      </div>
+      <p>Placeholder image: replace with Fluent velocity or particle tracking contours.</p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Context &amp; Challenge</h2>
+      <p>
+        Metered-dose inhalers are commonly prescribed for children with asthma, but a significant portion of medication
+        can be lost to the mouth and throat. Spacer devices improve delivery efficiency, but their internal geometry
+        strongly influences airflow patterns and particle trajectories. The challenge was to use CFD to assess existing
+        performance and propose geometry changes that improve drug delivery to the lungs. :contentReference[oaicite:0]{index=0}
+      </p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Objectives &amp; KPIs</h2>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <h3>Delivery Efficiency</h3>
+          <p>Maximise particle mass fraction reaching the throat.</p>
+        </div>
+        <div class="kpi-card">
+          <h3>Flow Behaviour</h3>
+          <p>Reduce recirculation and stagnation zones inside the spacer.</p>
+        </div>
+        <div class="kpi-card">
+          <h3>Comparative Study</h3>
+          <p>Evaluate four redesigned geometries against a baseline spacer.</p>
+        </div>
+        <div class="kpi-card">
+          <h3>Clinical Relevance</h3>
+          <p>Align assumptions with paediatric breathing rates and guidelines.</p>
+        </div>
+      </div>
+      :contentReference[oaicite:1]{index=1}
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>My Contribution</h2>
+      <p>
+        I designed and analysed the <strong>inclined outlet spacer</strong>, focusing on redirecting flow more smoothly
+        toward the mouth to reduce particle deposition on spacer walls. I contributed to mesh strategy discussions,
+        solver setup validation, and cross-comparison of all redesigns in the final presentation.
+      </p>
+
+      <div class="highlight-card highlight-card--spaced">
+        <ul>
+          <li>Designed one full spacer geometry for CFD evaluation.</li>
+          <li>Set up and ran Fluent simulations using consistent boundary conditions.</li>
+          <li>Post-processed velocity fields and particle trajectories for comparison.</li>
+          <li>Contributed to validation and limitations discussion.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>CFD Setup</h2>
+
+      <div class="tech-details">
+        <details>
+          <summary>Geometry and mesh</summary>
+          <p>
+            A baseline spacer and four redesigned geometries were modelled. Mesh sizing was iterated to achieve a valid
+            mesh with acceptable element count while avoiding skewed or failed cells. A standard growth rate was used
+            to maintain mesh quality across curved surfaces. :contentReference[oaicite:2]{index=2}
+          </p>
+          <div class="detail-media">
+            <span class="media-pending">Inhaler spacer mesh</span>
+          </div>
+        </details>
+
+        <details>
+          <summary>Solver and models</summary>
+          <p>
+            Simulations were run in <strong>ANSYS Fluent</strong> using a steady-state approach with a
+            <strong>k–ε turbulence model</strong>. Gravity was enabled and hybrid initialisation was used to improve
+            convergence stability. :contentReference[oaicite:3]{index=3}
+          </p>
+        </details>
+
+        <details>
+          <summary>Boundary conditions</summary>
+          <p>
+            Inlet flow conditions were set to represent typical paediatric inspiratory flow rates based on published
+            respiratory data. Pressure outlet conditions were applied at the mouth exit, with no-slip walls modelled
+            as smooth polycarbonate. :contentReference[oaicite:4]{index=4}
+          </p>
+        </details>
+
+        <details>
+          <summary>Particle modelling (DPM)</summary>
+          <p>
+            Drug particles were modelled using the Discrete Phase Model. Salbutamol density was defined explicitly,
+            while remaining properties were approximated using air due to limited available data. Particle tracking
+            allowed quantification of deposition versus successful delivery to the throat. :contentReference[oaicite:5]{index=5}
+          </p>
+          <div class="detail-media">
+            <span class="media-pending">Particle trajectory visualisation</span>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Results &amp; Comparison</h2>
+      <p>
+        All redesigned spacers altered internal flow structures compared to the baseline. Designs that reduced sharp
+        directional changes and promoted smoother diffusion generally improved particle delivery efficiency. The
+        inclined outlet design showed reduced wall deposition near the outlet and a more coherent jet into the mouth.
+        :contentReference[oaicite:6]{index=6}
+      </p>
+
+      <div class="detail-media">
+        <span class="media-pending">Comparison of particle delivery efficiency across designs</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Validation &amp; Limitations</h2>
+      <p>
+        Results were compared qualitatively with literature studies on inhaler spacer performance. The steady-state
+        assumption significantly reduced computational cost but limited realism compared to a transient breathing
+        cycle. Simplified mouth geometry and approximate drug properties were also key limitations. :contentReference[oaicite:7]{index=7}
+      </p>
+
+      <div class="highlight-card">
+        <ul>
+          <li>Transient modelling would better capture inhalation dynamics.</li>
+          <li>More anatomically accurate mouth geometry would improve realism.</li>
+          <li>Measured salbutamol properties would refine particle tracking accuracy.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>What This Demonstrated</h2>
+      <div class="highlight-card highlight-card--spaced">
+        <ul>
+          <li>Ability to use CFD as a <strong>design comparison tool</strong>, not just visualisation.</li>
+          <li>Understanding of <strong>mesh quality, solver choice, and modelling assumptions</strong>.</li>
+          <li>Effective teamwork, with one validated redesign per team member.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="logo footer-logo">
+            <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
+          </div>
+          <p>Graduate Project Manager at Arcadis, Property Regions &middot; MEng Mechanical Engineering (Automotive), University of Birmingham.</p>
+        </div>
+        <div class="footer-links">
+          <a
+            href="https://www.linkedin.com/in/diljitsingh03/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://www.instagram.com/hashtagdiljit/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Instagram</a
+          >
+          <a href="mailto:diljitsingh2003@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">© 2026 BYDILJITSINGH — BIRMINGHAM, UK</div>
+    </footer>
+  </body>
+</html>

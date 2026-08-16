@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Small-Scale Two-Stroke CI Engine (MDA) — an engineering project case study from Diljit Singh's technical portfolio, covering approach, analysis, and outcomes." />
+    <link rel="canonical" href="https://hashtagdiljit.github.io/bydiljitsingh/projects/small-scale-2-stroke-engine.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Small Scale 2 Stroke Engine | bydiljitsingh" />
+    <meta property="og:description" content="Small-Scale Two-Stroke CI Engine (MDA) — an engineering project case study from Diljit Singh's technical portfolio, covering approach, analysis, and outcomes." />
+    <meta property="og:url" content="https://hashtagdiljit.github.io/bydiljitsingh/projects/small-scale-2-stroke-engine.html" />
+    <meta property="og:image" content="https://hashtagdiljit.github.io/bydiljitsingh/assets/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Small Scale 2 Stroke Engine | bydiljitsingh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" href="../assets/bydiljitsingh-favicon.png" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a class="logo" href="../index.html">
+          <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
+        </a>
+        <nav>
+          <a href="../index.html">Home</a>
+          <a href="../projects.html" class="active">Projects</a>
+          <a href="../cv.html">CV</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+  <section class="project-detail-hero">
+    <div class="container">
+      <a class="button ghost back-button" href="../projects.html">Back to all projects</a>
+      <h1>Small-Scale Two-Stroke CI Engine (MDA)</h1>
+      <p>
+        Designed and validated a single-cylinder, air-cooled, two-stroke compression ignition engine concept for a UAV,
+        then translated the design into a manufacturable plan for 20,000 units.
+      </p>
+
+      <div class="project-meta">
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"
+            />
+          </svg>
+          Team size: 3
+        </div>
+
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2 2 7l10 5 10-5-10-5Zm0 20-10-5v-7l10 5 10-5v7l-10 5Z" />
+          </svg>
+          Role: Design + Validation + Manufacturing Planning
+        </div>
+
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M6 2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 4v12h12V6H6Zm2 3h8v2H8V9Zm0 4h5v2H8v-2Z"
+            />
+          </svg>
+          Duration: Sept-Dec
+        </div>
+
+        <div class="project-chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m14 2-1 2H7l-1-2H4v2l1 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6l1-2V2Zm-1 6H9v2h4V8Z" />
+          </svg>
+          Tools: Fusion 360, Granta EduPack
+        </div>
+      </div>
+
+      <div class="project-hero-image">
+        <div class="image-frame">
+          <img
+            src="../assets/projects/small-scale-2-stroke-engine/cover.png"
+            alt="Small-scale two-stroke compression ignition engine concept render"
+          />
+        </div>
+        <p>CAD Render of the Small-scale Engine</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Context &amp; Challenge</h2>
+      <p>
+        The brief was to design a compact two-stroke, compression ignition engine to power an unmanned aerial vehicle,
+        meeting a minimum flight time requirement while staying air-cooled and manufacturable at scale. Key constraints
+        included a target speed of <strong>12,000 rpm</strong>, output around <strong>45 W (0.06 bhp)</strong>,
+        and a production requirement of <strong>20,000 units in 4 months</strong>.
+      </p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Objectives &amp; KPIs</h2>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <h3>Performance</h3>
+          <p>45 W at 12,000 rpm, sized for a 200 mm propeller and 100 mm pitch.</p>
+        </div>
+
+        <div class="kpi-card">
+          <h3>Packaging</h3>
+          <p>Bore-stroke ratio of <strong>0.8:1</strong> with compact internal geometry.</p>
+        </div>
+
+        <div class="kpi-card">
+          <h3>Safety &amp; Reliability</h3>
+          <p>Safety factor target range <strong>2.3-3.5</strong> and critical speed margin above operating rpm.</p>
+        </div>
+
+        <div class="kpi-card">
+          <h3>Manufacturability</h3>
+          <p>Processes and materials selected for repeatable mass production (20,000 units).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>System Overview</h2>
+      <p>
+        The engine architecture followed a traditional single-cylinder layout with piston, connecting rod, crankshaft,
+        crankcase, cylinder head and a compact fuel system. The design also included a contra piston arrangement for the
+        combustion chamber, plus standard fasteners and bearings to simplify assembly and servicing.
+      </p>
+
+      <div class="detail-media">
+        <img
+          src="../assets/projects/small-scale-2-stroke-engine/system-layout.png"
+          alt="Exploded view or system layout of the two-stroke engine (placeholder)"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Key Design Choices</h2>
+
+      <div class="tech-details">
+        <details>
+          <summary>Bore, Stroke &amp; Compression</summary>
+          <p>
+            Bore and stroke were set to approximately <strong>9.0 mm</strong> and <strong>11.3 mm</strong> respectively to
+            meet the bore–stroke ratio requirement. The design used a <strong>starting compression ratio of 8:1</strong>
+            and <strong>running compression ratio of 18:1</strong>, with clearance volumes calculated from displacement.
+          </p>
+          <div class="detail-media">
+            <img
+              src="../assets/projects/small-scale-2-stroke-engine/bore-stroke.png"
+              alt="Bore and stroke diagram or calculation snapshot (placeholder)"
+            />
+          </div>
+        </details>
+
+        <details>
+          <summary>Porting Concept</summary>
+          <p>
+            Intake, exhaust, and transfer port timing and areas were sized from crank-angle durations, translating into
+            target mean port areas and widths for the small displacement volume.
+          </p>
+          <div class="detail-media">
+            <img
+              src="../assets/projects/small-scale-2-stroke-engine/porting.png"
+              alt="Port timing and sizing diagram (placeholder)"
+            />
+          </div>
+        </details>
+
+        <details>
+          <summary>Rotordynamics: Critical Speed Margin</summary>
+          <p>
+            Whirl risk was checked by estimating shaft deflection and applying the Rayleigh–Ritz approach. The calculated
+            critical speed was around <strong>19,300 rpm</strong>, giving a margin of about <strong>1.6×</strong> the
+            operating speed.
+          </p>
+          <div class="detail-media">
+            <img
+              src="../assets/projects/small-scale-2-stroke-engine/critical-speed.png"
+              alt="Free body / deflection / critical speed plot or page snapshot (placeholder)"
+            />
+          </div>
+        </details>
+
+        <details>
+          <summary>Strength: Safety Factor</summary>
+          <p>
+            A combined loading check used a conservative yield assumption and the Tresca criterion, giving a lower-bound
+            safety factor of about <strong>2.3</strong>, with an upper bound around <strong>3.46</strong> if higher yield
+            strength steel is assumed.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Manufacturing &amp; Materials Strategy</h2>
+      <p>
+        The project did not stop at CAD. We built a manufacturing plan tailored for volume production, defining primary and
+        secondary processes for non-standard components, then justifying material choices based on stiffness, fatigue,
+        thermal stability, machinability, and cost.
+      </p>
+
+      <div class="tech-details">
+        <details>
+          <summary>Material Selection Focus: Crankshaft</summary>
+          <p>
+            Using Granta EduPack, the crankshaft material was screened on Young’s modulus, fatigue strength at
+            10<sup>7</sup> cycles, thermal expansion, density, and price. The final comparison considered stainless steel,
+            cast iron, and medium carbon steel. <strong>Medium carbon steel</strong> was selected as it offered the best
+            stiffness-to-cost balance with favourable fatigue strength and low thermal expansion.
+          </p>
+          <div class="detail-media">
+            <img
+              src="../assets/projects/small-scale-2-stroke-engine/granta-selection.png"
+              alt="Granta EduPack material selection charts (placeholder)"
+            />
+          </div>
+        </details>
+
+        <details>
+          <summary>High-Volume Manufacturing Plan</summary>
+          <p>
+            The casing and piston were specified as grey cast iron for thermal conductivity, vibration damping and
+            machinability. Powertrain components such as the crankshaft, connecting rod and gudgeon pin were specified as
+            medium carbon steel for strength and fatigue performance. The fuel tank was specified as polypropylene for
+            injection moulding, chemical resistance, and transparency.
+          </p>
+        </details>
+
+        <details>
+          <summary>Process Breakdown: Example Components</summary>
+          <p>
+            We defined process routes for each non-standard part. Examples include:
+          </p>
+          <ul>
+            <li>
+              <strong>Piston</strong>: turning + drilling + deburring for a smooth sliding surface
+              (cycle time reported around <strong>~2 minutes</strong>).
+            </li>
+            <li>
+              <strong>Connecting rod</strong>: CNC milling with reamed holes for fit and finish
+              (cycle time reported around <strong>1 min 44 s</strong>).
+            </li>
+            <li>
+              <strong>Crankshaft</strong>: turning + milling + threading to hit fits and reduce deflection risk
+              (cycle time reported around <strong>1 min 44 s</strong>).
+            </li>
+            <li>
+              <strong>Crankcase</strong>: gravity die casting followed by machining for contact surfaces and ports.
+            </li>
+          </ul>
+        </details>
+      </div>
+
+      <div class="detail-media">
+        <img
+          src="../assets/projects/small-scale-2-stroke-engine/component-manufacturing.png"
+          alt="CAD renders showing piston, rod, crankshaft manufacturing steps (placeholder)"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>Assembly Planning</h2>
+      <p>
+        To reduce variability at scale, assembly was structured into subassemblies with simple jigs. A piston jig guided
+        gudgeon pin insertion depth before pressing the pin fully with the connecting rod in place. A crankcase jig held
+        the case during bearing and crankshaft insertion. The final assembly sequence was designed to be completed with
+        minimal tooling.
+      </p>
+
+      <div class="detail-media">
+        <img
+          src="../assets/projects/small-scale-2-stroke-engine/assembly-flow.png"
+          alt="Assembly flowchart and jig concept images (placeholder)"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>CAM Study (Component-Level)</h2>
+      <p>
+        Alongside the manufacturing strategy, I produced a CAM routine for a small cylindrical component (piston-form
+        factor) including roughing, finishing and drilling parameters, targeting tight tolerances and surface finish for
+        low friction interfaces.
+      </p>
+
+      <div class="highlight-card highlight-card--spaced">
+        <ul>
+          <li>Total manufacturing time reported: <strong>2 min 15 s</strong>.</li>
+          <li>Tolerance target: <strong>0.01 mm</strong>.</li>
+          <li>Surface finish targets referenced: <strong>Ra 0.4 μm</strong> (milling) and <strong>Ra 1.6 μm</strong> (drilling).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2>What We Achieved</h2>
+
+      <div class="achievement-grid">
+        <div class="achievement-card">
+          <strong>45 W</strong>
+          <span>Target Power</span>
+        </div>
+        <div class="achievement-card">
+          <strong>12,000 rpm</strong>
+          <span>Operating Speed</span>
+        </div>
+        <div class="achievement-card">
+          <strong>~19,300 rpm</strong>
+          <span>Critical Speed (calc.)</span>
+        </div>
+        <div class="achievement-card">
+          <strong>2.3–3.5</strong>
+          <span>Safety Factor Range</span>
+        </div>
+      </div>
+
+      <p>
+        The outcome was a coherent engine concept supported by core validation calculations, plus a practical manufacturing
+        and assembly plan that considered repeatability, cost, and scalability.
+      </p>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="logo footer-logo">
+            <span class="logo-dark">by</span><span class="logo-light">diljitsingh</span>
+          </div>
+          <p>Graduate Project Manager at Arcadis, Property Regions &middot; MEng Mechanical Engineering (Automotive), University of Birmingham.</p>
+        </div>
+        <div class="footer-links">
+          <a
+            href="https://www.linkedin.com/in/diljitsingh03/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://www.instagram.com/hashtagdiljit/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Instagram</a
+          >
+          <a href="mailto:diljitsingh2003@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">© 2026 BYDILJITSINGH — BIRMINGHAM, UK</div>
+    </footer>
+  </body>
+</html>
