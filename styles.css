@@ -163,15 +163,22 @@ a {
 
 .wordmark {
   font-family: var(--display);
-  font-size: 1.24rem;
-  letter-spacing: 0.02em;
+  font-size: 1.3rem;
+  letter-spacing: 0.015em;
   color: var(--ink);
   white-space: nowrap;
 }
 
-.wordmark em {
-  font-style: italic;
+.wordmark b {
+  font-weight: 400;
+  font-style: normal;
   color: var(--brass);
+}
+
+.wordmark i {
+  font-weight: 400;
+  font-style: normal;
+  color: var(--ink);
 }
 
 .masthead nav {
@@ -262,7 +269,7 @@ a {
   font-size: clamp(3.4rem, 14.6vw, 14.5rem);
   line-height: 0.86;
   letter-spacing: -0.02em;
-  margin-bottom: clamp(28px, 4vw, 56px);
+  margin-bottom: clamp(48px, 7vw, 104px);
   white-space: nowrap;
 }
 
@@ -1062,4 +1069,141 @@ a {
   body {
     background: #fff;
   }
+}
+
+
+/* --------------------------------------------------------------------------
+   Enlargeable figures
+   Any image inside a .plate-figure can be opened full size. The affordance
+   is a hairline badge that fades in on hover and is always visible on touch,
+   plus a zoom cursor.
+   -------------------------------------------------------------------------- */
+
+.plate-figure {
+  position: relative;
+}
+
+.plate-figure__btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  font: inherit;
+  color: inherit;
+  position: relative;
+}
+
+.plate-figure__hint {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 380ms var(--ease), transform 380ms var(--ease);
+  pointer-events: none;
+}
+
+.plate-figure__btn:hover .plate-figure__hint,
+.plate-figure__btn:focus-visible .plate-figure__hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Touch devices get no hover, so show it permanently */
+@media (hover: none) {
+  .plate-figure__hint {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.plate-figure__hint svg {
+  width: 13px;
+  height: 13px;
+  stroke: var(--brass);
+  fill: none;
+  stroke-width: 1.6;
+}
+
+/* Overlay */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: clamp(20px, 5vw, 64px);
+  background: color-mix(in srgb, var(--forest) 96%, transparent);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 420ms var(--ease), visibility 420ms var(--ease);
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox__img {
+  max-width: min(1280px, 100%);
+  max-height: 76vh;
+  object-fit: contain;
+  background: var(--paper);
+  border: 1px solid rgba(238, 241, 234, 0.22);
+  transform: scale(0.985);
+  transition: transform 480ms var(--ease);
+}
+
+.lightbox.is-open .lightbox__img {
+  transform: scale(1);
+}
+
+.lightbox__caption {
+  color: #c3cbc3;
+  font-size: 0.86rem;
+  text-align: center;
+  max-width: 70ch;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: clamp(16px, 3vw, 34px);
+  right: clamp(16px, 3vw, 34px);
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: 1px solid rgba(238, 241, 234, 0.28);
+  color: var(--paper);
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: border-color 320ms var(--ease), color 320ms var(--ease);
+}
+
+.lightbox__close:hover {
+  border-color: var(--brass);
+  color: var(--brass-light);
+}
+
+body.lightbox-open {
+  overflow: hidden;
 }
