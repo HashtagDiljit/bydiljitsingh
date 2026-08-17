@@ -148,6 +148,14 @@
   text-transform: uppercase;
 }
 
+/* Caption-weight paragraph. Carried over from the source pages, where the
+   class was used on placeholder-image captions but never actually defined. */
+.muted,
+.prose .muted {
+  font-size: 0.86rem;
+  color: var(--stone);
+}
+
 /* Tag row, as in the showcase but standalone under a metadata table */
 .tag-row {
   display: flex;
