@@ -56,6 +56,8 @@ These were deliberate, and each has a reason that isn't obvious from the code.
 
 **Header, nav and footer are duplicated across every page** with no templating. A change to any of them has to be applied to all sixteen files, scripted rather than by hand, and verified afterwards.
 
+**Two `var` declarations with the same name in one function silently clobber each other.** The lightbox reused the name `figures`, which the sticky showcase above it was already using. Because `var` is function-scoped, the showcase's list of images was replaced by an empty one and the homepage image froze on the first project while the titles kept changing. The lightbox list is now called `plateFigs`. If a new block is added to `site.js`, give its variables fresh names.
+
 **Verify in a browser rather than asserting.** Several real faults were only caught by rendering: a figure crop that had swallowed a paragraph of report text, a masthead overflowing at mobile width, and a transformer silently dropping a `<ul>` nested inside `<details>`.
 
 ---
@@ -64,6 +66,7 @@ These were deliberate, and each has a reason that isn't obvious from the code.
 
 - **`assets/Diljit_Singh_CV.pdf` is out of date.** The CV page reflects the 2026 CV; the downloadable PDF does not. It needs replacing with the same filename so links don't break. This has been outstanding a while.
 - **23 `media-pending` placeholders** remain across agridrive, factory-in-a-box, inhaler-spacer, thin-plate-fea and wankel-engine-transmission. They are deliberate and stay until Diljit supplies real images. When he does, swap the placeholder span back to an `<img>` inside a `plate-figure` figure so it becomes enlargeable.
+- **Image weight.** `green-hydrogen-plant/site-layout.png` is 3.4 MB on its own and makes that page slow. It is a photographic render saved as PNG; saving it as JPEG would cut it by roughly 90%, but that changes the file extension and the reference in the page. Four other oversized images were recompressed in place without changing filenames or dimensions.
 - **Wording.** Diljit is editing text directly on GitHub. `projects.html` still carries "Technical portfolio" and a systems-first quote, both leftovers from the original generated site. Leave the wording to him unless asked.
 - **Google Search Console.** The property is verified via `googlee40dc542abb486fa.html` in the repo root, which must never be deleted. After the redesign, re-request indexing for the homepage, projects and CV, since the content changed substantially.
 

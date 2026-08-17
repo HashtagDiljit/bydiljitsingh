@@ -75,9 +75,12 @@
 
 
     /* ---- Lightbox: click any figure image to enlarge ------------------ */
-    var figures = document.querySelectorAll(".plate-figure");
+    /* Named plateFigs, not figures: the showcase above already uses a
+       `figures` variable, and `var` is function-scoped, so reusing the
+       name overwrote it and froze the showcase on its first image. */
+    var plateFigs = document.querySelectorAll(".plate-figure");
 
-    if (figures.length) {
+    if (plateFigs.length) {
       var overlay = document.createElement("div");
       overlay.className = "lightbox";
       overlay.setAttribute("role", "dialog");
@@ -110,7 +113,7 @@
         if (lastFocus) lastFocus.focus();
       };
 
-      figures.forEach(function (fig) {
+      plateFigs.forEach(function (fig) {
         var img = fig.querySelector("img");
         if (!img) return;
 
