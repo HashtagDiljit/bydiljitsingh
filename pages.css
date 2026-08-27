@@ -1,5 +1,5 @@
 /* ==========================================================================
-   bydiljitsingh — page components
+   bydiljitsingh - page components
    Supplements styles.css for the sub-pages. styles.css is the reference
    implementation and is not modified; everything here is built from its
    tokens only. No new colours, no new fonts, no border-radius on a content
@@ -15,7 +15,7 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   Prose — body copy inside a section
+   Prose - body copy inside a section
    -------------------------------------------------------------------------- */
 
 .prose {
@@ -47,9 +47,9 @@
   color: var(--ink-soft);
 }
 
-/* Brass en-dash marker, in place of a bullet */
+/* Brass hyphen marker, in place of a bullet */
 .prose li::before {
-  content: "—";
+  content: "-";
   position: absolute;
   left: 0;
   color: var(--brass);
@@ -77,7 +77,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   Figure plate — hairline frame, hard corners, image keeps its own ratio
+   Figure plate - hairline frame, hard corners, image keeps its own ratio
    -------------------------------------------------------------------------- */
 
 .figure {
@@ -180,7 +180,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   Disclosure sheets — the old tech-details accordions
+   Disclosure sheets - the old tech-details accordions
    -------------------------------------------------------------------------- */
 
 .sheets {
@@ -217,7 +217,7 @@
 }
 
 .sheets details[open] summary::after {
-  content: "–";
+  content: "-";
 }
 
 .sheets summary:hover {
@@ -229,7 +229,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   Document entries — CV. Date in a left column, hairline between rows.
+   Document entries - CV. Date in a left column, hairline between rows.
    -------------------------------------------------------------------------- */
 
 .doc {
@@ -262,7 +262,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   Register year groups — projects.html
+   Register year groups - projects.html
    -------------------------------------------------------------------------- */
 
 .group + .group {
@@ -330,5 +330,125 @@
   .figure__cap {
     flex-direction: column;
     gap: 6px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Gallery - photography and short looping video.
+   A moodboard rather than a grid: three columns that flow independently, so
+   pieces never line up into rows, plus a small vertical offset on every other
+   item. Mixed portrait and landscape is the point, so nothing is cropped.
+   Items load in batches as you scroll; without JavaScript they are all
+   present and simply render at once.
+   -------------------------------------------------------------------------- */
+
+.gallery {
+  columns: 3;
+  column-gap: clamp(14px, 2.2vw, 34px);
+}
+
+.gallery__item {
+  break-inside: avoid;
+  margin-bottom: clamp(14px, 2.2vw, 34px);
+  position: relative;
+}
+
+/* Offset every other piece so the columns never read as a grid */
+.gallery__item:nth-child(3n + 2) {
+  margin-top: clamp(16px, 3vw, 46px);
+}
+
+.gallery__item:nth-child(4n + 3) {
+  margin-top: clamp(8px, 1.6vw, 24px);
+}
+
+.gallery__media {
+  position: relative;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  overflow: hidden;
+}
+
+.gallery__media img,
+.gallery__media video {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 1200ms var(--ease), filter 900ms var(--ease);
+  filter: saturate(0.94);
+}
+
+.gallery__item:hover .gallery__media img,
+.gallery__item:hover .gallery__media video {
+  transform: scale(1.015);
+  filter: saturate(1);
+}
+
+/* Caption sits under the frame, only on hover, so the wall stays quiet */
+.gallery__cap {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 9px;
+  opacity: 0;
+  transform: translateY(-3px);
+  transition: opacity 400ms var(--ease), transform 400ms var(--ease);
+}
+
+.gallery__item:hover .gallery__cap,
+.gallery__item:focus-within .gallery__cap {
+  opacity: 1;
+  transform: none;
+}
+
+/* Touch devices have no hover, so captions stay visible */
+@media (hover: none) {
+  .gallery__cap {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Marks a looping clip without adding chrome */
+.gallery__moving {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 5px 10px;
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  border: 1px solid var(--line);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+/* Batch loading sentinel */
+.gallery-more {
+  display: flex;
+  justify-content: center;
+  padding-top: clamp(30px, 5vw, 60px);
+}
+
+.js .gallery__batch[hidden] {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .gallery {
+    columns: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .gallery {
+    columns: 1;
+  }
+
+  .gallery__item:nth-child(3n + 2),
+  .gallery__item:nth-child(4n + 3) {
+    margin-top: 0;
   }
 }

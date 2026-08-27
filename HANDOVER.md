@@ -44,6 +44,10 @@ These were deliberate, and each has a reason that isn't obvious from the code.
 
 **GDI, not DCI.** The AFPS project is gasoline direct injection. The original site had this wrong and it was corrected; don't let it drift back.
 
+**Plain hyphens and straight quotes.** No em dashes, en dashes or curly quotes anywhere in the copy. `transform.py` normalises them on every build so they cannot creep back in.
+
+**Claim the degree, not the profession.** Diljit has an engineering degree but does not work as an engineer, and is early enough at Arcadis not to claim property expertise. Copy should present the project work as university work and the property side as something being learned. Avoid aphorisms: an earlier homepage carried "Precision is a habit, not an event" and "What lasts is rarely accidental", which is exactly the register to stay out of.
+
 ---
 
 ## Working practices that were learned the hard way
@@ -67,6 +71,7 @@ These were deliberate, and each has a reason that isn't obvious from the code.
 - **`assets/Diljit_Singh_CV.pdf` is out of date.** The CV page reflects the 2026 CV; the downloadable PDF does not. It needs replacing with the same filename so links don't break. This has been outstanding a while.
 - **23 `media-pending` placeholders** remain across agridrive, factory-in-a-box, inhaler-spacer, thin-plate-fea and wankel-engine-transmission. They are deliberate and stay until Diljit supplies real images. When he does, swap the placeholder span back to an `<img>` inside a `plate-figure` figure so it becomes enlargeable.
 - **Image weight.** `green-hydrogen-plant/site-layout.png` is 3.4 MB on its own and makes that page slow. It is a photographic render saved as PNG; saving it as JPEG would cut it by roughly 90%, but that changes the file extension and the reference in the page. Four other oversized images were recompressed in place without changing filenames or dimensions.
+- **Gallery page.** The layout and styling are built and reviewed (`.gallery` in `pages.css`): three independently flowing columns so pieces never align into rows, offsets on every other item, uncropped mixed portrait and landscape, captions on hover, looping muted video supported, items revealed in batches as you scroll. It is not shipped, because there are no photographs in the repo yet and no page ships with placeholder content. When Diljit adds files to `assets/gallery/`, generate the page, add Gallery to the nav on all pages, and add it to `sitemap.xml`.
 - **Wording.** Diljit is editing text directly on GitHub. `projects.html` still carries "Technical portfolio" and a systems-first quote, both leftovers from the original generated site. Leave the wording to him unless asked.
 - **Google Search Console.** The property is verified via `googlee40dc542abb486fa.html` in the repo root, which must never be deleted. After the redesign, re-request indexing for the homepage, projects and CV, since the content changed substantially.
 
