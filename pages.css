@@ -384,46 +384,6 @@
   filter: saturate(1);
 }
 
-/* Caption sits under the frame, only on hover, so the wall stays quiet */
-.gallery__cap {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 9px;
-  opacity: 0;
-  transform: translateY(-3px);
-  transition: opacity 400ms var(--ease), transform 400ms var(--ease);
-}
-
-.gallery__item:hover .gallery__cap,
-.gallery__item:focus-within .gallery__cap {
-  opacity: 1;
-  transform: none;
-}
-
-/* Touch devices have no hover, so captions stay visible */
-@media (hover: none) {
-  .gallery__cap {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* Marks a looping clip without adding chrome */
-.gallery__moving {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 2;
-  padding: 5px 10px;
-  background: color-mix(in srgb, var(--paper) 90%, transparent);
-  border: 1px solid var(--line);
-  font-size: 0.58rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--stone);
-}
 
 /* Batch loading sentinel */
 .gallery-more {

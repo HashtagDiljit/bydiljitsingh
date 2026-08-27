@@ -1171,8 +1171,24 @@ a {
   transition: transform 480ms var(--ease);
 }
 
-.lightbox.is-open .lightbox__img {
+.lightbox.is-open .lightbox__img,
+.lightbox.is-open .lightbox__video {
   transform: scale(1);
+}
+
+/* Video enlarges on the same terms as a still */
+.lightbox__video {
+  max-width: min(1280px, 100%);
+  max-height: 76vh;
+  object-fit: contain;
+  background: var(--forest);
+  border: 1px solid rgba(238, 241, 234, 0.22);
+  transform: scale(0.985);
+  transition: transform 480ms var(--ease);
+}
+
+.lightbox [hidden] {
+  display: none;
 }
 
 .lightbox__caption {
