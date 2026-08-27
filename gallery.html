@@ -31,7 +31,11 @@
     <header class="masthead">
       <div class="shell masthead__inner">
         <a class="wordmark" href="index.html"><b>by</b><i>diljit</i><b>singh</b></a>
-        <nav>
+        <button class="nav-toggle" type="button" aria-expanded="false"
+          aria-controls="site-nav" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="site-nav">
           <a href="index.html">Home</a>
           <a href="projects.html">Projects</a>
           <a href="gallery.html" aria-current="page">Gallery</a>
@@ -47,7 +51,7 @@
           <div class="hero__eyebrow">
             <span class="label label--brass">Gallery</span>
             <hr class="rule" />
-            <span class="label">17 pieces</span>
+            <span class="label">25 pieces</span>
           </div>
           <h1 class="sheet-title">Away from the <em>desk</em></h1>
           <p class="sheet-standfirst">
@@ -57,108 +61,157 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section--tight">
         <div class="shell">
-          <div class="gallery gallery__batch">
-          <figure class="gallery__item plate-figure">
+          <div class="gallery">
+          <figure class="gallery__item plate-figure" data-batch="0">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/beautiful-bridge.jpg" data-full="assets/gallery/beautiful-bridge.jpg" alt="Beautiful bridge"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="0">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/cadair-idris-lake.jpg" data-full="assets/gallery/cadair-idris-lake.jpg" alt="Cadair idris lake"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="0">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/camper-van.jpg" data-full="assets/gallery/camper-van.jpg" alt="Camper van"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="0">
+            <div class="gallery__media">
+            <img src="assets/gallery/thumb/drive.jpg" data-full="assets/gallery/drive.jpg" alt="Drive"
+              loading="lazy" decoding="async" />
+            </div>
+          </figure>
+          <figure class="gallery__item plate-figure" data-batch="0">
+            <div class="gallery__media">
+            <img src="assets/gallery/thumb/duomo.jpg" data-full="assets/gallery/duomo.jpg" alt="Duomo"
+              loading="lazy" decoding="async" />
+            </div>
+          </figure>
+          <figure class="gallery__item plate-figure" data-batch="0">
+            <div class="gallery__media">
+            <img src="assets/gallery/thumb/ferarri-book.jpg" data-full="assets/gallery/ferarri-book.jpg" alt="Ferarri book"
+              loading="lazy" decoding="async" />
+            </div>
+          </figure>
+          <figure class="gallery__item plate-figure" data-batch="0">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/film-in-nyc.jpg" data-full="assets/gallery/film-in-nyc.jpg" alt="Film in nyc"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="0">
+            <div class="gallery__media">
+            <img src="assets/gallery/thumb/graduation.jpg" data-full="assets/gallery/graduation.jpg" alt="Graduation"
+              loading="lazy" decoding="async" />
+            </div>
+          </figure>
+          <figure class="gallery__item plate-figure" data-batch="0">
+            <div class="gallery__media">
+            <img src="assets/gallery/thumb/heart.jpg" data-full="assets/gallery/heart.jpg" alt="Heart"
+              loading="lazy" decoding="async" />
+            </div>
+          </figure>
+          <figure class="gallery__item plate-figure" data-batch="0">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/hiking-solo.jpg" data-full="assets/gallery/hiking-solo.jpg" alt="Hiking solo"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="0">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/idwal.jpg" data-full="assets/gallery/idwal.jpg" alt="Idwal"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="0">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/italian-architecture.jpg" data-full="assets/gallery/italian-architecture.jpg" alt="Italian architecture"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="1">
+            <div class="gallery__media">
+            <video autoplay muted loop playsinline preload="metadata"
+              disablepictureinpicture poster="assets/gallery/poster-lake-como.jpg" aria-label="Lake como">
+              <source src="assets/gallery/lake-como.webm" type="video/webm" />
+              <source src="assets/gallery/lake-como.mp4" type="video/mp4" />
+            </video>
+            </div>
+          </figure>
+          <figure class="gallery__item plate-figure" data-batch="1">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/italy-portrait.jpg" data-full="assets/gallery/italy-portrait.jpg" alt="Italy portrait"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="1">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/lake-como.jpg" data-full="assets/gallery/lake-como.jpg" alt="Lake como"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="1">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/lake-idwal.jpg" data-full="assets/gallery/lake-idwal.jpg" alt="Lake idwal"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="1">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/manhattan-bridge.jpg" data-full="assets/gallery/manhattan-bridge.jpg" alt="Manhattan bridge"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="1">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/nyc.jpg" data-full="assets/gallery/nyc.jpg" alt="Nyc"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          </div>
-          <div class="gallery gallery__batch">
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="1">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/path-to-the-lake.jpg" data-full="assets/gallery/path-to-the-lake.jpg" alt="Path to the lake"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="1">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/rolling-hills.jpg" data-full="assets/gallery/rolling-hills.jpg" alt="Rolling hills"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="1">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/rolling-in-coniston.jpg" data-full="assets/gallery/rolling-in-coniston.jpg" alt="Rolling in coniston"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="1">
+            <div class="gallery__media">
+            <img src="assets/gallery/thumb/statue.jpg" data-full="assets/gallery/statue.jpg" alt="Statue"
+              loading="lazy" decoding="async" />
+            </div>
+          </figure>
+          <figure class="gallery__item plate-figure" data-batch="1">
+            <div class="gallery__media">
+            <img src="assets/gallery/thumb/t-l-building.jpg" data-full="assets/gallery/t-l-building.jpg" alt="T l building"
+              loading="lazy" decoding="async" />
+            </div>
+          </figure>
+          <figure class="gallery__item plate-figure" data-batch="1">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/up-to-mam-tor.jpg" data-full="assets/gallery/up-to-mam-tor.jpg" alt="Up to mam tor"
               loading="lazy" decoding="async" />
             </div>
           </figure>
-          <figure class="gallery__item plate-figure">
+          <figure class="gallery__item plate-figure" data-batch="2">
             <div class="gallery__media">
             <img src="assets/gallery/thumb/vinland-audi.jpg" data-full="assets/gallery/vinland-audi.jpg" alt="Vinland audi"
               loading="lazy" decoding="async" />

@@ -960,6 +960,15 @@ a {
     max-width: 380px;
   }
 
+  /* On one column the portrait, or a project's cover plate, would otherwise
+     land beneath the details list and the buttons, at the very bottom of the
+     screen. Pulling it forward puts it directly under the heading. */
+  .hero__grid > .plate,
+  .hero__grid > .figure {
+    order: -1;
+    margin-bottom: clamp(24px, 4vw, 40px);
+  }
+
   .showcase__grid {
     grid-template-columns: 1fr;
   }
@@ -997,24 +1006,114 @@ a {
   }
 }
 
-/* Five nav items (Home, Projects, Gallery, CV, Contact) no longer fit a
-   360px screen at the 760px sizing, so tighten again on small phones. */
-@media (max-width: 480px) {
-  .masthead__inner {
-    gap: 8px;
+/* --------------------------------------------------------------------------
+   Menu button
+   Five items squeezed into a phone width gave targets a few pixels tall, well
+   under the ~44px a finger needs. Below 720px they collapse behind a button
+   and open as a full-width list with proper tap targets.
+   -------------------------------------------------------------------------- */
+
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-toggle span {
+  position: absolute;
+  left: 11px;
+  width: 22px;
+  height: 1px;
+  background: var(--ink);
+  transition: transform 380ms var(--ease), opacity 220ms var(--ease);
+}
+
+.nav-toggle span:nth-child(1) {
+  top: 16px;
+}
+.nav-toggle span:nth-child(2) {
+  top: 22px;
+}
+.nav-toggle span:nth-child(3) {
+  top: 28px;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (max-width: 720px) {
+  .nav-toggle {
+    display: block;
   }
 
-  .wordmark {
-    font-size: 0.92rem;
+  .masthead__inner {
+    position: relative;
   }
 
   .masthead nav {
-    gap: 10px;
+    position: absolute;
+    top: 100%;
+    left: calc(var(--gutter) * -1);
+    right: calc(var(--gutter) * -1);
+    flex-direction: column;
+    gap: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    padding: 4px var(--gutter) 12px;
+    display: none;
+  }
+
+  .masthead nav.is-open {
+    display: flex;
   }
 
   .masthead nav a {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  /* The sliding brass underline is a desktop hover affordance */
+  .masthead nav a::after {
+    display: none;
+  }
+}
+
+/* Without JavaScript there is no toggle, so keep the inline row */
+html:not(.js) .nav-toggle {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  html:not(.js) .masthead nav {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    inset: auto;
+    border: 0;
+    padding: 0;
+    gap: 12px;
+  }
+
+  html:not(.js) .masthead nav a {
     font-size: 0.56rem;
     letter-spacing: 0.04em;
+    padding: 6px 0;
+    border-top: 0;
   }
 }
 

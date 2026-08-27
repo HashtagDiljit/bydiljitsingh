@@ -12,6 +12,35 @@
   }
 
   ready(function () {
+    /* ---- Menu button on narrow screens -------------------------------- */
+    var navToggle = document.querySelector(".nav-toggle");
+    var siteNav = document.getElementById("site-nav");
+
+    if (navToggle && siteNav) {
+      var setNav = function (open) {
+        navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+        siteNav.classList.toggle("is-open", open);
+      };
+
+      navToggle.addEventListener("click", function () {
+        setNav(navToggle.getAttribute("aria-expanded") !== "true");
+      });
+
+      /* Following a link, pressing Escape, or widening past the breakpoint
+         should all leave the menu closed. */
+      siteNav.addEventListener("click", function (e) {
+        if (e.target.closest("a")) setNav(false);
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setNav(false);
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 720) setNav(false);
+      });
+    }
+
     /* ---- Scroll reveals ---------------------------------------------- */
     var reveals = document.querySelectorAll(".reveal");
 
@@ -89,7 +118,8 @@
       overlay.innerHTML =
         '<button class="lightbox__close" type="button" aria-label="Close">&#10005;</button>' +
         '<img class="lightbox__img" alt="" />' +
-        '<video class="lightbox__video" autoplay loop playsinline controls></video>' +
+        '<video class="lightbox__video" autoplay loop muted playsinline ' +
+        'disablepictureinpicture></video>' +
         '<p class="lightbox__caption"></p>';
       document.body.appendChild(overlay);
 
@@ -99,8 +129,12 @@
       var oClose = overlay.querySelector(".lightbox__close");
       var lastFocus = null;
 
-      var open = function (src, alt, caption, isVideo) {
+      var openToken = 0;
+
+      var open = function (src, alt, caption, isVideo, preview) {
         lastFocus = document.activeElement;
+        openToken += 1;
+        var token = openToken;
         if (isVideo) {
           oVid.src = src;
           oVid.hidden = false;
@@ -108,12 +142,24 @@
           oImg.removeAttribute("src");
           oVid.play().catch(function () {});
         } else {
-          oImg.src = src;
-          oImg.alt = alt || "";
-          oImg.hidden = false;
           oVid.hidden = true;
           oVid.pause();
           oVid.removeAttribute("src");
+          oImg.alt = alt || "";
+          oImg.hidden = false;
+          /* Show the thumbnail first. It is already in the page, so it paints
+             immediately; setting the full-size src on its own would leave the
+             previously viewed photograph on screen while the new one loaded,
+             which read as the wrong photograph opening. */
+          oImg.src = preview || src;
+          if (preview && src !== preview) {
+            var full = new Image();
+            full.onload = function () {
+              /* Ignore a load that finished after a later click. */
+              if (token === openToken) oImg.src = src;
+            };
+            full.src = src;
+          }
         }
         oCap.textContent = caption || "";
         oCap.hidden = !caption;
@@ -131,6 +177,19 @@
         };
         window.requestAnimationFrame(focusWhenVisible);
       };
+
+      /* The clip is decoration, not a player: no controls, and clicking it
+         must not pause it. */
+      oVid.addEventListener("click", function (e) {
+        e.stopPropagation();
+        if (oVid.paused) oVid.play().catch(function () {});
+      });
+
+      oVid.addEventListener("pause", function () {
+        if (overlay.classList.contains("is-open")) {
+          oVid.play().catch(function () {});
+        }
+      });
 
       var close = function () {
         overlay.classList.remove("is-open");
@@ -170,11 +229,19 @@
 
         btn.addEventListener("click", function () {
           var cap = fig.querySelector("figcaption");
+          /* A <video> built from <source> children has no src attribute, and
+             currentSrc is empty until it has loaded. */
+          var firstSource = isVideo ? img.querySelector("source") : null;
           open(
-            img.getAttribute("data-full") || img.currentSrc || img.src,
+            img.getAttribute("data-full") ||
+              img.currentSrc ||
+              img.getAttribute("src") ||
+              (firstSource && firstSource.getAttribute("src")) ||
+              "",
             img.alt,
             cap ? cap.textContent.trim() : "",
-            isVideo
+            isVideo,
+            isVideo ? "" : img.currentSrc || img.src
           );
         });
       });
@@ -190,27 +257,38 @@
 
 
     /* ---- Gallery: reveal further batches as you approach the bottom --- */
-    var batches = document.querySelectorAll(".gallery__batch");
+    var galleryItems = document.querySelectorAll(".gallery__item[data-batch]");
     var sentinel = document.querySelector("[data-gallery-sentinel]");
+    var batchCount = 0;
+    galleryItems.forEach(function (el) {
+      batchCount = Math.max(batchCount, +el.getAttribute("data-batch") + 1);
+    });
 
-    if (batches.length > 1 && sentinel && "IntersectionObserver" in window) {
-      /* Hide the later batches only now, so a visitor without JavaScript
-         still gets the whole gallery in one go. */
+    if (batchCount > 1 && sentinel && "IntersectionObserver" in window) {
+      /* Hide the later items only now, so a visitor without JavaScript still
+         gets the whole gallery in one go. Items are hidden individually
+         rather than in separate containers, so the columns stay continuous
+         and every gap between photographs is identical. */
       var shown = 1;
-      for (var i = 1; i < batches.length; i++) {
-        batches[i].hidden = true;
-      }
+      var showBatch = function (n) {
+        galleryItems.forEach(function (el) {
+          if (+el.getAttribute("data-batch") === n) el.hidden = false;
+        });
+      };
+      galleryItems.forEach(function (el) {
+        if (+el.getAttribute("data-batch") >= 1) el.hidden = true;
+      });
 
       var moreIO = new IntersectionObserver(
         function (entries) {
           if (!entries[0].isIntersecting) return;
-          if (shown >= batches.length) {
+          if (shown >= batchCount) {
             moreIO.disconnect();
             return;
           }
-          batches[shown].hidden = false;
+          showBatch(shown);
           shown += 1;
-          if (shown >= batches.length) {
+          if (shown >= batchCount) {
             moreIO.disconnect();
             return;
           }
