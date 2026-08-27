@@ -997,6 +997,27 @@ a {
   }
 }
 
+/* Five nav items (Home, Projects, Gallery, CV, Contact) no longer fit a
+   360px screen at the 760px sizing, so tighten again on small phones. */
+@media (max-width: 480px) {
+  .masthead__inner {
+    gap: 8px;
+  }
+
+  .wordmark {
+    font-size: 0.92rem;
+  }
+
+  .masthead nav {
+    gap: 10px;
+  }
+
+  .masthead nav a {
+    font-size: 0.56rem;
+    letter-spacing: 0.04em;
+  }
+}
+
 @media (max-width: 680px) {
   .entry {
     grid-template-columns: 38px minmax(0, 1fr);

@@ -171,7 +171,7 @@
         btn.addEventListener("click", function () {
           var cap = fig.querySelector("figcaption");
           open(
-            img.currentSrc || img.src,
+            img.getAttribute("data-full") || img.currentSrc || img.src,
             img.alt,
             cap ? cap.textContent.trim() : "",
             isVideo
