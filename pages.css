@@ -286,6 +286,12 @@
   letter-spacing: -0.01em;
 }
 
+/* A section that follows a page head directly does not need the full
+   top rhythm as well - the head has already provided it. */
+.section--tight {
+  padding-top: clamp(20px, 2.5vw, 40px);
+}
+
 /* --------------------------------------------------------------------------
    Narrow page head, used where a page needs a title but not the full hero
    -------------------------------------------------------------------------- */
@@ -343,23 +349,15 @@
    -------------------------------------------------------------------------- */
 
 .gallery {
+  --gallery-gap: clamp(14px, 2.2vw, 34px);
   columns: 3;
-  column-gap: clamp(14px, 2.2vw, 34px);
+  column-gap: var(--gallery-gap);
 }
 
 .gallery__item {
   break-inside: avoid;
-  margin-bottom: clamp(14px, 2.2vw, 34px);
+  margin-bottom: var(--gallery-gap);
   position: relative;
-}
-
-/* Offset every other piece so the columns never read as a grid */
-.gallery__item:nth-child(3n + 2) {
-  margin-top: clamp(16px, 3vw, 46px);
-}
-
-.gallery__item:nth-child(4n + 3) {
-  margin-top: clamp(8px, 1.6vw, 24px);
 }
 
 .gallery__media {
@@ -390,10 +388,6 @@
   display: flex;
   justify-content: center;
   padding-top: clamp(30px, 5vw, 60px);
-}
-
-.js .gallery__batch[hidden] {
-  display: none;
 }
 
 @media (max-width: 900px) {
