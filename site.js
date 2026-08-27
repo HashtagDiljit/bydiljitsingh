@@ -89,40 +89,71 @@
       overlay.innerHTML =
         '<button class="lightbox__close" type="button" aria-label="Close">&#10005;</button>' +
         '<img class="lightbox__img" alt="" />' +
+        '<video class="lightbox__video" autoplay loop playsinline controls></video>' +
         '<p class="lightbox__caption"></p>';
       document.body.appendChild(overlay);
 
       var oImg = overlay.querySelector(".lightbox__img");
+      var oVid = overlay.querySelector(".lightbox__video");
       var oCap = overlay.querySelector(".lightbox__caption");
       var oClose = overlay.querySelector(".lightbox__close");
       var lastFocus = null;
 
-      var open = function (src, alt, caption) {
+      var open = function (src, alt, caption, isVideo) {
         lastFocus = document.activeElement;
-        oImg.src = src;
-        oImg.alt = alt || "";
+        if (isVideo) {
+          oVid.src = src;
+          oVid.hidden = false;
+          oImg.hidden = true;
+          oImg.removeAttribute("src");
+          oVid.play().catch(function () {});
+        } else {
+          oImg.src = src;
+          oImg.alt = alt || "";
+          oImg.hidden = false;
+          oVid.hidden = true;
+          oVid.pause();
+          oVid.removeAttribute("src");
+        }
         oCap.textContent = caption || "";
+        oCap.hidden = !caption;
         overlay.classList.add("is-open");
         document.body.classList.add("lightbox-open");
-        oClose.focus();
+        /* The overlay is visibility:hidden until its transition runs, and
+           focus() is ignored inside a hidden subtree. Wait for the element
+           to actually become visible before moving focus into the dialog. */
+        var focusWhenVisible = function () {
+          if (getComputedStyle(overlay).visibility === "visible") {
+            oClose.focus();
+          } else {
+            window.requestAnimationFrame(focusWhenVisible);
+          }
+        };
+        window.requestAnimationFrame(focusWhenVisible);
       };
 
       var close = function () {
         overlay.classList.remove("is-open");
         document.body.classList.remove("lightbox-open");
+        oVid.pause();
         if (lastFocus) lastFocus.focus();
       };
 
       plateFigs.forEach(function (fig) {
-        var img = fig.querySelector("img");
+        var img = fig.querySelector("img, video");
         if (!img) return;
+        var isVideo = img.tagName.toLowerCase() === "video";
 
         /* Wrap the image in a button so it is keyboard reachable and
            announced correctly, then add the visible hint. */
         var btn = document.createElement("button");
         btn.type = "button";
         btn.className = "plate-figure__btn";
-        btn.setAttribute("aria-label", "Enlarge image: " + (img.alt || "figure"));
+        btn.setAttribute(
+          "aria-label",
+          (isVideo ? "Play full size: " : "Enlarge image: ") +
+            (img.alt || img.getAttribute("aria-label") || "figure")
+        );
         img.parentNode.insertBefore(btn, img);
         btn.appendChild(img);
 
@@ -139,7 +170,12 @@
 
         btn.addEventListener("click", function () {
           var cap = fig.querySelector("figcaption");
-          open(img.currentSrc || img.src, img.alt, cap ? cap.textContent.trim() : "");
+          open(
+            img.getAttribute("data-full") || img.currentSrc || img.src,
+            img.alt,
+            cap ? cap.textContent.trim() : "",
+            isVideo
+          );
         });
       });
 
@@ -150,6 +186,47 @@
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && overlay.classList.contains("is-open")) close();
       });
+    }
+
+
+    /* ---- Gallery: reveal further batches as you approach the bottom --- */
+    var batches = document.querySelectorAll(".gallery__batch");
+    var sentinel = document.querySelector("[data-gallery-sentinel]");
+
+    if (batches.length > 1 && sentinel && "IntersectionObserver" in window) {
+      /* Hide the later batches only now, so a visitor without JavaScript
+         still gets the whole gallery in one go. */
+      var shown = 1;
+      for (var i = 1; i < batches.length; i++) {
+        batches[i].hidden = true;
+      }
+
+      var moreIO = new IntersectionObserver(
+        function (entries) {
+          if (!entries[0].isIntersecting) return;
+          if (shown >= batches.length) {
+            moreIO.disconnect();
+            return;
+          }
+          batches[shown].hidden = false;
+          shown += 1;
+          if (shown >= batches.length) {
+            moreIO.disconnect();
+            return;
+          }
+          /* The sentinel often stays inside the root margin after a batch
+             is revealed. IntersectionObserver only reports transitions, so
+             without re-arming it the callback would never fire again and
+             the gallery would stop loading after one batch. */
+          moreIO.unobserve(sentinel);
+          window.requestAnimationFrame(function () {
+            moreIO.observe(sentinel);
+          });
+        },
+        { rootMargin: "0px 0px 600px 0px" }
+      );
+
+      moreIO.observe(sentinel);
     }
 
     /* ---- Parallax ----------------------------------------------------- */
