@@ -346,12 +346,21 @@ a {
   aspect-ratio: 4 / 5;
   object-fit: cover;
   transition: transform 1400ms var(--ease), filter 900ms var(--ease);
-  filter: sepia(0.22) saturate(0.85) contrast(1.03);
+  filter: grayscale(1) contrast(1.03);
 }
 
-.plate:hover .plate__frame img {
+.plate:hover .plate__frame img,
+.plate:focus-within .plate__frame img {
   transform: scale(1.03);
-  filter: sepia(0) saturate(1) contrast(1);
+  filter: grayscale(0) contrast(1);
+}
+
+/* A touch screen has no hover, so the portrait would sit in black and white
+   permanently. Give those visitors the colour version outright. */
+@media (hover: none) {
+  .plate__frame img {
+    filter: none;
+  }
 }
 
 /* Offset brass rule behind the plate, an old-print framing device */
